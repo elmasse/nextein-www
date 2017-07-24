@@ -82,7 +82,14 @@ const Content = styled(PostContent)`
   font-size: 1.5em;
   font-weight: 200;
   line-height: 1.5em;
-  color: #666;
+
+  a, a:hover, a:visited {
+    color: #666;
+    text-decoration: none;
+  }
+
+  a { font-weight: 400; }
+
 `
 
 const flexed = css`
@@ -100,6 +107,10 @@ const Title = styled('h1')`
   font-size: 2.5em;
   color: #f63;
 
+  &.nextein {
+    font-size: 3.5em;
+  }
+
   &.md::after {
     content: '#_';    
     font-size: 100px;
@@ -114,6 +125,13 @@ const Title = styled('h1')`
     color: #e5e5e5;
     font-weight: 400; 
     font-size: 4em;   
-  }  
+  }
 
+  &.try-it::after {
+    content: '!'
+    font-size: 100px;
+    color: #e5e5e5;
+    font-weight: 400; 
+    font-size: 4em;   
+  }
 `

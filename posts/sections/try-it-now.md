@@ -6,4 +6,5 @@ className: try-it
 order: 4
 ---
 
-Get it from the github [repo](https://github.com/elmasse/nextein)
+Get it from the github [repository](https://github.com/elmasse/nextein) or  
+`npm i nextein@beta`

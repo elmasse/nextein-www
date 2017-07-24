@@ -1,28 +1,66 @@
 import React from 'react'
-import styled from 'emotion/react'
+import styled, { css } from 'emotion/react'
+
+import Github from './icons/github'
 
 export default () => {
   return (
     <Footer>
-      <BuiltWithLove by="elmasse" />
+      <div className={github}>
+        <Github fill="#999" width="25" style={{paddingRight: '5px'}}/>
+        <a href="https://github.com/elmasse/nextein">github.com/elmasse/<span>nextein</span></a>
+      </div>  
+      <BuiltWithLove />
     </Footer>
   )
 }
 
-const BuiltWithLove = ({ by }) => <Built>Built with ♥︎ and nextein by {by}</Built>
+const BuiltWithLove = ({ by }) => (
+  <Built>
+    Built with ♥︎ and <span>nextein</span> by <a href="https://github.com/elmasse">/<span>elmasse</span></a>
+  </Built>
+)
 
 const Footer = styled('footer')`
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background: #e4e4e4;
-  height: 100px;
+  height: 80px;
+  padding-top:40px;
 `
 
 const Built = styled('div')`
-  align-self: flex-end;
+  align-self: center;
   flex-grow: 1;
   text-align: center;
   font-size: 14px;
   padding: 10px;
-  color: #999;
+  &, a, a:visited, a:hover {
+    color: #999;
+    text-decoration: none;
+  }
+
+  span {
+    font-weight: 600;
+  }
+`
+const github = css`
+  align-self: center;
+  flex-grow: 1;
+  text-align: center;
+
+  font-size: 14px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  &, a, a:visited, a:hover {
+      color: #999;
+      text-decoration: none;
+  }
+
+  span {
+    font-weight: 600;
+  }
 `
