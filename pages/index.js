@@ -8,6 +8,12 @@ import styled from 'emotion/react'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
+// Adds server generated styles to emotion cache.
+// '__NEXT_DATA__.ids' is set in '_document.js'
+if (typeof window !== 'undefined') {
+  hydrate(window.__NEXT_DATA__.ids)
+}
+
 const classnames = (...args) => args.join(' ')
 const sortByOrder = (a, b) => a.data.order - b.data.order
 
