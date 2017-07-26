@@ -4,11 +4,11 @@ import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'emotion/react'
 
 import withPost, { Content } from 'nextein/post'
-import { inCategory } from 'nextein/posts'
-//TODO make this available thru a better name
-import loadEntries from 'nextein/dist/load-entries'
+import withPosts, { inCategory } from 'nextein/posts'
 
 import Navigation from '../components/guides/Navigation'
+import Footer from '../components/footer'
+
 
 // Adds server generated styles to emotion cache.
 // '__NEXT_DATA__.ids' is set in '_document.js'
@@ -17,18 +17,10 @@ if (typeof window !== 'undefined') {
 }
 
 class Guide extends Component {
-
-  static async getInitialProps() {
-    const all = await loadEntries()
-    const guides = all.filter(inCategory('guides', { includeSubCategories: true }))
-
-    return {
-      guides
-    }
-  }
-
+  
   render() {
-    const { post, guides } = this.props
+    const { post, posts } = this.props
+    const guides = posts.filter(inCategory('guides', { includeSubCategories: true }))
 
     injectGlobal`
       html, body {
@@ -42,26 +34,36 @@ class Guide extends Component {
 
     return (
       <Main>
-        <Side>
-          <Logo><a href="/">Nextein</a><span className={light}>/guides</span></Logo>
-          <Navigation guides={guides} post={post} />
-        </Side>
-        <Article>
-          <Category>{post.data.category}</Category>
-          <Title>{post.data.title}</Title>          
-          <Content {...post} renderers={{p: Paragraph, pre: CodeBlock}}/>
-        </Article>
+        <Section>
+          <Side>
+            <Logo><a href="/">Nextein</a><span className={light}>/guides</span></Logo>
+            <Navigation guides={guides} post={post} />
+          </Side>
+          <Article>
+            <Category>{post.data.category}</Category>
+            <Title>{post.data.title}</Title>          
+            <Content {...post} renderers={{p: Paragraph, pre: CodeBlock}}/>
+          </Article>
+          </Section>
+          <Footer />
       </Main>
     )
   }
 }
 
-export default withPost(Guide)
+export default withPost(withPosts(Guide))
 
 const Main = styled('main')`
+  display: flex;
+  flex-direction: column;
+`
+
+const Section = styled('section')`
   background: #f9f9f9;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
+  padding-bottom: 100px;
 `
 
 const Side = styled('side')`
@@ -83,14 +85,14 @@ const light = css`
 
 const Article = styled('article')`
   flex: 4;
-  padding-top: 20px;
+  padding-top: 70px;
 `
 
 const Title = styled('h1')`
   font-size: 4em;
   font-weight: 100;
   margin-top: -15px;
-  margin-bottom: 90px;
+  margin-bottom: 130px;
   padding-bottom: 15px;
   border-bottom: 3px solid #f63;
 `
