@@ -36,6 +36,8 @@ class Guide extends Component {
         fontFamily: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
         fontWeight: 100
       }
+
+      a { color: #666; font-weight: 200; text-decoration: none}
     `
 
     return (
@@ -67,13 +69,12 @@ const Side = styled('side')`
 `
 
 const Logo = styled('h1')`
-  font-weight: 400;
   padding-left: 10px;
   a, a:hover, a:visited {
     color: #212121;
     text-decoration: none;
+    font-weight: 400;
   }
-  
 `
 
 const light = css`
@@ -82,7 +83,7 @@ const light = css`
 
 const Article = styled('article')`
   flex: 4;
-  padding-top: 40px;
+  padding-top: 20px;
 `
 
 const Title = styled('h1')`
@@ -108,8 +109,24 @@ const Paragraph = styled('p')`
   letter-spacing: -0.05px;
   line-height: 1.5em;
   max-width: 750px;
+
+  strong, b {
+    font-weight: 600;
+  }
+
+  code {
+    font-size: 1.2em;
+    display: inline-block;
+    padding: 0 5px;
+  }
 `
 
 const CodeBlock = styled('pre')`
   margin: 50px 0;
+  font-size: 1.2em;
+  padding: 5px 20px;
+  background: #f2f2f2;  
+  .hljs {
+    background: #f2f2f2;
+  }
 `

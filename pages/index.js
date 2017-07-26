@@ -2,7 +2,7 @@
 import React from 'react'
 import withPosts, { inCategory } from 'nextein/posts'
 import { Content as PostContent } from 'nextein/post'
-import { css, injectGlobal } from  'emotion'
+import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'emotion/react'
 
 import Header from '../components/header'
