@@ -24,7 +24,7 @@ npm install --save next@beta react react-dom nextein@beta
 ```
 ## Create your first page and post
 
-For **Next.js** projects we need to follow a certain structure. Before jumping into the components, we need to create a `next.config.js` file. Here you will be able to place any **Next.js** configuration.
+**Next.js** projects follow a certain structure. Before jumping into the components, **Nextein** requires creating a `next.config.js` file. This configuration file uses a wrapper for **Next.js** configuration.
 
 ```js
 const nexteinConfig = require('nextein/config').default
@@ -34,7 +34,7 @@ module.exports = nexteinConfig({
 })
 ```
 
-**Nextein** relies on **Next.js** and the folder structure is exactly the same. Let's start creating a `/pages` folder with an `index.js` with the following content:
+**Nextein** follows **Next.js** folder structure. Let's begin creating a `/pages` folder with an `index.js` with the following content:
 
 ```jsx
 import React from 'react'
@@ -46,7 +46,7 @@ export default withPosts(({ posts }) => {
     <main>
     {
       posts.map((post, index) => (        
-        <article>
+        <article key={`post-${index}`}>
           <h1>{post.data.title}</h1>
           <Content {...post} />
         </article>
@@ -58,7 +58,7 @@ export default withPosts(({ posts }) => {
 
 ```
 
-This is our first `Page` component. In order to work, we are passing a list of `posts` to be rendered. These posts will be read from the `/posts` folder. Let's start by creating a simple post file `my-post.md` with the following content:
+This is our first `Page` component. THe HOC (High Order Component) `withPost` will be passing a list of `posts` to be rendered. These posts will be read from the `/posts` folder. Let's start by creating a simple post file `my-post.md` with the following content:
 
 ```md
 ---
@@ -68,7 +68,7 @@ title: My First Post
 This is the content of the first post. Hello there! 
 ```
 
-Now taht we have our `/pages/index.js` component, the `/posts/my-post.md` content and the root config `next.config.js`, we are ready to start our dev server rigth away. To do so, we need to edit the `package.json` file and add the following to the `scripts` section:
+Now that we have our `/pages/index.js` component, the `/posts/my-post.md` content and the root config `next.config.js`, we are ready to start our dev server rigth away. To do so, we need to edit the `package.json` file and add the following to the `scripts` section:
 
 ```json
 {
@@ -78,7 +78,7 @@ Now taht we have our `/pages/index.js` component, the `/posts/my-post.md` conten
 }
 
 ```
-Ok, finally we can start our dev server running the following command:
+Finally we can start our dev server by running the following command:
 
 ```bash
 npm run dev
@@ -86,3 +86,52 @@ npm run dev
 
 This will start a server available on [http://localhost:3000](http://localhost:3000).
 
+## Creating a single post Page
+
+In the previous example the `pages/index.js` component will render all files under `posts` folder. Now we want to create a `Page` component to render only the post content.
+
+Let's modify first the `index.js` to include a link for the post:
+
+```jsx
+import React from 'react'
+import withPosts from 'nextein/posts'
+import { Content } from 'nextein/post'
+
+export default withPosts(({ posts }) => {
+  return (
+    <main>
+    {
+      posts.map((post, index) => (        
+        <article key={`post-${index}`}>
+          <h1><a href={post.data.url}>{post.data.title}</a></h1>
+          <Content {...post} />
+        </article>
+      ))
+    }
+    </main>
+  )
+})
+
+```
+
+The post url is generated automatically based on the file name and, if specified, the category with the form of `/{category}/{file-name}`.
+
+As mentioned before, we need a component to render our post. The default configuration is having a file  `/pages/post.js`. Let's create it with the following content:
+
+```jsx
+import React from  'react'
+import withPost, { Content } from 'nextein/post'
+
+export default withPost(({ post }) => {
+  return (
+    <main>
+      <article>
+        <Content {...post} />
+      </article>
+    </main>
+  )
+})
+
+```
+
+The `withPost` HOC will pass the post information to be rendered.
