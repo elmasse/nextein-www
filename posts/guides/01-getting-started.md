@@ -45,10 +45,12 @@ export default withPosts(({ posts }) => {
   return (
     <main>
     {
-      posts.map((post, index) => {
-        <h1>{post.data.title}</h1>
-        <Content {...post} />
-      })
+      posts.map((post, index) => (        
+        <article>
+          <h1>{post.data.title}</h1>
+          <Content {...post} />
+        </article>
+      ))
     }
     </main>
   )
