@@ -85,7 +85,7 @@ const light = css`
 
 const Article = styled('article')`
   flex: 4;
-  padding-top: 70px;
+  padding-top: 60px;
 `
 
 const Title = styled('h1')`
