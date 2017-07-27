@@ -20,15 +20,15 @@ import withPosts, { inCategory } from 'nextein/posts'
 import  { Content } from 'nextein/post' 
 
 export default (({ posts }) => {
-    const blog = posts.filter(inCategory('blog'))
+  const blog = posts.filter(inCategory('blog'))
 
-    return (
-        <main>
-        {
-            blog.map((post, idx) => <Content key={`post-${idx}`} {...post} excerpt />)
-        }
-        </main>
-    )
+  return (
+    <main>
+    {
+      blog.map((post, idx) => <Content key={`post-${idx}`} {...post} excerpt />)
+    }
+    </main>
+  )
 })
 
 ```
@@ -39,7 +39,7 @@ If you have sub categories such as `blog`, `blog/react` and `blog/nodejs` the ex
 
 ```js
 
-    const blog = posts.filter(inCategory('blog', { includeSubCategories: true }))
+const blog = posts.filter(inCategory('blog', { includeSubCategories: true }))
 
 ```
 
@@ -49,14 +49,14 @@ In case you want to use your own filter, the posts property is an Array and can 
 
 ```jsx
 const byAuthor = (author) => (post) {
-    return post.data.author === author
+  return post.data.author === author
 }
 
 //...
 
 const maxBlog = posts
-        .filter(inCategory('blog', { includeSubCategories: true }))
-        .filter(byAuthor('max'))
+  .filter(inCategory('blog', { includeSubCategories: true }))
+  .filter(byAuthor('max'))
 
 ```
 
