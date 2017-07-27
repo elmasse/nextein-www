@@ -88,7 +88,7 @@ This will start a server available on [http://localhost:3000](http://localhost:3
 
 ## Creating a single post Page
 
-In the previous example the `pages/index.js` component will render all files under `posts` folder. Now we want to create a `Page` component to render only the post content.
+In the previous example the `pages/index.js` component rendered all files under `posts` folder. Now we want to create a `Page` component to render only the post content.
 
 Let's modify first the `index.js` to include a link for the post:
 
@@ -126,6 +126,7 @@ export default withPost(({ post }) => {
   return (
     <main>
       <article>
+        <h1>{post.data.title}</h1>
         <Content {...post} />
       </article>
     </main>
