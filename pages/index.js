@@ -6,6 +6,7 @@ import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'emotion/react'
 
 import Header from '../components/header'
+import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 
 // Adds server generated styles to emotion cache.
@@ -30,6 +31,7 @@ const Index = ({ posts }) => {
 
   return (
     <Main>
+      <Navigation style={{ position: 'absolute', alignSelf: 'center', top: '90vh' }}/>
       <Header />
       {
         sections.map((post, idx) => {
