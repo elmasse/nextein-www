@@ -6,7 +6,7 @@ import styled from 'emotion/react'
 import withPost, { Content } from 'nextein/post'
 import withPosts, { inCategory } from 'nextein/posts'
 
-import Navigation from '../components/guides/Navigation'
+import Navigation from '../components/guides/navigation'
 import Footer from '../components/footer'
 
 
@@ -48,15 +48,19 @@ class Guide extends Component {
             <Title>{post.data.title}</Title>          
             <Content {...post} renderers={{p: Paragraph, pre: CodeBlock}}/>
             <BottomNav>
-            {
-              prev &&
-              <a className="prev" href={prev.data.url}> <strong>&lt;</strong> Prev: {prev.data.title}</a>
-            }
-            {
-              next &&
-              <a className="next" href={next.data.url}>Next: {next.data.title} <strong>&gt;</strong> </a>
-            }
-          </BottomNav>
+              <NavPrev>
+              {
+                prev &&
+                <a className="prev" href={prev.data.url}> <strong>&lt;</strong> Prev: {prev.data.title}</a>
+              }
+              </NavPrev>
+              <NavNext>
+              {
+                next &&
+                <a className="next" href={next.data.url}>Next: {next.data.title} <strong>&gt;</strong> </a>
+              }
+              </NavNext>
+            </BottomNav>
           </Article>
         </Section>
         <Footer />
@@ -151,7 +155,9 @@ const BottomNav = styled('div')`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  .next {
-    padding-right: 30px;
-  }
+`
+const NavPrev = styled('div')``
+
+const NavNext = styled('div')`
+  padding-right: 30px;
 `
