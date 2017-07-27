@@ -22,6 +22,10 @@ class Guide extends Component {
     const { post, posts } = this.props
     const guides = posts.filter(inCategory('guides', { includeSubCategories: true }))
 
+    const currIdx = guides.findIndex(guide => ( guide.data.title == post.data.title ))
+    const prev = guides[currIdx - 1]
+    const next = guides[currIdx + 1]
+
     injectGlobal`
       html, body {
         margin: 0;
@@ -43,9 +47,19 @@ class Guide extends Component {
             <Category>{post.data.category}</Category>
             <Title>{post.data.title}</Title>          
             <Content {...post} renderers={{p: Paragraph, pre: CodeBlock}}/>
+            <BottomNav>
+            {
+              prev &&
+              <a className="prev" href={prev.data.url}> <strong>&lt;</strong> Prev: {prev.data.title}</a>
+            }
+            {
+              next &&
+              <a className="next" href={next.data.url}>Next: {next.data.title} <strong>&gt;</strong> </a>
+            }
+          </BottomNav>
           </Article>
-          </Section>
-          <Footer />
+        </Section>
+        <Footer />
       </Main>
     )
   }
@@ -130,5 +144,19 @@ const CodeBlock = styled('pre')`
   background: #f2f2f2;  
   .hljs {
     background: #f2f2f2;
+  }
+`
+
+const BottomNav = styled('div')`
+  display: flex;
+  flex-direction: column;
+
+  .prev {
+    align-self: flex-start;
+  }
+
+  .next {
+    align-self: flex-end;
+    padding-right: 30px;
   }
 `
