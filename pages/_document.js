@@ -18,10 +18,13 @@ export default class MyDocument extends Document {
 
   render () {
     return (
-      <html>
+      <html lang="en">
         <Head>
           <title>Nextein</title>
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" />
+          <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+          <script>hljs.initHighlightingOnLoad();</script>
         </Head>
         <body>
           <Main />

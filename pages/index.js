@@ -2,11 +2,18 @@
 import React from 'react'
 import withPosts, { inCategory } from 'nextein/posts'
 import { Content as PostContent } from 'nextein/post'
-import { css, injectGlobal } from  'emotion'
+import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'emotion/react'
 
 import Header from '../components/header'
+import Navigation from '../components/navigation'
 import Footer from '../components/footer'
+
+// Adds server generated styles to emotion cache.
+// '__NEXT_DATA__.ids' is set in '_document.js'
+if (typeof window !== 'undefined') {
+  hydrate(window.__NEXT_DATA__.ids)
+}
 
 const classnames = (...args) => args.join(' ')
 const sortByOrder = (a, b) => a.data.order - b.data.order
@@ -24,6 +31,7 @@ const Index = ({ posts }) => {
 
   return (
     <Main>
+      <Navigation style={{ position: 'absolute', alignSelf: 'center', top: '90vh' }}/>
       <Header />
       {
         sections.map((post, idx) => {
