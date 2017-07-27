@@ -149,14 +149,9 @@ const CodeBlock = styled('pre')`
 
 const BottomNav = styled('div')`
   display: flex;
-  flex-direction: column;
-
-  .prev {
-    align-self: flex-start;
-  }
-
+  flex-direction: row;
+  justify-content: space-between;
   .next {
-    align-self: flex-end;
     padding-right: 30px;
   }
 `
