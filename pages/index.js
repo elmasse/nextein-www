@@ -31,8 +31,8 @@ const Index = ({ posts }) => {
 
   return (
     <Main>
-      <Navigation style={{ position: 'absolute', alignSelf: 'center', top: '90vh' }}/>
       <Header />
+      <Navigation style={{ alignSelf: 'center', background: '#272121', zIndex: 1 }}/>      
       {
         sections.map((post, idx) => {
           const { className, title } = post.data
@@ -70,6 +70,8 @@ const Section = styled('section')`
 
   &:first-of-type {
     padding-top: 120px;
+    margin-top: -40px;
+
   }
 
   &:last-of-type {
