@@ -7,7 +7,7 @@ export default () => {
   return (
     <Footer>
       <div className={github}>
-        <Github fill="#999" width="25" style={{paddingRight: '5px'}}/>
+        <Github fill="#212121" width="25" style={{paddingRight: '5px'}}/>
         <a href="https://github.com/elmasse/nextein">github.com/elmasse/<span>nextein</span></a>
       </div>  
       <BuiltWithLove />
@@ -37,7 +37,7 @@ const Built = styled('div')`
   font-size: 14px;
   padding: 10px;
   &, a, a:visited, a:hover {
-    color: #999;
+    color: #212121;
     text-decoration: none;
   }
 
@@ -56,7 +56,7 @@ const github = css`
   flex-direction: row;
 
   &, a, a:visited, a:hover {
-      color: #999;
+      color: #212121;
       text-decoration: none;
   }
 
