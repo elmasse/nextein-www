@@ -36,7 +36,7 @@ class Guide extends Component {
       <Main>
         <Section>
           <Side>
-            <Logo><a href="/">Nextein</a><span className={light}>/guides</span></Logo>
+            <Logo><a href="/">Nextein</a><Light>/guides</Light></Logo>
             <Navigation guides={guides} post={post} />
           </Side>
           <Article>
@@ -79,7 +79,7 @@ const Logo = styled('h1')`
   }
 `
 
-const light = css`
+const Light = styled('span')`
   font-weight: 100;
 `
 
