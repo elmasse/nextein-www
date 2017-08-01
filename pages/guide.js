@@ -4,7 +4,7 @@ import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'emotion/react'
 
 import withPost, { Content } from 'nextein/post'
-import withPosts, { inCategory } from 'nextein/posts'
+import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
 import Navigation from '../components/guides/navigation'
 import Footer from '../components/footer'
@@ -16,60 +16,55 @@ if (typeof window !== 'undefined') {
   hydrate(window.__NEXT_DATA__.ids)
 }
 
-class Guide extends Component {
-  
-  render() {
-    const { post, posts } = this.props
-    const guides = posts.filter(inCategory('guides', { includeSubCategories: true }))
+const withGuides = withPostsFilterBy(inCategory('guides', { includeSubCategories: true }))
 
-    const currIdx = guides.findIndex(guide => ( guide.data.title == post.data.title ))
-    const prev = guides[currIdx - 1]
-    const next = guides[currIdx + 1]
+export default withPost(withGuides( ( { post, posts: guides } ) => {
 
-    injectGlobal`
-      html, body {
-        margin: 0;
-        fontFamily: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
-        fontWeight: 100
-      }
+  const currIdx = guides.findIndex(guide => ( guide.data.title == post.data.title ))
+  const prev = guides[currIdx - 1]
+  const next = guides[currIdx + 1]
 
-      a { color: #666; font-weight: 200; text-decoration: none}
-    `
+  injectGlobal`
+    html, body {
+      margin: 0;
+      fontFamily: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+      fontWeight: 100
+    }
 
-    return (
-      <Main>
-        <Section>
-          <Side>
-            <Logo><a href="/">Nextein</a><Light>/guides</Light></Logo>
-            <Navigation guides={guides} post={post} />
-          </Side>
-          <Article>
-            <Category>{post.data.category}</Category>
-            <Title>{post.data.title}</Title>          
-            <Content {...post} renderers={{p: Paragraph, pre: CodeBlock}}/>
-            <BottomNav>
-              <NavPrev>
-              {
-                prev &&
-                <a className="prev" href={prev.data.url}> <strong>&lt;</strong> Prev: {prev.data.title}</a>
-              }
-              </NavPrev>
-              <NavNext>
-              {
-                next &&
-                <a className="next" href={next.data.url}>Next: {next.data.title} <strong>&gt;</strong> </a>
-              }
-              </NavNext>
-            </BottomNav>
-          </Article>
-        </Section>
-        <Footer />
-      </Main>
-    )
-  }
-}
+    a { color: #666; font-weight: 200; text-decoration: none}
+  `
 
-export default withPost(withPosts(Guide))
+  return (
+    <Main>
+      <Section>
+        <Side>
+          <Logo><a href="/">Nextein</a><Light>/guides</Light></Logo>
+          <Navigation guides={guides} post={post} />
+        </Side>
+        <Article>
+          <Category>{post.data.category}</Category>
+          <Title>{post.data.title}</Title>          
+          <Content {...post} renderers={{p: Paragraph, pre: CodeBlock}}/>
+          <BottomNav>
+            <NavPrev>
+            {
+              prev &&
+              <a className="prev" href={prev.data.url}> <strong>&lt;</strong> Prev: {prev.data.title}</a>
+            }
+            </NavPrev>
+            <NavNext>
+            {
+              next &&
+              <a className="next" href={next.data.url}>Next: {next.data.title} <strong>&gt;</strong> </a>
+            }
+            </NavNext>
+          </BottomNav>
+        </Article>
+      </Section>
+      <Footer />
+    </Main>
+  )
+}))
 
 const Main = styled('main')`
   display: flex;
