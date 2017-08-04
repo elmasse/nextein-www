@@ -31,7 +31,11 @@ const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
       fontWeight: 100
     }
 
-    a { color: #666; font-weight: 200; text-decoration: none}
+    a { 
+      color: #666; 
+      font-weight: 200;
+      text-decoration-color: #ddd;
+    }
   `
 
   return (
@@ -71,6 +75,7 @@ export default withPageView(Guide)
 const Main = styled('main')`
   display: flex;
   flex-direction: column;
+  color: #666;
 `
 
 const Section = styled('section')`
@@ -79,6 +84,10 @@ const Section = styled('section')`
   display: flex;
   flex-direction: row;
   padding-bottom: 100px;
+
+  p + h2 {
+    margin-top: 40px;
+  }
 `
 
 const Side = styled('side')`
@@ -87,9 +96,8 @@ const Side = styled('side')`
 
 const Logo = styled('h1')`
   padding-left: 10px;
-  a, a:hover, a:visited {
+  a {
     color: #212121;
-    text-decoration: none;
     font-weight: 400;
   }
 `
@@ -135,6 +143,8 @@ const Paragraph = styled('p')`
     font-size: 1.2em;
     display: inline-block;
     padding: 0 5px;
+    background-color: #eee;
+    vertical-align: bottom;
   }
 `
 
@@ -142,7 +152,7 @@ const CodeBlock = styled('pre')`
   margin: 50px 0;
   font-size: 1.2em;
   padding: 5px 20px;
-  background: #f2f2f2;  
+  background: #f2f2f2;
   .hljs {
     background: #f2f2f2;
   }
@@ -152,6 +162,12 @@ const BottomNav = styled('div')`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color: #f63;
+    font-size: 1.1em;
+  }
 `
 const NavPrev = styled('div')``
 

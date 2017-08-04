@@ -19,6 +19,7 @@ const Nav = styled('nav')`
   a {
     padding: 10px;
     color: #999;
+    text-decoration: none;
   }
 
   a:hover {
