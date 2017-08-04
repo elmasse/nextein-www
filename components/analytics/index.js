@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactGA from 'react-ga'
+import { initialize, set, pageview } from 'react-ga'
 
 export default (Wrapped) => {
   
@@ -7,17 +7,16 @@ export default (Wrapped) => {
     class extends Component {
 
       componentDidMount() {
-        if (typeof window !== undefined) {
-          if (!window.GA) {
-            ReactGA.initialize('UA-104061611-1')
-            window.GA = true;
-          }
-          const location = window.location.pathname + window.location.search
-          
-          ReactGA.set({page: location})
-          ReactGA.pageview(location)
-
+        if (!window._ga_initialized) {
+          initialize('UA-104061611-1')
+          window._ga_initialized = true;
         }
+        
+        const location = window.location.pathname + window.location.search
+        
+        set({page: location})
+        pageview(location)
+
       }
 
       render() {      
