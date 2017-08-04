@@ -8,7 +8,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
 import Navigation from '../components/guides/navigation'
 import Footer from '../components/footer'
-
+import withPageView from '../components/analytics'
 
 // Adds server generated styles to emotion cache.
 // '__NEXT_DATA__.ids' is set in '_document.js'
@@ -18,7 +18,7 @@ if (typeof window !== 'undefined') {
 
 const withGuides = withPostsFilterBy(inCategory('guides', { includeSubCategories: true }))
 
-export default withPost(withGuides( ( { post, posts: guides } ) => {
+const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
 
   const currIdx = guides.findIndex(guide => ( guide.data.title == post.data.title ))
   const prev = guides[currIdx - 1]
@@ -65,6 +65,8 @@ export default withPost(withGuides( ( { post, posts: guides } ) => {
     </Main>
   )
 }))
+
+export default withPageView(Guide)
 
 const Main = styled('main')`
   display: flex;

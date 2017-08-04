@@ -8,6 +8,7 @@ import styled from 'emotion/react'
 import Header from '../components/header'
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
+import withPageView from '../components/analytics'
 
 // Adds server generated styles to emotion cache.
 // '__NEXT_DATA__.ids' is set in '_document.js'
@@ -18,7 +19,7 @@ if (typeof window !== 'undefined') {
 const classnames = (...args) => args.join(' ')
 const sortByOrder = (a, b) => a.data.order - b.data.order
 
-const Index = ({ posts }) => {
+const Index = withPosts(({ posts }) => {
   const sections = posts.filter(inCategory('section')).sort(sortByOrder)
 
   injectGlobal`
@@ -48,9 +49,9 @@ const Index = ({ posts }) => {
       <Footer />
     </Main>
   )
-}
+})
 
-export default withPosts(Index)
+export default withPageView(Index)
 
 // --- styled ---
 
