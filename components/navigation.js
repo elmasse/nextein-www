@@ -6,7 +6,7 @@ export default (props) => {
   return (
     <Nav {...props}>
       <a href="/guides/01-getting-started">guides</a>
-      <a href="github.com/elmasse/nextein">github</a>
+      <a href="https://github.com/elmasse/nextein">github</a>
       <a href="https://www.npmjs.com/package/nextein">npm</a>
     </Nav>
   )
