@@ -24,7 +24,11 @@ export default class MyDocument extends Document {
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" />
           <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-          <script>hljs.initHighlightingOnLoad();</script>
+          <script dangerouslySetInnerHTML={{__html:`
+            hljs.configure({languages: ["javascript", "jsx", "bash"]});
+            hljs.initHighlightingOnLoad();
+          `}}>
+          </script>
         </Head>
         <body>
           <Main />
