@@ -17,7 +17,8 @@
     "next": "^3.0.1-beta.18",
     "nextein": "1.0.0-beta16",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-ga": "^2.2.0"
   },
   "devDependencies": {
     "now": "^7.2.4"
