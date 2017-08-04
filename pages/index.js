@@ -1,6 +1,6 @@
 
 import React from 'react'
-import withPosts, { inCategory } from 'nextein/posts'
+import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content as PostContent } from 'nextein/post'
 import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'emotion/react'
@@ -19,8 +19,10 @@ if (typeof window !== 'undefined') {
 const classnames = (...args) => args.join(' ')
 const sortByOrder = (a, b) => a.data.order - b.data.order
 
-const Index = withPosts(({ posts }) => {
-  const sections = posts.filter(inCategory('section')).sort(sortByOrder)
+const withIndexSections = withPostsFilterBy(inCategory('section'))
+
+const Index = withIndexSections(({ posts }) => {
+  const sections = posts.sort(sortByOrder)
 
   injectGlobal`
     html, body {
