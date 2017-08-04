@@ -2,32 +2,30 @@ import React, { Component } from 'react'
 import { initialize, set, pageview } from 'react-ga'
 
 export default (Wrapped) => {
-  
-  return hoistGetInitialProps(
-    class extends Component {
+  return class extends Component {
 
-      componentDidMount() {
-        if (!window._ga_initialized) {
-          initialize('UA-104061611-1')
-          window._ga_initialized = true;
-        }
-        
-        const location = window.location.pathname + window.location.search
-        
-        set({page: location})
-        pageview(location)
+    static async getInitialProps(...args) {
+      const wrappedInitial = Wrapped.getInitialProps
+      const wrapped = wrappedInitial ? await wrappedInitial(...args) : {}
 
+      return wrapped;
+    }
+
+    componentDidMount() {
+      if (!window._ga_initialized) {
+        initialize('UA-104061611-1')
+        window._ga_initialized = true;
       }
 
-      render() {      
-        return <Wrapped {...this.props} />
-      }
-    }, Wrapped)
-}
+      const location = window.location.pathname + window.location.search
+      
+      set({page: location})
+      pageview(location)
 
-const hoistGetInitialProps = (HOC, Wrapped) => {
-  if (Wrapped.getInitialProps) {
-    HOC.getInitialProps = Wrapped.getInitialProps
+    }
+
+    render() {      
+      return <Wrapped {...this.props} />
+    }
   }
-  return HOC
 }
