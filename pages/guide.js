@@ -9,6 +9,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import Navigation from '../components/guides/navigation'
 import Footer from '../components/footer'
 import withPageView from '../components/analytics'
+import Edit from '../components/guides/edit'
 
 // Adds server generated styles to emotion cache.
 // '__NEXT_DATA__.ids' is set in '_document.js'
@@ -46,8 +47,9 @@ const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
           <Navigation guides={guides} post={post} />
         </Side>
         <Article>
+          <EditMe entry={post.data._entry} />
           <Category>{post.data.category}</Category>
-          <Title>{post.data.title}</Title>          
+          <Title>{post.data.title}</Title>
           <Content {...post} renderers={{p: Paragraph, pre: CodeBlock}}/>
           <BottomNav>
             <NavPrev>
@@ -109,6 +111,14 @@ const Light = styled('span')`
 const Article = styled('article')`
   flex: 4;
   padding-top: 60px;
+`
+
+const EditMe = styled(Edit)`
+  position: absolute;
+  top: 27px;
+  right: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
 `
 
 const Title = styled('h1')`
