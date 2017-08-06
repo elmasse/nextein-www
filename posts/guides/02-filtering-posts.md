@@ -17,9 +17,9 @@ The most common case is to filter posts by `category`. **Nextein** exposes a fil
 ```jsx
 import React from 'react'
 import withPosts, { inCategory } from 'nextein/posts'
-import  { Content } from 'nextein/post' 
+import { Content } from 'nextein/post' 
 
-export default (({ posts }) => {
+export default withPosts(({ posts }) => {
   const blog = posts.filter(inCategory('blog'))
 
   return (
@@ -60,3 +60,25 @@ const maxBlog = posts
 
 ```
 
+## withPostsFilterBy
+
+You can use the `withPostsFilterBy` which returns an HOC with a pre-configured filter. This avoid to process all  posts and filtering them in your render method.
+
+Our blog example can be then re-written as:
+
+```jsx
+import React from 'react'
+import { withPostsFilterBy, inCategory } from 'nextein/posts'
+import { Content } from 'nextein/post' 
+
+const fromBlog = withPostsFilterBy(inCategory('blog', { includeSubCategories: true }))
+
+export default fromBlog(({ posts }) => (
+    <main>
+    {
+      posts.map((post, idx) => <Content key={`post-${idx}`} {...post} excerpt />)
+    }
+    </main>
+  )
+)
+```
