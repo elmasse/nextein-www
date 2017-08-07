@@ -97,7 +97,7 @@ const Side = styled('side')`
 `
 
 const Logo = styled('h1')`
-  padding-left: 10px;
+  padding-left: 24px;
   a {
     color: #212121;
     font-weight: 400;

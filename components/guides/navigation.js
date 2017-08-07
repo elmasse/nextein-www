@@ -10,7 +10,7 @@ export default ({ guides, post}) => {
           const { data } = guide
           const active = post.data.url === data.url
           return (
-            <a  key={`guide-nav-${idx}`} className={active && 'active'} href={data.url}>{data.title}</a>
+            <a  key={`guide-nav-${idx}`} className={active ? 'active' : ''} href={data.url}>{data.title}</a>
           )
         })
       }
@@ -22,20 +22,30 @@ const Nav = styled('nav')`
   display: flex;
   flex-direction: column;
   align-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   
   > * {
-    padding: 5px 20px;
+    padding: 10px 20px;
   }
 
-  a, a:hover, a:visited {
+  a {
     text-decoration: none;
-    color: #999
+    color: #999;
+    border-left: 5px solid transparent;
+    flex: 1;
+    margin-right: 20px;
   }
 
-  a.active {
+  a.active, a.active:hover {
     color: #212121;
     background-color: #e4e4e4;
+    border-left: 5px solid #f63;
+  }
+
+  a:hover {
+    color: #212121;
+    background-color: #f4f4f4;
+    border-left: 5px solid #ccc;
   }
 
 `
