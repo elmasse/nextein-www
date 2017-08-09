@@ -19,7 +19,7 @@ mkdir my-blog  && cd my-blog  && npm init -y
 For a very simple project we will need at least to install **Nextein**, **Next.js** and **React**. You can keep adding more as you need them later.
 
 ```bash
-npm install --save next@beta react react-dom nextein@beta
+npm install --save next react react-dom nextein@beta
 
 ```
 ## Create your first page and post
