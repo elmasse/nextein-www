@@ -10,7 +10,7 @@ We will generate a new page (or section) for posts in a certain category. By def
 
 If we want to create our blog as a separated section, we can generate our `/blog` by creating a new page component `pages/blog.js`. This component will render only those posts within the `blog` category:
 
-```jsx
+```js
 import React from 'react'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content } from 'nextein/post' 

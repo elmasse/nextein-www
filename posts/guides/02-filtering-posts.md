@@ -14,7 +14,7 @@ The `category` property follows the directory structure by default. If you have 
 
 The most common case is to filter posts by `category`. **Nextein** exposes a filter function to help: `inCategory(category, options)`. This method uses the `post.data` to filter posts by a given `category`:
 
-```jsx
+```js
 import React from 'react'
 import withPosts, { inCategory } from 'nextein/posts'
 import { Content } from 'nextein/post' 
@@ -47,7 +47,7 @@ const blog = posts.filter(inCategory('blog', { includeSubCategories: true }))
 
 In case you want to use your own filter, the posts property is an Array and can be filtered out by the usual means. For instance, if we want to also filter out our blog posts by `author` we could write a filter function like this:
 
-```jsx
+```js
 const byAuthor = (author) => (post) {
   return post.data.author === author
 }
@@ -66,7 +66,7 @@ You can use the `withPostsFilterBy` which returns an HOC with a pre-configured f
 
 Our blog example can be then re-written as:
 
-```jsx
+```js
 import React from 'react'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content } from 'nextein/post' 

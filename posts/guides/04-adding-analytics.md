@@ -20,7 +20,7 @@ npm i -S react-ga
 
 Now we are able to create our `analytics` component. Let's create a file named `components/analytics.js` with the following content:
 
-```jsx
+```js
 import React, { Component } from 'react'
 import { initialize, set, pageview } from 'react-ga'
 
@@ -65,7 +65,7 @@ This component will call the pageView method when our page is mounted. As it was
 
 So we are ready to wrap any Page component with our analytics HOC. Let's revisit the `pages/index.js` from previous examples:
 
-```jsx
+```js
 import React from 'react'
 import withPosts from 'nextein/posts'
 import { Content } from 'nextein/post'

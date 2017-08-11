@@ -36,7 +36,7 @@ module.exports = nexteinConfig({
 
 **Nextein** follows **Next.js** folder structure. Let's begin creating a `/pages` folder with an `index.js` with the following content:
 
-```jsx
+```js
 import React from 'react'
 import withPosts from 'nextein/posts'
 import { Content } from 'nextein/post'
@@ -92,7 +92,7 @@ In the previous example the `pages/index.js` component rendered all files under 
 
 Let's modify first the `index.js` to include a link for the post:
 
-```jsx
+```js
 import React from 'react'
 import withPosts from 'nextein/posts'
 import { Content } from 'nextein/post'
@@ -118,7 +118,7 @@ The post url is generated automatically based on the file name and, if specified
 
 As mentioned before, we need a component to render our post. The default configuration is having a file  `/pages/post.js`. Let's create it with the following content:
 
-```jsx
+```js
 import React from  'react'
 import withPost, { Content } from 'nextein/post'
 
