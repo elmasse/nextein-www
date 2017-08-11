@@ -2,6 +2,7 @@
 import React, { Component } from  'react'
 import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'emotion/react'
+import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
@@ -41,6 +42,9 @@ const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
 
   return (
     <Main>
+      <Head>
+        <title>Nextein | Guides | {post.data.title}</title>
+      </Head>
       <Section>
         <Side>
           <Logo><a href="/">Nextein</a><Light>/guides</Light></Logo>
