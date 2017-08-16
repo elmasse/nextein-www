@@ -6,6 +6,7 @@ import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
+import Link from 'nextein/link'
 
 import Navigation from '../components/guides/navigation'
 import Footer from '../components/footer'
@@ -59,13 +60,13 @@ const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
             <NavPrev>
             {
               prev &&
-              <a className="prev" href={prev.data.url}> <strong>&lt;</strong> Prev: {prev.data.title}</a>
+              <Link data={prev.data}><a className="prev"> <strong>&lt;</strong> Prev: {prev.data.title}</a></Link>
             }
             </NavPrev>
             <NavNext>
             {
               next &&
-              <a className="next" href={next.data.url}>Next: {next.data.title} <strong>&gt;</strong> </a>
+              <Link data={next.data}><a className="next" >Next: {next.data.title} <strong>&gt;</strong> </a></Link>
             }
             </NavNext>
           </BottomNav>
