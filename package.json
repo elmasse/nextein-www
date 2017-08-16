@@ -15,7 +15,7 @@
   "dependencies": {
     "emotion": "^6.0.3",
     "next": "3.0.3",
-    "nextein": "1.0.0-beta17",
+    "nextein": "1.0.0-beta18",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-ga": "^2.2.0"
