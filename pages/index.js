@@ -3,7 +3,7 @@ import React from 'react'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content as PostContent } from 'nextein/post'
 import { css, injectGlobal, hydrate } from  'emotion'
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 
 import Header from '../components/header'
 import Navigation from '../components/navigation'
@@ -133,7 +133,7 @@ const Title = styled('h1')`
   }
 
   &.next::after {
-    content: '</>'
+    content: '</>';
     font-size: 100px;
     color: #e5e5e5;
     font-weight: 400; 
@@ -141,7 +141,7 @@ const Title = styled('h1')`
   }
 
   &.try-it::after {
-    content: '!'
+    content: '!';
     font-size: 100px;
     color: #e5e5e5;
     font-weight: 400; 

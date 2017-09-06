@@ -12,7 +12,7 @@ export default (props) => {
       Edit this on 
       <Github 
         fill="#212121"
-        width="16"
+        width="20"
         style={{
           verticalAlign: 'bottom',
           paddingLeft: 3

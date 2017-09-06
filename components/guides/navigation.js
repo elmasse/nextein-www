@@ -28,7 +28,7 @@ const Nav = styled('nav')`
     padding: 10px 20px;
   }
 
-  a {
+  & a {
     text-decoration: none;
     color: #999;
     border-left: 5px solid transparent;
@@ -36,13 +36,13 @@ const Nav = styled('nav')`
     margin-right: 20px;
   }
 
-  a.active, a.active:hover {
+  & a.active, & a.active:hover {
     color: #212121;
     background-color: #e4e4e4;
     border-left: 5px solid #f63;
   }
 
-  a:hover {
+  & a:hover {
     color: #212121;
     background-color: #f4f4f4;
     border-left: 5px solid #ccc;

@@ -1,7 +1,7 @@
 
 import React, { Component } from  'react'
 import { css, injectGlobal, hydrate } from  'emotion'
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
@@ -91,7 +91,7 @@ const Section = styled('section')`
   flex-direction: row;
   padding-bottom: 100px;
 
-  p + h2 {
+  & p + h2 {
     margin-top: 40px;
   }
 `
@@ -102,7 +102,7 @@ const Side = styled('side')`
 
 const Logo = styled('h1')`
   padding-left: 24px;
-  a {
+  & a {
     color: #212121;
     font-weight: 400;
   }
@@ -119,10 +119,12 @@ const Article = styled('article')`
 
 const EditMe = styled(Edit)`
   position: absolute;
-  top: 27px;
+  top: 20px;
   right: 20px;
   padding: 10px;
   border: 1px solid #ddd;
+  text-decoration: none;
+  background: #f2f2f2;
 `
 
 const Title = styled('h1')`
@@ -149,12 +151,12 @@ const Paragraph = styled('p')`
   line-height: 1.5em;
   max-width: 750px;
 
-  strong, b {
+  & strong, & b {
     font-weight: 600;
   }
 
-  code {
-    font-size: 1.2em;
+  &  code {
+    font-size: 1em;
     display: inline-block;
     padding: 0 5px;
     background-color: #eee;
@@ -167,7 +169,7 @@ const CodeBlock = styled('pre')`
   font-size: 1.2em;
   padding: 5px 20px;
   background: #f2f2f2;
-  .hljs {
+  & .hljs {
     background: #f2f2f2;
   }
 `
@@ -177,7 +179,7 @@ const BottomNav = styled('div')`
   flex-direction: row;
   justify-content: space-between;
 
-  a {
+  & a {
     text-decoration: none;
     color: #f63;
     font-size: 1.1em;

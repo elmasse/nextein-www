@@ -13,14 +13,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "emotion": "^6.0.3",
-    "next": "3.0.3",
-    "nextein": "1.0.0-beta18",
+    "babel-plugin-emotion": "^7.2.2",
+    "emotion": "^7.2.2",
+    "emotion-server": "^7.2.2",
+    "next": "^3.2.1",
+    "nextein": "1.0.0-beta19",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-emotion": "^7.2.2",
     "react-ga": "^2.2.0"
   },
   "devDependencies": {
-    "now": "^7.2.4"
+    "now": "^8.1.0"
   }
 }

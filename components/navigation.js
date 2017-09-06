@@ -16,13 +16,13 @@ const Nav = styled('nav')`
   display: flex;
   border-top: 3px solid #f63;
 
-  a {
+  & > a {
     padding: 10px;
     color: #999;
     text-decoration: none;
   }
 
-  a:hover {
+  & > a:hover {
     color: #CCC;
   }
 `

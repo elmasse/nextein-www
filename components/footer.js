@@ -36,12 +36,12 @@ const Built = styled('div')`
   text-align: center;
   font-size: 14px;
   padding: 10px;
-  &, a, a:visited, a:hover {
+  &, & a, & a:visited, & a:hover {
     color: #212121;
     text-decoration: none;
   }
 
-  span {
+  & span {
     font-weight: 600;
   }
 `
@@ -55,12 +55,12 @@ const github = css`
   display: flex;
   flex-direction: row;
 
-  &, a, a:visited, a:hover {
-      color: #212121;
-      text-decoration: none;
+  &, & a, & a:visited, & a:hover {
+    color: #212121;
+    text-decoration: none;
   }
 
-  span {
+  & span {
     font-weight: 600;
   }
 `
