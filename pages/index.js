@@ -68,7 +68,7 @@ const Section = styled('section')`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
+  min-height: 60vh;
   padding: 120px 10vw;
 
   &:first-of-type {
@@ -84,7 +84,7 @@ const Section = styled('section')`
   &.even {
     flex-direction: row-reverse;
     background: #272121;
-    > div {
+      & > p {
       text-align: right;
       color: #e4e4e4;
     }
