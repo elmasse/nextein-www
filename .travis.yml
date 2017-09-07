@@ -11,7 +11,3 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-env:
-  global:
-    - secure: >-
-        im/QiLw89JhHwj5XYcVRukVH20SXWzintonu+lcNYjtHyK3bJ7csoE4jAOfzGc8ch1cRJmqQ7xtbEGPHy59DwD4LvTiackBsYyZxbyGzQIAvxk5SPwLMiJhdcmMk1z7C+j5sV2IaPZwOoxlMV9kuXK9GMyf9ICCeIpU92cpoYZZXbZQhTf0EVHYDdeCRXpkfNzVPX7RXVuuPj0b+k81v9zKyp8LrQ3yxIC6D+ry0jA76W9fdpTUjQbsL0fS77X8LTIXWzAgfOM47rPavWW5P6jdloJhlS/nMN3Sld+2dJkGSDcp2GaUqiSUnLKOxwiIVEC4O/UUAqj6FUrM52Cb7DL8gSIzQO8Yq1lr2w8C6DzecI9vkwCExuk8x85IylbwlHH5BfHs13qbnj0TGuMTuBkM2ZgvBtzjdCD2xnOaKUNVHRH6GrqXDHaIlN7X5PfiWoofo1va8ok+2+TheEwsHCpNjl6P2XQ7y9rkBNv6ou1v6CPuqethhdVpm3udTDvNXESBUd+bFsMgdWT7l/RIbPNgwrsVbMlr3PK73MMwe/026pWbLvys/Kt5EG2ixMw42QaSa3dvCNAjLzOPYEPRm2T/YSoGDd9HmKU15QoUBuGMmQdvgbMIunWgCrU2os5v3RYqlxwPsfyk5XS/iRlIIYZNey+dD4YJmD61RbeFeqRM=
