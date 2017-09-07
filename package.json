@@ -24,6 +24,6 @@
     "react-ga": "^2.2.0"
   },
   "devDependencies": {
-    "now": "^8.1.0"
+    "now": "^7.2.4"
   }
 }
