@@ -15,7 +15,8 @@ export default (props) => {
 const Nav = styled('nav')`
   display: flex;
   border-top: 3px solid #f63;
-
+  padding: 0 30px;
+  
   & > a {
     padding: 10px;
     color: #999;

@@ -35,7 +35,7 @@ const Index = withIndexSections(({ posts }) => {
   return (
     <Main>
       <Header />
-      <Navigation style={{ alignSelf: 'center', background: '#272121', zIndex: 1 }}/>      
+      <Navigation style={{ alignSelf: 'center', background: 'rgba(39, 33, 33, .2)', zIndex: 1 }}/>      
       {
         sections.map((post, idx) => {
           const { className, title } = post.data
@@ -70,7 +70,7 @@ const Section = styled('section')`
   justify-content: space-around;
   min-height: 60vh;
   padding: 120px 10vw;
-
+  
   &:first-of-type {
     padding-top: 120px;
     margin-top: -40px;
@@ -82,9 +82,10 @@ const Section = styled('section')`
   }
 
   &.even {
-    flex-direction: row-reverse;
-    background: #272121;
-      & > p {
+    flex-direction: row-reverse;    
+    background-color: #272121;
+    background-size: 100%;
+    & > p {
       text-align: right;
       color: #e4e4e4;
     }

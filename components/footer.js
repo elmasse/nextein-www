@@ -7,7 +7,7 @@ export default () => {
   return (
     <Footer>
       <div className={github}>
-        <Github fill="#212121" width="25" style={{paddingRight: '5px'}}/>
+        <Github fill="#e4e4e4" width="25" style={{paddingRight: '5px'}}/>
         <a href="https://github.com/elmasse/nextein">github.com/elmasse/<span>nextein</span></a>
       </div>  
       <BuiltWithLove />
@@ -17,7 +17,7 @@ export default () => {
 
 const BuiltWithLove = ({ by }) => (
   <Built>
-    Built with ♥︎ and <span>nextein</span> by <a href="https://github.com/elmasse">/<span>elmasse</span></a>
+    Built with <span>♥︎</span> and <span>nextein</span> by <a href="https://github.com/elmasse">/<span>elmasse</span></a>
   </Built>
 )
 
@@ -25,8 +25,8 @@ const Footer = styled('footer')`
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #e4e4e4;
-  height: 80px;
+  background: #272121;
+  height: 120px;
   padding-top:40px;
 `
 
@@ -37,12 +37,14 @@ const Built = styled('div')`
   font-size: 14px;
   padding: 10px;
   &, & a, & a:visited, & a:hover {
-    color: #212121;
+    color: #eee;
     text-decoration: none;
   }
 
   & span {
     font-weight: 600;
+    color: #f63;
+    
   }
 `
 const github = css`
@@ -56,11 +58,12 @@ const github = css`
   flex-direction: row;
 
   &, & a, & a:visited, & a:hover {
-    color: #212121;
+    color: #eee;
     text-decoration: none;
   }
 
   & span {
     font-weight: 600;
+    color: #f63;
   }
 `
