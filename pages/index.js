@@ -81,10 +81,15 @@ const Section = styled('section')`
     padding-bottom: 120px;
   }
 
+  background-image: radial-gradient(circle at center , rgba(0, 0, 0, 0.1) 0%, #fafafa 100%);
+  text-shadow: 0 0 1px #eee;
+
   &.even {
     flex-direction: row-reverse;    
     background-color: #272121;
-    background-size: 100%;
+    background-image: radial-gradient(circle at center , rgba(255, 255, 255, 0.1) 0%, #272121 100%);
+    text-shadow: 0 0 1px #000;
+    
     & > p {
       text-align: right;
       color: #e4e4e4;
@@ -125,16 +130,17 @@ const Title = styled('h1')`
     font-size: 3.5em;
   }
 
-  &.md::after {
-    content: '#_';    
+  &.md::after {    
+    content: '#_';
     font-size: 100px;
-    color: #e5e5e5;
+    color: #aaa;
     font-weight: 400;
     font-size: 4em;
   }
 
   &.next::after {
     content: '</>';
+    text-shadow: 0 0 1px #000;
     font-size: 100px;
     color: #e5e5e5;
     font-weight: 400; 
@@ -144,7 +150,7 @@ const Title = styled('h1')`
   &.try-it::after {
     content: '!';
     font-size: 100px;
-    color: #e5e5e5;
+    color: #aaa;
     font-weight: 400; 
     font-size: 4em;   
   }
