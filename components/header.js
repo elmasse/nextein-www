@@ -14,7 +14,7 @@ export default () => {
 const Header = styled('header')`
   height: 90vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: row wrap;
   align-items: center;
   justify-content: center;
   font-size: 2em;
@@ -29,7 +29,7 @@ const Hello = styled('span')`
 const Title = styled('h1')`
   padding: 10px;
   font-weight: 100;
-  border-bottom: 4px solid #f63;
+  border-bottom: 4px solid #f63;  
 `
 
 const Brand = styled('span')`

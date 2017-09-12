@@ -68,12 +68,12 @@ const Section = styled('section')`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  min-height: 60vh;
+  min-height: 70vh;
   padding: 120px 10vw;
   
   &:first-of-type {
     padding-top: 120px;
-    margin-top: -40px;
+    margin-top: -65px;
 
   }
 
@@ -81,7 +81,8 @@ const Section = styled('section')`
     padding-bottom: 120px;
   }
 
-  background-image: radial-gradient(circle at center , rgba(0, 0, 0, 0.1) 0%, #fafafa 100%);
+  background-color: #f1f1f1;  
+  background-image: radial-gradient(circle at 15vw , #f1f1f1 0%, rgba(0, 0, 0, 0.15) 100%);
   text-shadow: 0 0 1px #eee;
 
   &.even {
@@ -123,11 +124,11 @@ const Title = styled('h1')`
   display: flex;
   flex-direction: column-reverse;
   font-weight: 100;
-  font-size: 2.5em;
+  font-size: 3em;
   color: #f63;
 
   &.nextein {
-    font-size: 3.5em;
+    font-size: 4.5em;
   }
 
   &.md::after {    
