@@ -137,9 +137,10 @@ const Title = styled('h1')`
 `
 
 const Category = styled('h2')`
-  font-size: 1em;
+  font-size: .8em;
   font-weight: 100;
   color: #666;
+  text-transform: uppercase;
 `
 
 const Paragraph = styled('p')`
