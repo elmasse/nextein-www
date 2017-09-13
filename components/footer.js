@@ -32,7 +32,6 @@ const Footer = styled('footer')`
 
 const Built = styled('div')`
   align-self: center;
-  flex-grow: 1;
   text-align: center;
   font-size: 14px;
   padding: 10px;
