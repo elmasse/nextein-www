@@ -9,10 +9,10 @@ export default (props) => {
   return (
     <Nav {...props}>
       <GithubLink href="https://github.com/elmasse/nextein">
-        <Github fill="#ccc" width="25"/>
+        <Github fill="#c0c0c0" width="25"/>
       </GithubLink>
       <NpmLink href="https://www.npmjs.com/package/nextein">
-        <Npm fill="#ccc" width="35"  style={{marginTop: '-5px'}} />
+        <Npm fill="#c0c0c0" width="35"  style={{marginTop: '-5px'}} />
       </NpmLink>
     </Nav>
   )

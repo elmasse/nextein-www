@@ -24,7 +24,7 @@ const Header = styled('header')`
   justify-content: center;
   font-size: 2em;
   background: #f1f1f1;
-  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 0%,  #e9e9e9 100%);
+  background-image: radial-gradient(circle at center, #fff 0%,  #e9e9e9 100%);
   
 `
 
@@ -59,11 +59,12 @@ const Button = styled('a')`
   border: 2px solid #f63;
   border-radius: 4px;
   color: #f63;
-  font-size: 14px;
+  font-size: .45em;
   font-weight: bold;
   padding: 10px 20px;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: .25em;
 
   &:hover {
     color: #fff;

@@ -30,6 +30,11 @@ const Index = withIndexSections(({ posts }) => {
       fontFamily: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
       fontWeight: 100
     }
+    a { 
+      color: #666; 
+      font-weight: 200;
+      text-decoration-color: #aaa;
+    }
   `
 
   return (
@@ -75,14 +80,14 @@ const Section = styled('section')`
     padding-bottom: 120px;
   }
 
-  background-color: #f1f1f1;  
-  background-image: radial-gradient(circle at 15vw , #f1f1f1 0%, rgba(0, 0, 0, 0.15) 100%);
-  text-shadow: 0 0 1px #eee;
+  &.odd {    
+    background-image: radial-gradient(circle at 15vw , #f1f1f1 0%, #ccc 100%);
+    text-shadow: 0 0 1px #eee;
+  }
 
   &.even {
     flex-direction: row-reverse;    
-    background-color: #272121;
-    background-image: radial-gradient(circle at center , rgba(255, 255, 255, 0.1) 0%, #272121 100%);
+    background-image: radial-gradient(circle at center , rgb(68, 60, 60) 0%, #272121 100%);
     text-shadow: 0 0 1px #000;
     
     & > p {
