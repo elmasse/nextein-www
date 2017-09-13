@@ -34,8 +34,8 @@ const Index = withIndexSections(({ posts }) => {
 
   return (
     <Main>
+      <Navigation style={{ position: 'absolute', width: '100vw' }}/>      
       <Header />
-      <Navigation style={{ alignSelf: 'center', background: 'rgba(39, 33, 33, .2)', zIndex: 1 }}/>      
       {
         sections.map((post, idx) => {
           const { className, title } = post.data
@@ -71,12 +71,6 @@ const Section = styled('section')`
   min-height: 70vh;
   padding: 120px 10vw;
   
-  &:first-of-type {
-    padding-top: 120px;
-    margin-top: -65px;
-
-  }
-
   &:last-of-type {
     padding-bottom: 120px;
   }

@@ -5,22 +5,35 @@ import styled from 'emotion/react'
 export default () => {
   return (
     <Header>
-      <Hello>Hello there!</Hello>
-      <Title>I'm <Brand>Nextein</Brand></Title>
+      <Main>
+        <Hello>Hello there!</Hello>
+        <Title>I'm <Brand>Nextein</Brand></Title>
+      </Main>
+      <Actions>
+        <Button href="/guides/01-getting-started">Guides </Button>
+      </Actions>
     </Header>
   )
 }
 
 const Header = styled('header')`
-  height: 90vh;
+  height: 95vh;
   display: flex;
-  flex-direction: row wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 2em;
-  background: #f9f9f9;
+  background: #f1f1f1;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 0%,  #e9e9e9 100%);
+  
 `
 
+const Main = styled('div')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+`
 const Hello = styled('span')`
   font-size: 1.5em;
   color: #999;
@@ -34,4 +47,26 @@ const Title = styled('h1')`
 
 const Brand = styled('span')`
   font-weight: 400;
+`
+
+const Actions = styled('div')`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+`
+
+const Button = styled('a')`
+  border: 2px solid #f63;
+  border-radius: 4px;
+  color: #f63;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #fff;
+    background-color: #f63;
+  }
 `
