@@ -15,7 +15,7 @@ export default (props) => {
         width="20"
         style={{
           verticalAlign: 'bottom',
-          paddingLeft: 3
+          paddingLeft: 5
         }}
       />
     </a>
