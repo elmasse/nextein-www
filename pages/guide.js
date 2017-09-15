@@ -7,6 +7,7 @@ import Head from 'next/head'
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
+import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
 import Footer from '../components/footer'
 import withPageView from '../components/analytics'
@@ -45,9 +46,12 @@ const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
       <Head>
         <title>Nextein | Guides | {post.data.title}</title>
       </Head>
+
+      <MainNavigation showHome title="guides" styles={{ width: `100vw` }}/>
+      
       <Section>
         <Side>
-          <Logo><a href="/">Nextein</a><Light>/guides</Light></Logo>
+          {/* <Logo><a href="/">Nextein</a><Light>/guides</Light></Logo> */}
           <Navigation guides={guides} post={post} />
         </Side>
         <Article>
@@ -100,19 +104,8 @@ const Side = styled('side')`
   flex: 1;
 `
 
-const Logo = styled('h1')`
-  padding-left: 24px;
-  & a {
-    color: #212121;
-    font-weight: 400;
-  }
-`
-
-const Light = styled('span')`
-  font-weight: 100;
-`
-
 const Article = styled('article')`
+  position: relative;
   flex: 4;
   padding-top: 60px;
 `
@@ -125,6 +118,9 @@ const EditMe = styled(Edit)`
   border: 1px solid #ddd;
   text-decoration: none;
   background: #f2f2f2;
+  &:hover {
+    background: #fff;
+  }
 `
 
 const Title = styled('h1')`
