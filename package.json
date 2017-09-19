@@ -16,12 +16,13 @@
     "babel-plugin-emotion": "^7.2.2",
     "emotion": "^7.2.2",
     "emotion-server": "^7.2.2",
-    "next": "^3.2.1",
-    "nextein": "1.0.0-beta20",
+    "next": "^3.2.2",
+    "nextein": "^1.0.0-beta21",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-emotion": "^7.2.2",
-    "react-ga": "^2.2.0"
+    "react-ga": "^2.2.0",
+    "react-highlight": "^0.10.0"
   },
   "devDependencies": {
     "now": "^7.2.4"
