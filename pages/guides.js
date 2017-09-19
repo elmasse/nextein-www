@@ -3,6 +3,7 @@ import React, { Component } from  'react'
 import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'react-emotion'
 import Head from 'next/head'
+import Highlight from 'react-highlight'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
@@ -21,8 +22,8 @@ if (typeof window !== 'undefined') {
 
 const withGuides = withPostsFilterBy(inCategory('guides', { includeSubCategories: true }))
 
-const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
-
+const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
+  const post = current || guides[0]
   const currIdx = guides.findIndex(guide => ( guide.data.title == post.data.title ))
   const prev = guides[currIdx - 1]
   const next = guides[currIdx + 1]
@@ -58,7 +59,7 @@ const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
           <EditMe entry={post.data._entry} />
           <Category>{post.data.category}</Category>
           <Title>{post.data.title}</Title>
-          <Content {...post} renderers={{p: Paragraph, pre: CodeBlock}}/>
+          <Content {...post} renderers={{code: Code, p: Paragraph, pre: CodeBlock}}/>
           <BottomNav>
             <NavPrev>
             {
@@ -81,6 +82,17 @@ const Guide = withPost(withGuides( ( { post, posts: guides } ) => {
 }))
 
 export default withPageView(Guide)
+
+const Code = ({className = "", children}) => {
+  const [, lang] = className.split('-')
+  if (lang) {
+    return <Highlight className={className}>{children.join('')}</Highlight>
+  }
+
+  return <code className={className}>{children}</code>
+
+}
+
 
 const Main = styled('main')`
   display: flex;

@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 order: 1
-page: guide
+page: guides
 ---
 
 This post will guide you on how to get started with **Nextein**. You'll need to install **Node.js** if you don't have it installed already. To get the latest Node.js version please visit the official Node.js website: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)

@@ -10,7 +10,7 @@ export default () => {
         <Title>I'm <Brand>Nextein</Brand></Title>
       </Main>
       <Actions>
-        <Button href="/guides/01-getting-started">Guides </Button>
+        <Button href="/guides">Guides </Button>
       </Actions>
     </Header>
   )

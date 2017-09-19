@@ -1,7 +1,7 @@
 ---
 title: Creating Pages
 order: 3
-page: guide
+page: guides
 ---
 
 In the previous guides we have seen how to create your `index` page listing all your posts, how to filter them, and how to render a single post. Now we are going to explore how to create a different section page. 
