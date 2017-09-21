@@ -11,6 +11,7 @@ export default () => {
       </Main>
       <Actions>
         <Button href="/guides">Guides </Button>
+        <Secondary href="/docs" inverted>Docs</Secondary>
       </Actions>
     </Header>
   )
@@ -53,21 +54,34 @@ const Actions = styled('div')`
   width: 100vw;
   display: flex;
   justify-content: center;
+
 `
 
 const Button = styled('a')`
   border: 2px solid #f63;
   border-radius: 4px;
-  color: #f63;
+  color: #fff;
+  background-color: #f63;
+  
   font-size: .45em;
   font-weight: bold;
-  padding: 10px 20px;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: .25em;
+  padding: 10px 20px;
+  margin: 20px 10px;  
+  &:hover {
+    color: #f63;
+    background-color: #fafafa;
+  }
+`
+
+const Secondary = styled(Button)`
+  color: #f63;
+  background-color: #fff;
 
   &:hover {
-    color: #fff;
-    background-color: #f63;
+    color: #f63;
+    background-color: #f9f9f9;
   }
 `

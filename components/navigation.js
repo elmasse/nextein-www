@@ -9,7 +9,9 @@ export default ({ title, showHome = false, ...props }) => {
   return (
     <Nav {...props}>
       { title && <Title>Nextein<Light>/{title}</Light></Title> }
-      { showHome && <Home href="/">Home</Home>}
+      { showHome && <Item href="/">Home</Item>}
+      <Item href="/guides">Guides</Item>
+      <Item href="/docs">Docs</Item>
       <GithubLink href="https://github.com/elmasse/nextein">
         <Github fill="#c0c0c0" width="25"/>
       </GithubLink>
@@ -34,7 +36,7 @@ const Nav = styled('nav')`
   }
 `
 
-const Home = styled('a')`
+const Item = styled('a')`
   text-transform: uppercase;
   font-size: .8em;
   letter-spacing: .2em;
