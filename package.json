@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nextein",
     "export": "nextein build && nextein export",
-    "deploy": "cd out && now alias --token=$NOW $(now --static --no-clipboard --token=$NOW --public) nextein"
+    "deploy": "cd out && now alias --token=$NOW $(now --static --no-clipboard --token=$NOW) nextein"
   },
   "keywords": [],
   "author": "",
