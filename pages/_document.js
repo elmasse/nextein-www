@@ -27,15 +27,10 @@ export default class MyDocument extends Document {
           <title>Nextein</title>
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" />
-          <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         </Head>
         <body>
           <Main />
           <NextScript />
-          <script dangerouslySetInnerHTML={{__html:`		
-             hljs.configure({languages: ["bash", "javascript", "json", "markdown"]});		
-           `}}>
-          </script>          
         </body>
       </html>
     )

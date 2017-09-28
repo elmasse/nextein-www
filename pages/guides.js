@@ -3,13 +3,13 @@ import React, { Component } from  'react'
 import { css, injectGlobal, hydrate } from  'emotion'
 import styled from 'react-emotion'
 import Head from 'next/head'
-import Highlight from 'react-highlight'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
+import Code from '../components/code'
 import Footer from '../components/footer'
 import withPageView from '../components/analytics'
 import Edit from '../components/guides/edit'
@@ -82,17 +82,6 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
 }))
 
 export default withPageView(Guide)
-
-const Code = ({className = "", children}) => {
-  const [, lang] = className.split('-')
-  if (lang) {
-    return <Highlight className={className}>{children.join('')}</Highlight>
-  }
-
-  return <code className={className}>{children}</code>
-
-}
-
 
 const Main = styled('main')`
   display: flex;
