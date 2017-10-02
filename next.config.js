@@ -1,5 +1,5 @@
 const { default: config } = require('nextein/config')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 
 module.exports = config({
