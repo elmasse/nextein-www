@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'emotion/react'
+import styled, { css } from 'react-emotion'
 
 import Github from './icons/github'
 
@@ -15,7 +15,7 @@ export default () => {
   )
 }
 
-const BuiltWithLove = ({ by }) => (
+const BuiltWithLove = () => (
   <Built>
     Built with <span>♥︎</span> and <span>nextein</span> by <a href="https://github.com/elmasse">/<span>elmasse</span></a>
   </Built>
@@ -35,17 +35,18 @@ const Built = styled('div')`
   text-align: center;
   font-size: 14px;
   padding: 10px;
-  &, & a, & a:visited, & a:hover {
+  &, a, a:visited, a:hover {
     color: #eee;
     text-decoration: none;
   }
 
-  & span {
+  span {
     font-weight: 600;
     color: #f63;
     
   }
 `
+
 const github = css`
   align-self: center;
   flex-grow: 1;
@@ -55,13 +56,13 @@ const github = css`
   align-items: center;
   display: flex;
   flex-direction: row;
-
-  &, & a, & a:visited, & a:hover {
+  
+  &, a, a:visited, a:hover {
     color: #eee;
     text-decoration: none;
   }
 
-  & span {
+  span {
     font-weight: 600;
     color: #f63;
   }

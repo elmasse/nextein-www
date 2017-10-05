@@ -1,7 +1,6 @@
 
 import React, { Component } from  'react'
-import { css, injectGlobal, hydrate } from  'emotion'
-import styled from 'react-emotion'
+import styled, { css, injectGlobal, hydrate } from 'react-emotion'
 import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
@@ -32,7 +31,7 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
     html, body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
-      fontWeight: 100
+      font-weight: 100;
     }
 
     a { 
@@ -52,7 +51,6 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
       
       <Section>
         <Side>
-          {/* <Logo><a href="/">Nextein</a><Light>/guides</Light></Logo> */}
           <Navigation guides={guides} post={post} />
         </Side>
         <Article>

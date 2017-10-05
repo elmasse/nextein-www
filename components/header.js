@@ -1,6 +1,6 @@
 
 import React from 'react'
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 
 export default () => {
   return (
@@ -26,7 +26,6 @@ const Header = styled('header')`
   font-size: 2em;
   background: #f1f1f1;
   background-image: radial-gradient(circle at center, #fff 0%,  #e9e9e9 100%);
-  
 `
 
 const Main = styled('div')`
@@ -35,7 +34,7 @@ const Main = styled('div')`
   align-items: center;
 
 `
-const Hello = styled('span')`
+const Hello = styled('div')`
   font-size: 1.5em;
   color: #999;
 `
@@ -70,7 +69,7 @@ const Button = styled('a')`
   letter-spacing: .25em;
   padding: 10px 20px;
   margin: 20px 10px;  
-  &:hover {
+  :hover {
     color: #f63;
     background-color: #fafafa;
   }
@@ -80,7 +79,7 @@ const Secondary = styled(Button)`
   color: #f63;
   background-color: #fff;
 
-  &:hover {
+  :hover {
     color: #f63;
     background-color: #f9f9f9;
   }

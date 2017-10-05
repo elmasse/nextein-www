@@ -2,8 +2,7 @@
 import React from 'react'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content as PostContent } from 'nextein/post'
-import { css, injectGlobal, hydrate } from  'emotion'
-import styled from 'react-emotion'
+import styled, { css, injectGlobal, hydrate } from 'react-emotion'
 
 import Header from '../components/header'
 import Navigation from '../components/navigation'
@@ -27,8 +26,8 @@ const Index = withIndexSections(({ posts }) => {
   injectGlobal`
     html, body {
       margin: 0;
-      fontFamily: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
-      fontWeight: 100
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+      font-weight: 100
     }
     a { 
       color: #666; 
@@ -46,7 +45,7 @@ const Index = withIndexSections(({ posts }) => {
           const { className, title } = post.data
           const kind = (idx % 2) ? 'odd' : 'even'
           return (
-            <Section className={classnames(flexed, kind)} key={`section-${idx}`}>
+            <Section className={kind} key={`section-${idx}`}>
               <Title className={className} >{title}</Title>
               <Content {...post} />
             </Section>
@@ -75,7 +74,12 @@ const Section = styled('section')`
   justify-content: space-around;
   min-height: 70vh;
   padding: 120px 10vw;
+
+  > * {
+    flex: 1;
+  }
   
+
   &:last-of-type {
     padding-bottom: 120px;
   }
@@ -90,7 +94,7 @@ const Section = styled('section')`
     background-image: radial-gradient(circle at center , rgb(68, 60, 60) 0%, #272121 100%);
     text-shadow: 0 0 1px #000;
     
-    & > p {
+    > p {
       text-align: right;
       color: #e4e4e4;
     }
@@ -109,12 +113,6 @@ const Content = styled(PostContent)`
 
   a { font-weight: 400; }
 
-`
-
-const flexed = css`
-  > * {
-    flex: 1;
-  }
 `
 
 const Title = styled('h1')`

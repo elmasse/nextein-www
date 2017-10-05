@@ -1,8 +1,8 @@
 
 import React from 'react'
-import styled from 'emotion/react'
+import styled, { css } from 'react-emotion'
 
-export default ({ docs, post }) => {  
+export default ({ docs, post }) => {
   return (
     <Nav>
       {
@@ -10,7 +10,7 @@ export default ({ docs, post }) => {
           const { data } = doc
           const active = post.data.url === data.url
           return (
-            <a  key={`doc-nav-${idx}`} className={active ? 'active' : ''} href={data.url}>{data.title}</a>
+            <Item key={`doc-nav-${idx}`} className={active && 'active'} href={data.url}>{data.title}</Item>
           )
         })
       }
@@ -23,29 +23,27 @@ const Nav = styled('nav')`
   flex-direction: column;
   align-content: center;
   align-items: stretch;
+`
+
+const Item = styled('a')`
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #999;
+  border-left: 5px solid transparent;
+  flex: 1;
+  margin-right: 20px;
   
-  > * {
-    padding: 10px 20px;
-  }
-
-  & a {
-    text-decoration: none;
-    color: #999;
-    border-left: 5px solid transparent;
-    flex: 1;
-    margin-right: 20px;
-  }
-
-  & a.active, & a.active:hover {
-    color: #212121;
-    background-color: #e4e4e4;
-    border-left: 5px solid #f63;
-  }
-
-  & a:hover {
+  &:hover {
     color: #212121;
     background-color: #f4f4f4;
     border-left: 5px solid #ccc;
   }
 
+  &.active,
+  &.active:hover {
+    color: #212121;
+    background-color: #e4e4e4;
+    border-left: 5px solid #f63;    
+  }
+  
 `

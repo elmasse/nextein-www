@@ -1,7 +1,6 @@
 
 import React, { Component } from  'react'
-import { injectGlobal, hydrate } from  'emotion'
-import styled from 'react-emotion'
+import styled, { injectGlobal, hydrate } from 'react-emotion'
 import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
@@ -29,8 +28,8 @@ const Doc = withPost(withDocs( ( { post: current, posts } ) => {
   injectGlobal`
     html, body {
       margin: 0;
-      fontFamily: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
-      fontWeight: 100
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+      font-weight: 100;
     }
 
     a { 
@@ -122,11 +121,11 @@ const Paragraph = styled('p')`
   max-width: 750px;
   margin: 0;
 
-  & strong, & b {
+  strong, b {
     font-weight: 600;
   }
 
-  &  code {
+  & code {
     font-size: 1em;
     display: inline-block;
     padding: 0 5px;
@@ -136,6 +135,7 @@ const Paragraph = styled('p')`
 `
 
 const CodeBlock = styled('pre')`
+  margin: 50px 0;
   font-size: 1.2em;
   padding: 5px 20px;
   background: #f2f2f2;
@@ -151,7 +151,7 @@ const MethodName = styled('div')`
   color: #000;
   margin: 60px 0 0 -2px;
 
-  & > em {
+  > em {
     font-weight: 200;
     letter-spacing: -0.8px;
     padding: 0 4px;    
@@ -164,7 +164,7 @@ const List = styled('ul')`
     line-height: 1.5em;
   }
 
-  &  code, & p code {
+  & code, & p code {
     font-size: 1em;
     display: inline-block;
     padding: 0 5px;

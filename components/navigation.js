@@ -1,6 +1,6 @@
 
 import React from 'react'
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 
 import Github from './icons/github'
 import Npm from './icons/npm'
@@ -29,7 +29,7 @@ const Nav = styled('nav')`
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;  
-  & > a {
+  > a {
     padding: 0 15px;
     color: #999;
     text-decoration: none;
