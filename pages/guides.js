@@ -62,13 +62,13 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
             <NavPrev>
             {
               prev &&
-             <a className="prev" href={prev.data.url}> <strong>&lt;</strong> Prev: {prev.data.title}</a>
+             <a className="prev" href={prev.data.url}><div className="nav-title">Previous</div><div className="article-title"> {prev.data.title}</div></a>
             }
             </NavPrev>
             <NavNext>
             {
               next &&
-              <a className="next" href={next.data.url}>Next: {next.data.title} <strong>&gt;</strong> </a>
+              <a className="next" href={next.data.url}><div className="nav-title">Next</div><div className="article-title"> {next.data.title}</div></a>
             }
             </NavNext>
           </BottomNav>
@@ -92,21 +92,20 @@ const Section = styled('section')`
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  padding-bottom: 100px;
-
   & p + h2 {
     margin-top: 40px;
   }
 `
 
 const Side = styled('side')`
-  flex: 1;
+  flex: .75;
+  border-right: 1px solid #eee;
 `
 
 const Article = styled('article')`
   position: relative;
   flex: 4;
-  padding-top: 60px;
+  padding: 60px 0 0 20px;
 `
 
 const EditMe = styled(Edit)`
@@ -174,6 +173,22 @@ const BottomNav = styled('div')`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: stretch;
+  background: #eee;
+  border-top: 2px solid #e0e0e0;
+  margin-left: -20px;
+  padding: 50px 0;
+
+  .nav-title {
+    font-size: .7em;
+    text-transform: uppercase;
+    letter-spacing: .2em;    
+  }
+
+  .article-title {
+    font-size: 1.5em;
+    font-weight: 300;
+  }
 
   & a {
     text-decoration: none;
@@ -181,8 +196,11 @@ const BottomNav = styled('div')`
     font-size: 1.1em;
   }
 `
-const NavPrev = styled('div')``
+const NavPrev = styled('div')`
+  padding-left: 30px;
+`
 
 const NavNext = styled('div')`
   padding-right: 30px;
+  text-align: right;
 `

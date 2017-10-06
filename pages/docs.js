@@ -84,16 +84,16 @@ const Section = styled('section')`
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  padding-bottom: 100px;
 `
 
 const Side = styled('side')`
-  flex: 1;
+  flex: .75;
+  border-right: 1px solid #eee;
 `
 
 const Article = styled('article')`
   flex: 4;
-  padding-top: 60px;
+  padding: 60px 0 0 20px;
 `
 
 const Title = styled('h1')`

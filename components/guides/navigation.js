@@ -31,8 +31,7 @@ const Item = styled('a')`
   color: #999;
   border-left: 5px solid transparent;
   flex: 1;
-  margin-right: 20px;
-
+  
   &:hover {
     color: #212121;
     background-color: #f4f4f4;
