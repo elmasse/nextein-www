@@ -48,13 +48,15 @@ const Item = styled('a')`
   letter-spacing: .2em;
   
   :hover {
-    color: #212121;
+    color: #f63;
   }
 
   &.active {
+    color: #f63;
     border-bottom: 3px solid #f63;
     border-top: 3px solid transparent;    
   }
+
 `
 
 const Title = styled('div')`
