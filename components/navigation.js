@@ -6,12 +6,14 @@ import Github from './icons/github'
 import Npm from './icons/npm'
 
 export default ({ title, showHome = false, ...props }) => {
+  const isGuide = (title === 'guides')
+  const isDoc = (title === 'documentation')
   return (
     <Nav {...props}>
       { title && <Title>Nextein<Light>/{title}</Light></Title> }
       { showHome && <Item href="/">Home</Item>}
-      <Item href="/guides">Guides</Item>
-      <Item href="/docs">Docs</Item>
+      <Item href="/guides" className={isGuide && 'active'} >Guides</Item>
+      <Item href="/docs" className={isDoc && 'active'}>Docs</Item>
       <GithubLink href="https://github.com/elmasse/nextein">
         <Github fill="#c0c0c0" width="25"/>
       </GithubLink>
@@ -27,8 +29,12 @@ const Nav = styled('nav')`
   display: flex;
   padding-right: 30px;
   justify-content: flex-end;
-  align-items: center;
+  align-items: stretch;
   box-sizing: border-box;  
+  > * {
+    display: flex;
+    align-items: center;    
+  }
   > a {
     padding: 0 15px;
     color: #999;
@@ -43,6 +49,11 @@ const Item = styled('a')`
   
   :hover {
     color: #212121;
+  }
+
+  &.active {
+    border-bottom: 3px solid #f63;
+    border-top: 3px solid transparent;    
   }
 `
 
