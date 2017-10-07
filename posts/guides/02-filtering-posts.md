@@ -48,7 +48,7 @@ const blog = posts.filter(inCategory('blog', { includeSubCategories: true }))
 In case you want to use your own filter, the posts property is an Array and can be filtered out by the usual means. For instance, if we want to also filter out our blog posts by `author` we could write a filter function like this:
 
 ```js
-const byAuthor = (author) => (post) {
+const byAuthor = (author) => (post) => {
   return post.data.author === author
 }
 
