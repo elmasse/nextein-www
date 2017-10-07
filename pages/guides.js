@@ -105,7 +105,7 @@ const Side = styled('side')`
 const Article = styled('article')`
   position: relative;
   flex: 4;
-  padding: 60px 0 0 20px;
+  padding: 60px 0 0 60px;
 `
 
 const EditMe = styled(Edit)`
@@ -176,7 +176,7 @@ const BottomNav = styled('div')`
   align-items: stretch;
   background: #eee;
   border-top: 2px solid #e0e0e0;
-  margin-left: -20px;
+  margin-left: -60px;
   padding: 50px 0;
 
   .nav-title {

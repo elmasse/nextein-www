@@ -93,7 +93,7 @@ const Side = styled('side')`
 
 const Article = styled('article')`
   flex: 4;
-  padding: 60px 0 0 20px;
+  padding: 60px 0 0 60px;
 `
 
 const Title = styled('h1')`
