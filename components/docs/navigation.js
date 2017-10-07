@@ -1,12 +1,16 @@
 
 import React from 'react'
 import styled, { css } from 'react-emotion'
+import { inCategory } from 'nextein/posts'
 
 export default ({ docs, post }) => {
+  const api = docs.filter(inCategory('docs/api'))
+  const content = docs.filter(inCategory('docs/content'))
   return (
     <Nav>
+      {api.length && <Separator>API</Separator>}
       {
-        docs.map((doc, idx) => {
+        api.map((doc, idx) => {
           const { data } = doc
           const active = post.data.url === data.url
           return (
@@ -14,6 +18,16 @@ export default ({ docs, post }) => {
           )
         })
       }
+      {content.length && <Separator>Content</Separator>}
+      {
+        content.map((doc, idx) => {
+          const { data } = doc
+          const active = post.data.url === data.url
+          return (
+            <Item key={`doc-nav-${idx}`} className={active && 'active'} href={data.url}>{data.title}</Item>
+          )
+        })
+      }      
     </Nav>
   )
 }
@@ -23,6 +37,16 @@ const Nav = styled('nav')`
   flex-direction: column;
   align-content: center;
   align-items: stretch;
+`
+
+const Separator = styled('div')`
+  padding: 7px 15px;
+  color: #999;
+  border-left: 5px solid transparent;
+  flex: 1;
+  font-size: .8em;
+  color: #212121;
+  background: #eee;
 `
 
 const Item = styled('a')`
