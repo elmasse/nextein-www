@@ -35,7 +35,7 @@ npm run export
 and then deploy it:
 
 ```bash
-now ./out
+npx now ./out
 ```
 
 That's all you need. If everything goes well you will have a link to your deploy in your console (and available in your clipboard to paste it in your browser.)
@@ -105,7 +105,7 @@ In case we want to use an alias with `now` deploys, we just need to change the d
     "scripts":{
         "dev": "nextein",
         "export": "nextein build && nextein export",
-        "deploy": "now alias --token=$NOW_TOKEN $(now ./out --static --no-clipboard --token=$NOW_TOKEN --public) nextein"
+        "deploy": "now alias --token=$NOW_TOKEN $(now ./out --static --no-clipboard --token=$NOW_TOKEN --public) your-alias"
     }
 }
 ```
