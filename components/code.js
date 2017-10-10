@@ -1,5 +1,5 @@
 import React from 'react'
-import Highlight from 'react-highlight/lib/optimized'
+import Highlight from './highlight'
 
 export default ({className = "", children}) => {
   const [, lang] = className.split('-')
