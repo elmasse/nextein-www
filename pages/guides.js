@@ -98,13 +98,14 @@ const Section = styled('section')`
 `
 
 const Side = styled('side')`
-  flex: .75;
+  flex: 1;
   border-right: 1px solid #eee;
 `
 
 const Article = styled('article')`
   position: relative;
   flex: 4;
+  width: 1px; // freaking width to get the Article to not expand
   padding: 60px 0 0 60px;
 `
 
