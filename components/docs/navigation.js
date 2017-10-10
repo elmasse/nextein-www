@@ -41,10 +41,10 @@ const Nav = styled('nav')`
 
 const Separator = styled('div')`
   padding: 7px 15px;
-  color: #999;
   border-left: 5px solid transparent;
   flex: 1;
   font-size: .8em;
+  font-weight: 600;
   color: #212121;
   background: #eee;
   text-transform: uppercase;
