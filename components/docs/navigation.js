@@ -47,6 +47,7 @@ const Separator = styled('div')`
   font-size: .8em;
   color: #212121;
   background: #eee;
+  text-transform: uppercase;
 `
 
 const Item = styled('a')`
