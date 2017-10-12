@@ -2,14 +2,17 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 
 import Github from './icons/github'
+import Npm from './icons/npm'
 
 export default () => {
   return (
     <Footer>
-      <div className={github}>
-        <Github fill="#e4e4e4" width="25" style={{paddingRight: '5px'}}/>
-        <a href="https://github.com/elmasse/nextein">github.com/elmasse/<span>nextein</span></a>
-      </div>  
+      <Brand>Nextein</Brand>
+      <Notice>&copy; 2017 - Max Fierro</Notice>
+      <Social>
+        <a href="https://github.com/elmasse/nextein"><Github fill="#564949" width="25" style={{paddingRight: '5px'}}/></a>
+        <a href="https://www.npmjs.com/package/nextein"><Npm fill="#564949" width="45" style={{paddingTop: '5px'}}/></a>
+      </Social>
       <BuiltWithLove />
     </Footer>
   )
@@ -26,33 +29,30 @@ const Footer = styled('footer')`
   display: flex;
   flex-direction: column;
   background: #272121;
-  height: 120px;
-  padding-top:40px;
-`
-
-const Built = styled('div')`
-  align-self: center;
-  text-align: center;
-  font-size: 14px;
-  padding: 10px;
-  &, a, a:visited, a:hover {
-    color: #eee;
-    text-decoration: none;
-  }
-
-  span {
-    font-weight: 600;
-    color: #f63;
-    
+  height: 250px;
+  padding-top: 40px;
+  > * {
+    padding-left: 20px;    
   }
 `
 
-const github = css`
-  align-self: center;
-  flex-grow: 1;
-  text-align: center;
+const Brand = styled('div')`
+  color: #f63;
+  font-size: 1.8em
+`
 
-  font-size: 14px;
+const Notice = styled('div')`
+  font-size: .8em;
+  color: #564949;
+  padding-bottom: 20px;
+`
+
+const Social = styled('div')`
+  flex: 3;
+  font-size: .8em;
+  background-color: #131010;
+
+
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -61,9 +61,22 @@ const github = css`
     color: #eee;
     text-decoration: none;
   }
+`
 
-  span {
-    font-weight: 600;
-    color: #f63;
-  }
+const Built = styled('div')`
+background-color: #131010;
+
+padding: 10px 0;
+align-self: stretch;
+text-align: center;
+font-size: .75em;
+&, a, a:visited, a:hover {
+  color: #564949;
+  text-decoration: none;
+}
+
+span {
+  font-weight: 600;
+  color: #f63;    
+}
 `
