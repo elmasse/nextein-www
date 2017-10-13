@@ -10,8 +10,8 @@ export default () => {
       <Brand>Nextein</Brand>
       <Notice>&copy; 2017 - Max Fierro</Notice>
       <Social>
-        <a href="https://github.com/elmasse/nextein"><Github fill="#564949" width="25" style={{paddingRight: '5px'}}/></a>
-        <a href="https://www.npmjs.com/package/nextein"><Npm fill="#564949" width="45" style={{paddingTop: '5px'}}/></a>
+        <a href="https://github.com/elmasse/nextein"><Github fill="#564949" width="25" style={{padding: '10px 10px 0 0'}}/></a>
+        <a href="https://www.npmjs.com/package/nextein"><Npm fill="#564949" width="45" /></a>
       </Social>
       <BuiltWithLove />
     </Footer>
@@ -51,15 +51,13 @@ const Social = styled('div')`
   flex: 3;
   font-size: .8em;
   background-color: #131010;
-
-
-  align-items: center;
+  padding-top: 10px;
+  align-items: flex-start;
   display: flex;
   flex-direction: row;
   
-  &, a, a:visited, a:hover {
-    color: #eee;
-    text-decoration: none;
+  a:hover svg {
+    fill: #9a8888;
   }
 `
 
@@ -70,6 +68,7 @@ padding: 10px 0;
 align-self: stretch;
 text-align: center;
 font-size: .75em;
+
 &, a, a:visited, a:hover {
   color: #564949;
   text-decoration: none;
