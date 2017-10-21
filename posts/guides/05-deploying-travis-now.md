@@ -9,7 +9,7 @@ We have seen so far how to create a blog, render and filter markdown files, use 
 
 ## Deploy with Now
 
-Once we are ready to push or development to the outside world, we can try to manually deploy an exported version using `now`- read more on [zeit.co](https://zeit.co)
+Once we are ready to push our development to the outside world, we can try to manually deploy an exported version using `now`- read more on [zeit.co](https://zeit.co)
 
 We can start by installing globally the `now` cli or you can install the desktop version which allows you to control what's deployed and also drag and drop folders.
 
@@ -72,7 +72,7 @@ Check the TravisCI guides for further information on how to configure the `.trav
 
 We need to create a token to use our `now` account with TravisCI to deploy automatically. To do so, go to your [account/token](https://zeit.co/account/tokens) and create a new token.
 
-### Adding the `now token` into TravisCI
+### Adding the _now token_ into TravisCI
 
 You can follow the TravisCI guide on how to add a new token / environment variable with the `travisci` cli. We are going to define a new variable using the TravisCI Settings. We just need to go to our repository settings and scroll down to the **Environment Variables** section. Add a name such as `NOW_TOKEN`, paste the generated token and click **Add**. 
 
