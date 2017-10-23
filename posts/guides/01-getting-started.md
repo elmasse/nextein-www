@@ -58,7 +58,7 @@ export default withPosts(({ posts }) => {
 
 ```
 
-This is our first `Page` component. THe HOC (High Order Component) `withPosts` will be passing a list of `posts` to be rendered. These posts will be read from the `/posts` folder. Let's start by creating a simple post file `my-post.md` with the following content:
+This is our first `Page` component. The HOC (High Order Component) `withPosts` will be passing a list of `posts` to be rendered. These posts will be read from the `/posts` folder. Let's start by creating a simple post file `my-post.md` with the following content:
 
 ```md
 ---
