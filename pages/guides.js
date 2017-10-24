@@ -45,6 +45,7 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
     <Main>
       <Head>
         <title>Nextein | Guides | {post.data.title}</title>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" />
       </Head>
 
       <MainNavigation showHome title="guides" styles={{ width: `100vw` }}/>

@@ -25,7 +25,6 @@ export default class MyDocument extends Document {
         <Head>
           <title>Nextein</title>
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" />
         </Head>
         <body>
           <Main />
