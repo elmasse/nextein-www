@@ -43,14 +43,13 @@ const Brand = styled('div')`
 
 const Notice = styled('div')`
   font-size: .8em;
-  color: #564949;
+  color: #f1f1f1;
   padding-bottom: 20px;
 `
 
 const Social = styled('div')`
   flex: 3;
   font-size: .8em;
-  background-color: #131010;
   padding-top: 10px;
   align-items: flex-start;
   display: flex;
@@ -62,20 +61,22 @@ const Social = styled('div')`
 `
 
 const Built = styled('div')`
-background-color: #131010;
+  background-color: #131010;
 
-padding: 10px 0;
-align-self: stretch;
-text-align: center;
-font-size: .75em;
+  padding: 10px 0;
+  align-self: stretch;
+  text-align: center;
+  
 
-&, a, a:visited, a:hover {
-  color: #564949;
-  text-decoration: none;
-}
+  font-size: .75em;
 
-span {
-  font-weight: 600;
-  color: #f63;    
-}
+  &, a, a:visited, a:hover {
+    color: #f1f1f1;
+    text-decoration: none;
+  }
+
+  span {
+    font-weight: 600;
+    color: #f63;    
+  }
 `
