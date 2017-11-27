@@ -18,7 +18,7 @@
     "emotion-server": "^8.0.10",
     "highlight.js": "9.12.0",
     "next": "^4.1.4",
-    "nextein": "1.0.0-beta27",
+    "nextein": "^1.0.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-emotion": "^8.0.10",
