@@ -13,19 +13,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-plugin-emotion": "^8.0.10",
-    "emotion": "^8.0.10",
-    "emotion-server": "^8.0.10",
+    "babel-plugin-emotion": "^8.0.12",
+    "emotion": "^8.0.12",
+    "emotion-server": "^8.0.12",
     "highlight.js": "9.12.0",
-    "next": "^4.1.4",
+    "next": "^4.2.1",
     "nextein": "^1.0.0",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-emotion": "^8.0.10",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-emotion": "^8.0.12",
     "react-ga": "^2.3.5"
   },
   "devDependencies": {
-    "now": "^8.5.1",
+    "now": "^8.5.4",
     "webpack-bundle-analyzer": "^2.9.0"
   }
 }
