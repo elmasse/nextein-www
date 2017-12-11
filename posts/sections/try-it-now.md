@@ -6,7 +6,11 @@ className: try-it
 order: 4
 ---
 
-Get it from the github [repository](https://github.com/elmasse/nextein)
+## Github
+Get it from [elmasse/nextein repository](https://github.com/elmasse/nextein)
 
-Install it from npm `npm i nextein`
+## npm
+Install it from npm with:  `npm install nextein`
 
+## Starter Kit
+Clone it from [elmasse/nextein-starter repository](https://github.com/elmasse/nextein-starter)
