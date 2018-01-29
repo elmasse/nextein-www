@@ -68,7 +68,7 @@ title: My First Post
 This is the content of the first post. Hello there! 
 ```
 
-Now that we have our `/pages/index.js` component, the `/posts/my-post.md` content and the root config `next.config.js`, we are ready to start our dev server rigth away. To do so, we need to edit the `package.json` file and add the following to the `scripts` section:
+Now that we have our `/pages/index.js` component, the `/posts/my-post.md` content and the root config `next.config.js`, we are ready to start our dev server right away. To do so, we need to edit the `package.json` file and add the following to the `scripts` section:
 
 ```json
 {
