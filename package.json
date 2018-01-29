@@ -19,6 +19,7 @@
     "highlight.js": "9.12.0",
     "next": "^4.2.3",
     "nextein": "^1.0.0",
+    "postcast": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^8.0.12",

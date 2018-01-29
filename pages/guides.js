@@ -5,6 +5,7 @@ import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
+import Postcast from 'postcast'
 
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
@@ -18,6 +19,14 @@ import Edit from '../components/guides/edit'
 if (typeof window !== 'undefined') {
   hydrate(window.__NEXT_DATA__.ids)
 }
+
+const postcast = ({ data, content }) =>
+`---
+lang: en-US
+title: ${data.title}
+---
+${content}
+` 
 
 const withGuides = withPostsFilterBy(inCategory('guides', { includeSubCategories: true }))
 
@@ -58,6 +67,9 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
           <EditMe entry={post.data._entry} />
           <Category>{post.data.category}</Category>
           <Title>{post.data.title}</Title>
+          <WatchIt>
+            <Postcast width="750" height="420">{() => postcast(post)}</Postcast>
+          </WatchIt>
           <Content {...post} renderers={{code: Code, p: Paragraph, pre: CodeBlock}}/>
           <BottomNav>
             <NavPrev>
@@ -107,7 +119,7 @@ const Article = styled('article')`
   position: relative;
   flex: 4;
   width: 1px; // freaking width to get the Article to not expand
-  padding: 60px 0 0 60px;
+  padding: 30px 0 0 60px;
 `
 
 const EditMe = styled(Edit)`
@@ -137,6 +149,10 @@ const Category = styled('h2')`
   font-weight: 100;
   color: #666;
   text-transform: uppercase;
+`
+
+const WatchIt = styled('div')`
+
 `
 
 const Paragraph = styled('p')`
