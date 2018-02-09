@@ -152,7 +152,9 @@ const Category = styled('h2')`
 `
 
 const WatchIt = styled('div')`
-
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 const Paragraph = styled('p')`
