@@ -8,9 +8,9 @@ export default (props) => {
   const gitUrl = `${pkg.repository}/tree/${branch}/${entry}`
 
   return (
-    <a target="_blank" href={gitUrl} {...rest} style={{fontSize: '.9em'}}>
+    <a target="_blank" rel="noopener" href={gitUrl} {...rest} style={{fontSize: '.9em'}}>
       Edit this on 
-      <Github 
+      <Github
         fill="#212121"
         width="20"
         style={{
