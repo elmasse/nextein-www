@@ -1,11 +1,10 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import { extractCritical, flush } from 'emotion-server'
+import { extractCritical } from 'emotion-server'
 
 const dev = process.env.NODE_ENV !== 'production'
 
 export default class MyDocument extends Document {
   static getInitialProps ({ renderPage }) {
-    if (dev) { flush() }
     const page = renderPage()
     const styles = extractCritical(page.html)
     return { ...page, ...styles }
