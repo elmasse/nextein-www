@@ -9,7 +9,7 @@ export default ({ title, showHome = false, ...props }) => {
   const isGuide = (title === 'guides')
   const isDoc = (title === 'documentation')
   return (
-    <Nav {...props}>
+    <Nav {...props} showHome={showHome}>
       { title && <Title>Nextein<Light>/{title}</Light></Title> }
       { showHome && <Item href="/">Home</Item>}
       <Item href="/guides" className={isGuide && 'active'} >Guides</Item>
@@ -25,7 +25,7 @@ export default ({ title, showHome = false, ...props }) => {
 }
 
 const Nav = styled('nav')`
-  min-height: 60px;
+  min-height: 72px;
   display: flex;
   padding-right: 30px;
   justify-content: flex-end;
@@ -40,6 +40,7 @@ const Nav = styled('nav')`
     color: #999;
     text-decoration: none;
   }
+  border-bottom: ${ ({ showHome }) => showHome ? '1px solid #eee' : '' }
 `
 
 const Item = styled('a')`
@@ -56,7 +57,6 @@ const Item = styled('a')`
     border-bottom: 3px solid #f63;
     border-top: 3px solid transparent;    
   }
-
 `
 
 const Title = styled('div')`

@@ -90,6 +90,7 @@ const Section = styled('section')`
 const Side = styled('side')`
   flex: 1;
   border-right: 1px solid #eee;
+  background: #eee;
 `
 
 const Article = styled('article')`

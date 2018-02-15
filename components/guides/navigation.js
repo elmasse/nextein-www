@@ -26,7 +26,7 @@ const Nav = styled('nav')`
 `
 
 const Item = styled('a')`
-  padding: 10px 20px;
+  padding: 16px 20px;
   text-decoration: none;
   color: #999;
   border-left: 5px solid transparent;
