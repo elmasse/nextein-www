@@ -195,8 +195,6 @@ const BottomNav = styled('div')`
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  background: #eee;
-  border-top: 2px solid #e0e0e0;
   margin-left: -60px;
   padding: 50px 0;
 
