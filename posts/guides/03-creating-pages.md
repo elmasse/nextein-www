@@ -35,9 +35,9 @@ Now, this is not different from the example in the previous guide. But in this c
 const nexteinConfig = require('nextein/config').default
 
 module.exports = nexteinConfig({
-    exportPathMap: () => ({
-        '/blog': { page: '/blog' }
-    })
+  exportPathMap: () => ({
+    '/blog': { page: '/blog' }
+  })
 })
 
 ```

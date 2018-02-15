@@ -82,13 +82,13 @@ The `.travis.yml` specifies that we will run a deploy script. We need to add the
 
 ```json
 {
-    "name": "my-awesome-blog",
-    //...
-    "scripts":{
-        "dev": "nextein",
-        "export": "nextein build && nextein export",
-        "deploy": "now ./out --static --no-clipboard --token=$NOW_TOKEN --public" 
-    }
+  "name": "my-awesome-blog",
+  //...
+  "scripts":{
+    "dev": "nextein",
+    "export": "nextein build && nextein export",
+    "deploy": "now ./out --static --no-clipboard --token=$NOW_TOKEN --public" 
+  }
 }
 ```
 
