@@ -13,6 +13,7 @@ import Code from '../components/code'
 import Footer from '../components/footer'
 import withPageView from '../components/analytics'
 import Edit from '../components/guides/edit'
+import Image from '../components/guides/image'
 
 // Adds server generated styles to emotion cache.
 // '__NEXT_DATA__.ids' is set in '_document.js'
@@ -35,6 +36,7 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
   const currIdx = guides.findIndex(guide => ( guide.data.title == post.data.title ))
   const prev = guides[currIdx - 1]
   const next = guides[currIdx + 1]
+  const { postcast = true } = post.data
 
   injectGlobal`
     html, body {
@@ -67,10 +69,19 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
           <EditMe entry={post.data._entry} />
           <Category>{post.data.category}</Category>
           <Title>{post.data.title}</Title>
+          {postcast &&
           <WatchIt>
             <Postcast width="750" height="420">{() => postcast(post)}</Postcast>
           </WatchIt>
-          <Content {...post} renderers={{code: Code, p: Paragraph, pre: CodeBlock}}/>
+          }
+          <Content {...post} 
+            renderers={{
+              code: Code,
+              p: Paragraph,
+              pre: CodeBlock,
+              img: Image
+            }}
+          />
           <BottomNav>
             <NavPrev>
             {
