@@ -23,25 +23,26 @@ const Nav = styled('nav')`
   flex-direction: column;
   align-content: center;
   align-items: stretch;
+  padding: 8px 0;
 `
 
 const Item = styled('a')`
-  padding: 16px 20px;
+  padding: 16px 12px;
   text-decoration: none;
   color: #999;
-  border-left: 5px solid transparent;
+  border-left: 8px solid transparent;
   flex: 1;
   
   &:hover {
     color: #212121;
     background-color: #f4f4f4;
-    border-left: 5px solid #ccc;
+    border-left: 8px solid #ccc;
   }
   
   &.active,
   &.active:hover {
     color: #212121;
     background-color: #e4e4e4;
-    border-left: 5px solid #f63;    
+    border-left: 8px solid #f63;    
   }
 `
