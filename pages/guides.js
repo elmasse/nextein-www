@@ -36,7 +36,7 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
   const currIdx = guides.findIndex(guide => ( guide.data.title == post.data.title ))
   const prev = guides[currIdx - 1]
   const next = guides[currIdx + 1]
-  const { postcast = true } = post.data
+  const { postcast: showPostcast = true } = post.data
 
   injectGlobal`
     html, body {
@@ -69,7 +69,7 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
           <EditMe entry={post.data._entry} />
           <Category>{post.data.category}</Category>
           <Title>{post.data.title}</Title>
-          {postcast &&
+          {showPostcast &&
           <WatchIt>
             <Postcast width="750" height="420">{() => postcast(post)}</Postcast>
           </WatchIt>
