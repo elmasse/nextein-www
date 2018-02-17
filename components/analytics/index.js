@@ -11,9 +11,11 @@ export default (Wrapped) => {
       return wrapped;
     }
 
+    _ua = process.env.UA
+
     componentDidMount() {
-      if (!window._ga_initialized) {
-        initialize('UA-104061611-1')
+      if (!window._ga_initialized) {    
+        initialize(this._ua)
         window._ga_initialized = true;
       }
 
