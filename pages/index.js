@@ -18,9 +18,10 @@ if (typeof window !== 'undefined') {
 const classnames = (...args) => args.join(' ')
 const sortByOrder = (a, b) => a.data.order - b.data.order
 
-const withIndexSections = withPostsFilterBy(inCategory('section'))
+const withIndexSections = withPostsFilterBy(inCategory('section', { includeSubCategories: true }))
 
 const Index = withIndexSections(({ posts }) => {
+  
   const sections = posts.sort(sortByOrder)
 
   injectGlobal`
