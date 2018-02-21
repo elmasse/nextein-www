@@ -2,18 +2,13 @@
 import React from 'react'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content as PostContent } from 'nextein/post'
-import styled, { css, injectGlobal, hydrate } from 'react-emotion'
+import styled, { css } from 'react-emotion'
 
 import Header from '../components/header'
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import withPageView from '../components/analytics'
-
-// Adds server generated styles to emotion cache.
-// '__NEXT_DATA__.ids' is set in '_document.js'
-if (typeof window !== 'undefined') {
-  hydrate(window.__NEXT_DATA__.ids)
-}
+import withStyles from '../components/styled'
 
 const classnames = (...args) => args.join(' ')
 const sortByOrder = (a, b) => a.data.order - b.data.order
@@ -23,19 +18,6 @@ const withIndexSections = withPostsFilterBy(inCategory('section', { includeSubCa
 const Index = withIndexSections(({ posts }) => {
   
   const sections = posts.sort(sortByOrder)
-
-  injectGlobal`
-    html, body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
-      font-weight: 100
-    }
-    a {
-      color: #666; 
-      font-weight: 200;
-      text-decoration-color: #aaa;
-    }
-  `
 
   return (
     <Main>
@@ -58,7 +40,7 @@ const Index = withIndexSections(({ posts }) => {
   )
 })
 
-export default withPageView(Index)
+export default withPageView(withStyles(Index))
 
 // --- styled ---
 

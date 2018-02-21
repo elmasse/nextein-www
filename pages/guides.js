@@ -1,6 +1,6 @@
 
 import React, { Component } from  'react'
-import styled, { css, injectGlobal, hydrate } from 'react-emotion'
+import styled, { css } from 'react-emotion'
 import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
@@ -14,12 +14,7 @@ import Footer from '../components/footer'
 import withPageView from '../components/analytics'
 import Edit from '../components/guides/edit'
 import Image from '../components/guides/image'
-
-// Adds server generated styles to emotion cache.
-// '__NEXT_DATA__.ids' is set in '_document.js'
-if (typeof window !== 'undefined') {
-  hydrate(window.__NEXT_DATA__.ids)
-}
+import withStyles from '../components/styled'
 
 const postcast = ({ data, content }) =>
 `---
@@ -37,20 +32,6 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
   const prev = guides[currIdx - 1]
   const next = guides[currIdx + 1]
   const { postcast: showPostcast = true } = post.data
-
-  injectGlobal`
-    html, body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
-      font-weight: 100;
-    }
-
-    a { 
-      color: #666; 
-      font-weight: 200;
-      text-decoration-color: #ddd;
-    }
-  `
 
   return (
     <Main>
@@ -103,7 +84,7 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
   )
 }))
 
-export default withPageView(Guide)
+export default withPageView(withStyles(Guide))
 
 const Main = styled('main')`
   display: flex;

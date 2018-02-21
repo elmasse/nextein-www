@@ -1,6 +1,6 @@
 
 import React, { Component } from  'react'
-import styled, { injectGlobal, hydrate } from 'react-emotion'
+import styled from 'react-emotion'
 import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
@@ -11,12 +11,7 @@ import Navigation from '../components/docs/navigation'
 import Footer from '../components/footer'
 import Code from '../components/code'
 import withPageView from '../components/analytics'
-
-// Adds server generated styles to emotion cache.
-// '__NEXT_DATA__.ids' is set in '_document.js'
-if (typeof window !== 'undefined') {
-  hydrate(window.__NEXT_DATA__.ids)
-}
+import withStyles from '../components/styled'
 
 const withDocs = withPostsFilterBy(inCategory('docs', { includeSubCategories: true }))
 
@@ -24,20 +19,6 @@ const Doc = withPost(withDocs( ( { post: current, posts } ) => {
   const post = current || posts[0]
   
   posts.sort((a, b) => a.data.order - b.data.order )
-
-  injectGlobal`
-    html, body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
-      font-weight: 100;
-    }
-
-    a { 
-      color: #666; 
-      font-weight: 200;
-      text-decoration-color: #ddd;
-    }
-  `
 
   return (
     <Main>
@@ -72,7 +53,7 @@ const Doc = withPost(withDocs( ( { post: current, posts } ) => {
   )
 }))
 
-export default withPageView(Doc)
+export default withPageView(withStyles(Doc))
 
 const Main = styled('main')`
   display: flex;
