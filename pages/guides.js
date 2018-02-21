@@ -20,6 +20,8 @@ const postcast = ({ data, content }) =>
 `---
 lang: en-US
 title: ${data.title}
+phonemes:
+ nextein: /nɛkstɛɪn/
 ---
 ${content}
 ` 
