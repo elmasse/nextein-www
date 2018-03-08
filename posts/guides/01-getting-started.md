@@ -4,11 +4,13 @@ order: 1
 page: guides
 ---
 
-This post will guide you on how to get started with **Nextein**. You'll need to install **Node.js** if you don't have it installed already. To get the latest Node.js version please visit the official Node.js website: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+This post will guide you on how to get started with **Nextein**. You'll need to install **Node.js** if you don't have it installed already. 
+
+> To get the latest Node.js version please visit the [official Node.js website](https://nodejs.org/en/download/)
 
 ## Create an npm project
 
-The first step is to use **npm** to create a project in order to install all dependencies:
+The first step is to use **npm** to create a project in order to install all dependencies.
 
 ```bash
 mkdir my-blog  && cd my-blog  && npm init -y
@@ -16,7 +18,7 @@ mkdir my-blog  && cd my-blog  && npm init -y
 ```
 ## Install the dependencies
 
-For a very simple project we will need at least to install **Nextein**, **Next.js** and **React**. You can keep adding more as you need them later.
+For our first project we will need, at least, to install **Nextein**, **Next.js** and **React**. You can keep adding more as you need them later.
 
 ```bash
 npm install --save next react react-dom nextein
@@ -24,7 +26,7 @@ npm install --save next react react-dom nextein
 ```
 ## Create your first page and post
 
-**Next.js** projects follow a certain structure. Before jumping into the components, **Nextein** requires creating a `next.config.js` file. This configuration file uses a wrapper for **Next.js** configuration.
+**Next.js**'s projects follow a certain structure. **Nextein** requires creating a `next.config.js` file. This configuration file uses a wrapper for **Next.js** configuration.
 
 ```js
 const nexteinConfig = require('nextein/config').default
@@ -34,7 +36,7 @@ module.exports = nexteinConfig({
 })
 ```
 
-**Nextein** follows **Next.js** folder structure. Let's begin creating a `/pages` folder with an `index.js` with the following content:
+**Nextein** follows **Next.js** folder structure. Let's begin creating a `pages` folder with an `index.js` with this code.
 
 ```js
 import React from 'react'
@@ -68,7 +70,7 @@ title: My First Post
 This is the content of the first post. Hello there! 
 ```
 
-Now that we have our `/pages/index.js` component, the `/posts/my-post.md` content and the root config `next.config.js`, we are ready to start our dev server right away. To do so, we need to edit the `package.json` file and add the following to the `scripts` section:
+Now that we have our `pages/index.js` component, the `posts/my-post.md` content and the root config `next.config.js`, we are ready to start our dev server right away. To do so, we need to edit the `package.json` file and add the following to the `scripts` section:
 
 ```json
 {
@@ -84,13 +86,13 @@ Finally we can start our dev server by running the following command:
 npm run dev
 ```
 
-This will start a server available on [http://localhost:3000](http://localhost:3000).
+This will start a server available on [localhost:3000](http://localhost:3000).
 
 ## Creating a single post Page
 
-In the previous example the `pages/index.js` component rendered all files under `posts` folder. Now we want to create a `Page` component to render only the post content.
+In the previous example the `pages/index.js` component rendered all files under the `posts` folder. Now, we are going to create a `Page` component to render only the post content.
 
-Let's modify first the `index.js` to include a link for the post:
+Let's modify first the `index.js` to include a link for the post.
 
 ```js
 import React from 'react'
@@ -116,7 +118,7 @@ export default withPosts(({ posts }) => {
 
 The post url is generated automatically based on the file name and, if specified, the category with the form of `/{category}/{file-name}`.
 
-As mentioned before, we need a component to render our post. The default configuration is having a file  `/pages/post.js`. Let's create it with the following content:
+As mentioned before, we need a component to render our post. The default configuration is having a file  `pages/post.js`. Let's create it with the following content:
 
 ```js
 import React from  'react'
@@ -135,4 +137,7 @@ export default withPost(({ post }) => {
 
 ```
 
-The `withPost` HOC will pass the post information to be rendered.
+The `withPost` HOC will pass the post's information to be rendered.
+
+That's all you need to get started with **Nextein**. You can also check our [nextein starter](https://github.com/elmasse/nextein-starter) repository to get you up and running in seconds!
+
