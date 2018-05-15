@@ -6,7 +6,7 @@ import Head from 'next/head'
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import Link from 'nextein/link'
-import Postcast from 'postcast'
+// import Postcast from 'postcast'
 
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
@@ -53,11 +53,11 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
           <EditMe entry={post.data._entry} />
           <Category>{post.data.category}</Category>
           <Title>{post.data.title}</Title>
-          {showPostcast &&
+          {/* {showPostcast &&
           <WatchIt>
             <Postcast width="750" height="420">{() => postcast(post)}</Postcast>
           </WatchIt>
-          }
+          } */}
           <Content {...post} 
             renderers={{
               code: Code,
