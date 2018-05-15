@@ -1,6 +1,7 @@
 
 import React from 'react'
 import styled, { css } from 'react-emotion'
+import Link from 'nextein/link'
 
 export default ({ guides, post}) => {  
   return (    
@@ -10,7 +11,7 @@ export default ({ guides, post}) => {
           const { data } = guide
           const active = post.data.url === data.url
           return (
-            <Item key={`guide-nav-${idx}`} className={active && 'active'} href={data.url}>{data.title}</Item>
+            <Link key={`guide-nav-${idx}`} { ...guide } passHref><Item className={active ? 'active' : ''}>{data.title}</Item></Link>
           )
         })
       }

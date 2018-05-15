@@ -2,6 +2,7 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
 import { inCategory } from 'nextein/posts'
+import Link from 'nextein/link'
 
 export default ({ docs, post }) => {
   const api = docs.filter(inCategory('docs/api'))
@@ -14,7 +15,7 @@ export default ({ docs, post }) => {
           const { data } = doc
           const active = post.data.url === data.url
           return (
-            <Item key={`doc-nav-${idx}`} className={active && 'active'} href={data.url}>{data.title}</Item>
+            <Link key={`doc-nav-${idx}`} { ...doc }><Item className={active ? 'active': ''}>{data.title}</Item></Link>
           )
         })
       }
@@ -24,7 +25,7 @@ export default ({ docs, post }) => {
           const { data } = doc
           const active = post.data.url === data.url
           return (
-            <Item key={`doc-nav-${idx}`} className={active && 'active'} href={data.url}>{data.title}</Item>
+            <Link key={`doc-nav-${idx}`} { ...doc } passHref><Item className={active ? 'active' : ''}>{data.title}</Item></Link>
           )
         })
       }      
