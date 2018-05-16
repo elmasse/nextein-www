@@ -40,6 +40,7 @@ const Doc = withPost(withDocs( ( { post: current, posts } ) => {
             {...post}
             renderers={{
               h2: MethodName,
+              blockquote: Blockquote,
               code: Code,
               p: Paragraph,
               pre: CodeBlock,
@@ -69,8 +70,7 @@ const Section = styled('section')`
 `
 
 const Side = styled('side')`
-  flex: 1;
-  border-right: 1px solid #eee;
+  flex: .9;
   background: #eee;
 `
 
@@ -97,7 +97,7 @@ const Category = styled('h2')`
 `
 
 const Paragraph = styled('p')`
-  font-size: 1.3em;
+  font-size: 1.25em;
   font-weight: 300;
   color: #444;
   letter-spacing: -0.05px;
@@ -116,6 +116,13 @@ const Paragraph = styled('p')`
     background-color: #eee;
     vertical-align: bottom;
   }
+`
+
+const Blockquote = styled('blockquote')`
+  margin: 0;
+  margin-bottom: 1.25em;
+  padding-left: 1.25em;
+  border-left: 5px solid; 
 `
 
 const CodeBlock = styled('pre')`

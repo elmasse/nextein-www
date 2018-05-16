@@ -60,6 +60,8 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
           } */}
           <Content {...post} 
             renderers={{
+              h2: BlogSection,
+              blockquote: Blockquote,
               code: Code,
               p: Paragraph,
               pre: CodeBlock,
@@ -106,8 +108,7 @@ const Section = styled('section')`
 `
 
 const Side = styled('side')`
-  flex: 1;
-  border-right: 1px solid #eee;
+  flex: .9;
   background: #eee;
 `
 
@@ -154,10 +155,10 @@ const WatchIt = styled('div')`
 `
 
 const Paragraph = styled('p')`
-  font-size: 1.3em;
+  font-size: 1.25em;
   font-weight: 300;
   color: #444;
-  margin-top: 40px;
+  margin-top: 2em;
   letter-spacing: -0.05px;
   line-height: 1.5em;
   max-width: 750px;
@@ -167,12 +168,25 @@ const Paragraph = styled('p')`
   }
 
   &  code {
-    font-size: 1em;
+    font-size: .95em;
     display: inline-block;
     padding: 0 5px;
     background-color: #eee;
     vertical-align: bottom;
   }
+`
+
+const BlogSection = styled('h2')`
+  margin: 1em 0;
+  margin-left: -0.25em;
+  color: #000;
+`
+
+const Blockquote = styled('blockquote')`
+  margin: 0;
+  margin-bottom: 2.25em;
+  padding-left: 1.25em;
+  border-left: 5px solid; 
 `
 
 const CodeBlock = styled('pre')`
