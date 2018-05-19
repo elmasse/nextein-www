@@ -1,6 +1,7 @@
 
 import React from 'react'
 import styled from 'react-emotion'
+import Link from 'nextein/link'
 
 export default () => {
   return (
@@ -10,8 +11,8 @@ export default () => {
         <Title>I'm <Brand>Nextein</Brand></Title>
       </Main>
       <Actions>
-        <Button href="/guides">Guides </Button>
-        <Secondary href="/docs" inverted>Docs</Secondary>
+        <Link href="/guides" passHref><Button >Guides</Button></Link>
+        <Link href="/docs" passHref><Secondary inverted>Docs</Secondary></Link>
       </Actions>
     </Header>
   )
