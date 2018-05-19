@@ -69,7 +69,7 @@ const Section = styled('section')`
   flex-direction: row;
 `
 
-const Side = styled('side')`
+const Side = styled('div')`
   flex: .9;
   background: #eee;
 `
