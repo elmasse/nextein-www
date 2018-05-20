@@ -77,7 +77,7 @@ const Side = styled('div')`
 const Article = styled('article')`
   flex: 4;
   width: 1px; // freaking width to get the Article to not expand  
-  padding: 60px 0 0 60px;
+  padding: 3.5em 0 3.5em 3.5em;
 `
 
 const Title = styled('h1')`
@@ -120,15 +120,17 @@ const Paragraph = styled('p')`
 
 const Blockquote = styled('blockquote')`
   margin: 0;
-  margin-bottom: 1.25em;
   padding-left: 1.25em;
   border-left: 5px solid; 
+  & p > {
+    margin: 0;
+  }
 `
 
 const CodeBlock = styled('pre')`
-  margin: 50px 0;
+  margin: 1.5em 0;
   font-size: 1.2em;
-  padding: 5px 20px;
+  padding: .5em 1.2em;
   background: #f2f2f2;
   & .hljs {
     background: #f2f2f2;
@@ -140,7 +142,7 @@ const MethodName = styled('div')`
   line-height: 2em;
   font-weight: 600;
   color: #000;
-  margin: 60px 0 0 -2px;
+  margin: 3.5em 0 0 -2px;
 
   > em {
     font-weight: 200;

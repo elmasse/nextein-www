@@ -116,7 +116,7 @@ const Article = styled('article')`
   position: relative;
   flex: 4;
   width: 1px; // freaking width to get the Article to not expand
-  padding: 30px 0 0 60px;
+  padding: 3.5em 0 3.5em 3.5em;
 `
 
 const EditMe = styled(Edit)`
@@ -184,9 +184,13 @@ const BlogSection = styled('h2')`
 
 const Blockquote = styled('blockquote')`
   margin: 0;
-  margin-bottom: 2.25em;
+  padding: 1.5em;
   padding-left: 1.25em;
   border-left: 5px solid; 
+  background: #e4e4e4;
+  & > p {
+    margin: 0;
+  }
 `
 
 const CodeBlock = styled('pre')`
@@ -204,9 +208,9 @@ const BottomNav = styled('div')`
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  margin-left: -60px;
-  padding: 50px 0;
-
+  margin-left: -3.75em;
+  margin-top: 3em;
+  
   .nav-title {
     font-size: .7em;
     text-transform: uppercase;
