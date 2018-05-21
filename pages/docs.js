@@ -40,6 +40,7 @@ const Doc = withPost(withDocs( ( { post: current, posts } ) => {
             {...post}
             renderers={{
               h2: MethodName,
+              blockquote: Blockquote,
               code: Code,
               p: Paragraph,
               pre: CodeBlock,
@@ -68,16 +69,15 @@ const Section = styled('section')`
   flex-direction: row;
 `
 
-const Side = styled('side')`
-  flex: 1;
-  border-right: 1px solid #eee;
+const Side = styled('div')`
+  flex: .9;
   background: #eee;
 `
 
 const Article = styled('article')`
   flex: 4;
   width: 1px; // freaking width to get the Article to not expand  
-  padding: 60px 0 0 60px;
+  padding: 3.5em 0 3.5em 3.5em;
 `
 
 const Title = styled('h1')`
@@ -97,7 +97,7 @@ const Category = styled('h2')`
 `
 
 const Paragraph = styled('p')`
-  font-size: 1.3em;
+  font-size: 1.25em;
   font-weight: 300;
   color: #444;
   letter-spacing: -0.05px;
@@ -118,10 +118,19 @@ const Paragraph = styled('p')`
   }
 `
 
+const Blockquote = styled('blockquote')`
+  margin: 0;
+  padding-left: 1.25em;
+  border-left: 5px solid; 
+  & p > {
+    margin: 0;
+  }
+`
+
 const CodeBlock = styled('pre')`
-  margin: 50px 0;
+  margin: 1.5em 0;
   font-size: 1.2em;
-  padding: 5px 20px;
+  padding: .5em 1.2em;
   background: #f2f2f2;
   & .hljs {
     background: #f2f2f2;
@@ -133,7 +142,7 @@ const MethodName = styled('div')`
   line-height: 2em;
   font-weight: 600;
   color: #000;
-  margin: 60px 0 0 -2px;
+  margin: 3.5em 0 0 -2px;
 
   > em {
     font-weight: 200;

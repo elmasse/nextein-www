@@ -2,6 +2,7 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
 import { inCategory } from 'nextein/posts'
+import Link from 'nextein/link'
 
 export default ({ docs, post }) => {
   const api = docs.filter(inCategory('docs/api'))
@@ -14,7 +15,7 @@ export default ({ docs, post }) => {
           const { data } = doc
           const active = post.data.url === data.url
           return (
-            <Item key={`doc-nav-${idx}`} className={active && 'active'} href={data.url}>{data.title}</Item>
+            <Link key={`doc-nav-${idx}`} { ...doc }><Item className={active ? 'active': ''}>{data.title}</Item></Link>
           )
         })
       }
@@ -24,7 +25,7 @@ export default ({ docs, post }) => {
           const { data } = doc
           const active = post.data.url === data.url
           return (
-            <Item key={`doc-nav-${idx}`} className={active && 'active'} href={data.url}>{data.title}</Item>
+            <Link key={`doc-nav-${idx}`} { ...doc } passHref><Item className={active ? 'active' : ''}>{data.title}</Item></Link>
           )
         })
       }      
@@ -37,38 +38,37 @@ const Nav = styled('nav')`
   flex-direction: column;
   align-content: center;
   align-items: stretch;
-  padding: 8px 0;
 `
 
 const Separator = styled('div')`
-  padding: 8px 16px;
+  margin: .5em 0;
+  padding: .5em 1em;
   border-left: 5px solid transparent;
   flex: 1;
-  font-size: .8em;
+  font-size: .75em;
   font-weight: 600;
   color: #212121;
-  background: #eee;
   text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
 `
 
 const Item = styled('a')`
-  padding: 16px 12px;
+  padding: 1em;
   text-decoration: none;
-  color: #999;
-  border-left: 8px solid transparent;
+  color: #212121;
+  border-left: .5em solid transparent;
   flex: 1;
   
   &:hover {
-    color: #212121;
+    color: #181818;
     background-color: #f4f4f4;
-    border-left: 8px solid #ccc;
+    border-left: .5em solid #ccc;
   }
-
+  
   &.active,
   &.active:hover {
     color: #212121;
-    background-color: #e4e4e4;
-    border-left: 8px solid #f63;    
+    background-color: #fafafa;
+    border-left: .5em solid #f63;    
   }
-  
 `

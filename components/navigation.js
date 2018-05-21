@@ -1,6 +1,7 @@
 
 import React from 'react'
 import styled from 'react-emotion'
+import Link from 'nextein/link'
 
 import Github from './icons/github'
 import Npm from './icons/npm'
@@ -11,9 +12,9 @@ export default ({ title, showHome = false, ...props }) => {
   return (
     <Nav {...props} showHome={showHome}>
       { title && <Title>Nextein<Light>/{title}</Light></Title> }
-      { showHome && <Item href="/">Home</Item>}
-      <Item href="/guides" className={isGuide && 'active'} >Guides</Item>
-      <Item href="/docs" className={isDoc && 'active'}>Docs</Item>
+      { showHome && <Link href="/" passHref><Item>Home</Item></Link>}
+      <Link href="/guides" passHref><Item className={isGuide && 'active'} >Guides</Item></Link>
+      <Link href="/docs" passHref><Item className={isDoc && 'active'}>Docs</Item></Link>
       <GithubLink href="https://github.com/elmasse/nextein">
         <Github fill="#c0c0c0" width="25"/>
       </GithubLink>

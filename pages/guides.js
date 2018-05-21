@@ -5,7 +5,8 @@ import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
-import Postcast from 'postcast'
+import Link from 'nextein/link'
+// import Postcast from 'postcast'
 
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
@@ -52,13 +53,15 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
           <EditMe entry={post.data._entry} />
           <Category>{post.data.category}</Category>
           <Title>{post.data.title}</Title>
-          {showPostcast &&
+          {/* {showPostcast &&
           <WatchIt>
             <Postcast width="750" height="420">{() => postcast(post)}</Postcast>
           </WatchIt>
-          }
+          } */}
           <Content {...post} 
             renderers={{
+              h2: BlogSection,
+              blockquote: Blockquote,
               code: Code,
               p: Paragraph,
               pre: CodeBlock,
@@ -69,13 +72,13 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
             <NavPrev>
             {
               prev &&
-             <a className="prev" href={prev.data.url}><div className="nav-title">Previous</div><div className="article-title"> {prev.data.title}</div></a>
+              <Link {...prev}><a className="prev"><div className="nav-title">Previous</div><div className="article-title"> {prev.data.title}</div></a></Link>
             }
             </NavPrev>
             <NavNext>
             {
               next &&
-              <a className="next" href={next.data.url}><div className="nav-title">Next</div><div className="article-title"> {next.data.title}</div></a>
+              <Link {...next}><a className="next"><div className="nav-title">Next</div><div className="article-title"> {next.data.title}</div></a></Link>
             }
             </NavNext>
           </BottomNav>
@@ -104,9 +107,8 @@ const Section = styled('section')`
   }
 `
 
-const Side = styled('side')`
-  flex: 1;
-  border-right: 1px solid #eee;
+const Side = styled('div')`
+  flex: .9;
   background: #eee;
 `
 
@@ -114,7 +116,7 @@ const Article = styled('article')`
   position: relative;
   flex: 4;
   width: 1px; // freaking width to get the Article to not expand
-  padding: 30px 0 0 60px;
+  padding: 3.5em 0 3.5em 3.5em;
 `
 
 const EditMe = styled(Edit)`
@@ -153,10 +155,10 @@ const WatchIt = styled('div')`
 `
 
 const Paragraph = styled('p')`
-  font-size: 1.3em;
+  font-size: 1.25em;
   font-weight: 300;
   color: #444;
-  margin-top: 40px;
+  margin-top: 2em;
   letter-spacing: -0.05px;
   line-height: 1.5em;
   max-width: 750px;
@@ -166,11 +168,28 @@ const Paragraph = styled('p')`
   }
 
   &  code {
-    font-size: 1em;
+    font-size: .95em;
     display: inline-block;
     padding: 0 5px;
     background-color: #eee;
     vertical-align: bottom;
+  }
+`
+
+const BlogSection = styled('h2')`
+  margin: 1em 0;
+  margin-left: -0.25em;
+  color: #000;
+`
+
+const Blockquote = styled('blockquote')`
+  margin: 0;
+  padding: 1.5em;
+  padding-left: 1.25em;
+  border-left: 5px solid; 
+  background: #e4e4e4;
+  & > p {
+    margin: 0;
   }
 `
 
@@ -189,9 +208,9 @@ const BottomNav = styled('div')`
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  margin-left: -60px;
-  padding: 50px 0;
-
+  margin-left: -3.75em;
+  margin-top: 3em;
+  
   .nav-title {
     font-size: .7em;
     text-transform: uppercase;

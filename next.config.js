@@ -24,7 +24,7 @@ module.exports = config({
   },
 
   exportPathMap: () => ({
-    '/guides': { page: '/guides' },
-    '/docs': { page: '/docs' }
+    '/guides': { page: '/guides', query: {} }, // <-query is needed, otherwise shallow-eq returns error
+    '/docs': { page: '/docs', query: {} }
   })
 })
