@@ -60,9 +60,9 @@ Categories are resolved by the folder structure by default. This means that a po
 import withPosts, { inCategory } from 'nextein/posts'
 
 export default withPosts( ({ posts }) => { 
-    const homePosts = posts.filter(inCategory('home'))
-    /* render your homePosts here */ 
-} )
+  const homePosts = posts.filter(inCategory('home'))
+  /* render your homePosts here */ 
+})
 
 ```
 
@@ -72,10 +72,10 @@ If you want to retrieve all posts under a certain category, let's say `categoryA
 import withPosts, { inCategory } from 'nextein/posts'
 
 export default withPosts( ({ posts }) => { 
-    const categoryAPosts = posts
-        .filter(inCategory('categoryA', { includeSubCategories: true }))
-    /* render your categoryAPostsmePosts here */ 
-} )
+  const categoryAPosts = posts
+    .filter(inCategory('categoryA', { includeSubCategories: true }))
+  /* render your categoryAPostsmePosts here */ 
+})
 
 ```
 
@@ -93,7 +93,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 const withCategoryAPosts = withPostsFilterBy(inCategory('categoryA'))
 
 export default withCategoryAPosts(({ posts }) => { 
-    /* render your posts here */ 
+  /* render your posts here */ 
 })
 
 ```
@@ -106,8 +106,8 @@ Sort function to be applied to posts to sort by date (newest on top). This requi
 import withPosts, { sortByDate } from 'nextein/posts'
 
 export default withPosts( ({ posts }) => { 
-    posts.sort(sortByDate)
-    /* render your posts here */ 
-} )
+  posts.sort(sortByDate)
+  /* render your posts here */ 
+})
 
 ```

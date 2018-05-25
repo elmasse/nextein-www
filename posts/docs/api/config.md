@@ -11,10 +11,12 @@ A wrapper configuration function to be applied into the `next.config.js`. It pro
 
 ```js
 
-const nexteinConfig = require('nextein/config').default
+const { default: nexteinConfig } = require('nextein/config')
 
 module.exports = nexteinConfig({
-    // Your own next.js config here
+  // Your own next.js config here
 })
 
 ```
+
+> `next.config.js` is required to get Nextein working. This is the minimal configuration required.
