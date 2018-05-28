@@ -2,26 +2,38 @@
 import React from 'react'
 import styled from 'react-emotion'
 import Link from 'nextein/link'
+import Head from 'next/head'
+import Router from 'next/router'
+import NProgress from 'nprogress'
 
 import Github from './icons/github'
 import Npm from './icons/npm'
+
+Router.onRouteChangeStart = (url) => {
+  NProgress.start()
+}
+Router.onRouteChangeComplete = () => NProgress.done()
+Router.onRouteChangeError = () => NProgress.done()
 
 export default ({ title, showHome = false, ...props }) => {
   const isGuide = (title === 'guides')
   const isDoc = (title === 'documentation')
   return (
-    <Nav {...props} showHome={showHome}>
-      { title && <Title>Nextein<Light>/{title}</Light></Title> }
-      { showHome && <Link href="/" passHref><Item>Home</Item></Link>}
-      <Link href="/guides" passHref><Item className={isGuide && 'active'} >Guides</Item></Link>
-      <Link href="/docs" passHref><Item className={isDoc && 'active'}>Docs</Item></Link>
-      <GithubLink href="https://github.com/elmasse/nextein">
-        <Github fill="#c0c0c0" width="25"/>
-      </GithubLink>
-      <NpmLink href="https://www.npmjs.com/package/nextein">
-        <Npm fill="#c0c0c0" width="35"  style={{marginTop: '5px'}} />
-      </NpmLink>
-    </Nav>
+    <React.Fragment>
+      <Head><link rel='stylesheet' type='text/css' href='/static/nprogress.css' /></Head>
+      <Nav {...props} showHome={showHome}>
+        { title && <Title>Nextein<Light>/{title}</Light></Title> }
+        { showHome && <Link href="/" passHref><Item>Home</Item></Link>}
+        <Link href="/guides" passHref><Item className={isGuide && 'active'} >Guides</Item></Link>
+        <Link href="/docs" passHref><Item className={isDoc && 'active'}>Docs</Item></Link>
+        <GithubLink href="https://github.com/elmasse/nextein">
+          <Github fill="#c0c0c0" width="25"/>
+        </GithubLink>
+        <NpmLink href="https://www.npmjs.com/package/nextein">
+          <Npm fill="#c0c0c0" width="35"  style={{marginTop: '5px'}} />
+        </NpmLink>
+      </Nav>
+    </React.Fragment>
   )
 }
 
