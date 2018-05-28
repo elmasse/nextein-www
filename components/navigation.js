@@ -9,6 +9,10 @@ import NProgress from 'nprogress'
 import Github from './icons/github'
 import Npm from './icons/npm'
 
+NProgress.configure({
+  showSpinner: false
+})
+
 Router.onRouteChangeStart = (url) => {
   NProgress.start()
 }
