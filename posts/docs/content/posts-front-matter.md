@@ -82,11 +82,11 @@ Default values is `'/:category?/:name`
 
 All front matter variables, even custom ones, can be used to define the permalink.
 
-## name (__Read Only__)
+## name _String_ (__Read Only__)
 
 The post file name. If the name contains a date that is removed from the final name.
 
-## url (__Read Only__)
+## url _String_ (__Read Only__)
 
 The generated url for the post.
 
