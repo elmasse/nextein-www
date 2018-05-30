@@ -44,7 +44,7 @@ export default ({ title, showHome = false, ...props }) => {
 const Nav = styled('nav')`
   min-height: 72px;
   display: flex;
-  padding-right: 30px;
+  padding: 0 1.8em;
   justify-content: flex-end;
   align-items: stretch;
   box-sizing: border-box;  
@@ -56,6 +56,9 @@ const Nav = styled('nav')`
     padding: 0 15px;
     color: #999;
     text-decoration: none;
+    &:last-child {
+      padding-right: 0;
+    }
   }
   border-bottom: ${ ({ showHome }) => showHome ? '1px solid #eee' : '' }
 `
@@ -78,7 +81,6 @@ const Item = styled('a')`
 
 const Title = styled('div')`
   font-size: 1.4em;
-  padding-left: 20px;
   margin-right: auto;
   color: #212121;
   font-weight: 400;
