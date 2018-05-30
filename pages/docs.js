@@ -100,17 +100,21 @@ const Paragraph = styled('p')`
   font-size: 1.25em;
   font-weight: 300;
   color: #444;
+  margin: 0;
   letter-spacing: -0.05px;
   line-height: 1.5em;
-  max-width: 750px;
-  margin: 0;
+  max-width: 800px;
 
-  strong, b {
+  &:not(:first-child):not(:last-child) {
+    margin: 1em 0;
+  }
+
+  & strong, & b {
     font-weight: 600;
   }
 
-  & code {
-    font-size: 1em;
+  &  code {
+    font-size: .95em;
     display: inline-block;
     padding: 0 5px;
     background-color: #eee;
@@ -142,7 +146,7 @@ const MethodName = styled('div')`
   line-height: 2em;
   font-weight: 600;
   color: #000;
-  margin: 3.5em 0 0 -2px;
+  margin: 2em 0 0 -2px;
 
   > em {
     font-weight: 200;

@@ -121,8 +121,8 @@ const Article = styled('article')`
 
 const EditMe = styled(Edit)`
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1.8em;
+  right: 1.8em;
   padding: 10px;
   border: 1px solid #ddd;
   text-decoration: none;
@@ -158,10 +158,14 @@ const Paragraph = styled('p')`
   font-size: 1.25em;
   font-weight: 300;
   color: #444;
-  margin-top: 2em;
+  margin: 0;
   letter-spacing: -0.05px;
   line-height: 1.5em;
-  max-width: 750px;
+  max-width: 800px;
+
+  &:not(:first-child):not(:last-child) {
+    margin: 1em 0;
+  }
 
   & strong, & b {
     font-weight: 600;
@@ -183,7 +187,7 @@ const BlogSection = styled('h2')`
 `
 
 const Blockquote = styled('blockquote')`
-  margin: 0;
+  margin: 1em 0;
   padding: 1.5em;
   padding-left: 1.25em;
   border-left: 5px solid; 
@@ -229,10 +233,10 @@ const BottomNav = styled('div')`
   }
 `
 const NavPrev = styled('div')`
-  padding-left: 30px;
+  padding-left: 1.8em;
 `
 
 const NavNext = styled('div')`
-  padding-right: 30px;
+  padding-right: 1.8em;
   text-align: right;
 `
