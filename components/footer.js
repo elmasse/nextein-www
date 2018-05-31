@@ -7,14 +7,22 @@ import Npm from './icons/npm'
 export default () => {
   return (
     <Footer>
-      <Wrapper>
-        <Brand>Nextein</Brand>
-        <Notice>&copy; 2017 - Max Fierro</Notice>
+      <Grid>
+        <Brand>
+          Nextein
+          <Notice>Copyright &copy; { new Date().getFullYear() } - Max Fierro</Notice>
+        </Brand>
+        <SiteMap>
+          <a href="/">HOME</a>
+          <a href="/guides">GUIDES</a>
+          <a href="/docs">DOCS</a>
+
+        </SiteMap>
         <Social>
           <a href="https://github.com/elmasse/nextein"><Github fill="#564949" width="35" /></a>
           <a href="https://www.npmjs.com/package/nextein"><Npm fill="#564949" width="45" /></a>
         </Social>
-      </Wrapper>
+      </Grid>
       <BuiltWithLove />
     </Footer>
   )
@@ -35,44 +43,52 @@ const Footer = styled('footer')`
   min-height: 250px;
 `
 
-const Wrapper = styled('div')`
+const Grid = styled('div')`
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
   flex: 1;
   padding: 32px;
+  width: 900px;
+  margin: auto;
 `
-const Separator = styled('div')`
-  height: 0px;
-  border: 1px solid #f63;
-  border-bottom: none;
-  margin: 1.3em 0;
+const SiteMap = styled('div')`
+  flex: 2;
+  padding: 1em 0;
+  border-top: 1px solid #564949;
+  & a {
+    display: block;
+    text-decoration: none;
+    padding: 2px 0;
+  }
+  & a:hover {
+    color: #f63;
+  }
 `
 
 const Brand = styled('div')`
   color: #f63;
-  font-size: 2.5em
+  font-size: 2.5em;
+  margin-right: 2em;
 `
 
 const Notice = styled('div')`
-  font-size: .65em;
+  font-size: 11px;
   color: #f1f1f1;
   text-transform: uppercase;
   letter-spacing: .06em;
 `
 
 const Social = styled('div')`
-  flex: 3;
+  flex: 1;
+  padding: 1em 0;
+  border-top: 1px solid #f63;
   font-size: .8em;
-  align-items: center;
   display: flex;
-  flex-direction: row;
-  
-  a {
+  justify-content: flex-end;
+  & a {
     padding: 5px;
   }
 
-  a:hover svg {
+  & a:hover svg {
     fill: #9a8888;
   }
 `
