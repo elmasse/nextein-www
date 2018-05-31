@@ -8,8 +8,9 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/docs/navigation'
-import Footer from '../components/footer'
+import { Main, Section, Side, Article, Title, Category, Paragraph, Blockquote, CodeBlock, List } from '../components/elements'
 import Code from '../components/code'
+import Footer from '../components/footer'
 import withPageView from '../components/analytics'
 import withStyles from '../components/styled'
 
@@ -56,91 +57,6 @@ const Doc = withPost(withDocs( ( { post: current, posts } ) => {
 
 export default withPageView(withStyles(Doc))
 
-const Main = styled('main')`
-  display: flex;
-  flex-direction: column;
-  color: #666;
-`
-
-const Section = styled('section')`
-  background: #f9f9f9;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-`
-
-const Side = styled('div')`
-  flex: .9;
-  background: #eee;
-`
-
-const Article = styled('article')`
-  flex: 4;
-  width: 1px; // freaking width to get the Article to not expand  
-  padding: 3.5em 0 3.5em 3.5em;
-`
-
-const Title = styled('h1')`
-  font-size: 4em;
-  font-weight: 100;
-  margin-top: -15px;
-  padding-bottom: 15px;
-  border-bottom: 3px solid #f63;
-`
-
-const Category = styled('h2')`
-  font-size: .8em;
-  font-weight: 100;
-  letter-spacing: .2em;
-  color: #666;
-  text-transform: uppercase;
-`
-
-const Paragraph = styled('p')`
-  font-size: 1.25em;
-  font-weight: 300;
-  color: #444;
-  margin: 0;
-  letter-spacing: -0.05px;
-  line-height: 1.5em;
-  max-width: 800px;
-
-  &:not(:first-child):not(:last-child) {
-    margin: 1em 0;
-  }
-
-  & strong, & b {
-    font-weight: 600;
-  }
-
-  &  code {
-    font-size: .95em;
-    display: inline-block;
-    padding: 0 5px;
-    background-color: #eee;
-    vertical-align: bottom;
-  }
-`
-
-const Blockquote = styled('blockquote')`
-  margin: 0;
-  padding-left: 1.25em;
-  border-left: 5px solid; 
-  & p > {
-    margin: 0;
-  }
-`
-
-const CodeBlock = styled('pre')`
-  margin: 1.5em 0;
-  font-size: 1.2em;
-  padding: .5em 1.2em;
-  background: #f2f2f2;
-  & .hljs {
-    background: #f2f2f2;
-  }
-`
-
 const MethodName = styled('div')`
   font-size: 1.8em;
   line-height: 2em;
@@ -153,19 +69,4 @@ const MethodName = styled('div')`
     letter-spacing: -0.8px;
     padding: 0 4px;    
   }
-`
-
-const List = styled('ul')`  
-  &, & li > p {
-    font-size: 1.1em;
-    line-height: 1.5em;
-  }
-
-  & code, & p code {
-    font-size: 1em;
-    display: inline-block;
-    padding: 0 5px;
-    background-color: #eee;
-  }
-  
 `
