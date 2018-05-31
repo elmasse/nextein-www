@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 
 import Github from './icons/github'
+import Gitter from './icons/gitter'
 import Npm from './icons/npm'
 
 export default () => {
@@ -16,11 +17,11 @@ export default () => {
           <a href="/">HOME</a>
           <a href="/guides">GUIDES</a>
           <a href="/docs">DOCS</a>
-
         </SiteMap>
         <Social>
-          <a href="https://github.com/elmasse/nextein"><Github fill="#564949" width="35" /></a>
-          <a href="https://www.npmjs.com/package/nextein"><Npm fill="#564949" width="45" /></a>
+          <a href="https://gitter.im/nextein" target="_blank"><Gitter fill="#564949" width="20" alt="Gitter IM"/></a>
+          <a href="https://github.com/elmasse/nextein" target="_blank"><Github fill="#564949" width="35" alt="Github"/></a>
+          <a href="https://www.npmjs.com/package/nextein" target="_blank"><Npm fill="#564949" width="45" alt="npm" /></a>
         </Social>
       </Grid>
       <BuiltWithLove />
@@ -81,8 +82,11 @@ const Social = styled('div')`
   flex: 1;
   padding: 1em 0;
   border-top: 1px solid #f63;
-  font-size: .8em;
+  font-size: 2em;
+  font-weight: 300;
+  color: #f63;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   & a {
     padding: 5px;
