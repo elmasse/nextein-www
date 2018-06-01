@@ -31,10 +31,10 @@ export default ({ title, showHome = false, ...props }) => {
         <Link href="/guides" passHref><Item className={isGuide && 'active'} >Guides</Item></Link>
         <Link href="/docs" passHref><Item className={isDoc && 'active'}>Docs</Item></Link>
         <GithubLink href="https://github.com/elmasse/nextein">
-          <Github fill="#c0c0c0" width="25"/>
+          <Github fill="#c0c0c0" width="25" alt="Github"/>
         </GithubLink>
         <NpmLink href="https://www.npmjs.com/package/nextein">
-          <Npm fill="#c0c0c0" width="35"  style={{marginTop: '5px'}} />
+          <Npm fill="#c0c0c0" width="35"  style={{marginTop: '5px'}} alt="npm"/>
         </NpmLink>
       </Nav>
     </React.Fragment>
