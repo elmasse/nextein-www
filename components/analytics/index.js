@@ -13,17 +13,24 @@ export default (Wrapped) => {
 
     _ua = process.env.UA
 
+    componentDidUpdate() {
+      this._sendPageView()
+    }
+
     componentDidMount() {
       if (!window._ga_initialized) {    
         initialize(this._ua)
         window._ga_initialized = true;
       }
+     
+      this._sendPageView()
+    }
 
+    _sendPageView() {
       const location = window.location.pathname + window.location.search
-      
       set({page: location})
       pageview(location)
-
+      
     }
 
     render() {      
