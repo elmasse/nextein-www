@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
+import Link from 'nextein/link'
 
 import Github from './icons/github'
 import Gitter from './icons/gitter'
@@ -14,9 +15,9 @@ export default () => {
           <Notice>Copyright &copy; { new Date().getFullYear() } - Max Fierro</Notice>
         </Brand>
         <SiteMap>
-          <a href="/">HOME</a>
-          <a href="/guides">GUIDES</a>
-          <a href="/docs">DOCS</a>
+          <Link href="/"><a>HOME</a></Link>
+          <Link href="/guides"><a>GUIDES</a></Link>
+          <Link href="/docs"><a>DOCS</a></Link>
         </SiteMap>
         <Social>
           <a href="https://gitter.im/nextein" target="_blank"><Gitter fill="#564949" width="20" alt="Gitter IM"/></a>
@@ -56,6 +57,7 @@ const SiteMap = styled('div')`
   padding: 1em 0;
   border-top: 1px solid #564949;
   & a {
+    font-size: .8em;
     display: block;
     text-decoration: none;
     padding: 2px 0;
@@ -82,11 +84,11 @@ const Social = styled('div')`
   flex: 1;
   padding: 1em 0;
   border-top: 1px solid #f63;
-  font-size: 2em;
   font-weight: 300;
   color: #f63;
   display: flex;
   align-items: center;
+  align-self: baseline;
   justify-content: flex-end;
   & a {
     padding: 5px;
