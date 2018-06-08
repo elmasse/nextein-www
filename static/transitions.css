@@ -55,10 +55,6 @@
 }
 
 /* GUIDES & DOCS */
-.fade-transition-group {
-  flex: 4;
-  width: 1px; /* width to get the Article to not expand */
-}
 
 .fade-transition-enter {
   opacity: 0;
