@@ -2,13 +2,12 @@
 import React from 'react'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content as PostContent } from 'nextein/post'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 
 import Header from '../components/header'
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 import withPageView from '../components/analytics'
-import withStyles from '../components/styled'
 
 const classnames = (...args) => args.join(' ')
 const sortByOrder = (a, b) => a.data.order - b.data.order
@@ -40,7 +39,7 @@ const Index = withIndexSections(({ posts }) => {
   )
 })
 
-export default withPageView(withStyles(Index))
+export default withPageView(Index)
 
 // --- styled ---
 
