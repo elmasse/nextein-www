@@ -22,7 +22,7 @@ export default (Wrapped) => {
         initialize(this._ua)
         window._ga_initialized = true;
       }
-     
+
       this._sendPageView()
     }
 
@@ -30,10 +30,9 @@ export default (Wrapped) => {
       const location = window.location.pathname + window.location.search
       set({page: location})
       pageview(location)
-      
     }
 
-    render() {      
+    render() {
       return <Wrapped {...this.props} />
     }
   }
