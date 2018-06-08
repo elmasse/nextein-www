@@ -1,7 +1,8 @@
 
-import React, { Component } from  'react'
+import React, { Component } from 'react'
 import styled from 'react-emotion'
 import Head from 'next/head'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
@@ -16,10 +17,10 @@ import withStyles from '../components/styled'
 
 const withDocs = withPostsFilterBy(inCategory('docs', { includeSubCategories: true }))
 
-const Doc = withPost(withDocs( ( { post: current, posts } ) => {
+const Doc = withPost(withDocs(({ post: current, posts }) => {
   const post = current || posts[0]
-  
-  posts.sort((a, b) => a.data.order - b.data.order )
+
+  posts.sort((a, b) => a.data.order - b.data.order)
 
   return (
     <Main>
@@ -28,27 +29,31 @@ const Doc = withPost(withDocs( ( { post: current, posts } ) => {
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" />
       </Head>
 
-      <MainNavigation showHome title="documentation" styles={{ width: `100vw` }}/>
+      <MainNavigation showHome title="documentation" styles={{ width: `100vw` }} />
 
       <Section>
         <Side>
           <Navigation docs={posts} post={post} />
         </Side>
-        <Article>
-          <Category>{post.data.category}</Category>
-          <Title>{post.data.title}</Title>
-          <Content
-            {...post}
-            renderers={{
-              h2: MethodName,
-              blockquote: Blockquote,
-              code: Code,
-              p: Paragraph,
-              pre: CodeBlock,
-              ul: List
-            }}
-          />
-        </Article>
+        <TransitionGroup className="fade-transition-group">
+          <CSSTransition key={post.data.url} classNames="fade-transition" timeout={500}>
+            <Article>
+              <Category>{post.data.category}</Category>
+              <Title>{post.data.title}</Title>
+              <Content
+                {...post}
+                renderers={{
+                  h2: MethodName,
+                  blockquote: Blockquote,
+                  code: Code,
+                  p: Paragraph,
+                  pre: CodeBlock,
+                  ul: List
+                }}
+              />
+            </Article>
+          </CSSTransition>
+        </TransitionGroup>
       </Section>
       <Footer />
     </Main>
