@@ -7,7 +7,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
-
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
 import { Main, Section, Side, Article, Title, Category, Paragraph, CodeBlock } from '../components/elements'
@@ -17,7 +16,6 @@ import Footer from '../components/footer'
 import withPageView from '../components/analytics'
 import Edit from '../components/guides/edit'
 import Image from '../components/guides/image'
-import withStyles from '../components/styled'
 
 const withGuides = withPostsFilterBy(inCategory('guides', { includeSubCategories: true }))
 
@@ -64,7 +62,7 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
   )
 }))
 
-export default withPageView(withStyles(Guide))
+export default withPageView(Guide)
 
 const EditMe = styled(Edit)`
   position: absolute;

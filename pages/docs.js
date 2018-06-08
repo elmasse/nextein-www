@@ -13,7 +13,6 @@ import { Main, Section, Side, Article, Title, Category, Paragraph, Blockquote, C
 import Code from '../components/code'
 import Footer from '../components/footer'
 import withPageView from '../components/analytics'
-import withStyles from '../components/styled'
 
 const withDocs = withPostsFilterBy(inCategory('docs', { includeSubCategories: true }))
 
@@ -60,7 +59,7 @@ const Doc = withPost(withDocs(({ post: current, posts }) => {
   )
 }))
 
-export default withPageView(withStyles(Doc))
+export default withPageView(Doc)
 
 const MethodName = styled('div')`
   font-size: 1.8em;
