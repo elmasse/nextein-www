@@ -9,7 +9,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
-import { Main, Section, Side, Article, Title, Category, Paragraph, CodeBlock } from '../components/elements'
+import { Main, Section, Side, ArticleTransitionWrapper, Article, Title, Category, Paragraph, CodeBlock } from '../components/elements'
 import Code from '../components/code'
 import BottomNavigation from '../components/guides/bottom-navigation'
 import Footer from '../components/footer'
@@ -35,7 +35,7 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
         <Side>
           <Navigation guides={guides} post={post} />
         </Side>
-        <TransitionGroup className="fade-transition-group">
+        <TransitionGroup className="fade-transition-group" component={ArticleTransitionWrapper}>
           <CSSTransition key={post.data.url} classNames="fade-transition" timeout={500}>
             <Article>
               <EditMe entry={post.data._entry} />

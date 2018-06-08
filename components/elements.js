@@ -22,6 +22,11 @@ export const Side = styled('div')`
   background: #eee;
 `
 
+export const ArticleTransitionWrapper = styled('div')`
+  flex: 4;
+  width: 1px; /* width to get the Article to not expand */
+`
+
 export const Article = styled('article')`
   position: relative;
   // flex: 4;
