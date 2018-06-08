@@ -24,8 +24,8 @@ export const Side = styled('div')`
 
 export const Article = styled('article')`
   position: relative;
-  flex: 4;
-  width: 1px; // width to get the Article to not expand
+  // flex: 4;
+  // width: 1px; // width to get the Article to not expand
   padding: 3.5em 0 3.5em 3.5em;
 `
 

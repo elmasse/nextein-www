@@ -2,10 +2,9 @@
 import React from 'react'
 import styled from 'react-emotion'
 import Link from 'nextein/link'
-import Head from 'next/head'
 import Router from 'next/router'
 import NProgress from 'nprogress'
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Github from './icons/github'
 import Npm from './icons/npm'
 
@@ -24,7 +23,14 @@ export default ({ title, showHome = false, ...props }) => {
   const isDoc = (title === 'documentation')
   return (
     <Nav {...props} showHome={showHome}>
-      { title && <Title>Nextein<Light>/{title}</Light></Title> }
+      { title && (
+        <TransitionGroup className="navigation-group" component={null}>
+          <CSSTransition classNames="navigation-title" timeout={500} appear in>
+            <Title>Nextein<Light>/{title}</Light></Title>
+          </CSSTransition>
+        </TransitionGroup>
+      )
+      }
       { showHome && <Link href="/" passHref><Item>Home</Item></Link>}
       <Link href="/guides" passHref><Item className={isGuide && 'active'} >Guides</Item></Link>
       <Link href="/docs" passHref><Item className={isDoc && 'active'}>Docs</Item></Link>

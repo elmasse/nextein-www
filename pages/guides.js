@@ -2,10 +2,11 @@
 import React, { Component } from  'react'
 import styled, { css } from 'react-emotion'
 import Head from 'next/head'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
-import Link from 'nextein/link'
+
 
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
@@ -36,23 +37,27 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
         <Side>
           <Navigation guides={guides} post={post} />
         </Side>
-        <Article>
-          <EditMe entry={post.data._entry} />
-          <Category>{post.data.category}</Category>
-          <Title>{post.data.title}</Title>
-          <Content
-            {...post}
-            renderers={{
-              h2: BlogSection,
-              blockquote: Blockquote,
-              code: Code,
-              p: Paragraph,
-              pre: CodeBlock,
-              img: Image
-            }}
-          />
-          <BottomNavigation guides={guides} post={post} />
-        </Article>
+        <TransitionGroup className="fade-transition-group">
+          <CSSTransition key={post.data.url} classNames="fade-transition" timeout={500}>
+            <Article>
+              <EditMe entry={post.data._entry} />
+              <Category>{post.data.category}</Category>
+              <Title>{post.data.title}</Title>
+              <Content
+                {...post}
+                renderers={{
+                  h2: BlogSection,
+                  blockquote: Blockquote,
+                  code: Code,
+                  p: Paragraph,
+                  pre: CodeBlock,
+                  img: Image
+                }}
+              />
+              <BottomNavigation guides={guides} post={post} />
+            </Article>
+           </CSSTransition>
+          </TransitionGroup> 
       </Section>
       <Footer />
     </Main>
