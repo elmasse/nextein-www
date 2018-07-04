@@ -6,6 +6,15 @@ className: md
 order: 2
 ---
 
-Write your content with **Markdown**.  
-Plain Text. Easier to read. Easier to update.  
-It's just content.
+```md
+# Markdown
+
+Write your content with **Markdown**
+
+- Plain Text. 
+- Easier to read. 
+- Easier to update.  
+
+So you can focus on **your** content.
+  
+```

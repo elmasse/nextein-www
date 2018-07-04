@@ -1,6 +1,6 @@
 
 import React, { Component } from  'react'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 import Head from 'next/head'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
