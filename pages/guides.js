@@ -1,22 +1,21 @@
 
 import React, { Component } from  'react'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 import Head from 'next/head'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
-import Link from 'nextein/link'
 
 import MainNavigation from '../components/navigation'
 import Navigation from '../components/guides/navigation'
-import { Main, Section, Side, Article, Title, Category, Paragraph, CodeBlock } from '../components/elements'
+import { Main, Section, Side, ArticleTransitionWrapper, Article, Title, Category, Paragraph, CodeBlock } from '../components/elements'
 import Code from '../components/code'
 import BottomNavigation from '../components/guides/bottom-navigation'
 import Footer from '../components/footer'
 import withPageView from '../components/analytics'
 import Edit from '../components/guides/edit'
 import Image from '../components/guides/image'
-import withStyles from '../components/styled'
 
 const withGuides = withPostsFilterBy(inCategory('guides', { includeSubCategories: true }))
 
@@ -36,30 +35,34 @@ const Guide = withPost(withGuides( ( { post: current, posts: guides } ) => {
         <Side>
           <Navigation guides={guides} post={post} />
         </Side>
-        <Article>
-          <EditMe entry={post.data._entry} />
-          <Category>{post.data.category}</Category>
-          <Title>{post.data.title}</Title>
-          <Content
-            {...post}
-            renderers={{
-              h2: BlogSection,
-              blockquote: Blockquote,
-              code: Code,
-              p: Paragraph,
-              pre: CodeBlock,
-              img: Image
-            }}
-          />
-          <BottomNavigation guides={guides} post={post} />
-        </Article>
+        <TransitionGroup className="fade-transition-group" component={ArticleTransitionWrapper}>
+          <CSSTransition key={post.data.url} classNames="fade-transition" timeout={500}>
+            <Article>
+              <EditMe entry={post.data._entry} />
+              <Category>{post.data.category}</Category>
+              <Title>{post.data.title}</Title>
+              <Content
+                {...post}
+                renderers={{
+                  h2: BlogSection,
+                  blockquote: Blockquote,
+                  code: Code,
+                  p: Paragraph,
+                  pre: CodeBlock,
+                  img: Image
+                }}
+              />
+              <BottomNavigation guides={guides} post={post} />
+            </Article>
+           </CSSTransition>
+          </TransitionGroup> 
       </Section>
       <Footer />
     </Main>
   )
 }))
 
-export default withPageView(withStyles(Guide))
+export default withPageView(Guide)
 
 const EditMe = styled(Edit)`
   position: absolute;
@@ -88,6 +91,6 @@ const Blockquote = styled('blockquote')`
 const BlogSection = styled('h2')`
   margin: 1em 0;
   margin-left: -0.25em;
-  color: #000;
+  color: rgba(0,0,0, .8);
 `
 

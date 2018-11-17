@@ -6,7 +6,17 @@ className: try-it
 order: 4
 ---
 
+## Install __Nextein__ from npm.
 
-- Get it from [elmasse/nextein repository](https://github.com/elmasse/nextein)
-- Install it from npm with:  `npm install nextein`
-- Starter Kit [elmasse/nextein-starter repository](https://github.com/elmasse/nextein-starter)
+```bash
+$ npm install nextein
+```
+## Clone the __*Starter kit!*__ 
+[elmasse/nextein-starter repository](https://github.com/elmasse/nextein-starter)
+
+```bash
+$ git clone https://github.com/elmasse/nextein-starter.git
+$ cd nextein-starter
+nextein-starter $ npm install
+nextein-starter $ npm run dev
+```

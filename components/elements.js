@@ -22,14 +22,20 @@ export const Side = styled('div')`
   background: #eee;
 `
 
+export const ArticleTransitionWrapper = styled('div')`
+  flex: 4;
+  width: 1px; /* width to get the Article to not expand */
+`
+
 export const Article = styled('article')`
   position: relative;
-  flex: 4;
-  width: 1px; // width to get the Article to not expand
+  // flex: 4;
+  // width: 1px; // width to get the Article to not expand
   padding: 3.5em 0 3.5em 3.5em;
 `
 
 export const Title = styled('h1')`
+  color: rgba(0,0,0, .8);
   font-size: 4em;
   font-weight: 100;
   margin-top: -15px;
@@ -39,6 +45,7 @@ export const Title = styled('h1')`
 `
 
 export const Category = styled('h2')`
+  color: rgba(0,0,0, .8);
   font-size: .8em;
   font-weight: 100;
   color: #666;

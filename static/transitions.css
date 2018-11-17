@@ -1,0 +1,76 @@
+
+/* HOME */
+.hello-appear,
+.brand-appear,
+.actions-appear {
+  opacity: 0;
+}
+
+.hello-appear {
+  transform: translateX(-240px);
+}
+.brand-appear {
+  transform: translateY(-40px);
+}
+.actions-appear {
+  transform: translateY(40px);
+}
+
+.hello-appear-active,
+.brand-appear-active,
+.actions-appear-active {
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+  transform: translate(0, 0);
+}
+
+.brand-appear-active {
+  transition-delay: 650ms;
+}
+.actions-appear-active {
+  transition-delay: 1000ms;
+}
+
+/* NAVIGATION */
+
+.navigation-title-appear {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.navigation-title-appear-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 350ms ease-out;
+  transition-delay: 150ms;
+}
+
+.navigation-title-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.navigation-title-exit-active {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 500ms ease-in;
+}
+
+/* GUIDES & DOCS */
+
+.fade-transition-enter {
+  opacity: 0;
+  /* transform: translateX(-100vw); */
+}
+.fade-transition-enter-active {
+  opacity: 1;
+  /* transform: translateX(0); */
+  transition: opacity 500ms ease-out;
+}
+.fade-transition-exit {
+  opacity: 1;
+  /* transform: translateX(0); */
+}
+.fade-transition-exit-active {
+  opacity: 0;
+  /* transform: translateX(100vw); */
+  transition: opacity 350ms ease-in;
+}

@@ -22,8 +22,9 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>Nextein</title>
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+          <link rel='stylesheet' type='text/css' href='/static/nprogress.css' />
+          <link rel='stylesheet' type='text/css' href='/static/transitions.css' />
         </Head>
         <body>
           <Main />

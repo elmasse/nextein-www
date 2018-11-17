@@ -2,18 +2,30 @@
 import React from 'react'
 import styled from 'react-emotion'
 import Link from 'nextein/link'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 export default () => {
   return (
     <Header>
       <Main>
-        <Hello>Hello there!</Hello>
-        <Title>I'm <Brand>Nextein</Brand></Title>
+      <TransitionGroup className="home-group" component={null}>
+        <CSSTransition classNames="hello" timeout={750} appear in>
+          <Hello>Hello there!</Hello>
+        </CSSTransition>
+        <CSSTransition classNames="brand" timeout={1500} appear in> 
+          <Title>I'm <Brand>Nextein</Brand></Title>
+        </CSSTransition>
+      </TransitionGroup>
       </Main>
-      <Actions>
-        <Link href="/guides" passHref><Button >Guides</Button></Link>
-        <Link href="/docs" passHref><Secondary inverted>Docs</Secondary></Link>
-      </Actions>
+      <TransitionGroup className="action-group" component={null}>
+        <CSSTransition classNames="actions" timeout={2000} appear in>
+          <Actions>
+            <Link href="/guides" passHref><Button >Guides</Button></Link>
+            <Link href="/docs" passHref><Secondary inverted>Docs</Secondary></Link>
+          </Actions>
+        </CSSTransition>
+      </TransitionGroup>
+
     </Header>
   )
 }

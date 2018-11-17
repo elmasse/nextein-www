@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
+import Link from 'nextein/link'
 
 import Github from './icons/github'
 import Gitter from './icons/gitter'
@@ -14,14 +15,14 @@ export default () => {
           <Notice>Copyright &copy; { new Date().getFullYear() } - Max Fierro</Notice>
         </Brand>
         <SiteMap>
-          <a href="/">HOME</a>
-          <a href="/guides">GUIDES</a>
-          <a href="/docs">DOCS</a>
+          <Link href="/"><a>HOME</a></Link>
+          <Link href="/guides"><a>GUIDES</a></Link>
+          <Link href="/docs"><a>DOCS</a></Link>
         </SiteMap>
         <Social>
-          <a href="https://gitter.im/nextein" target="_blank"><Gitter fill="#564949" width="20" alt="Gitter IM"/></a>
-          <a href="https://github.com/elmasse/nextein" target="_blank"><Github fill="#564949" width="35" alt="Github"/></a>
-          <a href="https://www.npmjs.com/package/nextein" target="_blank"><Npm fill="#564949" width="45" alt="npm" /></a>
+          <a href="https://gitter.im/nextein" target="_blank"><Gitter fill="#564949" width="16" alt="Gitter IM"/></a>
+          <a href="https://github.com/elmasse/nextein" target="_blank"><Github fill="#564949" width="24" alt="Github"/></a>
+          <a href="https://www.npmjs.com/package/nextein" target="_blank"><Npm fill="#564949" width="32" alt="npm" /></a>
         </Social>
       </Grid>
       <BuiltWithLove />
@@ -40,7 +41,7 @@ const Footer = styled('footer')`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: #272121;
+  background: #131010;
   min-height: 250px;
 `
 
@@ -48,14 +49,13 @@ const Grid = styled('div')`
   display: flex;
   flex: 1;
   padding: 32px;
-  width: 900px;
-  margin: auto;
 `
 const SiteMap = styled('div')`
   flex: 2;
   padding: 1em 0;
   border-top: 1px solid #564949;
   & a {
+    font-size: .8em;
     display: block;
     text-decoration: none;
     padding: 2px 0;
@@ -67,26 +67,27 @@ const SiteMap = styled('div')`
 
 const Brand = styled('div')`
   color: #f63;
-  font-size: 2.5em;
+  font-size: 1.5em;
   margin-right: 2em;
 `
 
 const Notice = styled('div')`
-  font-size: 11px;
+  font-size: .3em;
   color: #f1f1f1;
   text-transform: uppercase;
   letter-spacing: .06em;
+  padding-top: 12px;
 `
 
 const Social = styled('div')`
   flex: 1;
   padding: 1em 0;
   border-top: 1px solid #f63;
-  font-size: 2em;
   font-weight: 300;
   color: #f63;
   display: flex;
   align-items: center;
+  align-self: baseline;
   justify-content: flex-end;
   & a {
     padding: 5px;
@@ -98,7 +99,7 @@ const Social = styled('div')`
 `
 
 const Built = styled('div')`
-  background-color: #131010;
+  
 
   padding: 16px 0;
   align-self: stretch;
