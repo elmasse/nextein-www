@@ -65,7 +65,7 @@ const MethodName = styled('div')`
   font-size: 1.8em;
   line-height: 2em;
   font-weight: 600;
-  color: #000;
+  color: rgba(0,0,0, .8);
   margin: 2em 0 0 -2px;
 
   > em {

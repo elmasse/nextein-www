@@ -1,9 +1,9 @@
-const { default: config } = require('nextein/config')
+const { withNextein } = require('nextein/config')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 const EnvironmentPlugin = require('webpack/lib/EnvironmentPlugin')
 
-module.exports = config({
+module.exports = withNextein({
   webpack: (config) => {
     config.plugins.push(
       ...[      

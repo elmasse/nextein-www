@@ -91,6 +91,6 @@ const Blockquote = styled('blockquote')`
 const BlogSection = styled('h2')`
   margin: 1em 0;
   margin-left: -0.25em;
-  color: #000;
+  color: rgba(0,0,0, .8);
 `
 

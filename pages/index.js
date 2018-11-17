@@ -24,6 +24,7 @@ const Index = withIndexSections(({ posts }) => {
   return (
     <Main>
       <Head>
+        <title>Nextein</title>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" />
       </Head>
 
@@ -82,6 +83,7 @@ const Section = styled('section')`
   text-shadow: 0 0 1px #eee;
 
   & h2 {
+    color: rgba(0,0,0, .8);
     font-size: 1.1em;
     font-weight: 100;
   }

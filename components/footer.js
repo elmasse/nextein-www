@@ -20,9 +20,9 @@ export default () => {
           <Link href="/docs"><a>DOCS</a></Link>
         </SiteMap>
         <Social>
-          <a href="https://gitter.im/nextein" target="_blank"><Gitter fill="#564949" width="20" alt="Gitter IM"/></a>
-          <a href="https://github.com/elmasse/nextein" target="_blank"><Github fill="#564949" width="35" alt="Github"/></a>
-          <a href="https://www.npmjs.com/package/nextein" target="_blank"><Npm fill="#564949" width="45" alt="npm" /></a>
+          <a href="https://gitter.im/nextein" target="_blank"><Gitter fill="#564949" width="16" alt="Gitter IM"/></a>
+          <a href="https://github.com/elmasse/nextein" target="_blank"><Github fill="#564949" width="24" alt="Github"/></a>
+          <a href="https://www.npmjs.com/package/nextein" target="_blank"><Npm fill="#564949" width="32" alt="npm" /></a>
         </Social>
       </Grid>
       <BuiltWithLove />
@@ -41,7 +41,7 @@ const Footer = styled('footer')`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: #272121;
+  background: #131010;
   min-height: 250px;
 `
 
@@ -49,8 +49,6 @@ const Grid = styled('div')`
   display: flex;
   flex: 1;
   padding: 32px;
-  width: 900px;
-  margin: auto;
 `
 const SiteMap = styled('div')`
   flex: 2;
@@ -69,15 +67,16 @@ const SiteMap = styled('div')`
 
 const Brand = styled('div')`
   color: #f63;
-  font-size: 2.5em;
+  font-size: 1.5em;
   margin-right: 2em;
 `
 
 const Notice = styled('div')`
-  font-size: 11px;
+  font-size: .3em;
   color: #f1f1f1;
   text-transform: uppercase;
   letter-spacing: .06em;
+  padding-top: 12px;
 `
 
 const Social = styled('div')`
@@ -100,7 +99,7 @@ const Social = styled('div')`
 `
 
 const Built = styled('div')`
-  background-color: #131010;
+  
 
   padding: 16px 0;
   align-self: stretch;
