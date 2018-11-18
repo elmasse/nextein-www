@@ -6,12 +6,12 @@ className: try-it
 order: 4
 ---
 
-## Install __Nextein__ from npm.
+Install __Nextein__ from npm:
 
 ```bash
 $ npm install nextein
 ```
-## Clone the __*Starter kit!*__ 
+Or clone the __*Starter kit!*__  from
 [elmasse/nextein-starter repository](https://github.com/elmasse/nextein-starter)
 
 ```bash
