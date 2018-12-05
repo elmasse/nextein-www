@@ -1,19 +1,20 @@
 import React from 'react'
 import NextApp, { Container } from 'next/app'
-import { injectGlobal, hydrate } from 'react-emotion'
-
+// import { injectGlobal, hydrate } from 'emotion'
+import { Global, css } from '@emotion/core'
 // Adds server generated styles to emotion cache.
 // '__NEXT_DATA__.ids' is set in '_document.js'
-if (typeof window !== 'undefined') {
-  hydrate(window.__NEXT_DATA__.ids)
-}
+// if (typeof window !== 'undefined') {
+//   hydrate(window.__NEXT_DATA__.ids)
+// }
 
 export default class App extends NextApp {
 
   render () {    
     const { Component, pageProps } = this.props;
 
-    injectGlobal`
+    // injectGlobal
+    const globalStyles = `
       body {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
@@ -32,6 +33,7 @@ export default class App extends NextApp {
     `    
     return (
       <Container>
+        <Global styles={css`${globalStyles}`} />
         <Component { ...pageProps } />
       </Container>
     )

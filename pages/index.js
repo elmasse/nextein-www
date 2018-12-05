@@ -3,7 +3,7 @@ import React from 'react'
 import Head from 'next/head'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content as PostContent } from 'nextein/post'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 
 import Header from '../components/header'
 import Navigation from '../components/navigation'

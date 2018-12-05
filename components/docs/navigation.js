@@ -1,6 +1,6 @@
 
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled from '@emotion/styled'
 import { inCategory } from 'nextein/posts'
 import Link from 'nextein/link'
 

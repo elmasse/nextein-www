@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled from '@emotion/styled'
 import Link from 'nextein/link'
 
 import Github from './icons/github'
