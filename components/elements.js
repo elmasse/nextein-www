@@ -1,113 +1,143 @@
 import React from 'react'
-import styled from '@emotion/styled'
 
-export const Main = styled('main')`
-  display: flex;
-  flex-direction: column;
-  color: #666;
-`
+export const Blockquote = ({ children, ...props }) => {
+  return (
+    <blockquote {...props}>
+      {children}
+      <style jsx>{`
+        blockquote {
+          margin: calc(var(--spacing) * 3) 0;
+          padding-left: calc(var(--spacing) * 3);
+          border-left: calc(var(--spacing) * .5) solid var(--grey500);
+          background-color: var(--grey50);
+        }
+      `}</style>
+    </blockquote>
+  )
+}
 
-export const Section = styled('section')`
-  background: #f9f9f9;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  & p + h2 {
-    margin-top: 40px;
-  }
-`
+export const Heading1 = ({ children, ...props }) => {
+  return (
+    <h1 {...props}>
+      {children}
+      <style jsx>{`
+        h1 {
+          margin-left: calc(var(--spacing) * -0.5);
+          margin-bottom: calc(var(--spacing) * 4);
+          margin-top: calc(var(--spacing) * 6)
+        }
+      `}</style>
+    </h1>
+  )
+}
 
-export const Side = styled('div')`
-  flex: .9;
-  background: #eee;
-`
+export const Heading2 = ({ children, ...props }) => {
+  return (
+    <h2 {...props}>
+      {children}
+      <style jsx>{`
+        h2 {
+          margin-left: calc(var(--spacing) * -0.5);
+          margin-bottom: calc(var(--spacing) * 3);
+          margin-top: calc(var(--spacing) * 5)
+        }
+      `}</style>
+    </h2>
+  )
+}
 
-export const ArticleTransitionWrapper = styled('div')`
-  flex: 4;
-  width: 1px; /* width to get the Article to not expand */
-`
+export const Heading3 = ({ children, ...props }) => {
+  return (
+    <h3 {...props}>
+      {children}
+      <style jsx>{`
+        h3 {
+          margin-left: calc(var(--spacing) * -0.5);
+          margin-bottom: calc(var(--spacing) * 2.5);
+          margin-top: calc(var(--spacing) * 4)
+        }
+      `}</style>
+    </h3>
+  )
+}
 
-export const Article = styled('article')`
-  position: relative;
-  // flex: 4;
-  // width: 1px; // width to get the Article to not expand
-  padding: 3.5em 0 3.5em 3.5em;
-`
+export const Heading4 = ({ children, ...props }) => {
+  return (
+    <h4 {...props}>
+      {children}
+      <style jsx>{`
+        h4 {
+          margin-left: calc(var(--spacing) * -0.5);
+          margin-bottom: calc(var(--spacing) * 2);
+          margin-top: calc(var(--spacing) * 3)
+        }
+      `}</style>
+    </h4>
+  )
+}
 
-export const Title = styled('h1')`
-  color: rgba(0,0,0, .8);
-  font-size: 4em;
-  font-weight: 100;
-  margin-top: -15px;
-  margin-bottom: 130px;
-  padding-bottom: 15px;
-  border-bottom: 3px solid #f63;
-`
+export const Paragraph = ({ children, ...props }) => {
+  return (
+    <p {...props}>
+      {children}
+      <style jsx>{`
+        p {
+          margin: calc(var(--spacing) * 3) 0;
+          line-height: 1.54;
+          letter-spacing: -0.003em;
+          font-weight: 400;
+          color: var(--main-color);
+        }
+      `}</style>
+    </p>
+  )
+}
 
-export const Category = styled('h2')`
-  color: rgba(0,0,0, .8);
-  font-size: .8em;
-  font-weight: 100;
-  color: #666;
-  text-transform: uppercase;
-`
+export const Pre = ({ children, ...props }) => {
+  return (
+    <pre {...props}>
+      {children}
+      <style jsx>{`
+        pre {
+          margin: calc(var(--spacing) * 3) 0;
+          padding: calc(var(--spacing) * 2);
+          border: 1px solid var(--main-color);
+          overflow: auto;
+          line-height: 1;
+          font-size: .9em;
+        }
+      `}</style>
+    </pre>
+  )
+}
 
-export const Paragraph = styled('p')`
-  font-size: 1.25em;
-  font-weight: 300;
-  color: #444;
-  margin: 0;
-  letter-spacing: -0.05px;
-  line-height: 1.5em;
-  max-width: 800px;
+export const List = ({ children, ...props }) => {
+  return (
+    <ul {...props}>
+      {children}
+      <style jsx>{`
+        ul {
+          margin: calc(var(--spacing) * 2) 0;
+        }
 
-  &:not(:first-child):not(:last-child) {
-    margin: 1em 0;
-  }
+        ul :global(ul) {
+          margin: 0;
+        }
+      `}</style>
+    </ul>
+  )
+}
 
-  & strong, & b {
-    font-weight: 600;
-  }
-
-  &  code {
-    font-size: .95em;
-    display: inline-block;
-    padding: 0 5px;
-    background-color: #eee;
-    vertical-align: bottom;
-  }
-`
-
-export const Blockquote = styled('blockquote')`
-  margin: 0;
-  padding-left: 1.25em;
-  border-left: 5px solid; 
-  & p > {
-    margin: 0;
-  }
-`
-
-export const CodeBlock = styled('pre')`
-  margin: 1.5em 0;
-  font-size: 1.2em;
-  padding: .5em 1.2em;
-  background: #f2f2f2;
-  & .hljs {
-    background: #f2f2f2;
-  }
-`
-
-export const List = styled('ul')`  
-  &, & li > p {
-    font-size: 1.1em;
-    line-height: 1.5em;
-  }
-
-  & code, & p code {
-    font-size: 1em;
-    display: inline-block;
-    padding: 0 5px;
-    background-color: #eee;
-  }
-  
-`
+export const ListItem = ({ children, ...props }) => {
+  return (
+    <li {...props}>
+      {children}
+      <style jsx>{`
+        li {
+          list-style: none;
+          margin: calc(var(--spacing) * 1);
+        }
+      `}</style>
+    </li>
+  )
+}
