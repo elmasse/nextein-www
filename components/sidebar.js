@@ -34,10 +34,16 @@ export default class Sidebar extends Component {
         </List>
         <style jsx>{`
           .container {
-            position: ${'fixed' in props ? 'fixed': 'static'};
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            width: ${'width' in props ? `${props.width}` : 'auto'};
+            padding: 0 var(--spacing);
+            padding-top: calc(var(--spacing) * 8);
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
-            max-width: 288px;
+            background: var(--grey100);
           }
 
           .toc {

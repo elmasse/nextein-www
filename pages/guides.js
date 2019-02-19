@@ -44,10 +44,12 @@ class Guides extends Component {
               />
               <footer></footer>
             </article>
-            <aside><Sidebar current={post} posts={posts} fixed /></aside>
+            <aside><Sidebar current={post} posts={posts} fixed width={`var(--sidebar-width)`}/></aside>
           </div>
           <footer ></footer>
           <style jsx>{`
+            --sidebar-width: calc(var(--spacing) * 38);
+
             .container > * {
               margin: 0 auto;
               max-width: 64em;
@@ -75,11 +77,9 @@ class Guides extends Component {
 
             aside {
               margin-top: calc(var(--spacing) * -11);
-              padding: 0 calc(var(--spacing) * 1);
               padding-top: calc(var(--spacing) * 3);
-              width: calc(var(--spacing) * 36);
+              width: var(--sidebar-width);
               border-left: 1px solid #eee;
-              background: var(--grey100);
               overflow-y: auto;
             }
           `}</style>
