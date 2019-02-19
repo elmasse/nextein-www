@@ -7,7 +7,7 @@ const extractHeaders = (post) => {
   const { content } = post
 
   const appendValue = item => textNode => {
-    item.value = textNode.value
+    item.value += `${textNode.value.trim()} `
   }
   const appendHref = item => node => {
     if (node.tagName === 'a') {
@@ -17,11 +17,12 @@ const extractHeaders = (post) => {
   
   return selectAll('h1,h2,h3,h4,h5,h6', content).map(node => {
     const item = {
-      type: node.tagName
+      type: node.tagName,
+      value: ''
     }
     visit(node, 'text', appendValue(item))
     visit(node, 'element', appendHref(item))
-    return item
+    return { ...item, value: item.value.trim() }
   })
 }
 
