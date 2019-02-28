@@ -54,7 +54,12 @@ export default class Header extends Component {
           }
 
           .terminal {
-            padding: 7em 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+            flex: 1;
+            padding: 0 calc(var(--spacing) * 5);
           }        
         `}</style>          
       </div>
