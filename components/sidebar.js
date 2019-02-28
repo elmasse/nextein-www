@@ -1,43 +1,60 @@
 import React, { Component } from 'react'
+import { inCategory } from 'nextein/posts'
 import Link from 'nextein/link'
 
 import { List, ListItem } from './elements'
 
 export default class Sidebar extends Component {
-  render() {
-    const { posts, current, ...props } = this.props
+  groupPosts() {
+    const { posts, categories = {} } = this.props
+    posts.sort((a, b) => a.data.order - b.data.order)
 
+    const keys = Object.keys(categories)
+    return keys.length ?
+      keys.map(category => ({ title: categories[category], posts: posts.filter(inCategory(category)) }))
+      : [{ posts }]
+  }
+  render() {
+    const { current } = this.props
+    const groups = this.groupPosts()
     return (
       <div className="container">
         <List>
-          {posts.map((post, idx) => {
-            const { data } = post
-            const active = post.data.url === current.data.url
-            return (
-              <ListItem key={`sidenav-${idx}`}>
-                <Link { ...post } ><a className={`toc ${active ? 'active' : ''}`}>{data.title}</a></Link>
-                {active && post.data.toc &&
-                  <List>
-                    {post.data.toc.map((item, itemIdx) => {
-                      return (
-                        <ListItem key={`sidenav-${idx}-item-${itemIdx}`}>
-                          <Link href={item.href}><a className={`toc toc-${item.type}`}>{item.value}</a></Link>
-                        </ListItem>
-                      )
-                    })
+          {groups.map(({ title, posts }) => 
+            <React.Fragment key={`${title || 'all'}`}>
+              {title && <div className="separator">{title}</div>}
+              {posts.map((post, idx) => {
+                const { data } = post
+                const active = post.data.url === current.data.url
+                return (
+                  <ListItem key={`sidenav-${idx}`}>
+                    <Link { ...post } ><a className={`toc ${active ? 'active' : ''}`}>{data.title}</a></Link>
+                    {active && post.data.toc &&
+                      <List>
+                        {post.data.toc.map((item, itemIdx) => {
+                          return (
+                            <ListItem key={`sidenav-${idx}-item-${itemIdx}`}>
+                              <Link href={item.href}><a className={`toc toc-${item.type}`}>{item.value}</a></Link>
+                            </ListItem>
+                          )
+                        })
+                        }
+                      </List>
                     }
-                  </List>
-                }
-              </ListItem>
-            )
-          })}
+                  </ListItem>
+                )
+              })}
+            </React.Fragment>
+            
+          
+          )}
         </List>
         <style jsx>{`
           .container {
             position: fixed;
             top: 0;
             height: 100vh;
-            width: ${'width' in props ? `${props.width}` : 'auto'};
+            width: ${'width' in this.props ? `${this.props.width}` : 'auto'};
             padding: 0 var(--spacing);
             padding-top: calc(var(--spacing) * 8);
             overflow-y: auto;
@@ -45,7 +62,12 @@ export default class Sidebar extends Component {
             flex-direction: column;
             background: var(--grey100);
           }
-
+          .separator {
+            text-transform: uppercase;            
+            padding: var(--spacing);
+            border-bottom: 1px solid var(--grey400);
+            color: var(--main-color);
+          }
           .toc {
             display: block;
             padding: var(--spacing);
