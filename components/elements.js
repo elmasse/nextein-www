@@ -22,6 +22,8 @@ export const Heading1 = ({ children, ...props }) => {
       {children}
       <style jsx>{`
         h1 {
+          font-family: var(--font-family-heading);
+          font-size: 4.4em;
           margin-left: calc(var(--spacing) * -0.5);
           margin-bottom: calc(var(--spacing) * 4);
           margin-top: calc(var(--spacing) * 6)
@@ -37,6 +39,8 @@ export const Heading2 = ({ children, ...props }) => {
       {children}
       <style jsx>{`
         h2 {
+          font-family: var(--font-family-heading);
+          font-size: 2.35em;
           margin-left: calc(var(--spacing) * -0.5);
           margin-bottom: calc(var(--spacing) * 3);
           margin-top: calc(var(--spacing) * 5)
@@ -52,6 +56,8 @@ export const Heading3 = ({ children, ...props }) => {
       {children}
       <style jsx>{`
         h3 {
+          font-family: var(--font-family-heading);
+          font-size: 1.8em;
           margin-left: calc(var(--spacing) * -0.5);
           margin-bottom: calc(var(--spacing) * 2.5);
           margin-top: calc(var(--spacing) * 4)
@@ -67,12 +73,47 @@ export const Heading4 = ({ children, ...props }) => {
       {children}
       <style jsx>{`
         h4 {
+          font-family: var(--font-family-heading);
+          font-size: 1.5em;
           margin-left: calc(var(--spacing) * -0.5);
           margin-bottom: calc(var(--spacing) * 2);
           margin-top: calc(var(--spacing) * 3)
         }
       `}</style>
     </h4>
+  )
+}
+
+export const Heading5 = ({ children, ...props }) => {
+  return (
+    <h5 {...props}>
+      {children}
+      <style jsx>{`
+        h5 {
+          font-family: var(--font-family-heading);
+          font-size: 1.3em;
+          margin-left: calc(var(--spacing) * -0.5);
+          margin-bottom: calc(var(--spacing) * 2);
+          margin-top: calc(var(--spacing) * 3)
+        }
+      `}</style>
+    </h5>
+  )
+}
+export const Heading6 = ({ children, ...props }) => {
+  return (
+    <h6 {...props}>
+      {children}
+      <style jsx>{`
+        h6 {
+          font-family: var(--font-family-heading);
+          font-size: 1.1em;
+          margin-left: calc(var(--spacing) * -0.5);
+          margin-bottom: calc(var(--spacing) * 2);
+          margin-top: calc(var(--spacing) * 3)
+        }
+      `}</style>
+    </h6>
   )
 }
 
