@@ -52,28 +52,6 @@ export default class App extends NextApp {
             flex-direction: row;
           }
 
-          h1,h2,h3,h4,h5,h6 {
-            font-family: var(--font-family-heading);
-          }
-          h1 {
-            font-size: 3em;
-          }
-          h2 {
-            font-size: 2.2em;
-          }
-          h3 {
-            font-size: 1.8em;            
-          }
-          h4 {
-            font-size: 1.5em;
-          }
-          h5 {
-            font-size: 1.3em;
-          }
-          h6 {
-            font-size: 1.1em;
-          }
-
         `}</style>
         <Component { ...pageProps } />
 
