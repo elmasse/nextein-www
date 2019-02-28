@@ -38,7 +38,7 @@ export default withPosts( ({ posts }) => {
 
 > `next/link` will work out of the box.
 
-#### Using a Post url
+### Using a Post url
 
 You can pass the `post.data.url` or any other page url into the `href` property. This is specially usefull when you want to cross reference a post or in a Navigation Component. 
 

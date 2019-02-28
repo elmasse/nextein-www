@@ -4,16 +4,16 @@ page: docs
 order: 1
 ---
 
-## config
+## withNextein
 
 A wrapper configuration function to be applied into the `next.config.js`. It provides a way to add your own `next.js` config along with `nextein` internal next.js config.
 
 
 ```js
 
-const { default: nexteinConfig } = require('nextein/config')
+const { withNextein } = require('nextein/config')
 
-module.exports = nexteinConfig({
+module.exports = withNextein({
   // Your own next.js config here
 })
 
