@@ -15,7 +15,7 @@ module.exports = withNextein({
       {
         name: './plugins/extract-toc',
         options: {
-          categories: ['guides']
+          categories: ['guides', 'docs']
         }
       }    
     ]
