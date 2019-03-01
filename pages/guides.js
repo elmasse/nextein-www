@@ -8,6 +8,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
+import ScrollSync from '../components/scrollsync'
 import { Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Pre } from '../components/elements'
 
 class Guides extends Component {
@@ -25,27 +26,33 @@ class Guides extends Component {
           <header>
             <Navigation/>
           </header>
-          <div className="rows">
-            <article>
-              <header>
-                <Heading1>{post.data.title}</Heading1>
-              </header>
-              <Content
-                className="content columns"
-                {...post}
-                renderers={{
-                  blockquote: Blockquote,
-                  h2: Heading2,
-                  h3: Heading3,
-                  h4: Heading4,
-                  p: Paragraph,
-                  pre: Pre
-                }}
-              />
-              <footer></footer>
-            </article>
-            <aside><Sidebar current={post} posts={posts} fixed width={`var(--sidebar-width)`}/></aside>
-          </div>
+              <div className="rows">
+                <article>
+                  <header>
+                    <Heading1>{post.data.title}</Heading1>
+                  </header>
+                  <Content
+                    className="content columns"
+                    {...post}
+                    renderers={{
+                      blockquote: Blockquote,
+                      h2: Heading2,
+                      h3: Heading3,
+                      h4: Heading4,
+                      p: Paragraph,
+                      pre: Pre
+                    }}
+                  />
+                  <footer></footer>
+                </article>
+                <aside>
+                  <ScrollSync post={post}>
+                    {({ activeTarget }) => (
+                      <Sidebar current={post} activeTarget={activeTarget}  posts={posts} fixed width={`var(--sidebar-width)`}/>
+                    )}
+                  </ScrollSync>
+                </aside>
+              </div>
           <footer ></footer>
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);

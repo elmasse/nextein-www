@@ -26,7 +26,8 @@ export default class App extends NextApp {
             --grey800: #212121;
             --grey900: #181818;
 
-            --main-color: var(--grey700);            
+            --main-color: var(--grey700);
+            --action-color: #f63;
           }
 
           * {

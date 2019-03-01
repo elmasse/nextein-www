@@ -15,7 +15,7 @@ export default class Sidebar extends Component {
       : [{ posts }]
   }
   render() {
-    const { current } = this.props
+    const { current, activeTarget } = this.props
     const groups = this.groupPosts()
     return (
       <div className="container">
@@ -32,8 +32,9 @@ export default class Sidebar extends Component {
                     {active && post.data.toc &&
                       <List>
                         {post.data.toc.map((item, itemIdx) => {
+                          const active = item.href === `#${activeTarget}`
                           return (
-                            <ListItem key={`sidenav-${idx}-item-${itemIdx}`}>
+                            <ListItem key={`sidenav-${idx}-item-${itemIdx}`} className={`target ${active ? 'active' : ''}`}>
                               <Link href={item.href}><a className={`toc toc-${item.type}`}>{item.value}</a></Link>
                             </ListItem>
                           )
@@ -94,6 +95,18 @@ export default class Sidebar extends Component {
             font-style: italic;
             padding-left: calc(var(--spacing) * 2);
           } 
+
+          .container :global(.target)  {
+            border-left: 2px solid transparent;
+            transition: all 0.2s ease;
+          }
+          .container :global(.target.active) {
+            border-left-color: var(--action-color);
+          }
+          .container :global(.target.active .toc) {
+            font-weight: bold;
+          }
+
         `}</style>
       </div>
     )
