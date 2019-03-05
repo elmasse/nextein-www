@@ -31,7 +31,7 @@ class Index extends Component {
           </footer>
           <style jsx>{`
             .container {
-              background: radial-gradient(ellipse at top , var(--grey700), transparent) var(--grey900);
+              background: radial-gradient(ellipse at top , var(--grey700), var(--grey900));
               color: var(--grey100);            
             }
 
