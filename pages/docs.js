@@ -20,7 +20,6 @@ class Docs extends Component {
       <React.Fragment>
         <Head>
           <title>Nextein | Docs | {post.data.title}</title>
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" />
         </Head>
         <div className="container">
           <header>
@@ -51,8 +50,7 @@ class Docs extends Component {
               <Sidebar
                 current={post}
                 posts={posts}
-                categories={{'docs/api': 'api', 'docs/content': 'content' }}
-                fixed
+                categories={{'docs/api': 'api', 'docs/content': 'content' }}                
                 width={`var(--sidebar-width)`}
               />
             </aside>

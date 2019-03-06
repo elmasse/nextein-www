@@ -20,7 +20,6 @@ class Guides extends Component {
       <React.Fragment>
         <Head>
           <title>Nextein | Guides | {post.data.title}</title>
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" />
         </Head>
         <div className="container">
           <header>
@@ -48,7 +47,7 @@ class Guides extends Component {
                 <aside>
                   <ScrollSync post={post}>
                     {({ activeTarget }) => (
-                      <Sidebar current={post} activeTarget={activeTarget}  posts={posts} fixed width={`var(--sidebar-width)`}/>
+                      <Sidebar current={post} activeTarget={activeTarget} posts={posts} width={`var(--sidebar-width)`}/>
                     )}
                   </ScrollSync>
                 </aside>
