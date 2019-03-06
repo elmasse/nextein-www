@@ -10,7 +10,7 @@ export default class App extends NextApp {
       <Container>
         <style jsx global>{`
           :root {
-            --font-base: 18px;
+            --font-base: 16px;
             --font-family-heading: 'Montserrat';
             --font-family-body: 'Lato';
             --spacing: 8px;
