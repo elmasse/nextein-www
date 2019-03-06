@@ -85,11 +85,13 @@ export default class Sidebar extends Component {
 
           .toc.active {
             background: var(--grey200);
+            font-weight: bold;
           }
 
           .toc-h2 {
             font-size: 0.90em;
-          } 
+          }
+
           .toc-h3 {
             font-size: 0.88em;
             font-style: italic;
@@ -99,6 +101,8 @@ export default class Sidebar extends Component {
           .container :global(.target)  {
             border-left: 2px solid transparent;
             transition: all 0.2s ease;
+            margin-left: 0px;
+            padding-left: var(--spacing);            
           }
           .container :global(.target.active) {
             border-left-color: var(--action-color);
