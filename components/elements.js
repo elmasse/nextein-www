@@ -127,6 +127,7 @@ export const Paragraph = ({ children, ...props }) => {
           line-height: 1.54;
           letter-spacing: -0.003em;
           font-weight: 400;
+          font-size: 1.2em;
           color: var(--main-color);
         }
       `}</style>
