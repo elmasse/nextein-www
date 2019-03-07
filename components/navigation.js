@@ -26,6 +26,7 @@ export default class Navigation extends Component {
             align-items: center;    
             min-height: 4em;
             margin-bottom: calc(var(--spacing) * 2);
+            font-family: var(--font-family-heading);
           }
 
           nav > a {
