@@ -29,6 +29,7 @@ class Docs extends Component {
           <div className="rows">
             <article>
               <header>
+                <div className="category">{post.data.category}</div>
                 <Heading1>{post.data.title}</Heading1>
               </header>
               <Content
@@ -83,17 +84,21 @@ class Docs extends Component {
 
             article header {
               display: flex;
-              flex-direction: row;
+              flex-direction: column;
               flex-grow: 0;
               flex-shrink: 1;
               flex-basis: auto;
               justify-content: space-between;
               align-items: baseline;
-              margin: calc(var(--spacing) * 12) 0;
+              margin: calc(var(--spacing) * 10) 0;
             }
 
-            article header h1 {
-              font-size: 5em;
+            article header .category {
+              font-family: var(--font-family-heading);
+              font-size: 2em;
+              text-transform: uppercase;
+              color: var(--grey600);
+              margin-bottom: calc(var(--spacing) * -4);
             }
 
             aside {
