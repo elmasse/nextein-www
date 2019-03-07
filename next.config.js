@@ -1,23 +1,23 @@
 const { withNextein } = require('nextein/config')
+const withCSS = require('@zeit/next-css')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 const EnvironmentPlugin = require('webpack/lib/EnvironmentPlugin')
 
-module.exports = withNextein({
+module.exports = withNextein(withCSS({
   nextein: {
     plugins: [
       {
         name: 'nextein-plugin-markdown', 
         options: {
-          rehype: ['rehype-slug', 'rehype-autolink-headings']
+          rehype: ['rehype-slug', 'rehype-autolink-headings', 'rehype-prism']
         }
       },
       {
-        name: './plugins/extract-toc',
+        name: './plugins/nextein-plugin-toc',
         options: {
           categories: ['guides', 'docs']
         }
-      }    
+      }
     ]
   },
 
@@ -31,10 +31,6 @@ module.exports = withNextein({
         new EnvironmentPlugin({
           UA: 'UA-104061611-1'
         }),
-        new ContextReplacementPlugin(
-          /highlight\.js[/\/]lib[/\/]languages$/,
-          /javascript|json|markdown|bash|yaml|xml/
-        )
       ].filter(Boolean)
     )
 
@@ -43,6 +39,6 @@ module.exports = withNextein({
 
   exportPathMap: () => ({
     '/guides': { page: '/guides', query: {} }, // <-query is needed, otherwise shallow-eq returns error
-    // '/docs': { page: '/docs', query: {} }
+    '/docs': { page: '/docs', query: {} }
   })
-})
+}))

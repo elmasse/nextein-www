@@ -9,6 +9,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
+import ScrollSync from '../components/scrollsync'
 import { Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Pre, List, ListItem } from '../components/elements'
 
 class Docs extends Component {
@@ -47,12 +48,18 @@ class Docs extends Component {
               <footer></footer>
             </article>
             <aside>
-              <Sidebar
-                current={post}
-                posts={posts}
-                categories={{'docs/api': 'api', 'docs/content': 'content' }}                
-                width={`var(--sidebar-width)`}
-              />
+                <ScrollSync post={post}>
+                  {({ activeTarget }) => (
+                    <Sidebar
+                    current={post}
+                    posts={posts}
+                    activeTarget={activeTarget}
+                    categories={{'docs/api': 'api', 'docs/content': 'content' }}                
+                    width={`var(--sidebar-width)`}
+                  />
+    
+                  )}
+                </ScrollSync>              
             </aside>
           </div>
           <footer ></footer>

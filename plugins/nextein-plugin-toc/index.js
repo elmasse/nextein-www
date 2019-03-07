@@ -1,4 +1,3 @@
-const { selectAll } = require('hast-util-select')
 const visit = require('unist-util-visit')
 
 const { inCategory } = require('nextein/posts')
@@ -37,7 +36,7 @@ const filter = (categories = [], post) => {
   for ( const category of categories ) {
     if (inCategory(category, { includeSubCategories: true })(post)) return true
   }
-  return false
+  return !categories.length
 }
 
 module.exports.transform = async ({ categories = true, maxDepth = 6 }, posts) => {
