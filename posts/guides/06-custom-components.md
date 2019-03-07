@@ -200,6 +200,7 @@ export default withPost(({ post }) => {
 
 ![Using custom elements](/static/images/guides/06-custom-element.png)
 
-
-_A thing to notice_: We need to use the custom element with open and close tags (`<x-image></x-image>`) in the markdown file. 
+>_Notice_
+>
+> We need to use the custom element with open and close tags (`<x-image></x-image>`) in the markdown file. 
 

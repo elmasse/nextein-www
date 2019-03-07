@@ -3,7 +3,7 @@ title: Front Matter
 page: docs
 ---
 
-The __Front Matter__ configuration for posts controls many aspects of the generated content. All markdown files in the `posts` folder should start with a YAML fonrt matter block in between the three dashes separator as follows:
+The __Front Matter__ configuration for posts controls many aspects of the generated content. All markdown files in the `posts` folder should start with a YAML front matter block in between the three dashes separator as follows:
 
 ```yaml
 ---
