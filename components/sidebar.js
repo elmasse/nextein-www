@@ -65,9 +65,9 @@ export default class Sidebar extends Component {
           }
           .separator {
             text-transform: uppercase;            
-            padding: var(--spacing);
-            border-bottom: 1px solid var(--grey400);
+            padding: var(--spacing);            
             color: var(--main-color);
+            font-weight: bold;
           }
           .toc {
             display: block;
