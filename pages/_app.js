@@ -1,7 +1,7 @@
 import React from 'react'
 import NextApp, { Container } from 'next/app'
 
-import Prism from 'prismjs'
+import 'prismjs'
 
 export default class App extends NextApp {
 
