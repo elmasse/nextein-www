@@ -9,7 +9,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
-import { Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Pre } from '../components/elements'
+import { Blockquote, Heading1, Heading2, Heading3, Heading4, Img, Paragraph, Pre } from '../components/elements'
 
 class Guides extends Component {
   render() {
@@ -39,6 +39,7 @@ class Guides extends Component {
                       h2: Heading2,
                       h3: Heading3,
                       h4: Heading4,
+                      img: Img,
                       p: Paragraph,
                       pre: Pre
                     }}
