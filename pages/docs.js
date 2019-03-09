@@ -10,7 +10,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
-import { Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Pre, List, ListItem } from '../components/elements'
+import { Anchor, Code, Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Pre, List, ListItem } from '../components/elements'
 
 class Docs extends Component {
   render() {
@@ -36,6 +36,8 @@ class Docs extends Component {
                 className="content columns"
                 {...post}
                 renderers={{
+                  a: Anchor,
+                  code: Code,
                   blockquote: Blockquote,
                   h2: Heading2,
                   h3: Heading3,

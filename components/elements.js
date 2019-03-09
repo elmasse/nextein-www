@@ -1,5 +1,18 @@
 import React from 'react'
 
+export const Anchor = ({ children, ...props }) => {
+  return (
+    <a {...props}>
+      {children}
+      <style jsx>{`
+        a {
+          color: var(--action-color);
+        }
+      `}</style>
+    </a>
+  )
+}
+
 export const Blockquote = ({ children, ...props }) => {
   return (
     <blockquote {...props}>
@@ -13,6 +26,19 @@ export const Blockquote = ({ children, ...props }) => {
         }
       `}</style>
     </blockquote>
+  )
+}
+
+export const Code = ({ children, ...props }) => {
+  return (
+    <code {...props}>
+      {children}
+      <style jsx>{`
+        code {
+          background-color: var(--grey100);
+        }
+      `}</style>
+    </code>
   )
 }
 
@@ -147,6 +173,10 @@ export const Pre = ({ children, ...props }) => {
           overflow: auto;
           line-height: 1;
           font-size: .9em;
+        }
+
+        pre :global(code) {
+          background-color: transparent;
         }
       `}</style>
     </pre>
