@@ -8,7 +8,7 @@ This post will guide you on how to get started with **Nextein**. You'll need to 
 
 > To get the latest Node.js version please visit the [official Node.js website](https://nodejs.org/en/download/)
 
-## Create an npm project
+## Create an npm Project
 
 The first step is to use **npm** to create a project in order to install all dependencies.
 
@@ -16,7 +16,7 @@ The first step is to use **npm** to create a project in order to install all dep
 mkdir my-blog  && cd my-blog  && npm init -y
 
 ```
-## Install the dependencies
+## Install Dependencies
 
 For our first project we will need, at least, to install **Nextein**, **Next.js** and **React**. You can keep adding more as you need them later.
 
@@ -24,7 +24,7 @@ For our first project we will need, at least, to install **Nextein**, **Next.js*
 npm install --save next react react-dom nextein
 
 ```
-## Create your first page and post
+## Create Your First Page and Post
 
 **Next.js**'s projects follow a certain structure. **Nextein** requires creating a `next.config.js` file. This configuration file uses a wrapper for **Next.js** configuration.
 
@@ -88,7 +88,7 @@ npm run dev
 
 This will start a server available on [localhost:3000](http://localhost:3000).
 
-## Creating a single post Page
+## Creating a Single Post Page
 
 In the previous example the `pages/index.js` component rendered all files under the `posts` folder. Now, we are going to create a `Page` component to render only the post content.
 

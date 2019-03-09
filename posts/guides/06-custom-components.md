@@ -9,7 +9,7 @@ In this guide we are going to learn about using custom components in markdown po
 
 You can change elements in your markdown posts by using custom renderers in the `Content` component. These renderers are React components that will replace the original element.
 
-## Styling HTML elements
+## Styling HTML Elements
 
 The very first idea for allowing custom renderers is to allow developers to change elements. We can create a custom component to replace for instance `p` or `h2` elements.
 
@@ -118,7 +118,7 @@ The final result will render paragraphs with our style
 ![Custom Renders for Paragraphs](/static/images/guides/06-styled-p.png)
 
 
-## Custom elements
+## Custom Elements
 
 In a similar way we can use the renderers to define custom components. We can create a new tag in our markdown to display an image with a caption. If we use the `img` element (`![alt text](image url)`) we will end up with an `img` wrapped into a `p` element. In our case we are going to use a custom html element `x-image`. 
 

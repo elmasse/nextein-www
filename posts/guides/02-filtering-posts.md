@@ -43,7 +43,7 @@ const blog = posts.filter(inCategory('blog', { includeSubCategories: true }))
 
 ```
 
-## Custom filtering
+## Custom Filtering
 
 In case you want to use your own filter, the posts property is an Array and can be filtered out by the usual means. For instance, if we want to also filter out our blog posts by `author` we could write a filter function like this:
 
@@ -60,7 +60,7 @@ const maxBlog = posts
 
 ```
 
-## withPostsFilterBy
+## Using withPostsFilterBy
 
 You can use the `withPostsFilterBy` which returns an HOC with a pre-configured filter. This avoid to process all  posts and filtering them in your render method.
 
