@@ -25,37 +25,37 @@ class Guides extends Component {
           <header>
             <Navigation/>
           </header>
-              <div className="rows">
-                <article>
-                  <header>
-                    <div className="category">{post.data.category}</div>
-                    <Heading1>{post.data.title}</Heading1>
-                  </header>
-                  <Content
-                    className="content columns"
-                    {...post}
-                    renderers={{
-                      a: Anchor,
-                      code: Code,
-                      blockquote: Blockquote,
-                      h2: Heading2,
-                      h3: Heading3,
-                      h4: Heading4,
-                      img: Img,
-                      p: Paragraph,
-                      pre: Pre
-                    }}
-                  />
-                  <footer></footer>
-                </article>
-                <aside>
-                  <ScrollSync post={post}>
-                    {({ activeTarget }) => (
-                      <Sidebar current={post} activeTarget={activeTarget} posts={posts} width={`var(--sidebar-width)`}/>
-                    )}
-                  </ScrollSync>
-                </aside>
-              </div>
+          <div className="rows">
+            <article>
+              <header>
+                <div className="category">{post.data.category}</div>
+                <Heading1>{post.data.title}</Heading1>
+              </header>
+              <Content
+                className="content columns"
+                {...post}
+                renderers={{
+                  a: Anchor,
+                  code: Code,
+                  blockquote: Blockquote,
+                  h2: Heading2,
+                  h3: Heading3,
+                  h4: Heading4,
+                  img: Img,
+                  p: Paragraph,
+                  pre: Pre
+                }}
+              />
+              <footer></footer>
+            </article>
+            <aside>
+              <ScrollSync post={post}>
+                {({ activeTarget }) => (
+                  <Sidebar current={post} activeTarget={activeTarget} posts={posts} width={`var(--sidebar-width)`}/>
+                )}
+              </ScrollSync>
+            </aside>
+          </div>
           <footer ></footer>
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);
