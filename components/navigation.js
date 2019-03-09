@@ -5,7 +5,6 @@ import Github from './icons/github'
 import Npm from './icons/npm'
 
 export default class Navigation extends Component {
-
   render() {
     return (
       <nav>
@@ -14,10 +13,14 @@ export default class Navigation extends Component {
         <Link href="/guides"><a>Guides</a></Link>
         <Link href="/docs"><a>Docs</a></Link>
         <Link href="https://github.com/elmasse/nextein">
-          <a><Github fill="var(--grey500)" width="25" alt="Github" /></a>
+          <a target="_blank" rel="noopener noreferrer">
+            <Github width="25" alt="Github" />
+          </a>
         </Link>
         <Link href="https://www.npmjs.com/package/nextein">
-          <a><Npm fill="var(--grey500)" width="35" style={{ marginTop: '5px' }} alt="npm" /></a>
+          <a target="_blank" rel="noopener noreferrer">
+            <Npm width="35" style={{ marginTop: '5px' }} alt="npm" />
+          </a>
         </Link>  
         <style jsx>{`
           nav {
@@ -34,15 +37,23 @@ export default class Navigation extends Component {
             font-size: .885em;
           }
 
-          a, a:visited {
+          nav > a, nav > a:visited {
             color: var(--grey500);
             font-weight: 700;
             text-transform: uppercase;
             text-decoration: none;
           }
 
-          a:hover {
+          nav > a:hover {
             color: var(--grey600);
+          }
+
+          nav > a :global(svg) {
+            fill: var(--grey500);
+          }
+
+          nav > a :global(svg:hover) {
+            fill: var(--grey600);
           }
           
         `}</style>              
