@@ -10,6 +10,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
+import Footer from '../components/footer'
 import { Anchor, Code, Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Pre, List, ListItem } from '../components/elements'
 
 class Docs extends Component {
@@ -48,36 +49,30 @@ class Docs extends Component {
                   li: ListItem
                 }}
               />
-              <footer></footer>
+              <Footer/>
             </article>
             <aside>
-                <ScrollSync post={post}>
-                  {({ activeTarget }) => (
-                    <Sidebar
-                    current={post}
-                    posts={posts}
-                    activeTarget={activeTarget}
-                    categories={{'docs/api': 'api', 'docs/content': 'content' }}                
-                    width={`var(--sidebar-width)`}
-                  />
-    
-                  )}
-                </ScrollSync>              
+              <ScrollSync post={post}>
+                {({ activeTarget }) => (
+                  <Sidebar
+                  current={post}
+                  posts={posts}
+                  activeTarget={activeTarget}
+                  categories={{'docs/api': 'api', 'docs/content': 'content' }}                
+                  width={`var(--sidebar-width)`}
+                />
+  
+                )}
+              </ScrollSync>              
             </aside>
           </div>
-          <footer ></footer>
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);
-
-            .container > * {
-              margin: 0 auto;
-              max-width: 64em;
-            }
 
             article {
               flex: 1;
               width: 1px; /* width to get the Article to not expand */
-              padding-right: calc(var(--spacing) * 3);
+              padding: 0 calc(var(--spacing) * 4);
               display: flex;
               flex-direction: column;
               justify-content: flex-start;

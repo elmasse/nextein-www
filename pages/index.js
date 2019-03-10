@@ -8,6 +8,7 @@ import { Content } from 'nextein/post'
 
 import Navigation from '../components/navigation'
 import Hero from '../components/index/hero'
+import Footer from '../components/footer'
 
 const sortByOrder = (a, b) => a.data.order - b.data.order
 
@@ -26,18 +27,12 @@ class Index extends Component {
             <Navigation />
             <Hero />
           </header>
-          <footer>
-            Hello, Footer
-          </footer>
+          <Footer />
           <style jsx>{`
-            .container {
-              background: radial-gradient(ellipse at top , var(--grey700), var(--grey900));
-              color: var(--grey100);            
-            }
+            --main-color: var(--grey600);
 
-            .container > * {
-              margin: 0 auto;
-              max-width: 64em;          
+            .container {
+              background: radial-gradient(ellipse at 50% 0% , var(--grey700), var(--grey900));
             }
 
             header {

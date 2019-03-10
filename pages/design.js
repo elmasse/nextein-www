@@ -6,7 +6,7 @@ const loremImpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 export default class Design extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container columns">
         <article>
           <Heading1>Heading 1</Heading1>
           <Heading2>Heading 2</Heading2>
@@ -27,12 +27,6 @@ export default class Design extends Component {
           </List>
         </article>
         <style jsx>{`
-          .container {
-            margin: 0 auto;
-            max-width: 64em;
-            display: flex;
-            flex-direction: column;
-          }
           article {
             padding-right: calc(var(--spacing) * 3);
           }

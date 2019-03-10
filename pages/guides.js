@@ -9,6 +9,7 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
+import Footer from '../components/footer'
 import { Anchor, Code, Blockquote, Heading1, Heading2, Heading3, Heading4, Img, Paragraph, Pre } from '../components/elements'
 
 class Guides extends Component {
@@ -46,7 +47,7 @@ class Guides extends Component {
                   pre: Pre
                 }}
               />
-              <footer></footer>
+              <Footer />
             </article>
             <aside>
               <ScrollSync post={post}>
@@ -56,19 +57,13 @@ class Guides extends Component {
               </ScrollSync>
             </aside>
           </div>
-          <footer ></footer>
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);
-
-            .container > * {
-              margin: 0 auto;
-              max-width: 64em;
-            }
 
             article {
               flex: 1;
               width: 1px; /* width to get the Article to not expand */
-              padding-right: calc(var(--spacing) * 3);
+              padding: 0 calc(var(--spacing) * 4);
               display: flex;
               flex-direction: column;
               justify-content: flex-start;

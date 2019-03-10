@@ -21,7 +21,7 @@ export default class Navigation extends Component {
           <a target="_blank" rel="noopener noreferrer">
             <Npm width="35" style={{ marginTop: '5px' }} alt="npm" />
           </a>
-        </Link>  
+        </Link>
         <style jsx>{`
           nav {
             display: flex;

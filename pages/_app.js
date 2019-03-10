@@ -45,6 +45,11 @@ export default class App extends NextApp {
             font-weight: 100;
           }
 
+          .container > * {
+            margin: 0 auto;
+            max-width: 72em;          
+          }
+
           .columns {
             display: flex;
             flex-direction: column;
