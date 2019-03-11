@@ -13,7 +13,7 @@ export default class Pagination extends Component {
         {prev && (
           <Link {...prev}>
             <a className="prev columns">
-              <div className="nav-to">Prev</div>
+              <div className="nav-to">Previous</div>
               <div className="title">{prev.data.title}</div>
               <div className="category">{prev.data.category}</div>
             </a>
@@ -32,10 +32,9 @@ export default class Pagination extends Component {
           nav {
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: flex-start;
             min-height: 4em;
-            margin: calc(var(--spacing) * 8) 0;
-            font-family: var(--font-family-heading);            
+            margin: calc(var(--spacing) * 8) 0;    
           }
 
           nav > .columns {
@@ -61,11 +60,13 @@ export default class Pagination extends Component {
           }
 
           .title {
+            font-family: var(--font-family-heading);
             font-size: 1.4em;
             font-weight: bold;
           }
 
           .category {
+            font-family: var(--font-family-heading);
             font-size: .85em;
             text-transform: uppercase;
           }
