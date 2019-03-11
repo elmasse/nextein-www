@@ -1,13 +1,12 @@
 
 import React, { Component } from 'react'
 import Head from 'next/head'
-import css from 'styled-jsx/css'
 
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Content } from 'nextein/post'
 
 import Navigation from '../components/navigation'
-import Hero from '../components/index/hero'
+import Hero from '../components/hero'
 import Footer from '../components/footer'
 
 const sortByOrder = (a, b) => a.data.order - b.data.order

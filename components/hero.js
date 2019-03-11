@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Terminal from '../terminal'
+import Terminal from './terminal'
 
 export default class Header extends Component {
   render() {
