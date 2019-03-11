@@ -11,6 +11,7 @@ import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
 import Footer from '../components/footer'
+import Pagination from '../components/pagination'
 import { Anchor, Code, Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Pre, List, ListItem } from '../components/elements'
 
 class Docs extends Component {
@@ -49,7 +50,12 @@ class Docs extends Component {
                   li: ListItem
                 }}
               />
-              <Footer/>
+              <Footer>
+                <Pagination
+                  posts={posts.filter(inCategory(post.data.category)).sort((a, b) => a.data.order - b.data.order)}
+                  post={post} 
+                />
+              </Footer>
             </article>
             <aside>
               <ScrollSync post={post}>

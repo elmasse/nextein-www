@@ -10,6 +10,7 @@ import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
 import Footer from '../components/footer'
+import Pagination from '../components/pagination'
 import { Anchor, Code, Blockquote, Heading1, Heading2, Heading3, Heading4, Img, Paragraph, Pre } from '../components/elements'
 
 class Guides extends Component {
@@ -47,7 +48,9 @@ class Guides extends Component {
                   pre: Pre
                 }}
               />
-              <Footer />
+              <Footer>
+                 <Pagination posts={posts} post={post} /> 
+              </Footer>
             </article>
             <aside>
               <ScrollSync post={post}>
