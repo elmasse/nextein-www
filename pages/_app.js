@@ -1,9 +1,11 @@
 import React from 'react'
 import NextApp, { Container } from 'next/app'
+import Router from "next/router";
 
+import withGA from "next-ga";
 import 'prismjs'
 
-export default class App extends NextApp {
+class App extends NextApp {
 
   render () {    
     const { Component, pageProps } = this.props;
@@ -68,3 +70,5 @@ export default class App extends NextApp {
     )
   }
 }
+
+export default withGA(process.env.UA, Router)(App)
