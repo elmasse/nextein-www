@@ -10,7 +10,7 @@ export default class Header extends Component {
         <div className="title row">
           <h1>Hello, I'm</h1>
           <h1><span>N</span>extein.</h1>
-          <p>Nextein is a site generator for <i>Next.js</i>. Create websites with the tools you already use and love. </p>
+          <p>Nextein is a static site &amp; blog generator. Combine the simplicity of <b>Markdown</b> and the power of <b>Next.js</b>. </p>
           <div className="actions rows">
             <Button variant="highlight">
               <Link href="/guides"><a><b>Guides</b></a></Link>  
