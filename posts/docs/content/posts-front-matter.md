@@ -12,7 +12,7 @@ title: Hello
 ---
 ```
 
-## page _String | false_
+## page: _String | false_
 
 The `page` variable points to the page component used to render the post content. In case the current post is not intended to be rendered by itself, we can pass `false` as a parameter.  
 Default value is `post`.
@@ -29,12 +29,12 @@ Default value is `post`.
 >Welcome to the Documentation!
 >```
 
-## published _Boolean_
+## published: _Boolean_
 
 This controls if the current post will be published or not. If the value is set to `false` then the post will not appear in any of the lists and won't be exported.  
 Default value is `true`
 
-## category _String_
+## category: _String_
 
 Defines the category for a post. This is optional. The default value is taken from directory hierarchy in the `posts` folder. If you create a post under `/posts/food` folder then `category` is set to `food` by default.  
 Subcagetories are separated by `/` following the directory structure.
@@ -50,7 +50,7 @@ Subcagetories are separated by `/` following the directory structure.
 >Welcome to the Documentation!
 >```
 
-## date _String_
+## date: _String_
 
 The date to be used for sorting posts in a list when using `sortByDate` from `nextein/post`. If the post name starts with a date `YYYY-MM-DD` format, that will be assigned as the default value or the file creation date if available.
 
@@ -72,23 +72,23 @@ The date to be used for sorting posts in a list when using `sortByDate` from `ne
 >/posts/2017-06-09-my-awesome-post.md
 >```
 
-## permalink _String_
+## permalink: _String_
 
 The permalink can override the generated uri for the post.   
 Default values is `'/:category?/:name`
 
-`:` Indicates that is a variable from the post front matter data.
-`?` Indicates the variable is optional.
+- `:` Indicates that is a variable from the post front matter data.
+- `?` Indicates the variable is optional.
 
 All front matter variables, even custom ones, can be used to define the permalink.
 
-## name _String_ (__Read Only__)
+## name: _String_ (__Read Only__)
 
-The post file name. If the name contains a date that is removed from the final name.
+The post file name. If the name contains a date, it is removed from the final name.
 
-## url _String_ (__Read Only__)
+## url: _String_ (__Read Only__)
 
-The generated url for the post.
+The generated url for the post based on the permalink.
 
 ## Custom Variables
 

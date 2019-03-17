@@ -1,10 +1,16 @@
 ---
 title: nextein/link
 page: docs
-order: 4
+order: 30
 ---
 
 ## Link
+
+```js
+import Link from 'nextein/link'
+
+<Link />
+```
 
 This component wraps the `next/link` to simplify creating a _Link_ for a given post object. It also adds a mechanism to make your post urls to work seamlessly and loading the post as a `next` Page.
 You can use `nextein/link` in place of `next/link` with the exact same parameters. 
