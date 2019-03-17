@@ -2,18 +2,12 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
 
-import { withPostsFilterBy, inCategory } from 'nextein/posts'
-import { Content } from 'nextein/post'
-
 import Navigation from '../components/navigation'
 import Hero from '../components/hero'
 import Footer from '../components/footer'
-import { Heading2, Heading3, Heading4, Paragraph } from '../components/elements'
 
 class Index extends Component {
   render() {
-    const { posts } = this.props
-
     return (
       <React.Fragment>
         <Head>
@@ -24,9 +18,6 @@ class Index extends Component {
             <Navigation />
             <Hero />
           </header>
-          {/* <section className="center">
-            <Heading2 className="title">Sponsors &amp; Contributors</Heading2>
-          </section> */}
           <Footer />
           <style jsx>{`
             .container {
@@ -61,6 +52,4 @@ class Index extends Component {
   }
 }
 
-export default withPostsFilterBy(
-  inCategory('section', { includeSubCategories: true })
-)(Index)
+export default Index;
