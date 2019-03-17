@@ -9,7 +9,7 @@ export default class Navigation extends Component {
     return (
       <nav>
         <Link href="/"><a><span>N</span>extein</a></Link>
-        <Link href="/blog"><a>Blog</a></Link>
+        {/* <Link href="/blog"><a>Blog</a></Link> */}
         <Link href="/guides"><a>Guides</a></Link>
         <Link href="/docs"><a>Docs</a></Link>
         <Link href="https://github.com/elmasse/nextein">
