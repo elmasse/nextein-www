@@ -1,23 +1,31 @@
 import React, { Component } from 'react'
-
+import Link from 'nextein/link'
+import { Button } from './elements'
 import Terminal from './terminal'
 
 export default class Header extends Component {
   render() {
-    const { className } = this.props
     return (
       <div className="container rows">
         <div className="title row">
           <h1>Hello, I'm</h1>
           <h1><span>N</span>extein.</h1>
           <p>Nextein is an static site generator based on Next.js and Markdown.</p>
+          <div className="actions rows">
+            <Button variant="highlight">
+              <Link href="/guides"><a><b>Guides</b></a></Link>  
+            </Button>
+            <Button raised>
+              <Link href="/docs"><a><b>Docs</b></a></Link>  
+            </Button>
+          </div>
         </div>
         <div className="terminal row">
           <Terminal type="fish">npm install nextein</Terminal>
         </div>
         <style jsx>{`
           .container {
-            min-height: 75vh;
+            min-height: 80vh;
           }
 
           .row {
@@ -28,7 +36,8 @@ export default class Header extends Component {
             display: flex;
             flex-direction: column;
             align-items: self-start;
-            justify-content: center;                
+            justify-content: center;
+            padding: 0 calc(var(--spacing) * 8);
           }
 
           h1:first-child {
@@ -61,7 +70,14 @@ export default class Header extends Component {
             font-weight: 200;
             color: var(--grey300);            
           }
-
+          .actions {
+            margin-top: calc(var(--spacing) * 6);
+            margin-left: calc(var(--spacing) * -1);
+          }
+          .actions :global(button) {
+            margin: 0 calc(var(--spacing) * 1);
+            width: 150px;
+          }
           .terminal {
             display: flex;
             flex-direction: column;
