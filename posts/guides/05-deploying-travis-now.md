@@ -7,7 +7,7 @@ page: guides
 We have seen so far how to create a blog, render and filter markdown files, use custom components and how to add analytics. In this post, we'll explore how to deploy our blog using Travis CI and Now.
 
 
-## Deploy with Now
+## Deploy with now
 
 Once we are ready to push our development to the outside world, we can try to manually deploy an exported version using `now`- read more on [zeit.co](https://zeit.co)
 
@@ -41,13 +41,13 @@ npx now ./out
 That's all you need. If everything goes well you will have a link to your deploy in your console (and available in your clipboard to paste it in your browser.)
 
 
-## Automate the process with TravisCI
+## Automate the Process with TravisCI
 
 Using TravisCI is quite simple. If you want to use a free account you will need to have your code available in a public github repository. 
 
 Login into [TravisCI](http://travis-ci.org/) with your github account and follow the steps to enable the CI with your repository.
 
-### Configure your .travis.yml
+### Configure Your TravisCI
 
 Add a new file to your repository named `.travis.yml` with the following content:
 
@@ -68,15 +68,15 @@ This configuration file will tell Travis to use `node 8` and execute the `npm ru
 
 Check the TravisCI guides for further information on how to configure the `.travis.yml` file.
 
-### Now Token
+### now Token
 
 We need to create a token to use our `now` account with TravisCI to deploy automatically. To do so, go to your [account/token](https://zeit.co/account/tokens) and create a new token.
 
-### Adding the _now token_ into TravisCI
+### Adding the now Token into TravisCI
 
 You can follow the TravisCI guide on how to add a new token / environment variable with the `travisci` cli. We are going to define a new variable using the TravisCI Settings. We just need to go to our repository settings and scroll down to the **Environment Variables** section. Add a name such as `NOW_TOKEN`, paste the generated token and click **Add**. 
 
-### Add the export task into the package.json
+### Add the Export Task into the package.json
 
 The `.travis.yml` specifies that we will run a deploy script. We need to add the `deploy` script to our package.json
 

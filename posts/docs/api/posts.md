@@ -1,10 +1,16 @@
 ---
 title: nextein/posts
 page: docs
-order: 2
+order: 10
 ---
 
-## withPosts(_component_)
+## withPosts
+
+```js
+import withPosts from 'nextein/posts'
+
+withPosts(Component)
+```
 
 HOC for `/pages` components that renders a list of posts. It makes the post list available thru the `posts` property.
 
@@ -42,7 +48,13 @@ export default withPosts(MyComponent)
 ```
 
 
-## inCategory(_category, options_)
+## inCategory
+
+```js
+import { inCategory } from 'nextein/posts'
+
+inCategory(category, options)
+```
 
 Filter function to be applied to posts to retrieve posts in a given category.
 
@@ -79,7 +91,13 @@ export default withPosts( ({ posts }) => {
 
 ```
 
-## withPostsFilterBy(_filter_)
+## withPostsFilterBy
+
+```js
+import { withPostsFilterBy } from 'nextein/posts'
+
+withPostsFilterBy(filter)(Component)
+```
 
 Returns an HOC that gets all posts filtered out by the given filter function.
 
@@ -99,6 +117,12 @@ export default withCategoryAPosts(({ posts }) => {
 ```
 
 ## sortByDate
+
+```js
+import { sortByDate } from 'nextein/posts'
+
+sortByDate(postA, postB)
+```
 
 Sort function to be applied to posts to sort by date (newest on top). This requires the post contains a `date` in `frontmatter` or in the file name (ala jekyll)
 
