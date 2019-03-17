@@ -21,7 +21,7 @@ export default class Terminal extends Component {
             border-radius: 5px;
             background-color: #2f2f2f;
             padding: 8px;
-            border-radius: 6px;
+            border-radius: 8px;
             border: 1px solid #333;
             border-top-color: #666;
             box-shadow: 4px 16px 42px rgba(0,0,0,.3);
@@ -35,10 +35,11 @@ export default class Terminal extends Component {
             flex-direction: row;
             justify-content: flex-start;
             position: relative;
+            margin-bottom: 8px;
           }
           i {
             border-radius: 50%;
-            margin: 5px;
+            margin: 4px;
             width: 12px;
             height: 12px;          
           }
@@ -78,7 +79,7 @@ export class Bash extends Component {
         <style jsx>{`
           p::before {
             content: '$';
-            padding-right: 4px;
+            padding-right: 8px;
           }
         `}</style>
       </p>
@@ -116,7 +117,7 @@ export class Fish extends Component {
           p::before {
             content: '~';
             color: rgb(15,214,214);
-            padding-right: 6px;
+            padding-right: 8px;
           }
         `}</style>
       </p>
