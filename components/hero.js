@@ -63,15 +63,15 @@ export default class Header extends Component {
 
           p {
             margin-top: 4em;
-            font-size: 1.35em;
-            line-height: 1.3;
+            font-size: 1.2em;
+            line-height: 1.35;
             letter-spacing: normal;
             font-family: var(--font-family-body);
             font-weight: 200;
-            color: var(--grey300);            
+            color: var(--grey400);            
           }
           .actions {
-            margin-top: calc(var(--spacing) * 6);
+            margin-top: calc(var(--spacing) * 8);
             margin-left: calc(var(--spacing) * -1);
           }
           .actions :global(button) {
