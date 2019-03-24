@@ -68,7 +68,7 @@ export default class Header extends Component {
             letter-spacing: normal;
             font-family: var(--font-family-body);
             font-weight: 200;
-            color: var(--grey400);            
+            color: var(--grey400);
           }
           .actions {
             margin-top: calc(var(--spacing) * 8);
@@ -85,7 +85,22 @@ export default class Header extends Component {
             justify-content: center;
             flex: 1;
             padding: 0 calc(var(--spacing) * 8);
-          }        
+          }
+
+          @media screen and (max-width: 1024px) {
+            .container.rows {
+              flex-direction: column;
+            }
+            .title {
+              padding: calc(var(--spacing) * 4);
+              margin: 0 auto;
+            }
+
+            .terminal {
+              display: none;
+            }
+          }
+
         `}</style>          
       </div>
     )

@@ -27,7 +27,7 @@ class Guides extends Component {
           <header>
             <Navigation/>
           </header>
-          <div className="rows">
+          <div className="main rows">
             <article>
               <header>
                 <div className="category">{post.data.category}</div>
@@ -99,6 +99,13 @@ class Guides extends Component {
               border-left: 1px solid #eee;
               overflow-y: auto;
             }
+
+            @media screen and (max-width: 1024px) {
+              aside {
+                display: none;
+              }
+            }
+
           `}</style>
         </div>
       </React.Fragment>

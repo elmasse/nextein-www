@@ -9,7 +9,7 @@ import { Anchor } from './elements';
 
 export default class Footer extends Component {
   render() {
-    const { children } = this.props
+    const { children, gutter = false } = this.props
     return (
       <footer className="columns">
         {children}
@@ -41,6 +41,7 @@ export default class Footer extends Component {
         </div>
         <style jsx>{`
           footer {
+            ${gutter ? `padding: 0 calc(var(--spacing) * 4);` : ''}
             padding-top: calc(var(--spacing) * 6);
             min-height: 30vh;
             color: var(--main-color);
@@ -55,6 +56,7 @@ export default class Footer extends Component {
           .info {
             justify-content: space-between;
             min-height: 10vh;
+            align-items: flex-start;
           }
 
           .brand {

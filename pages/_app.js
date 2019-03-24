@@ -35,6 +35,12 @@ class App extends NextApp {
             --action-color: #f63;
           }
 
+          @media screen and (max-width: 680px) {
+            :root {
+              --font-base: 12px;
+            }
+          }
+
           * {
             box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
@@ -50,7 +56,7 @@ class App extends NextApp {
 
           .container > * {
             margin: 0 auto;
-            max-width: 72em;          
+            max-width: 72em;
           }
 
           .columns {

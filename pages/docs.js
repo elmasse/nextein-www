@@ -74,6 +74,10 @@ class Docs extends Component {
           </div>
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);
+            
+            @media screen and (max-width: 1024px) {
+              --sidebar-width: calc(var(--spacing) * 30);
+            }
 
             article {
               flex: 1;

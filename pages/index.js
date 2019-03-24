@@ -18,32 +18,12 @@ class Index extends Component {
             <Navigation />
             <Hero />
           </header>
-          <Footer />
+          <Footer gutter />
           <style jsx>{`
             .container {
               --main-color: var(--grey600);
               --main-contrast-color: var(--grey100);
               background: radial-gradient(ellipse at 50% 0% , var(--grey700), var(--grey900));
-            }
-
-            section {
-              --main-color: var(--grey100);
-              min-height: 50vh;
-              padding: calc(var(--spacing) * 8);
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            }
-            section.center :global(.title) {
-              position: relative;
-            }
-            section.center :global(.title):after {
-              content: ' ';
-              position: absolute;
-              left: 30%;
-              right: 30%;
-              bottom: -48px;
-              border: 1px solid white;
             }
           `}</style>
         </div>

@@ -63,6 +63,10 @@ export default class Sidebar extends Component {
             flex-direction: column;
             background: var(--grey100);
           }
+
+          @media screen and (max-width: 1024px) {
+          }
+
           .separator {
             text-transform: uppercase;            
             padding: var(--spacing);            
