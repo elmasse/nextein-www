@@ -18,6 +18,16 @@ class Docs extends Component {
   render() {
     const { post: current, posts } = this.props
     const post = current || posts[0]
+    // Little hack to make title to break on / but without showing spaces.
+    const title = post.data.title.split('/').reduce((prev, curr, idx) => {
+      if (idx > 0) {
+        prev.push(<span className="title-separator"> / </span>)
+      }
+      prev.push(curr);
+      return prev;
+    }, [])
+
+    console.log(title)
 
     return (
       <React.Fragment>
@@ -32,7 +42,9 @@ class Docs extends Component {
             <article>
               <header>
                 <div className="category">{post.data.category}</div>
-                <Heading1>{post.data.title}</Heading1>
+                <Heading1>{}
+                  {title}
+                </Heading1>
               </header>
               <Content
                 className="content columns"
@@ -102,6 +114,11 @@ class Docs extends Component {
               text-transform: uppercase;
               color: var(--grey600);
               margin-bottom: calc(var(--spacing) * -4);
+            }
+
+            article header :global(.title-separator) {
+              width: calc(var(--font-size) * 1.2);
+              display: inline-block;
             }
 
             aside {
