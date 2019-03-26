@@ -75,10 +75,6 @@ class Docs extends Component {
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);
             
-            @media screen and (max-width: 1024px) {
-              --sidebar-width: calc(var(--spacing) * 30);
-            }
-
             article {
               flex: 1;
               width: 1px; /* width to get the Article to not expand */
@@ -115,6 +111,13 @@ class Docs extends Component {
               border-left: 1px solid #eee;
               overflow-y: auto;
             }
+
+            @media screen and (max-width: 1024px) {
+              aside {
+                display: none;
+              }
+            }
+
           `}</style>
         </div>
       </React.Fragment>
