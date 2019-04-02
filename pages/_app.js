@@ -32,7 +32,7 @@ class App extends NextApp {
 
             --main-color: var(--grey700);
             --main-contrast-color: var(--grey200);
-            --action-color: #f63;
+            --action-color: #f60;
           }
 
           @media screen and (max-width: 680px) {

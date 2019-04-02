@@ -70,11 +70,12 @@ export default class Header extends Component {
             font-weight: 200;
             color: var(--grey400);
           }
-          .actions {
+          .actions {            
             margin-top: calc(var(--spacing) * 8);
             margin-left: calc(var(--spacing) * -1);
           }
           .actions :global(button) {
+            --button-color: var(--grey900);
             margin: 0 calc(var(--spacing) * 1);
             width: 150px;
           }
