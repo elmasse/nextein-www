@@ -21,13 +21,11 @@ class Docs extends Component {
     // Little hack to make title to break on / but without showing spaces.
     const title = post.data.title.split('/').reduce((prev, curr, idx) => {
       if (idx > 0) {
-        prev.push(<span className="title-separator"> / </span>)
+        prev.push(<span key={idx} className="title-separator"> / </span>)
       }
       prev.push(curr);
       return prev;
     }, [])
-
-    console.log(title)
 
     return (
       <React.Fragment>
