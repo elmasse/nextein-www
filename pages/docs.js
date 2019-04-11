@@ -7,6 +7,7 @@ import Head from 'next/head'
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
+import { name, url, description } from '../site.json'
 import Meta from '../components/meta'
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
@@ -35,7 +36,7 @@ class Docs extends Component {
       <React.Fragment>
         <Head>
         <title>{headTitle}</title>
-          <Meta title={headTitle} url={fullUrl}/>
+          <Meta title={headTitle} url={fullUrl} description={description}/>
         </Head>
         <div className="container">
           <header>

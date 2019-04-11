@@ -26,7 +26,7 @@ class Guides extends Component {
       <React.Fragment>
         <Head>
           <title>{headTitle}</title>
-          <Meta title={headTitle} url={fullUrl}/>
+          <Meta title={headTitle} url={fullUrl} description={description}/>
         </Head>
         <div className="container">
           <header>
