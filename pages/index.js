@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
 
+import { name, url, description } from '../site.json'
+import Meta from '../components/meta'
 import Navigation from '../components/navigation'
 import Hero from '../components/hero'
 import Footer from '../components/footer'
@@ -11,7 +13,8 @@ class Index extends Component {
     return (
       <React.Fragment>
         <Head>
-          <title>Nextein</title>
+          <title>{name}</title>
+          <Meta title={name} url={url} description={description}/>
         </Head>
         <div className="container">
           <header>

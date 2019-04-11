@@ -7,6 +7,7 @@ import Head from 'next/head'
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
+import Meta from '../components/meta'
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
@@ -27,10 +28,14 @@ class Docs extends Component {
       return prev;
     }, [])
 
+    const headTitle = `${name} | Guides | ${post.data.title}`
+    const fullUrl = `${url}${post.data.url}`
+
     return (
       <React.Fragment>
         <Head>
-          <title>Nextein | Docs | {post.data.title}</title>
+        <title>{headTitle}</title>
+          <Meta title={title} url={fullUrl}/>
         </Head>
         <div className="container">
           <header>
