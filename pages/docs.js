@@ -35,7 +35,7 @@ class Docs extends Component {
       <React.Fragment>
         <Head>
         <title>{headTitle}</title>
-          <Meta title={title} url={fullUrl}/>
+          <Meta title={headTitle} url={fullUrl}/>
         </Head>
         <div className="container">
           <header>
