@@ -28,6 +28,6 @@
     "unist-util-map": "^1.0.4"
   },
   "devDependencies": {
-    "webpack-bundle-analyzer": "^3.0.3"
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }
