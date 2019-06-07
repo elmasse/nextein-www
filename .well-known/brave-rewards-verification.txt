@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: nextein.now.sh
+Token: 025a4eb473da25f6fb512b321478e7863237c1ec71f769410c0283543301e7e1
