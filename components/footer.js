@@ -2,10 +2,11 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 
-import Github from './icons/github'
-import Npm from './icons/npm'
-import Gitter from './icons/gitter'
 import { Anchor } from './elements';
+import Github from './icons/github'
+import Gitter from './icons/gitter'
+import Nextein from './icons/nextein'
+import Npm from './icons/npm'
 
 export default class Footer extends Component {
   render() {
@@ -15,7 +16,10 @@ export default class Footer extends Component {
         {children}
         <div className="info rows">
           <div>
-            <div className="brand">Nextein</div>
+            <div className="brand">
+              <Nextein width="28" alt="Nextein"/>
+              Nextein
+            </div>
             <div className="copyright">Copyright &copy; { new Date().getFullYear() } Max Fierro</div>
           </div>
           <div className="social rows">
@@ -60,6 +64,7 @@ export default class Footer extends Component {
           }
 
           .brand {
+            margin-left: -5px;
             font-size: 1.5em;
             font-weight: bold;
           }
