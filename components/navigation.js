@@ -16,12 +16,12 @@ export default class Navigation extends Component {
         {/* <Link href="/blog"><a>Blog</a></Link> */}
         <Link href="/guides"><a>Guides</a></Link>
         <Link href="/docs"><a>Docs</a></Link>
-        <Link href="https://github.com/elmasse/nextein">
+        <Link href="https://github.com/elmasse/nextein" prefetch={false}>
           <a target="_blank" rel="noopener noreferrer">
             <Github width="25" alt="Github" />
           </a>
         </Link>
-        <Link href="https://www.npmjs.com/package/nextein">
+        <Link href="https://www.npmjs.com/package/nextein" prefetch={false}>
           <a target="_blank" rel="noopener noreferrer">
             <Npm width="35" style={{ marginTop: '5px' }} alt="npm" />
           </a>

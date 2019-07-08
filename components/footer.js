@@ -23,17 +23,17 @@ export default class Footer extends Component {
             <div className="copyright">Copyright &copy; { new Date().getFullYear() } Max Fierro</div>
           </div>
           <div className="social rows">
-            <Link href="https://gitter.im/nextein">
+            <Link href="https://gitter.im/nextein" prefetch={false}>
               <a target="_blank" rel="noopener noreferrer">
               <Gitter width="16" alt="Gitter IM"/>
               </a>
             </Link> 
-            <Link href="https://github.com/elmasse/nextein">
+            <Link href="https://github.com/elmasse/nextein" prefetch={false}>
               <a target="_blank" rel="noopener noreferrer">
                 <Github width="25" alt="Github" />
               </a>
             </Link>
-            <Link href="https://www.npmjs.com/package/nextein">
+            <Link href="https://www.npmjs.com/package/nextein" prefetch={false}>
               <a target="_blank" rel="noopener noreferrer">
                 <Npm width="35" style={{ marginTop: '5px' }} alt="npm" />
               </a>
