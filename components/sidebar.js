@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { inCategory } from 'nextein/posts'
 import Link from 'nextein/link'
 
@@ -21,7 +21,7 @@ export default class Sidebar extends Component {
       <div className="container">
         <List>
           {groups.map(({ title, posts }) => 
-            <React.Fragment key={`${title || 'all'}`}>
+            <Fragment key={`${title || 'all'}`}>
               {title && <div className="separator">{title}</div>}
               {posts.map((post, idx) => {
                 const { data } = post
@@ -45,9 +45,7 @@ export default class Sidebar extends Component {
                   </ListItem>
                 )
               })}
-            </React.Fragment>
-            
-          
+            </Fragment>
           )}
         </List>
         <style jsx>{`
@@ -64,13 +62,10 @@ export default class Sidebar extends Component {
             background: var(--grey100);
           }
 
-          @media screen and (max-width: 1024px) {
-          }
-
           .separator {
             text-transform: uppercase;            
-            padding: var(--spacing);            
-            color: var(--main-color);
+            padding: var(--spacing);
+            color: var(--grey700);
             font-weight: bold;
           }
 
@@ -86,7 +81,8 @@ export default class Sidebar extends Component {
 
           .toc:hover,
           .toc.active,
-          :global(.target.active) .toc[class*="toc-"] {
+          :global(.target.active) .toc[class*="toc-"],
+          .toc[class*="toc-"]:hover {
             color: var(--grey900);
           }
 
@@ -98,15 +94,10 @@ export default class Sidebar extends Component {
           .toc[class*="toc-"]{
             color: var(--grey600);
             font-weight: 400;
-          }
-          
-          .toc-h2 {
             font-size: 0.90em;
           }
-
+          
           .toc-h3 {
-            font-size: 0.88em;
-            font-style: italic;
             padding-left: calc(var(--spacing) * 2);
           } 
 
