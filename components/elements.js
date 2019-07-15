@@ -124,7 +124,8 @@ export const Heading1 = ({ children, ...props }) => {
           color: var(--main-color);
           margin-left: calc(var(--spacing) * -0.5);
           margin-bottom: calc(var(--spacing) * 4);
-          margin-top: calc(var(--spacing) * 6)
+          margin-top: calc(var(--spacing) * 8);
+          line-height: .95em;
         }
       `}</style>
     </h1>
