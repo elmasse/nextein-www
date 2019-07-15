@@ -1,7 +1,8 @@
 const { withNextein } = require('nextein/config')
 const withCSS = require('@zeit/next-css')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+
 const EnvironmentPlugin = require('webpack/lib/EnvironmentPlugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = withNextein(withCSS({
   nextein: {
@@ -9,7 +10,7 @@ module.exports = withNextein(withCSS({
       {
         name: 'nextein-plugin-markdown', 
         options: {
-          rehype: ['rehype-slug', 'rehype-autolink-headings', 'rehype-prism']
+          rehype: ['rehype-slug', 'rehype-autolink-headings', '@mapbox/rehype-prism']
         }
       },
       {
@@ -23,7 +24,7 @@ module.exports = withNextein(withCSS({
 
   webpack: (config) => {
     config.plugins.push(
-      ...[      
+      ...[
         process.env.ANALYZE && 
         new BundleAnalyzerPlugin({
           analyzerMode: 'static'

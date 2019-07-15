@@ -1,13 +1,14 @@
 import React from 'react'
 import NextApp, { Container } from 'next/app'
-import Router from "next/router";
+import Router from 'next/router';
 
-import withGA from "next-ga";
-import 'prismjs'
+import withGA from 'next-ga';
+
+import 'prismjs/themes/prism-twilight.css';
 
 class App extends NextApp {
 
-  render () {    
+  render () {
     const { Component, pageProps } = this.props;
 
     return (

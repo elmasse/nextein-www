@@ -1,8 +1,7 @@
 {
   "name": "nextein-www",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "repository": "https://github.com/elmasse/nextein-www",
   "scripts": {
     "dev": "nextein",
@@ -10,21 +9,18 @@
     "now-build": "npm run export && npm run copy-wellknown",
     "copy-wellknown": "cpr .well-known out/.well-known"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "@mapbox/rehype-prism": "0.3.1",
     "@zeit/next-css": "^1.0.1",
     "babel-plugin-prismjs": "^1.0.2",
     "lodash.flowright": "^3.5.0",
     "next": "^9.0.0",
     "next-ga": "^2.3.4",
-    "nextein": "^2.2.0",
-    "prismjs": "^1.15.0",
+    "nextein": "^2.3.0-beta.0",
+    "prismjs": "^1.16.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "rehype-autolink-headings": "^2.0.4",
-    "rehype-prism": "^0.1.1",
     "rehype-slug": "^2.0.2",
     "unist-util-map": "^1.0.4"
   },
