@@ -15,12 +15,16 @@ import Footer from '../components/footer'
 import Pagination from '../components/pagination'
 import { Anchor, Code, Blockquote, Heading1, Heading2, Heading3, Heading4, Img, Paragraph, Pre } from '../components/elements'
 
+const byOrderSorter = (a, b) => a.data.order - b.data.order
+
 class Guides extends Component {
   render() {
     const { post: current, posts } = this.props
     const post = current || posts[0]
     const headTitle = `${name} | Guides | ${post.data.title}`
     const fullUrl = `${url}${post.data.url}`
+
+    posts.sort(byOrderSorter)
 
     return (
       <React.Fragment>
