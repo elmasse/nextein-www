@@ -73,17 +73,20 @@ export default class Sidebar extends Component {
             color: var(--main-color);
             font-weight: bold;
           }
+
           .toc {
             display: block;
             padding: var(--spacing);
-            color: var(--main-color);
+            color: var(--grey600);
             text-decoration: none;
             font-size: 0.95em;
-            font-weight: 400;
+            font-weight: 600;
             line-height: 1.5;
           }
 
-          .toc:hover, .toc.active {          
+          .toc:hover,
+          .toc.active,
+          :global(.target.active) .toc[class*="toc-"] {
             color: var(--grey900);
           }
 
@@ -91,7 +94,12 @@ export default class Sidebar extends Component {
             background: var(--grey200);
             font-weight: bold;
           }
-
+          
+          .toc[class*="toc-"]{
+            color: var(--grey600);
+            font-weight: 400;
+          }
+          
           .toc-h2 {
             font-size: 0.90em;
           }
@@ -110,9 +118,6 @@ export default class Sidebar extends Component {
           }
           .container :global(.target.active) {
             border-left-color: var(--action-color);
-          }
-          .container :global(.target.active .toc) {
-            font-weight: bold;
           }
 
         `}</style>
