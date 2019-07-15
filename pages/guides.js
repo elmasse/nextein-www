@@ -1,5 +1,5 @@
 
-import React, { Component } from  'react'
+import React, { Component, Fragment } from  'react'
 import compose from 'lodash.flowright'
 import Head from 'next/head'
 
@@ -27,7 +27,7 @@ class Guides extends Component {
     posts.sort(byOrderSorter)
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Head>
           <title>{headTitle}</title>
           <Meta title={headTitle} url={fullUrl} description={description}/>
@@ -117,7 +117,7 @@ class Guides extends Component {
 
           `}</style>
         </div>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }

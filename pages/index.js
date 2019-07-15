@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Head from 'next/head'
 
 import { name, url, description } from '../site.json'
@@ -11,7 +11,7 @@ import Footer from '../components/footer'
 class Index extends Component {
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <Head>
           <title>{name}</title>
           <Meta title={name} url={url} description={description}/>
@@ -24,13 +24,13 @@ class Index extends Component {
           <Footer gutter />
           <style jsx>{`
             .container {
-              --main-color: var(--grey600);
+              --main-color: var(--grey500);
               --main-contrast-color: var(--grey100);
               background: radial-gradient(ellipse at 50% 0% , var(--grey700), var(--grey900));
             }
           `}</style>
         </div>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }

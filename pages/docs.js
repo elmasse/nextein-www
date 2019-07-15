@@ -1,6 +1,6 @@
 
 
-import React, { Component } from  'react'
+import React, { Component, Fragment } from  'react'
 import compose from 'lodash.flowright'
 import Head from 'next/head'
 
@@ -33,7 +33,7 @@ class Docs extends Component {
     const fullUrl = `${url}${post.data.url}`
 
     return (
-      <React.Fragment>
+      <Fragment>
         <Head>
         <title>{headTitle}</title>
           <Meta title={headTitle} url={fullUrl} description={description}/>
@@ -141,7 +141,7 @@ class Docs extends Component {
 
           `}</style>
         </div>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }
