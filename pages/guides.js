@@ -58,7 +58,10 @@ class Guides extends Component {
                 }}
               />
               <Footer>
-                 <Pagination posts={posts} post={post} /> 
+                 <Pagination posts={posts} post={post} />
+                 <div className="bottom-post-nav">
+                  <Sidebar current={post} posts={posts} toc={false} />
+                 </div>
               </Footer>
             </article>
             <aside>
@@ -109,9 +112,17 @@ class Guides extends Component {
               overflow-y: auto;
             }
 
+            .bottom-post-nav {
+              display: none;
+            }
+
             @media screen and (max-width: 1024px) {
               aside {
                 display: none;
+              }
+
+              .bottom-post-nav {
+                display: flex;
               }
             }
 

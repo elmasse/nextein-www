@@ -71,6 +71,14 @@ class Docs extends Component {
                   posts={posts.filter(inCategory(post.data.category)).sort((a, b) => a.data.order - b.data.order)}
                   post={post} 
                 />
+                <div className="bottom-post-nav">
+                  <Sidebar
+                   current={post}
+                   posts={posts}
+                   categories={{'docs/api': 'api', 'docs/content': 'content' }}
+                   toc={false}
+                  />
+                </div>
               </Footer>
             </article>
             <aside>
@@ -133,12 +141,19 @@ class Docs extends Component {
               overflow-y: auto;
             }
 
+            .bottom-post-nav {
+              display: none;
+            }
+
             @media screen and (max-width: 1024px) {
               aside {
                 display: none;
               }
-            }
 
+              .bottom-post-nav {
+                display: flex;
+              }
+            }
           `}</style>
         </div>
       </Fragment>

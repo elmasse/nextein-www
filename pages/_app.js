@@ -38,7 +38,7 @@ class App extends NextApp {
 
           @media screen and (max-width: 680px) {
             :root {
-              --font-base: 12px;
+              --font-base: 14px;
             }
           }
 
