@@ -22,6 +22,7 @@ export default class Design extends Component {
               Item 3
               <List>
                 <ListItem>Sub Item</ListItem>
+                <ListItem>{loremImpsum}</ListItem>
               </List>
             </ListItem>
           </List>

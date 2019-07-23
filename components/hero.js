@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'nextein/link'
-import { Button } from './elements'
+import { Button, Paragraph } from './elements'
 import Terminal from './terminal'
 
 export default class Header extends Component {
@@ -10,7 +10,9 @@ export default class Header extends Component {
         <div className="title row">
           <h1>Hello, I'm</h1>
           <h1><span>N</span>extein.</h1>
-          <p>Nextein is a static site &amp; blog generator. Combine the simplicity of <b>Markdown</b> and the power of <b>Next.js</b>. </p>
+          <Paragraph>
+            Nextein is a static site &amp; blog generator. Combine the simplicity of <b>Markdown</b> and the power of <b>Next.js</b>.
+          </Paragraph>
           <div className="actions rows">
             <Button variant="highlight">
               <Link href="/guides"><a><b>Guides</b></a></Link>  
@@ -25,7 +27,7 @@ export default class Header extends Component {
         </div>
         <style jsx>{`
           .container {
-            min-height: 80vh;
+            min-height: 90vh;
           }
 
           .row {
@@ -61,24 +63,23 @@ export default class Header extends Component {
             padding-bottom: calc(var(--spacing) * 4 );
           }
 
-          p {
+          .title :global(p) {
+            --main-color: var(--grey400);
             margin-top: 4em;
-            font-size: 1.2em;
-            line-height: 1.35;
-            letter-spacing: normal;
-            font-family: var(--font-family-body);
             font-weight: 200;
-            color: var(--grey400);
           }
-          .actions {            
+
+          .actions {
             margin-top: calc(var(--spacing) * 8);
             margin-left: calc(var(--spacing) * -1);
           }
+
           .actions :global(button) {
             --button-color: var(--grey900);
             margin: 0 calc(var(--spacing) * 1);
             width: 150px;
           }
+
           .terminal {
             display: flex;
             flex-direction: column;

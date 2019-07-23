@@ -85,13 +85,12 @@ class Docs extends Component {
               <ScrollSync post={post}>
                 {({ activeTarget }) => (
                   <Sidebar
-                  current={post}
-                  posts={posts}
-                  activeTarget={activeTarget}
-                  categories={{'docs/api': 'api', 'docs/content': 'content' }}                
-                  width={`var(--sidebar-width)`}
-                />
-  
+                    current={post}
+                    posts={posts}
+                    activeTarget={activeTarget}
+                    categories={{'docs/api': 'api', 'docs/content': 'content' }}                
+                    width={`var(--sidebar-width)`}
+                  />
                 )}
               </ScrollSync>              
             </aside>

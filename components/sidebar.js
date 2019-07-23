@@ -48,7 +48,7 @@ export default class Sidebar extends Component {
             </Fragment>
           )}
         </List>
-        <style jsx>{`
+        <style jsx>{`          
           .container {
             position: fixed;
             top: 0;
@@ -71,6 +71,10 @@ export default class Sidebar extends Component {
               margin-bottom: calc(var(--spacing) * 8);
               font-size: 16px;
             }
+          }
+
+          .container :global(li) {
+            font-size: 1.1em;
           }
 
           .separator {

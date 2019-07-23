@@ -287,6 +287,8 @@ export const ListItem = ({ children, ...props }) => {
         li {
           list-style: none;
           margin: calc(var(--spacing) * 1);
+          font-size: 1.2rem;
+          line-height: 1.54rem;
         }
       `}</style>
     </li>
@@ -309,4 +311,3 @@ export const Img = (props) => {
     </React.Fragment>
   )
 }
-
