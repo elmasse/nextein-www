@@ -1,10 +1,10 @@
 ---
-title: Deploy with TravisCI & Now
+title: Deploy with TravisCI & Now CLI
 order: 5
 page: guides
 ---
 
-We have seen so far how to create a blog, render and filter markdown files, use custom components and how to add analytics. In this post, we'll explore how to deploy our blog using Travis CI and Now.
+We have seen so far how to create a blog, render and filter markdown files, use custom components and how to add analytics. In this guide, we'll explore how to deploy our blog using Travis CI and Now.
 
 
 ## Deploy with now
