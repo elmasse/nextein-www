@@ -27,7 +27,8 @@ module.exports.source = async ({ owner, repo, category = 'contributors', addCont
       data: {
         page: false,
         category,
-        contributors
+        contributors,
+        _entry: 'contributors.md'
       },
       content
     }]
