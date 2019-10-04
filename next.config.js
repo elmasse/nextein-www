@@ -17,7 +17,8 @@ module.exports = withNextein(withCSS({
         name: './plugins/nextein-plugin-contributors',
         options: {
           owner: 'elmasse',
-          repo: 'nextein'
+          repo: 'nextein',
+          includeOwner: true
         }
       },
       {

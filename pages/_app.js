@@ -1,5 +1,5 @@
-import React from 'react'
-import NextApp, { Container } from 'next/app'
+import React, { Fragment } from 'react'
+import NextApp from 'next/app'
 import Router from 'next/router';
 
 import withGA from 'next-ga';
@@ -12,7 +12,7 @@ class App extends NextApp {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <Fragment>
         <style jsx global>{`
           :root {
             --font-base: 16px;
@@ -73,7 +73,7 @@ class App extends NextApp {
         `}</style>
         <Component { ...pageProps } />
 
-      </Container>
+      </Fragment>
     )
   }
 }

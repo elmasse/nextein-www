@@ -13,7 +13,6 @@ export default class Section extends Component {
         </div>
         {children}
         <style jsx>{`
-          --avatar-size: calc(var(--spacing) * 15);
 
           .container {
             margin-top: calc(var(--spacing) * 2);
@@ -27,8 +26,8 @@ export default class Section extends Component {
             background-color: var(--main-color);
           }
 
-          .title :global(h2) {
-            margin-top: calc(var(--spacing) * 3)
+          .title :global(h3) {
+            margin: calc(var(--spacing) * 4) 0;
           }
           `}</style>        
       </div>

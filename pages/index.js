@@ -8,6 +8,7 @@ import { name, url, description } from '../site.json'
 import Meta from '../components/meta'
 import Navigation from '../components/navigation'
 import Hero from '../components/hero'
+import Intro from '../components/intro'
 import Contributors from '../components/contributors'
 import Sponsors from '../components/sponsors'
 import Footer from '../components/footer'
@@ -26,6 +27,7 @@ class Index extends Component {
             <Navigation />
             <Hero />
           </header>
+          <Intro />
           {contributors && <Contributors contributors={contributors} />}
           <Sponsors />
           <Footer gutter />
