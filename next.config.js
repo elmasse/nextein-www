@@ -14,6 +14,14 @@ module.exports = withNextein(withCSS({
         }
       },
       {
+        name: './plugins/nextein-plugin-contributors',
+        options: {
+          owner: 'elmasse',
+          repo: 'nextein',
+          includeOwner: true
+        }
+      },
+      {
         name: './plugins/nextein-plugin-toc',
         options: {
           categories: ['guides', 'docs']

@@ -71,6 +71,7 @@ export default class Footer extends Component {
 
           .copyright {
             font-size: .9em;
+            line-height: 2em;
           }
 
           .social {
@@ -79,7 +80,7 @@ export default class Footer extends Component {
 
           .built {
             align-self: center;
-            padding: calc(var(--spacing) * 1);
+            padding: calc(var(--spacing) * 3);
             font-size: .85em;
             text-align: center;
           }

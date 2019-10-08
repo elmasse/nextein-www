@@ -65,12 +65,12 @@ export default class Header extends Component {
 
           .title :global(p) {
             --main-color: var(--grey400);
-            margin-top: 4em;
+            margin-top: calc(var(--spacing) * 10);
             font-weight: 200;
           }
 
           .actions {
-            margin-top: calc(var(--spacing) * 8);
+            margin-top: calc(var(--spacing) * 2);
             margin-left: calc(var(--spacing) * -1);
           }
 
