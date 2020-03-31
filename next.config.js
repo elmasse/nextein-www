@@ -1,7 +1,6 @@
 const { withNextein } = require('nextein/config')
-const withCSS = require('@zeit/next-css')
 
-module.exports = withNextein(withCSS({
+module.exports = withNextein({
   nextein: {
     plugins: [
       {
@@ -31,4 +30,4 @@ module.exports = withNextein(withCSS({
     '/guides': { page: '/guides', query: {} }, // <-query is needed, otherwise shallow-eq returns error
     '/docs': { page: '/docs', query: {} }
   })
-}))
+})
