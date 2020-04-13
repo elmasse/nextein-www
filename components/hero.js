@@ -102,7 +102,17 @@ export default class Header extends Component {
               display: none;
             }
           }
-
+          @media screen and (max-width: 400px) {
+            h1 {
+              font-size: 5em;
+            }
+            .actions.rows {
+              flex-direction: column;
+              flex: 1;
+              align-self: center;
+              justify-content: space-evenly;
+            }
+          }
         `}</style>          
       </div>
     )
