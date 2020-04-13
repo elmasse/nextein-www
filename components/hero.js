@@ -108,9 +108,13 @@ export default class Header extends Component {
             }
             .actions.rows {
               flex-direction: column;
-              flex: 1;
               align-self: center;
-              justify-content: space-evenly;
+              width: 100%;              
+            }
+
+            .actions :global(button) {
+              margin: calc(var(--spacing) * 1) 0;
+              width: 100%;
             }
           }
         `}</style>          
