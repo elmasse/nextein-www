@@ -26,7 +26,8 @@ module.exports = withNextein({
     ]
   },
 
-  exportPathMap: () => ({
+  exportPathMap: (defaultPathMap) => ({
+    ...defaultPathMap,
     '/guides': { page: '/guides', query: {} }, // <-query is needed, otherwise shallow-eq returns error
     '/docs': { page: '/docs', query: {} }
   })
