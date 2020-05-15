@@ -28,7 +28,7 @@ export default fromBlog(({ posts }) => (
 
 ```
 
-Now, this is not different from the example in the previous guide. But in this case we want to generate a `/blog`. To do that, we just need to adjust our `exportPathMap` in `next.config.js` as follows:
+Now, this is not different from the example in the previous guide. But in this case we want to generate a `/blog`. To do that, we just need to adjust our `exportPathMap` in `next.config.js` as follows (only needed in versions prior to `v2.5.0`):
 
 ```js
 
@@ -40,6 +40,17 @@ module.exports = nexteinConfig({
   })
 })
 
+```
+
+From `v2.5.0` this is **not needed** anymore. Also you if you define a `exportPathMap` function you will get a `defaultPathMap` object as a parameter (same behavior as in `next`). And you have to return **all** paths that will be exported:
+
+```js
+module.exports = nexteinConfig({
+  exportPathMap: (defaultPathMap) => ({
+    ...defaultPathMap,
+    '/blog': { page: '/blog' } // Not needed, but for reference.
+  })
+})
 ```
 
 That's all you need. You should be able to navigate to `localhost:3000/blog` if you run `npm run dev`.
