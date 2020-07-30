@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 
+import { Paragraph } from 'elems'
+
 import Section from './section'
-import { Button, Paragraph } from './elements'
+import { Button } from './button'
 import Geut from './icons/geut'
 
 export default class Sponsors extends Component {

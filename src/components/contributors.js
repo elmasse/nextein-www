@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 
+import { Paragraph } from 'elems'
+
 import Section from './section'
-import { Button, Paragraph } from './elements'
+import { Button } from './button'
 
 
 export default class Contributors extends Component {
@@ -85,6 +87,7 @@ export default class Contributors extends Component {
 
           .avatar img {
             width: var(--avatar-size);
+            max-width: fit-content;
             border-radius: calc(var(--avatar-size) * 0.5);
             border: 6px solid rgba(0,0,0,.16);
             box-shadow: 0 5px 10px rgba(0,0,0,.16);

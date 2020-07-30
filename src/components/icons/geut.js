@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props) => {
+export default function Geut (props) {
   return (
     <svg {...props} type="image/svg+xml" x="0px" y="0px" viewBox="0 0 220 160" xmlSpace="preserve">
       <g>

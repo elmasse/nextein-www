@@ -60,7 +60,6 @@ Filter function to be applied to posts to retrieve posts in a given category.
 
 
 - `category`: `{String}` The category to filter results.  
-
 - `options`: `{Object}`  
     - `includeSubCategories`: `{Boolean}` Set to `true` to include posts in sub categories.  
     Default: `false`.  

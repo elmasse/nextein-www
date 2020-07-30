@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { inCategory } from 'nextein/posts'
 import Link from 'nextein/link'
 
-import { List, ListItem } from './elements'
+import { List, ListItem } from 'elems'
 
 export default class Sidebar extends Component {
   groupPosts() {
@@ -60,6 +60,8 @@ export default class Sidebar extends Component {
             display: flex;
             flex-direction: column;
             background: var(--grey100);
+
+            --li-font-size: 1rem;
           }
 
           @media screen and (max-width: 1024px) {
@@ -73,8 +75,9 @@ export default class Sidebar extends Component {
             }
           }
 
-          .container :global(li) {
-            font-size: 1.1em;
+          .container :global(ul) {
+            list-style: none;
+            padding: 0;
           }
 
           .separator {

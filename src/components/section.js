@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Heading3 } from './elements'
+import { Heading3 } from 'elems'
 
 export default class Section extends Component {
   render() {
