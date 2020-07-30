@@ -2,7 +2,8 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 
-import { Anchor } from './elements';
+import { Anchor } from 'elems';
+
 import Github from './icons/github'
 import Gitter from './icons/gitter'
 import Nextein from './icons/nextein'
@@ -20,7 +21,7 @@ export default class Footer extends Component {
               <Nextein width="28" alt="Nextein"/>
               Nextein
             </div>
-            <div className="copyright">Copyright &copy; { new Date().getFullYear() } Max Fierro</div>
+            <div className="copyright">Copyright &copy; 2017 - { new Date().getFullYear() } Max Fierro</div>
           </div>
           <div className="social rows">
             <Link href="https://gitter.im/nextein" prefetch={false}>

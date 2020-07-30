@@ -12,10 +12,11 @@
   "dependencies": {
     "@mapbox/rehype-prism": "0.3.1",
     "babel-plugin-prismjs": "^1.0.2",
+    "elems": "^1.0.0-beta.10",
     "isomorphic-fetch": "^2.2.1",
     "lodash.flowright": "^3.5.0",
-    "next": "^9.4.0",
-    "nextein": "^2.6.0",
+    "next": "^9.5.0",
+    "nextein": "^2.7.1",
     "prismjs": "^1.16.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

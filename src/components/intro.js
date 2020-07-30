@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 
+import { Paragraph } from 'elems'
+
 import Section from './section'
-import { Paragraph } from './elements'
 
 export default class Intro extends Component {
   render() {

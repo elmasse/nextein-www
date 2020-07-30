@@ -6,6 +6,8 @@ import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
+import { Heading1 } from 'elems'
+import renderers from 'elems/renderers'
 
 import { name, url, description } from '../site.json'
 import Meta from '../components/meta'
@@ -14,7 +16,6 @@ import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
 import Footer from '../components/footer'
 import Pagination from '../components/pagination'
-import { Anchor, Code, Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Pre, List, ListItem } from '../components/elements'
 
 class Docs extends Component {
   render() {
@@ -53,18 +54,7 @@ class Docs extends Component {
               <Content
                 className="content columns"
                 {...post}
-                renderers={{
-                  a: Anchor,
-                  code: Code,
-                  blockquote: Blockquote,
-                  h2: Heading2,
-                  h3: Heading3,
-                  h4: Heading4,
-                  p: Paragraph,
-                  pre: Pre,
-                  ul: List,
-                  li: ListItem
-                }}
+                renderers={renderers}
               />
               <Footer>
                 <Pagination

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Link from 'nextein/link'
-import { Button, Paragraph } from './elements'
+import { Paragraph } from 'elems'
+
+import { Button } from './button'
 import Terminal from './terminal'
 
 export default class Header extends Component {
