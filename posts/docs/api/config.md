@@ -88,15 +88,15 @@ Each plugin can be defined as an Object or as an Array:
 
 ### Override the Default Plugin
 
-Nextein default plugin (`'nextein-markdown-plugin'`) can be overriden using the nextein function form for configuration:
+Nextein default plugin **'nextein-markdown-plugin'** can be overriden using the nextein function form for configuration:
 
 ```js
   nextein: config => {
     config.plugins = [
       {
         name: 'nextein-plugin-markdown', 
-        entriesDir: ['entries'],
         options: {
+          entriesDir: ['entries'],          
           rehype: ['rehype-slug', 'rehype-autolink-headings']
         }
       }
