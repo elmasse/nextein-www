@@ -16,7 +16,7 @@
     "isomorphic-fetch": "^2.2.1",
     "lodash.flowright": "^3.5.0",
     "next": "^9.5.0",
-    "nextein": "^2.7.1",
+    "nextein": "^2.7.3",
     "prismjs": "^1.16.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
