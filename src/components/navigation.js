@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Github from './icons/github'
 import Nextein from './icons/nextein'
 import Npm from './icons/npm'
+import Twitter from './icons/twitter'
 
 export default class Navigation extends Component {
   render() {
@@ -13,7 +14,6 @@ export default class Navigation extends Component {
         <Link href="/"><a>
           <Nextein width="28" alt="home" />
         </a></Link>
-        {/* <Link href="/blog"><a>Blog</a></Link> */}
         <Link href="/guides"><a>Guides</a></Link>
         <Link href="/docs"><a>Docs</a></Link>
         <Link href="https://github.com/elmasse/nextein" prefetch={false}>
@@ -26,6 +26,11 @@ export default class Navigation extends Component {
             <Npm width="35" style={{ marginTop: '5px' }} alt="npm" />
           </a>
         </Link>
+        <Link href="https://twiter.com/nexteinjs" prefetch={false}>
+          <a target="_blank" rel="noopener noreferrer">
+            <Twitter width="19" alt="Twitter" />
+          </a>
+        </Link>        
         <style jsx>{`
           nav {
             display: flex;

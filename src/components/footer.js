@@ -8,6 +8,7 @@ import Github from './icons/github'
 import Gitter from './icons/gitter'
 import Nextein from './icons/nextein'
 import Npm from './icons/npm'
+import Twitter from './icons/twitter'
 
 export default class Footer extends Component {
   render() {
@@ -24,6 +25,11 @@ export default class Footer extends Component {
             <div className="copyright">Copyright &copy; 2017 - { new Date().getFullYear() } Max Fierro</div>
           </div>
           <div className="social rows">
+            <Link href="https://twitter.com/nexteinjs" prefetch={false}>
+              <a target="_blank" rel="noopener noreferrer">
+              <Twitter width="19" alt="Twitter"/>
+              </a>
+            </Link>
             <Link href="https://gitter.im/nextein" prefetch={false}>
               <a target="_blank" rel="noopener noreferrer">
               <Gitter width="16" alt="Gitter IM"/>
