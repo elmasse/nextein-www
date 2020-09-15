@@ -16,11 +16,11 @@ export default class Sponsors extends Component {
           <div className="row description columns">
             <Paragraph>Amazing organizations that support this project.</Paragraph>
             <div className="actions">
-              <Button raised>
-                <Link href="https://opencollective.com/nextein" prefetch={false}>
+              <Link href="https://opencollective.com/nextein" prefetch={false}>
+                <Button raised>
                   <a target="_blank" rel="noopener noreferrer"><b>Become a Sponsor!</b></a>
-                </Link>  
-              </Button>
+                </Button>
+              </Link>  
             </div>
           </div>
           <div className="row sponsors rows">

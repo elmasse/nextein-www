@@ -17,11 +17,11 @@ export default class Contributors extends Component {
           <div className="row description columns">
             <Paragraph>This project exists thanks to all the people who contribute.</Paragraph>
             <div className="actions">
-              <Button raised>
-                <Link href="https://github.com/elmasse/nextein" prefetch={false}>
+              <Link href="https://github.com/elmasse/nextein" prefetch={false}>
+                <Button raised>
                   <a target="_blank" rel="noopener noreferrer"><b>Become a Contributor!</b></a>
-                </Link>  
-              </Button>
+                </Button>
+              </Link>  
             </div>
           </div>
           <div className="row contributors rows">

@@ -16,12 +16,16 @@ export default class Header extends Component {
             Nextein is a static site &amp; blog generator. Combine the simplicity of <b>Markdown</b> and the power of <b>Next.js</b>.
           </Paragraph>
           <div className="actions rows">
-            <Button variant="highlight">
-              <Link href="/guides"><a><b>Guides</b></a></Link>  
-            </Button>
-            <Button raised>
-              <Link href="/docs"><a><b>Docs</b></a></Link>  
-            </Button>
+            <Link href="/guides">
+              <Button variant="highlight">
+                <a><b>Guides</b></a>
+              </Button>
+            </Link>  
+            <Link href="/docs">
+              <Button raised>
+                <a><b>Docs</b></a>
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="terminal row">
