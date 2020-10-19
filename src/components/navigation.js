@@ -26,7 +26,7 @@ export default class Navigation extends Component {
             <Npm width="35" style={{ marginTop: '5px' }} alt="npm" />
           </a>
         </Link>
-        <Link href="https://twiter.com/nexteinjs" prefetch={false}>
+        <Link href="https://twitter.com/nexteinjs" prefetch={false}>
           <a target="_blank" rel="noopener noreferrer">
             <Twitter width="19" alt="Twitter" />
           </a>
