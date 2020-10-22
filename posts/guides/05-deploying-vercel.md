@@ -1,6 +1,6 @@
 ---
 title: Build & Deploy with Vercel
-order: 5.1
+order: 5
 page: guides
 published: true
 ---
