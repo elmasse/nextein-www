@@ -20,11 +20,12 @@ const byOrderSorter = (a, b) => a.data.order - b.data.order
 class Guides extends Component {
   render() {
     const { post: current, posts } = this.props
+    posts.sort(byOrderSorter)
+
     const post = current || posts[0]
     const headTitle = `${name} | Guides | ${post.data.title}`
     const fullUrl = `${url}${post.data.url}`
 
-    posts.sort(byOrderSorter)
 
     return (
       <Fragment>

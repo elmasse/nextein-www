@@ -16,9 +16,13 @@ import ScrollSync from '../components/scrollsync'
 import Footer from '../components/footer'
 import Pagination from '../components/pagination'
 
+const byOrderSorter = (a, b) => a.data.order - b.data.order
+
 class Docs extends Component {
   render() {
     const { post: current, posts } = this.props
+    posts.sort(byOrderSorter)
+
     const post = current || posts[0]
     // Little hack to make title to break on / but without showing spaces.
     const title = post.data.title.split('/').reduce((prev, curr, idx) => {

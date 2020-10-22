@@ -1,7 +1,7 @@
 ---
 title: Directory Structure
 page: docs
-order: 1
+order: 100
 ---
 
 Nextein follows `Next` directory structure. As an overview, these are the relevant files and folders on a `Nextein` project:
