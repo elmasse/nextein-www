@@ -5,8 +5,7 @@ page: guides
 published: true
 ---
 
-In an [previous guide](/guides/05-deploying-travis-now) we have seen how to do a deploy using TravisCI and now v1. In this post we will cover how to build and deploy your **nextein** site using _now v2_.
-
+In this post we will cover how to build and deploy your **nextein** site using _now v2_.
 
 ## Add a Configuration File and Set a Builder
 
