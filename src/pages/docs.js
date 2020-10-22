@@ -2,7 +2,6 @@
 
 import React, { Component, Fragment } from  'react'
 import compose from 'lodash.flowright'
-import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
@@ -35,10 +34,7 @@ class Docs extends Component {
 
     return (
       <Fragment>
-        <Head>
-        <title>{headTitle}</title>
-          <Meta title={headTitle} url={fullUrl} description={description}/>
-        </Head>
+        <Meta title={headTitle} url={fullUrl} description={description}/>
         <div className="container">
           <header>
             <Navigation/>

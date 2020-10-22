@@ -1,6 +1,5 @@
 
 import React, { Component, Fragment } from 'react'
-import Head from 'next/head'
 
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
@@ -18,10 +17,7 @@ class Index extends Component {
     const { posts: [ contributors ] } = this.props
     return (
       <Fragment>
-        <Head>
-          <title>{name}</title>
-          <Meta title={name} url={url} description={description}/>
-        </Head>
+        <Meta title={name} url={url} description={description}/>
         <div className="container">
           <header>
             <Navigation />

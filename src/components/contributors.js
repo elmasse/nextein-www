@@ -9,7 +9,7 @@ import { Button } from './button'
 
 export default class Contributors extends Component {
   render() {
-    const { contributors: { data: { contributors } } } = this.props;
+    const { contributors: { data: { contributors = [] } } } = this.props;
 
     return (
       <Section title="Contributors">
