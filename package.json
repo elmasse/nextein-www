@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nextein",
     "export": "nextein build && nextein export",
-    "now-build": "npm run export && npm run copy-wellknown",
+    "build": "npm run export && npm run copy-wellknown",
     "copy-wellknown": "cpr .well-known out/.well-known"
   },
   "dependencies": {
