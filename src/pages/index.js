@@ -14,7 +14,10 @@ import Footer from '../components/footer'
 
 class Index extends Component {
   render() {
-    const { posts: [ contributors ] } = this.props
+    const { posts } = this.props
+    const [contributors] = posts.filter(inCategory('contributors'));
+    const snippets = posts.filter(inCategory('snippets'));
+
     return (
       <Fragment>
         <Meta title={name} url={url} description={description}/>
@@ -23,8 +26,8 @@ class Index extends Component {
             <Navigation />
             <Hero />
           </header>
-          <Intro />
-          {contributors && <Contributors contributors={contributors} />}
+          <Intro snippets={snippets} />
+          <Contributors contributors={contributors} />
           <Sponsors />
           <Footer gutter />
           <style jsx>{`
@@ -40,4 +43,6 @@ class Index extends Component {
   }
 }
 
-export default withPostsFilterBy(inCategory('contributors'))(Index);
+export default withPostsFilterBy(
+  (post) => inCategory('contributors')(post) || inCategory('snippets')(post)
+)(Index);

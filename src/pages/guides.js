@@ -26,7 +26,6 @@ class Guides extends Component {
     const headTitle = `${name} | Guides | ${post.data.title}`
     const fullUrl = `${url}${post.data.url}`
 
-
     return (
       <Fragment>
         <Meta title={headTitle} url={fullUrl} description={description}/>
@@ -120,7 +119,6 @@ class Guides extends Component {
     )
   }
 }
-
 
 export default compose(
   withPost,

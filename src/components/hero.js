@@ -3,7 +3,7 @@ import Link from 'nextein/link'
 import { Paragraph } from 'elems'
 
 import { Button } from './button'
-import Terminal from './terminal'
+import Window from './windows/window'
 
 export default class Header extends Component {
   render() {
@@ -29,7 +29,7 @@ export default class Header extends Component {
           </div>
         </div>
         <div className="terminal row">
-          <Terminal type="fish">npm install nextein</Terminal>
+          <Window type="zsh" cmd="npm install nextein" />
         </div>
         <style jsx>{`
           .container {
