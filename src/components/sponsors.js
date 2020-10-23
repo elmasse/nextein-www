@@ -53,7 +53,6 @@ export default class Sponsors extends Component {
             flex: 2;
             margin: calc(var(--spacing) * 3);
             flex-wrap: wrap;
-            min-height: 40vh;          
             align-items: center;
             justify-content: center;
           }
