@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import NextApp from 'next/app'
 import { CssBaseline } from 'elems'
-import 'prismjs/themes/prism-twilight.css';
+
+import 'prismjs/themes/prism-tomorrow.css';
 
 export default class App extends NextApp {
 
