@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Button = ({ children, variant="normal", raised=false, ...props }) => {
+export const Button = React.forwardRef(({ children, variant="normal", raised=false, ...props }, ref) => {
   return (
-    <button type="text" {...props}>
+    <button type="text" {...props} ref={ref}>
       {children}
       <style jsx>{`
         button {
@@ -68,6 +68,4 @@ export const Button = ({ children, variant="normal", raised=false, ...props }) =
       `}</style>
     </button>
   )
-
-}
-
+})

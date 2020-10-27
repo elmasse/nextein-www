@@ -1,7 +1,6 @@
 
 import React, { Component, Fragment } from  'react'
 import compose from 'lodash.flowright'
-import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
@@ -21,18 +20,15 @@ const byOrderSorter = (a, b) => a.data.order - b.data.order
 class Guides extends Component {
   render() {
     const { post: current, posts } = this.props
+    posts.sort(byOrderSorter)
+
     const post = current || posts[0]
     const headTitle = `${name} | Guides | ${post.data.title}`
     const fullUrl = `${url}${post.data.url}`
 
-    posts.sort(byOrderSorter)
-
     return (
       <Fragment>
-        <Head>
-          <title>{headTitle}</title>
-          <Meta title={headTitle} url={fullUrl} description={description}/>
-        </Head>
+        <Meta title={headTitle} url={fullUrl} description={description}/>
         <div className="container">
           <header>
             <Navigation/>
@@ -123,7 +119,6 @@ class Guides extends Component {
     )
   }
 }
-
 
 export default compose(
   withPost,

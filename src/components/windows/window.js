@@ -1,19 +1,28 @@
 import React, { Component } from 'react'
+import { Bash, Fish } from './terminal'
+import { Browser } from './browser'
 
-export default class Terminal extends Component {
+const TYPES = {
+  bash: Bash,
+  zsh: Fish,
+  browser: Browser
+}
 
+export default class Window extends Component {
   render() {
-    const { title, type = 'fish', children, ...rest } = this.props
-    const Type = TERMINALS[type]
+    const { title, type, children, className = '', ...rest } = this.props
+    const Type = TYPES[type] || ((props) => props.children)
     return (      
-      <div className="window" {...rest}>
+      <div className={["window"].concat(className).join(' ')}>
         <div className="toolbar">
           <i className="close" />
           <i className="minimize" />
           <i className="maximize" />
           <div className="title">{title||type}</div>
         </div>
-        <div className="tty"><Type>{children}</Type></div>
+        <div className="body">
+          <Type {...rest}>{children}</Type>
+        </div>
         <style jsx>{`
           .window {
             display: flex;
@@ -60,72 +69,12 @@ export default class Terminal extends Component {
             line-height: 1;
             font-size: .9em;
           }
-          .tty {
+          .body {
             flex: 1;
-            padding: 8px;
+            display: flex;
           }
         `}</style>          
       </div>
     )
   }
-}
-
-export class Bash extends Component {
-  render() {
-    const { children } = this.props;
-    return (
-      <p>
-        {children}
-        <style jsx>{`
-          p::before {
-            content: '$';
-            padding-right: 8px;
-          }
-        `}</style>
-      </p>
-    )
-  }
-}
-
-export class Fish extends Component {
-  getCommandLine = children => {
-    const [ line ] = React.Children.toArray(children)    
-    return (
-      <React.Fragment>
-        {line.split(' ').map((part, i) => {
-          return (<span key={i} className={i === 0 ? "command" : "argument"}>{part} </span>);
-        })}
-        <style jsx>{`        
-          .command {
-            font-weight: bold;
-            color: #fafafa;
-          }
-          .argument {
-            color: rgb(15,214,214);
-          }      
-        `}</style>
-      </React.Fragment>
-    )
-  }
-
-  render() {
-    const { children } = this.props;
-    return (
-      <p>
-        {this.getCommandLine(children)}
-        <style jsx>{`
-          p::before {
-            content: '~';
-            color: rgb(15,214,214);
-            padding-right: 8px;
-          }
-        `}</style>
-      </p>
-    )
-  }
-}
-
-const TERMINALS = {
-  bash: Bash,
-  fish: Fish
 }

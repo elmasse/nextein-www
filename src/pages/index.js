@@ -1,6 +1,5 @@
 
 import React, { Component, Fragment } from 'react'
-import Head from 'next/head'
 
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
@@ -15,20 +14,20 @@ import Footer from '../components/footer'
 
 class Index extends Component {
   render() {
-    const { posts: [ contributors ] } = this.props
+    const { posts } = this.props
+    const [contributors] = posts.filter(inCategory('contributors'));
+    const snippets = posts.filter(inCategory('snippets'));
+
     return (
       <Fragment>
-        <Head>
-          <title>{name}</title>
-          <Meta title={name} url={url} description={description}/>
-        </Head>
+        <Meta title={name} url={url} description={description}/>
         <div className="container">
           <header>
             <Navigation />
             <Hero />
           </header>
-          <Intro />
-          {contributors && <Contributors contributors={contributors} />}
+          <Intro snippets={snippets} />
+          <Contributors contributors={contributors} />
           <Sponsors />
           <Footer gutter />
           <style jsx>{`
@@ -44,4 +43,6 @@ class Index extends Component {
   }
 }
 
-export default withPostsFilterBy(inCategory('contributors'))(Index);
+export default withPostsFilterBy(
+  (post) => inCategory('contributors')(post) || inCategory('snippets')(post)
+)(Index);

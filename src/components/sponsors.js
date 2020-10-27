@@ -8,8 +8,50 @@ import { Button } from './button'
 import Geut from './icons/geut'
 
 export default class Sponsors extends Component {
-  render() {
+  state = {
+    enter: false,
+    anim: {}
+  }
 
+  getRotations = (e) => {
+    const { top, left, height, width } = this.state;
+
+    const [x, y] = [
+      e.clientX - left,
+      e.clientY - top
+    ];
+
+    return [(-15 + (30 * y/height )), (15 + (-30 * x/width ))]
+  }  
+
+  onMouseEnter = (e)  => {
+    const target =  e.currentTarget
+    const { top, left, height, width } = target.getBoundingClientRect();
+
+    this.setState({
+      target,
+      top, left, height, width
+    })
+  }
+
+  onMouseMove = (e) => {
+    const { target } = this.state
+    const [rx, ry] = this.getRotations(e)
+    target.style =  `
+    transform: perspective(4000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.1, 1.1, 1.1);
+    filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .7));
+    `
+  }
+
+  onMouseLeave = (e) => {
+    const { target } = this.state
+    target.style = `transform: perspective(0) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); filter: none;`
+    this.setState({
+      target: undefined
+    })
+  }
+
+  render() {
     return (
       <Section title="Sponsors">
         <div className="rows container">
@@ -25,7 +67,12 @@ export default class Sponsors extends Component {
           </div>
           <div className="row sponsors rows">
             <Link href="https://geutstudio.com" prefetch={false}>
-              <a target="_blank" rel="noopener noreferrer" title="GEUT">
+              <a target="_blank" rel="noopener noreferrer" className="link"
+                title="GEUT"
+                onMouseEnter={this.onMouseEnter}
+                onMouseMove={this.onMouseMove}
+                onMouseLeave={this.onMouseLeave}
+              >
                 <Geut width="280" />
               </a>
             </Link>
@@ -53,7 +100,6 @@ export default class Sponsors extends Component {
             flex: 2;
             margin: calc(var(--spacing) * 3);
             flex-wrap: wrap;
-            min-height: 40vh;          
             align-items: center;
             justify-content: center;
           }
@@ -68,6 +114,9 @@ export default class Sponsors extends Component {
             margin: 0 calc(var(--spacing) * 1);
           }
 
+          .sponsors .link {
+            transition: all 200ms ease-out;
+          }
 
         `}</style>
       </Section>

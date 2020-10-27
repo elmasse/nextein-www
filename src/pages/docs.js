@@ -2,7 +2,6 @@
 
 import React, { Component, Fragment } from  'react'
 import compose from 'lodash.flowright'
-import Head from 'next/head'
 
 import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
@@ -17,9 +16,13 @@ import ScrollSync from '../components/scrollsync'
 import Footer from '../components/footer'
 import Pagination from '../components/pagination'
 
+const byOrderSorter = (a, b) => a.data.order - b.data.order
+
 class Docs extends Component {
   render() {
     const { post: current, posts } = this.props
+    posts.sort(byOrderSorter)
+
     const post = current || posts[0]
     // Little hack to make title to break on / but without showing spaces.
     const title = post.data.title.split('/').reduce((prev, curr, idx) => {
@@ -35,10 +38,7 @@ class Docs extends Component {
 
     return (
       <Fragment>
-        <Head>
-        <title>{headTitle}</title>
-          <Meta title={headTitle} url={fullUrl} description={description}/>
-        </Head>
+        <Meta title={headTitle} url={fullUrl} description={description}/>
         <div className="container">
           <header>
             <Navigation/>

@@ -9,7 +9,7 @@ import { Button } from './button'
 
 export default class Contributors extends Component {
   render() {
-    const { contributors: { data: { contributors } } } = this.props;
+    const { contributors: { data: { contributors = [] } } } = this.props;
 
     return (
       <Section title="Contributors">
@@ -63,7 +63,6 @@ export default class Contributors extends Component {
             flex: 2;
             margin: calc(var(--spacing) * 3);
             flex-wrap: wrap;
-            min-height: 40vh;
             align-items: center;
             justify-content: center;
           }
