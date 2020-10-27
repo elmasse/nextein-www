@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 155 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-    <g transform="matrix(1,0,0,1,-159.075,-163.661)">
-        <g transform="matrix(0.440542,0,0,0.574469,-40.8871,-3.2098)">
-            <path d="M471.973,471.593C476.321,481.369 508.946,434.03 532.731,434.173C585.752,434.494 772.013,481.173 790.096,473.515C804.206,467.54 797.144,319.468 792.031,298.144C787.556,279.487 778.599,345.7 759.413,345.567C705.702,345.197 485.453,288.595 469.762,295.919C452.059,304.181 460.489,445.771 471.973,471.593Z" style="fill:none;stroke:black;stroke-width:9.77px;"/>
-        </g>
+<svg width="100%" height="100%" viewBox="0 0 155 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+  <style>
+    path {
+      fill: #222;
+      stroke: #222;
+      stroke-width: 10px;
+    }
+    @media (prefers-color-scheme: dark) {
+      path {
+        fill: #999;
+        stroke: #999;
+      }
+    }
+  </style>
+  <g transform="matrix(1,0,0,1,-159.075,-163.661)">
+    <g transform="matrix(0.440542,0,0,0.574469,-40.8871,-3.2098)">
+      <path d="M471.973,471.593C476.321,481.369 508.946,434.03 532.731,434.173C585.752,434.494 772.013,481.173 790.096,473.515C804.206,467.54 797.144,319.468 792.031,298.144C787.556,279.487 778.599,345.7 759.413,345.567C705.702,345.197 485.453,288.595 469.762,295.919C452.059,304.181 460.489,445.771 471.973,471.593Z" />
     </g>
+  </g>
 </svg>
