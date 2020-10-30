@@ -4,9 +4,20 @@ order: 1
 page: guides
 ---
 
-This post will guide you on how to get started with **Nextein**. You'll need to install **Node.js** if you don't have it installed already. 
+This post will guide you on how to get started with **Nextein**. 
 
-> To get the latest Node.js version please visit the [official Node.js website](https://nodejs.org/en/download/)
+## What are we building?
+
+We are going to create a static site that contains:
+
+- An index page to get our posts listed.
+- A page to display each post.
+
+## Prerequisites
+
+You'll need to install **Node.js** if you don't have it installed already. (To get the latest Node.js version please visit the [official Node.js website](https://nodejs.org/en/download/))
+
+This guide assumes you are familiar with Javascript/ES6, and Next.js. It is always good to keep the [Next.js site](https://nextjs.org) at hand for learning and documentation.
 
 ## Create an npm Project
 
@@ -14,29 +25,27 @@ The first step is to use **npm** to create a project in order to install all dep
 
 ```bash
 mkdir my-blog  && cd my-blog  && npm init -y
-
 ```
 ## Install Dependencies
 
-For our first project we will need, at least, to install **Nextein**, **Next.js** and **React**. You can keep adding more as you need them later.
+For our first project we will need, at least, to install **Nextein**, **Next.js** and **React**. You can add more dependencies as you need them later.
 
 ```bash
 npm install --save next react react-dom nextein
-
 ```
 ## Create Your First Page and Post
 
-**Next.js**'s projects follow a certain structure. **Nextein** requires creating a `next.config.js` file. This configuration file uses a wrapper for **Next.js** configuration.
+**Nextein** requires creating a `next.config.js` file. This configuration file uses a wrapper for Next.js configuration.
 
 ```js
-const nexteinConfig = require('nextein/config').default
+const { withNextein } = require('nextein/config')
 
-module.exports = nexteinConfig({
+module.exports = withNextein({
   // place your next config in here!
 })
 ```
 
-**Nextein** follows **Next.js** folder structure. Let's begin creating a `pages` folder with an `index.js` with this code.
+Let's begin creating a `pages` folder with an `index.js` with this code:
 
 ```js
 import React from 'react'
@@ -138,6 +147,46 @@ export default withPost(({ post }) => {
 ```
 
 The `withPost` HOC will pass the post's information to be rendered.
+
+## Exporting the Static Content
+
+Once we are ready with the development of our site, we can export the site to generate the static content. 
+
+Modify the `package.json` to include the export script:
+  
+```json
+{
+  "scripts": {
+    "dev": "nextein",
+    "export": "nextein build && nextein export"
+  }
+}
+
+```
+
+Now we can run the export command using:
+
+```bash
+npm run export
+```
+
+This will generate an `out` folder wich will contain our static site. You can serve it using `serve`:
+
+
+```bash
+npx serve out
+```
+
+##### Note 
+
+It might be worth to clean the cache folders that Next.js uses before runnning the `export` command in our local environment to make sure we are including only the production ready files.
+
+```bash
+rm -rf .next/
+```
+
+
+
 
 That's all you need to get started with **Nextein**. You can also check our [nextein starter](https://github.com/elmasse/nextein-starter) repository to get you up and running in seconds!
 

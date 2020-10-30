@@ -91,6 +91,10 @@ class Guides extends Component {
               margin-bottom: calc(var(--spacing) * -4);
             }
 
+            article :global(.content p+ul) {
+              margin-top: calc(var(--spacing) * -4);
+            }
+
             aside {
               margin-top: calc(var(--spacing) * -11);
               padding-top: calc(var(--spacing) * 3);
