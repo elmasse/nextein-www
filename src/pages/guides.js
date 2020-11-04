@@ -36,7 +36,7 @@ class Guides extends Component {
           <div className="main rows">
             <article>
               <header>
-                <div className="category">{post.data.category}</div>
+                <div className="category">Guides</div>
                 <Heading1>{post.data.title}</Heading1>
               </header>
               <Content
@@ -126,5 +126,8 @@ class Guides extends Component {
 
 export default compose(
   withPost,
-  withPostsFilterBy(inCategory('guides', { includeSubCategories: true }))
+  withPostsFilterBy(
+    (value, idx, array, { version = 'latest' }) => (
+      inCategory(`guides${version ? `/${version}` : ''}`)(value))
+    )
 )(Guides)

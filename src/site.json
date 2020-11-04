@@ -1,5 +1,9 @@
 {
   "name": "Nextein",
   "url": "https://nextein.elmasse.io",
-  "description": "Nextein is a static site generator for Next.js"
+  "description": "Nextein is a static site generator for Next.js",
+  "versions": {
+    "latest": "v3.x",
+    "v2": "v2.x"
+  }
 }

@@ -33,7 +33,7 @@ class Docs extends Component {
       return prev;
     }, [])
 
-    const headTitle = `${name} | Guides | ${post.data.title}`
+    const headTitle = `${name} | Docs | ${post.data.title}`
     const fullUrl = `${url}${post.data.url}`
 
     return (
@@ -46,7 +46,7 @@ class Docs extends Component {
           <div className="rows">
             <article>
               <header>
-                <div className="category">{post.data.category}</div>
+                <div className="category">Docs</div>
                 <Heading1>{}
                   {title}
                 </Heading1>
@@ -65,7 +65,7 @@ class Docs extends Component {
                   <Sidebar
                    current={post}
                    posts={posts}
-                   categories={{'docs/api': 'api', 'docs/content': 'content' }}
+                  //  categories={{'docs/api': 'api', 'docs/content': 'content' }}
                    toc={false}
                   />
                 </div>
@@ -78,7 +78,7 @@ class Docs extends Component {
                     current={post}
                     posts={posts}
                     activeTarget={activeTarget}
-                    categories={{'docs/api': 'api', 'docs/content': 'content' }}                
+                    // categories={{'docs/api': 'api', 'docs/content': 'content' }}                
                     width={`var(--sidebar-width)`}
                   />
                 )}
@@ -152,5 +152,8 @@ class Docs extends Component {
 
 export default compose(
   withPost,
-  withPostsFilterBy(inCategory('docs', { includeSubCategories: true }))
+  withPostsFilterBy(
+    (value, idx, array, { version = 'latest' }) => (
+      inCategory(`docs${version ? `/${version}` : ''}`, { includeSubCategories: true })(value))
+    )
 )(Docs)

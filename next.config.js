@@ -32,7 +32,9 @@ module.exports = withNextein({
     // These are necessary since guides and docs are used to render entries.
     // Nextein removes any page specified in a `page` from the defaultPathMap
     // so we need to add them back to generate the index.html in each folder.
-    '/guides': { page: '/guides', query: {} }, // <-query is needed, otherwise shallow-eq returns error
-    '/docs': { page: '/docs', query: {} }
+    '/guides': { page: '/guides', query: {} },
+    '/docs': { page: '/docs', query: {} },
+    '/guides/v2': { page: '/guides', query: { version: 'v2' } },
+    '/docs/v2': { page: '/docs', query: { version: 'v2' } }
   })
 })

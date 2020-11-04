@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import Link from 'next/link'
+import Link from 'nextein/link'
 
 import Github from './icons/github'
 import Nextein from './icons/nextein'
@@ -16,17 +16,17 @@ export default class Navigation extends Component {
         </a></Link>
         <Link href="/guides"><a>Guides</a></Link>
         <Link href="/docs"><a>Docs</a></Link>
-        <Link href="https://github.com/elmasse/nextein" prefetch={false}>
+        <Link href="https://github.com/elmasse/nextein">
           <a target="_blank" rel="noopener noreferrer">
             <Github width="25" alt="Github" />
           </a>
         </Link>
-        <Link href="https://www.npmjs.com/package/nextein" prefetch={false}>
+        <Link href="https://www.npmjs.com/package/nextein">
           <a target="_blank" rel="noopener noreferrer">
             <Npm width="35" style={{ marginTop: '5px' }} alt="npm" />
           </a>
         </Link>
-        <Link href="https://twitter.com/nexteinjs" prefetch={false}>
+        <Link href="https://twitter.com/nexteinjs">
           <a target="_blank" rel="noopener noreferrer">
             <Twitter width="19" alt="Twitter" />
           </a>
