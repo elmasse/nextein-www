@@ -34,7 +34,7 @@ class Index extends Component {
             .container {
               --main-color: var(--grey500);
               --main-contrast-color: var(--grey100);
-              background: radial-gradient(ellipse at 50% 0% , var(--grey700), var(--grey900));              
+              background: radial-gradient(ellipse at 50% 0% , var(--grey700), var(--grey900));
             }  
           `}</style>
         </div>
