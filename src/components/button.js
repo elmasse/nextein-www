@@ -59,7 +59,7 @@ export const Button = React.forwardRef(({ children, variant="normal", raised=fal
           ${(variant === "highlight" || raised) && `
           box-shadow: 0 7px 20px rgba(0,0,0,.32);
           transform: translateY(-1px);
-          ` || `          
+          ` || `
           background-color: var(--button--hover-bg-color);
           border: 1px solid var(--button--hover-border-color);          
           color: var(--button--hover-color);

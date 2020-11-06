@@ -3,7 +3,7 @@ import Link from 'nextein/link'
 
 export default class Pagination extends Component {
   render() {
-    const { posts, post } = this.props
+    const { posts, post, section } = this.props
     const currIdx = posts.findIndex(p => ( p.data.title == post.data.title ))
     const prev = posts[currIdx - 1]
     const next = posts[currIdx + 1]
@@ -15,7 +15,7 @@ export default class Pagination extends Component {
             <a className="prev columns">
               <div className="nav-to">Previous</div>
               <div className="title">{prev.data.title}</div>
-              <div className="category">{prev.data.category}</div>
+              <div className="category">{section}</div>
             </a>
           </Link>
         )}
@@ -24,7 +24,7 @@ export default class Pagination extends Component {
             <a className="next columns">
               <div className="nav-to">Next</div>
               <div className="title">{next.data.title}</div>
-              <div className="category">{next.data.category}</div>
+              <div className="category">{section}</div>
             </a>
           </Link>
         )}

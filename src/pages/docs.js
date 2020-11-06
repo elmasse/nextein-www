@@ -8,19 +8,26 @@ import { withPostsFilterBy, inCategory } from 'nextein/posts'
 import { Heading1 } from 'elems'
 import renderers from 'elems/renderers'
 
-import { name, url, description } from '../site.json'
+import { name, url, description, versions } from '../site.json'
+import { inVersionedCategory } from '../versioned'
 import Meta from '../components/meta'
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
 import Footer from '../components/footer'
 import Pagination from '../components/pagination'
+import VersionSelector from '../components/version-selector'
 
 const byOrderSorter = (a, b) => a.data.order - b.data.order
 
 class Docs extends Component {
+  static getInitialProps({ query: { version } }) {
+    return {
+      version
+    }
+  }
   render() {
-    const { post: current, posts } = this.props
+    const { post: current, posts, version } = this.props
     posts.sort(byOrderSorter)
 
     const post = current || posts[0]
@@ -46,8 +53,10 @@ class Docs extends Component {
           <div className="rows">
             <article>
               <header>
-                <div className="category">Docs</div>
-                <Heading1>{}
+                <div className="category">
+                  Docs<VersionSelector section="docs" versions={versions} selected={version} />
+                </div>
+                <Heading1>
                   {title}
                 </Heading1>
               </header>
@@ -59,13 +68,13 @@ class Docs extends Component {
               <Footer>
                 <Pagination
                   posts={posts.filter(inCategory(post.data.category)).sort((a, b) => a.data.order - b.data.order)}
-                  post={post} 
+                  post={post}
+                  section="docs"
                 />
                 <div className="bottom-post-nav">
                   <Sidebar
                    current={post}
                    posts={posts}
-                  //  categories={{'docs/api': 'api', 'docs/content': 'content' }}
                    toc={false}
                   />
                 </div>
@@ -78,7 +87,6 @@ class Docs extends Component {
                     current={post}
                     posts={posts}
                     activeTarget={activeTarget}
-                    // categories={{'docs/api': 'api', 'docs/content': 'content' }}                
                     width={`var(--sidebar-width)`}
                   />
                 )}
@@ -110,11 +118,18 @@ class Docs extends Component {
             }
 
             article header .category {
+              display: flex;
               font-family: var(--font-family-heading);
               font-size: 2em;
               text-transform: uppercase;
               color: var(--grey600);
               margin-bottom: calc(var(--spacing) * -4);
+            }
+
+            article header .category > :global(div) {
+              display: inline-block;
+              padding-left: var(--spacing);
+              font-size: .9rem;
             }
 
             article header :global(.title-separator) {
@@ -152,8 +167,5 @@ class Docs extends Component {
 
 export default compose(
   withPost,
-  withPostsFilterBy(
-    (value, idx, array, { version = 'latest' }) => (
-      inCategory(`docs${version ? `/${version}` : ''}`, { includeSubCategories: true })(value))
-    )
+  withPostsFilterBy(inVersionedCategory('docs'))
 )(Docs)

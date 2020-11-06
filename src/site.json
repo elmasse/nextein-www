@@ -2,8 +2,10 @@
   "name": "Nextein",
   "url": "https://nextein.elmasse.io",
   "description": "Nextein is a static site generator for Next.js",
+  
   "versions": {
-    "latest": "v3.x",
-    "v2": "v2.x"
+    "latest": "v3",
+    "v3": "v3.0.0",
+    "v2": "v2.7.3"
   }
 }
