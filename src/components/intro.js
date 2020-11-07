@@ -41,20 +41,21 @@ export default class Intro extends Component {
 
           .rows.examples {
             margin: 5em 0;
+            perspective: 1500px;
           }
 
           :global(.window.example) {
             flex: 1;
           }
           :global(.window.example:nth-child(1)) {
-            transform: scale(.9);
+            transform: scale(.9) rotateY(15deg) rotateX(5deg);
           }
           :global(.window.example:nth-child(2)) {
             transform: scale(1.1);
             margin-left: -4em;
           }
           :global(.window.example:nth-child(3)) {
-            transform: scale(.98);
+            transform: scale(1.1) rotateY(-24deg) rotateX(12deg);
           }
 
           @media screen and (max-width: 1024px) {
@@ -76,9 +77,13 @@ export default class Intro extends Component {
               marign-top: -8em;
             }            
           }
-
-          :global(.window.browser .body) {
-            --main-color: #212121;
+          
+          :global(.window.browser .browser) {
+            --main-color: var(--grey700);
+            background: var(--grey100);
+            align-items: center;
+            flex-direction: column;
+            display: flex;
           }
         `}</style>
       </Section>
