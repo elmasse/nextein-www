@@ -38,14 +38,14 @@ export default class Sponsors extends Component {
     const { target } = this.state
     const [rx, ry] = this.getRotations(e)
     target.style =  `
-    transform: perspective(4000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.1, 1.1, 1.1);
+    transform: rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.1, 1.1, 1.1);
     filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .7));
     `
   }
 
   onMouseLeave = (e) => {
     const { target } = this.state
-    target.style = `transform: perspective(0) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); filter: none;`
+    target.style = `transform: rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); filter: none;`
     this.setState({
       target: undefined
     })
@@ -102,6 +102,7 @@ export default class Sponsors extends Component {
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+            perspective: 1000px;
           }
 
           .actions {
