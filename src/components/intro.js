@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Paragraph } from 'elems'
 import Content from 'nextein/content'
+import Link from 'nextein/link'
 import renderers from 'elems/renderers'
 
 import Section from './section'
 import Window from './windows/window'
+import { Button } from './button'
 
 const byOrderSorter = (a, b) => a.data.order - b.data.order
 
@@ -18,7 +20,7 @@ export default class Intro extends Component {
             <Paragraph>
               Built on top of <b>Next.js</b>, Nextein brings you the possibility of using plain Markdown 
               files along with your React components to create static sites in minutes.
-            </Paragraph>
+            </Paragraph>        
             <div className="rows examples">
             {snippets.map(code =>
               <Window
@@ -32,7 +34,21 @@ export default class Intro extends Component {
               </Window>
             )}
             </div>
+            <Paragraph>Get started right now with our Guides or check the Starter Kit.</Paragraph>
+            <div className="actions rows">
+              <Link href="/guides">
+                <Button variant="highlight">
+                  <a target="_blank" rel="noopener noreferrer"><b>Get Started!</b></a>
+                </Button>
+              </Link>  
+              <Link href="https://github.com/elmasse/nextein-starter" passHref>
+                <Button raised>
+                  <a target="_blank" rel="noopener noreferrer"><b>Check the starter kit</b></a>
+                </Button>
+              </Link>  
+            </div>            
         </div>
+
         <style jsx>{`
           .container {
             min-height: 50vh;
@@ -55,7 +71,8 @@ export default class Intro extends Component {
             margin-left: -4em;
           }
           :global(.window.example:nth-child(3)) {
-            transform: scale(1.1) rotateY(-24deg) rotateX(12deg);
+            transform: scale(.98) rotateY(-24deg) rotateX(12deg);
+            margin-left: -4em;
           }
 
           @media screen and (max-width: 1024px) {
@@ -74,6 +91,7 @@ export default class Intro extends Component {
             }
             :global(.window.example:nth-child(3)) {
               transform: scale(1);
+              margin-left: 0;
               marign-top: -8em;
             }            
           }
@@ -84,6 +102,11 @@ export default class Intro extends Component {
             align-items: center;
             flex-direction: column;
             display: flex;
+          }
+
+          .actions :global(button) {
+            --button-color: var(--grey900);
+            margin: 0 calc(var(--spacing) * 1);
           }
         `}</style>
       </Section>
