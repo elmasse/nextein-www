@@ -4,7 +4,7 @@ page: docs
 order: 40
 ---
 
-A post object represents the markdown content and the metadata.
+A post object represents the entry content and the metadata.
 
 ## data _Object_
 
@@ -17,8 +17,4 @@ The post metadata is encapsulated in the `data` property. This includes the foll
 
 ## raw _String_
 
-The markdown raw content.
-
-## content _Object_
-
-The HAST (Hypertext Abstract Syntax Tree) representation of the markdown content.
+The post raw content. This is removed by default by the `nextein-markdown-plugin`

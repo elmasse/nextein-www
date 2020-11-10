@@ -15,7 +15,8 @@ Use the `excerpt` property to only render the first paragraph (this is useful wh
 
 - `content`: `{HAST}` Markdown content to be render in Hypertext Abstract Syntax Tree. This is provided by `post.content`
 - `excerpt`: `{Boolean}` true to only render the first paragraph. Optional. Default: `false`
-- `renderers`: `{Object}` A set of custom renderers for Markdown elements with the form of `[tagName]: renderer`.
+- `components`: `{Object}` A set of custom renderers for Markdown elements with the form of `[tagName]: renderer`.
+- `renderers`: `{Object}` A convenient and backward compatible representation for `components`.
 - `prefix`: `{String}` Prefix to use for the generated React elements. Optional. Default: `'entry-'`
 
 

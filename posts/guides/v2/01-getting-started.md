@@ -1,5 +1,5 @@
 ---
-title: Getting Started V2!
+title: Getting Started
 order: 1
 page: guides
 ---
