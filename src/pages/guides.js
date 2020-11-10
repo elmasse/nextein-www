@@ -105,10 +105,6 @@ class Guides extends Component {
               font-size: .9rem;
             }
 
-            article :global(.content p+ul) {
-              margin-top: calc(var(--spacing) * -4);
-            }
-
             aside {
               margin-top: calc(var(--spacing) * -11);
               padding-top: calc(var(--spacing) * 3);

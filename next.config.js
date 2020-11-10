@@ -6,11 +6,12 @@ const { versions } = require('./src/site.json')
  * @param {*} defaultPathMap
  * @param {*} options 
  */
-function versionedEntries(defaultPathMap, { url, page = url, versions }) {
+function versionedEntries(defaultPathMap, { url, page = url, versions, dev }) {
   const { latest, ...all } = versions
   return Object.keys(all).reduce((prev, version) => {
     const isLatest = version === latest
     const versionedUrl = `${url}/${version}`
+
     return {
       ...prev,
       ...(isLatest ? {
@@ -38,7 +39,12 @@ module.exports = withNextein({
       {
         name: 'nextein-plugin-markdown', 
         options: {
-          rehype: ['rehype-slug', 'rehype-autolink-headings', '@mapbox/rehype-prism']
+          rehype: [
+            'rehype-slug',
+            'rehype-autolink-headings', 
+            '@mapbox/rehype-prism',
+            'rehype-minify-whitespace'
+          ]
         }
       },
       {
@@ -59,35 +65,11 @@ module.exports = withNextein({
     ]
   },
 
-  exportPathMap: (defaultPathMap) => { 
-    // const { latest, ...versions } = versionsConfig
+  exportPathMap: (defaultPathMap, { dev }) => { 
     return ({
       ...defaultPathMap,
-      ...versionedEntries(defaultPathMap, { url: '/guides', versions }),
-      ...versionedEntries(defaultPathMap, { url: '/docs', versions })
-      // ...Object.keys(versions).reduce((prev, version) => {
-      //   const isLatest = version === latest
-      //   const suffix = isLatest ? '' : `/${version}`
-
-      //   return {          
-      //     ...prev,
-      //     [`/guides${suffix}`]: { page: '/guides', query: { version } },
-      //     [`/docs${suffix}`]: { page: '/docs', query: { version } },
-      //     ...Object.keys(defaultPathMap)
-      //      // Search for posts entries in guides or docs that match this version
-      //     .filter(k => {
-      //       return k.startsWith(`/guides/${version}/`) || k.startsWith(`/docs/${version}/`)
-      //     })
-      //     // return the export entry and attach version param into query
-      //     .reduce((prev, key) => {
-      //       const value = defaultPathMap[key]
-      //       return {
-      //         ...prev,
-      //         [key]: {...value, query: {  ...value.query, version }}
-      //       }
-      //     }, {}) 
-      //   }
-      // }, {})
+      ...versionedEntries(defaultPathMap, { url: '/guides', versions, dev }),
+      ...versionedEntries(defaultPathMap, { url: '/docs', versions, dev })      
       // These are necessary since guides and docs are used to render entries.
       // Nextein removes any page specified in a `page` from the defaultPathMap
       // so we need to add them back to generate the index.html in each folder.

@@ -33,8 +33,8 @@ export default class App extends NextApp {
             --h6-margin: var(--h2-margin);
 
             --p-font-size: 21px;
-            --p-margin: 0 0 calc(var(--spacing) * 6) 0;
-            --pre-margin: 0 0 calc(var(--spacing) * 6) 0;
+            // --p-margin: 0 0 calc(var(--spacing) * 6) 0;
+            // --pre-margin: 0 0 calc(var(--spacing) * 6) 0;
             --li-font-size: 21px;
 
             --grey50: #fafafa;
@@ -72,6 +72,8 @@ export default class App extends NextApp {
             font-family: var(--font-family-body), -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
             font-size: var(--font-base);
           }
+
+          // LAYOUT ---
 
           .container > * {
             margin: 0 auto;

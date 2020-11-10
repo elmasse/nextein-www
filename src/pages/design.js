@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Anchor, Blockquote, Heading1, Heading2, Heading3, Heading4, Paragraph, Preformatted, List, ListItem } from 'elems'
+import { Anchor, Blockquote, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Paragraph, Preformatted, List, ListItem } from 'elems'
 
 import { Button } from '../components/button'
 import { Menu, MenuItem, MenuDivider } from '../components/menu'
@@ -9,15 +9,25 @@ const loremImpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 export default class Design extends Component {
   render() {
     return (
-      <div className="container columns">
-        <article>
+      <div className="container">
+        <article className="columns">
           <Heading1>Heading 1</Heading1>
+          <Paragraph>{loremImpsum}</Paragraph>
           <Heading2>Heading 2</Heading2>
+          <Paragraph>{loremImpsum}</Paragraph>
           <Heading3>Heading 3</Heading3>
+          <Paragraph>{loremImpsum}</Paragraph>
           <Heading4>Heading 4</Heading4>
+          <Heading5>Heading 5</Heading5>
+          <Heading6>Heading 6</Heading6>
           <Paragraph>This <Anchor>Paragraph</Anchor> {loremImpsum}</Paragraph>
+          <Heading2>Heading 2</Heading2>
+          <Paragraph>{loremImpsum}</Paragraph>
+          <Paragraph>{loremImpsum}</Paragraph>
           <Blockquote><Paragraph>Lorem ipsum dolor sit amet</Paragraph></Blockquote>
+          <Paragraph>{loremImpsum}</Paragraph>
           <Preformatted>This is a pre</Preformatted>
+          <Paragraph>{loremImpsum}</Paragraph>
           <List>
             <ListItem>Item 1</ListItem>
             <ListItem>Item 2</ListItem>
@@ -58,6 +68,10 @@ export default class Design extends Component {
 
           .button > :global(button) {
             margin: calc(var(--spacing) * 1);
+          }
+
+          :global(pre) {
+            background: var(--grey400);
           }
         `}</style>
       </div>
