@@ -71,7 +71,7 @@ export default class Intro extends Component {
             margin-left: -4em;
           }
           :global(.window.example:nth-child(3)) {
-            transform: scale(.98) rotateY(-24deg) rotateX(12deg);
+            transform: scale(0.8) rotateY(-24deg) rotateX(12deg) translateZ(150px);
             margin-left: -4em;
           }
 
