@@ -1,6 +1,5 @@
 
 import React, { Component, Fragment } from  'react'
-import compose from 'lodash.flowright'
 
 import { withPostsFilterBy } from 'nextein/posts'
 import Content from 'nextein/content'
