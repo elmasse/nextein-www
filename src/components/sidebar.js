@@ -32,7 +32,8 @@ export default class Sidebar extends Component {
                     {toc && active && post.data.toc &&
                       <List>
                         {post.data.toc.map((item, itemIdx) => {
-                          const active = item.href === activeTarget
+                          const active = item.href === `#${activeTarget}`
+                          console.log(activeTarget, item)
                           const href = `${post.data.url}${item.href}`
                           return (
                             <ListItem key={`sidenav-${post.data.__id}-item-${itemIdx}`} className={`target ${active ? 'active' : ''}`}>
