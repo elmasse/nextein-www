@@ -23,19 +23,20 @@ export default class Sidebar extends Component {
           {groups.map(({ title, posts }) => 
             <Fragment key={`${title || 'all'}`}>
               {title && <div className="separator">{title}</div>}
-              {posts.map((post, idx) => {
+              {posts.map((post) => {
                 const { data } = post
                 const active = post.data.url === current.data.url
                 return (
-                  <ListItem key={`sidenav-${idx}`}>
+                  <ListItem key={`sidenav-${post.data.__id}`}>
                     <Link { ...post } ><a className={`toc ${active ? 'active' : ''}`}>{data.title}</a></Link>
                     {toc && active && post.data.toc &&
                       <List>
                         {post.data.toc.map((item, itemIdx) => {
-                          const active = item.href === `#${activeTarget}`
+                          const active = item.href === activeTarget
+                          const href = `${post.data.url}${item.href}`
                           return (
-                            <ListItem key={`sidenav-${idx}-item-${itemIdx}`} className={`target ${active ? 'active' : ''}`}>
-                              <Link href={item.href}><a className={`toc toc-${item.type}`}>{item.value}</a></Link>
+                            <ListItem key={`sidenav-${post.data.__id}-item-${itemIdx}`} className={`target ${active ? 'active' : ''}`}>
+                              <Link href={href}><a className={`toc toc-${item.type}`}>{item.value}</a></Link>
                             </ListItem>
                           )
                         })
