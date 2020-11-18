@@ -16,6 +16,8 @@ import ScrollSync from '../components/scrollsync'
 import Footer from '../components/footer'
 import Pagination from '../components/pagination'
 import VersionSelector from '../components/version-selector'
+// Custom renderers
+import Blocks from '../components/blocks'
 
 const byOrderSorter = (a, b) => a.data.order - b.data.order
 
@@ -49,7 +51,10 @@ class Guides extends Component {
               <Content
                 className="content columns"
                 {...post}
-                renderers={renderers}
+                renderers={{
+                  ...renderers,
+                  blockquote: Blocks
+                }}
               />
               <Footer>
                  <Pagination posts={posts} post={post} section="guides"/>

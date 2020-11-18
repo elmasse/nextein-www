@@ -177,15 +177,13 @@ This will generate an `out` folder wich will contain our static site. You can se
 npx serve out
 ```
 
-##### Note 
-
-It might be worth to clean the cache folders that Next.js uses before runnning the `export` command in our local environment to make sure we are including only the production ready files.
-
-```bash
-rm -rf .next/
-```
-
-
+> Tip
+>
+> It might be worth to clean the cache folders that Next.js uses before runnning the `export` command in our local environment to make sure we are including only the production ready files.
+>
+>```bash
+> rm -rf .next/
+>```
 
 
 That's all you need to get started with **Nextein**. You can also check our [nextein starter](https://github.com/elmasse/nextein-starter) repository to get you up and running in seconds!
