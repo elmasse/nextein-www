@@ -6,7 +6,7 @@ order: 1
 
 ## withNextein
 
-A wrapper configuration function to be declared into the `next.config.js` file.
+A wrapper configuration function to be declared into the **next.config.js** file.
 
 ```js
 
@@ -18,13 +18,13 @@ module.exports = withNextein({
 
 ```
 
->Tip
+> Note
 >
->The `next.config.js` is required to get Nextein working. 
+> The **withNextein**  wrapper is **required** to get Nextein working. 
 
 ## Nextein Configuration
 
-Nextein configuration can be passed in the Next.js configuration object wrapped into `nextein`.
+Nextein is mostly based in plugins and it comes with batteries included. In case you need to add or change something, configuration can be passed as:
 
 ```js
 const { withNextein } = require('nextein/config')
@@ -38,7 +38,7 @@ module.exports = withNextein({
 
 ```
 
-The `nextein` configuration can be either an object, or a function that returns an object:
+The `nextein` configuration can be either an **object**, or a **function that returns an object**:
 
 ```js
 
@@ -80,8 +80,8 @@ Configuration resolves to an Object with the form:
 Accepted forms:
 
 - Object: `{ name, id?, options }`
-- String: `name-of-plugin` -> { name: 'name-of-plugin' },
-- Array: [name, options] -> { name, options }
+- String: `name-of-plugin` results in: `{ name: 'name-of-plugin' }`,
+- Array: `[name, options]` results in `{ name, options }`
 
 A plugin configuration is identified by an internal `id`. This *id* will be set by default to the plugin name if no `id` property is provided.
 This allows to generate multiple instances of the same plugin if an`id` is provided or it can override a pre-configured plugin if not id provided.
@@ -116,13 +116,45 @@ This allows to generate multiple instances of the same plugin if an`id` is provi
 }
 ```
 
-#### Default Settings
+### Default Plugins
 
 The following plugins are configured by default:
 
-- `nextien-plugin-source-fs` (source)
-- `nextein-pligin-markdown` (build, cleanup)
-- `nextein-plugin-filter-unpublished` (filter)
+```js
+['nextein-plugin-source-fs', { path: 'posts' }],
+  'nextein-plugin-markdown',
+  'nextein-plugin-filter-unpublished'
+```
 
+#### `nextien-plugin-source-fs`
 
+The filesystem source plugin is configured to read entries from `./posts` folder.
+
+#### `nextein-pligin-markdown`
+
+The markdown plugin is configured to read `.md` files (based in markdown mime-type) and build the post entries.
+It runs a *cleanup stage* to remove `position` and `raw` from each entry.
+
+#### `nextein-plugin-filter-unpublished`
+
+This plugin allows to set a `publish: false` in front-matter configuration to unpublish the post.
+
+### Overriding Defaults
+
+In order to override any of the default plugins configuration you can just set the values to adapt your needs. For instance, in case you want to modify the posts directory, you could override the **nextein-plugin-source-fs** configuration as follows: 
+
+```js
+module.exports = withNextein({
+  nextein: {
+    plugins: [
+      ['nextein-plugin-source-fs', { path: 'entries' }]
+    ]
+  },
+
+  // more config here....
+})
+
+```
+
+If no **id** is defined in the plugin configuration, it will override a previous definition.
 
