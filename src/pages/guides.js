@@ -2,8 +2,9 @@
 import React, { Component, Fragment } from  'react'
 import compose from 'lodash.flowright'
 
-import withPost, { Content } from 'nextein/post'
 import { withPostsFilterBy } from 'nextein/posts'
+import Content from 'nextein/content'
+
 import { Heading1 } from 'elems'
 import renderers from 'elems/renderers'
 
@@ -134,7 +135,4 @@ class Guides extends Component {
   }
 }
 
-export default compose(
-  withPost,
-  withPostsFilterBy(inVersionedCategory('guides'))
-)(Guides)
+export default withPostsFilterBy(inVersionedCategory('guides'))(Guides)
