@@ -65,7 +65,7 @@ class Docs extends Component {
               <Content
                 className="content columns"
                 {...post}
-                components={{
+                renderers={{
                   ...renderers,
                   blockquote: Blocks
                 }}
