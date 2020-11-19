@@ -17,8 +17,7 @@ Use the `excerpt` property to only render the first paragraph (this is useful wh
 
 - `content`: `{Any}` Content to be render, it will be processed by a render plugin. This is provided by `post.content`
 - `excerpt`: `{Boolean}` true to only render the first paragraph. Optional. Default: `false`
-- `components`: `{Object}` A set of custom renderers for Markdown elements with the form of `[tagName]: renderer`.
-- `renderers`: `{Object}` A convenient and backward compatible representation for `components`.
+- `renderers`: `{Object}` A set of custom renderers for Markdown elements with the form of `[tagName]: renderer`.
 - `prefix`: `{String}` Prefix to use for the generated React elements. Optional. Default: `'entry-'`
 
 
@@ -48,7 +47,7 @@ export default withPosts( ({ posts }) => {
 
 ```
 
-Using `components` to change/style the `<p>` tag
+Using `renderers` to change/style the `<p>` tag
 
 ```js
 import Content from 'nextein/content'
@@ -57,7 +56,7 @@ import withPost from 'nextein/post'
 export default withPost( ({ post }) => { 
   return (
     <Content {...post} 
-      components={{
+      renderers={{
         p: Paragraph 
       }}
     />
