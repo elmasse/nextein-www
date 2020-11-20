@@ -28,7 +28,7 @@ export default class Window extends Component {
             display: flex;
             flex-direction: column;
             border-radius: 5px;
-            background-color: #2f2f2f;
+            background-color: var(--grey${type === 'browser' ? '100' : '800'});
             padding: 8px;
             border-radius: 8px;
             border: 1px solid #333;
@@ -68,10 +68,15 @@ export default class Window extends Component {
             text-align: center;
             line-height: 1;
             font-size: .9em;
+            color: var(--grey${type === 'browser' ? '800' : '100'});
+
           }
           .body {
             flex: 1;
             display: flex;
+          }
+          .body :global(:not(pre) > code[class*="language-"], pre[class*="language-"]) {
+            background: var(--grey800);
           }
         `}</style>          
       </div>

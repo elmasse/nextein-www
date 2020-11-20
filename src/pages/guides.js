@@ -1,31 +1,39 @@
 
 import React, { Component, Fragment } from  'react'
-import compose from 'lodash.flowright'
 
-import withPost, { Content } from 'nextein/post'
-import { withPostsFilterBy, inCategory } from 'nextein/posts'
+import { withPostsFilterBy } from 'nextein/posts'
+import Content from 'nextein/content'
+
 import { Heading1 } from 'elems'
 import renderers from 'elems/renderers'
 
-import { name, url, description } from '../site.json'
+import { name, url, description, versions } from '../site.json'
+import { inVersionedCategory } from '../versioned'
 import Meta from '../components/meta'
 import Navigation from '../components/navigation'
 import Sidebar from '../components/sidebar'
 import ScrollSync from '../components/scrollsync'
 import Footer from '../components/footer'
 import Pagination from '../components/pagination'
+import VersionSelector from '../components/version-selector'
+// Custom renderers
+import Anchor from '../components/anchor'
+import Blocks from '../components/blocks'
 
 const byOrderSorter = (a, b) => a.data.order - b.data.order
 
 class Guides extends Component {
+  static getInitialProps({ query: { version } }) {
+    return { version }
+  }
+
   render() {
-    const { post: current, posts } = this.props
+    const { post: current, posts, version } = this.props
     posts.sort(byOrderSorter)
 
     const post = current || posts[0]
     const headTitle = `${name} | Guides | ${post.data.title}`
     const fullUrl = `${url}${post.data.url}`
-
     return (
       <Fragment>
         <Meta title={headTitle} url={fullUrl} description={description}/>
@@ -36,16 +44,22 @@ class Guides extends Component {
           <div className="main rows">
             <article>
               <header>
-                <div className="category">{post.data.category}</div>
+                <div className="category">
+                  Guides<VersionSelector section="guides" versions={versions} selected={version} />
+                </div>
                 <Heading1>{post.data.title}</Heading1>
               </header>
               <Content
                 className="content columns"
                 {...post}
-                renderers={renderers}
+                renderers={{
+                  ...renderers,
+                  a: Anchor,
+                  blockquote: Blocks
+                }}
               />
               <Footer>
-                 <Pagination posts={posts} post={post} />
+                 <Pagination posts={posts} post={post} section="guides"/>
                  <div className="bottom-post-nav">
                   <Sidebar current={post} posts={posts} toc={false} />
                  </div>
@@ -61,6 +75,7 @@ class Guides extends Component {
           </div>
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);
+            --code-background-color: var(--grey100);
 
             article {
               flex: 1;
@@ -84,6 +99,7 @@ class Guides extends Component {
             }
 
             article header .category {
+              display: flex;
               font-family: var(--font-family-heading);
               font-size: 2em;
               text-transform: uppercase;
@@ -91,8 +107,10 @@ class Guides extends Component {
               margin-bottom: calc(var(--spacing) * -4);
             }
 
-            article :global(.content p+ul) {
-              margin-top: calc(var(--spacing) * -4);
+            article header .category > :global(div) {
+              display: inline-block;
+              padding-left: var(--spacing);
+              font-size: .9rem;
             }
 
             aside {
@@ -124,7 +142,4 @@ class Guides extends Component {
   }
 }
 
-export default compose(
-  withPost,
-  withPostsFilterBy(inCategory('guides', { includeSubCategories: true }))
-)(Guides)
+export default withPostsFilterBy(inVersionedCategory('guides'))(Guides)

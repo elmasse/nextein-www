@@ -28,6 +28,7 @@ export default class Section extends Component {
 
           .title :global(h3) {
             margin: calc(var(--spacing) * 4) 0;
+            color: var(--action-color);
           }
           `}</style>        
       </div>

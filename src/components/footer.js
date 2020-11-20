@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import Link from 'next/link'
+import Link from 'nextein/link'
 
 import { Anchor } from 'elems';
 
@@ -25,22 +25,22 @@ export default class Footer extends Component {
             <div className="copyright">Copyright &copy; 2017 - { new Date().getFullYear() } Max Fierro</div>
           </div>
           <div className="social rows">
-            <Link href="https://twitter.com/nexteinjs" prefetch={false}>
+            <Link href="https://twitter.com/nexteinjs">
               <a target="_blank" rel="noopener noreferrer">
               <Twitter width="19" alt="Twitter"/>
               </a>
             </Link>
-            <Link href="https://gitter.im/nextein" prefetch={false}>
+            <Link href="https://gitter.im/nextein">
               <a target="_blank" rel="noopener noreferrer">
               <Gitter width="16" alt="Gitter IM"/>
               </a>
             </Link> 
-            <Link href="https://github.com/elmasse/nextein" prefetch={false}>
+            <Link href="https://github.com/elmasse/nextein">
               <a target="_blank" rel="noopener noreferrer">
                 <Github width="25" alt="Github" />
               </a>
             </Link>
-            <Link href="https://www.npmjs.com/package/nextein" prefetch={false}>
+            <Link href="https://www.npmjs.com/package/nextein">
               <a target="_blank" rel="noopener noreferrer">
                 <Npm width="35" style={{ marginTop: '5px' }} alt="npm" />
               </a>
