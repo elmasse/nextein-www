@@ -79,9 +79,9 @@ Configuration resolves to an Object with the form:
 
 Accepted forms:
 
-- Object: `{ name, id?, options }`
-- String: `name-of-plugin` results in: `{ name: 'name-of-plugin' }`,
-- Array: `[name, options]` results in `{ name, options }`
+- **Object**: `{ name, id?, options }` The id is optional.
+- **String**: `name-of-plugin` results in: `{ name: 'name-of-plugin' }`,
+- **Array**: `[name, options]` results in `{ name, options }`
 
 A plugin configuration is identified by an internal `id`. This *id* will be set by default to the plugin name if no `id` property is provided.
 This allows to generate multiple instances of the same plugin if an`id` is provided or it can override a pre-configured plugin if not id provided.

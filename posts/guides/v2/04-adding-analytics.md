@@ -6,7 +6,7 @@ page: guides
 
 One of the most common scenarios for websites or blogs is to add _Analytics_ to monitor traffic. In this guide we will use `react-ga` to configure a _Google Analytics_ account.
 
-There are several ways to do this with `Next` and `Nextein`. We could follow the  [Next.js with react-ga example ](https://github.com/zeit/next.js/tree/v3-beta/examples/with-react-ga) which basically defines a common `Layout` component that will send a `pageView` when `componentDidMount` lifecycle gets executed.
+There are several ways to do this with `Next` and `Nextein`. We could follow the  [Next.js with react-ga example](https://github.com/zeit/next.js/tree/v3-beta/examples/with-react-ga) which basically defines a common `Layout` component that will send a `pageView` when `componentDidMount` lifecycle gets executed.
 
 But, in this guide we will cover an alternative implementation using a High Order Component.
 
