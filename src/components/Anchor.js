@@ -24,7 +24,7 @@ export default function Anchor ({ children, ...props }) {
           transition: all ease 0.15s;
         }
         a:hover::after {
-          height: 50%;
+          height: 100%;
         }
       `}</style>
     </a>
