@@ -12,9 +12,9 @@ import withPost from 'nextein/post'
 withPost(Component)
 ```
 
-HOC for `/pages` components that renders a single post. It makes the post available thru the `post` property.
+HOC for **/pages** components that renders a single post. It makes the post available thru the **post** property.
 
-- `component`: `{Component|Function}` The component or render function that is provided with `post` in properties.  
+- **component**: `{Component|Function}` The component or render function that is provided with `post` in properties.  
 
 
 ```js
@@ -31,4 +31,4 @@ export default withPost( ({ post }) => { /* render your post here */ } )
 import { Content } from 'nextein/post'
 ```
 
-This is a convinient export of [nextein/content](/docs/api/content)
+This is a convinient export of [nextein/content](/docs/v3/api/content)

@@ -4,6 +4,8 @@ page: docs
 order: 11
 ---
 
+## inCategory
+
 ```js
 import { inCategory } from 'nextein/posts'
 
@@ -22,8 +24,6 @@ Filter function to be applied to posts to retrieve posts in a given category.
 >
 > **inCategory** is also available in from `'nextein/posts'` for convenience.
 
-
-asdasd
 
 ### Using Categories
 

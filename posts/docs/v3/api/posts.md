@@ -12,9 +12,9 @@ import withPosts from 'nextein/posts'
 withPosts(Component)
 ```
 
-HOC for `/pages` components that renders a list of posts. It makes the post list available thru the `posts` property.
+HOC for **/pages** components that renders a list of posts. It makes the post list available thru the **posts** property.
 
-- `component`: `{Component|Function}` The component or render function that is provided with `posts` in properties.  
+- **component**: `{Component|Function}` The component or render function that is provided with `posts` in properties.  
 
 
 Using a render function:
@@ -47,8 +47,6 @@ export default withPosts(MyComponent)
 
 ```
 
-
-
 ## withPostsFilterBy
 
 ```js
@@ -59,7 +57,7 @@ withPostsFilterBy(filter)(Component)
 
 Returns an HOC that gets all posts filtered out by the given filter function.
 
-- `filter`: `{Function}` The function to filter results.  
+- **filter**: `{Function}` The function to filter results.  
 
 This can be used in conjunction with `inCategory` to get only the desired posts in a certain category.
 
@@ -93,3 +91,11 @@ export default withPosts( ({ posts }) => {
 })
 
 ```
+
+## inCategory
+
+```js
+import { inCategory } from 'nextein/posts'
+```
+
+This is a convinient export of **inCategory** from [nextein/filters](/docs/v3/api/filters/#incategory)

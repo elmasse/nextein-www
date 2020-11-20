@@ -4,6 +4,8 @@ page: docs
 order: 21
 ---
 
+## Content
+
 ```js
 import Content from 'nextein/content'
 
