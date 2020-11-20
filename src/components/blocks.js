@@ -1,5 +1,5 @@
 import React from 'react'
-import { Blockquote, Paragraph } from 'elems'
+import { Blockquote } from 'elems'
 
 
 export default function Blocks ({ children }) {
@@ -8,7 +8,7 @@ export default function Blocks ({ children }) {
   const item = children[0]?.props.children[0]
   if (item && typeof item === 'string') {
     kind = (children[0]?.props.children[0].toLowerCase())
-    if (['note', 'warning', 'tip'].includes(kind)){
+    if (['example', 'note', 'warning', 'tip'].includes(kind)){
       Type = Block(kind)
     }
   }

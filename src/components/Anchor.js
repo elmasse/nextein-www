@@ -20,11 +20,10 @@ export default function Anchor ({ children, ...props }) {
           left: 0;
           bottom: 0;
           background-color: var(--action-color);
+          opacity: .3;
           transition: all ease 0.15s;
-          opacity: .25;
         }
         a:hover::after {
-          opacity: .8;
           height: 50%;
         }
       `}</style>

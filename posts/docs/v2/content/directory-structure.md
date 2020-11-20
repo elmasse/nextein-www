@@ -24,7 +24,7 @@ Nextein follows `Next` directory structure. As an overview, these are the releva
 
 The `/pages` folder contains all Page Components. These components will be used as either the page that list a set of posts or render a single post. 
 
-> Examples
+> Example
 >
 > `index.js`, `post.js`, `about.js`, `contact.js`
 
@@ -32,7 +32,7 @@ The `/pages` folder contains all Page Components. These components will be used 
 
 Stores all posts in markdown format. There is no need for an specific name convention. You can use whatever you want. In case you decide to use a date prefix it will be used and removed from the name property.
 
-> Examples
+> Example
 >
 > `hello-world.md`, `2017-08-10-post-with-date.md`, `01-first-post.md`
 
@@ -40,7 +40,7 @@ Stores all posts in markdown format. There is no need for an specific name conve
 
 The static folder serves as a repository for any static content such as images, css, videos, etc.
 
-> Examples
+> Example
 >
 > `image.png`, `custom.css`
 

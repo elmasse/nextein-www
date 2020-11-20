@@ -33,8 +33,6 @@ export default class App extends NextApp {
             --h6-margin: var(--h2-margin);
 
             --p-font-size: 21px;
-            // --p-margin: 0 0 calc(var(--spacing) * 6) 0;
-            // --pre-margin: 0 0 calc(var(--spacing) * 6) 0;
             --li-font-size: 21px;
 
             --grey50: #fafafa;

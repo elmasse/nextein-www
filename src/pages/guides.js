@@ -75,6 +75,7 @@ class Guides extends Component {
           </div>
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);
+            --code-background-color: var(--grey100);
 
             article {
               flex: 1;

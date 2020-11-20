@@ -98,4 +98,4 @@ export default withPosts( ({ posts }) => {
 import { inCategory } from 'nextein/posts'
 ```
 
-This is a convinient export of **inCategory** from [nextein/filters](/docs/v3/api/filters/#incategory)
+This is a convinient export of **inCategory** from [nextein/filters](../filters/#incategory)

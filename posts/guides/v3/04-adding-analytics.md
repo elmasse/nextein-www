@@ -77,8 +77,8 @@ const Index = withPosts(({ posts }) => {
   return (
     <main>
     {
-      posts.map((post, index) => (        
-        <article key={`post-${index}`}>
+      posts.map(post => (        
+        <article key={post.data.__id}>
           <h1>{post.data.title}</h1>
           <Content {...post} />
         </article>

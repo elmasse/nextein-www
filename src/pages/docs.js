@@ -73,11 +73,7 @@ class Docs extends Component {
                 }}
               />
               <Footer>
-                <Pagination
-                  posts={posts.filter(inCategory(post.data.category)).sort((a, b) => a.data.order - b.data.order)}
-                  post={post}
-                  section="docs"
-                />
+                <Pagination posts={posts} post={post} section="docs" />
                 <div className="bottom-post-nav">
                   <Sidebar
                    current={post}
@@ -102,7 +98,8 @@ class Docs extends Component {
           </div>
           <style jsx>{`
             --sidebar-width: calc(var(--spacing) * 38);
-            
+            --code-background-color: var(--grey100);
+
             article {
               flex: 1;
               width: 1px; /* width to get the Article to not expand */

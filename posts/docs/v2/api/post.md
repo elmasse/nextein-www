@@ -31,4 +31,4 @@ export default withPost( ({ post }) => { /* render your post here */ } )
 import { Content } from 'nextein/post'
 ```
 
-This is a convinient export of [nextein/content](/docs/api/content)
+This is a convinient export of [nextein/content](../content)
