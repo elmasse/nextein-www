@@ -18,6 +18,7 @@ import Footer from '../components/footer'
 import Pagination from '../components/pagination'
 import VersionSelector from '../components/version-selector'
 // Custom renderers
+import Anchor from '../components/anchor'
 import Blocks from '../components/blocks'
 
 const byOrderSorter = (a, b) => a.data.order - b.data.order
@@ -67,6 +68,7 @@ class Docs extends Component {
                 {...post}
                 renderers={{
                   ...renderers,
+                  a: Anchor,
                   blockquote: Blocks
                 }}
               />

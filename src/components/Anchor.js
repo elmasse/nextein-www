@@ -4,10 +4,9 @@ export default function Anchor ({ children, ...props }) {
   return (
     <a {...props}>
       {children}
-      <style jsx>
-        {`
+      <style jsx>{`
         a {
-          color: var(--anchor-color, var(--main-color));
+          color: var(--main-color);
           text-decoration: none;
           display: inline-block;
           position: relative;
@@ -17,14 +16,18 @@ export default function Anchor ({ children, ...props }) {
           position: absolute;
           z-index: -1;
           width: 100%;
-          height: 10px;
+          height: 30%;
           left: 0;
           bottom: 0;
           background-color: var(--action-color);
-          transition: all ease 0.3s;
+          transition: all ease 0.15s;
+          opacity: .25;
         }
-      `}
-      </style>
+        a:hover::after {
+          opacity: .8;
+          height: 50%;
+        }
+      `}</style>
     </a>
   )
 }
