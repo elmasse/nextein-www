@@ -31,7 +31,7 @@ mkdir my-blog  && cd my-blog  && npm init -y
 For our first project we will need, at least, to install **Nextein**, **Next.js** and **React**. You can add more dependencies as you need them later.
 
 ```bash
-npm install --save next react react-dom nextein
+npm install --save next react react-dom nextein webpack@4
 ```
 ## Create Your First Page and Post
 
