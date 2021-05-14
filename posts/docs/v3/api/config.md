@@ -130,7 +130,7 @@ The following plugins are configured by default:
 
 The filesystem source plugin is configured to read entries from `./posts` folder.
 
-#### `nextein-pligin-markdown`
+#### `nextein-plugin-markdown`
 
 The markdown plugin is configured to read `.md` files (based in markdown mime-type) and build the post entries.
 It runs a *cleanup stage* to remove `position` and `raw` from each entry.
