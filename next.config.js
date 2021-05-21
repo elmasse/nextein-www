@@ -56,7 +56,7 @@ module.exports = withNextein({
         }
       },
       {
-        name: './plugins/nextein-plugin-toc',
+        name: 'nextein-plugin-toc',
         options: {
           categories: ['guides', 'docs'],
           maxDepth: 3
