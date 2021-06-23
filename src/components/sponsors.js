@@ -8,48 +8,52 @@ import { Button } from './button'
 import Geut from './icons/geut'
 
 export default class Sponsors extends Component {
-  state = {
-    enter: false,
-    anim: {}
-  }
+  // state = {
+  //   enter: false,
+  //   anim: {}
+  // }
 
-  getRotations = (e) => {
-    const { top, left, height, width } = this.state;
+  // getRotations = (e) => {
+  //   const { top, left, height, width } = this.state;
 
-    const [x, y] = [
-      e.clientX - left,
-      e.clientY - top
-    ];
+  //   const [x, y] = [
+  //     e.clientX - left,
+  //     e.clientY - top
+  //   ];
 
-    return [(-15 + (30 * y/height )), (15 + (-30 * x/width ))]
-  }  
+  //   return [(-15 + (30 * y/height )), (15 + (-30 * x/width ))]
+  // }  
 
-  onMouseEnter = (e)  => {
-    const target =  e.currentTarget
-    const { top, left, height, width } = target.getBoundingClientRect();
+  // onMouseEnter = (e)  => {
+  //   console.log('enter',e)
+  //   const target =  e.target
+  //   const { top, left, height, width } = target.getBoundingClientRect();
+  //   this.setState({
+  //     target,
+  //     top, left, height, width
+  //   })
+  // }
 
-    this.setState({
-      target,
-      top, left, height, width
-    })
-  }
+  // onMouseMove = (e) => {
+  //   // const { target } = this.state
+  //   const [rx, ry] = this.getRotations(e)
+  //   console.log(e)
+  //   if( target) target.style =  `
+  //   transform: rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.1, 1.1, 1.1);
+  //   filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .7));
+  //   `
+  // }
 
-  onMouseMove = (e) => {
-    const { target } = this.state
-    const [rx, ry] = this.getRotations(e)
-    target.style =  `
-    transform: rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.1, 1.1, 1.1);
-    filter: drop-shadow( 4px 4px 3px rgba(0, 0, 0, .7));
-    `
-  }
-
-  onMouseLeave = (e) => {
-    const { target } = this.state
-    target.style = `transform: rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); filter: none;`
-    this.setState({
-      target: undefined
-    })
-  }
+  // onMouseLeave = (e) => {
+  //   const { target } = this.state
+  //   console.log(e)
+  //   if (target) {
+  //     target.style = `transform: rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); filter: none;`
+  //   }
+  //   this.setState({
+  //     target: undefined
+  //   })
+  // }
 
   render() {
     return (
@@ -68,10 +72,7 @@ export default class Sponsors extends Component {
           <div className="row sponsors rows">
             <Link href="https://geutstudio.com" prefetch={false}>
               <a target="_blank" rel="noopener noreferrer" className="link"
-                title="GEUT"
-                onMouseEnter={this.onMouseEnter}
-                onMouseMove={this.onMouseMove}
-                onMouseLeave={this.onMouseLeave}
+                title="GEUT"                
               >
                 <Geut width="280" />
               </a>

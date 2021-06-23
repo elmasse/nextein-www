@@ -104,6 +104,10 @@ export default class Intro extends Component {
             display: flex;
           }
 
+          .actions {
+            margin-left: calc(var(--spacing) * -1);
+          }
+
           .actions :global(button) {
             --button-color: var(--grey900);
             margin: 0 calc(var(--spacing) * 1);

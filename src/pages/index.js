@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
-import { name, url, description } from '../site.json'
+import site from '../site.json'
 import Meta from '../components/meta'
 import Navigation from '../components/navigation'
 import Hero from '../components/hero'
@@ -12,11 +12,13 @@ import Contributors from '../components/contributors'
 import Sponsors from '../components/sponsors'
 import Footer from '../components/footer'
 
+
 class Index extends Component {
   render() {
     const { posts } = this.props
-    const [contributors] = posts.filter(inCategory('contributors'));
-    const snippets = posts.filter(inCategory('snippets'));
+    const [contributors] = posts.filter(inCategory('contributors'))
+    const snippets = posts.filter(inCategory('snippets'))
+    const { name, url, description } = site
 
     return (
       <Fragment>

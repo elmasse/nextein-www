@@ -29,14 +29,14 @@ export default function VersionSelector ({ section, selected, versions = {} }) {
       <Button
         variant="highlight"        
         onClick={toggleMenu}>
-          <b>{version}</b>
+          <b className="selector-version">{version}</b>
         </Button>
       {open ? (
         <Menu>
           {Object.entries(all).map(([tag, name]) => (
             <MenuItem key={tag} selected={tag === selected}>
               <Link href={`/${section}/${tag}`}>
-                <a><b>{name}</b></a>
+                <a><b className="selector-version">{name}</b></a>
               </Link>
             </MenuItem>
           ))}
@@ -47,6 +47,9 @@ export default function VersionSelector ({ section, selected, versions = {} }) {
           position: relative;
         }
 
+        .selector .selector-version {
+          text-transform: none;
+        }
         .selector :global(button:hover) {
           box-shadow: none;
           transform: translateY(-1px);

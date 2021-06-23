@@ -7,7 +7,7 @@ import Content from 'nextein/content'
 import { Heading1 } from 'elems'
 import renderers from 'elems/renderers'
 
-import { name, url, description, versions } from '../site.json'
+import  site from '../site.json'
 import { inVersionedCategory } from '../versioned'
 import Meta from '../components/meta'
 import Navigation from '../components/navigation'
@@ -20,6 +20,7 @@ import VersionSelector from '../components/version-selector'
 import Anchor from '../components/anchor'
 import Blocks from '../components/blocks'
 
+const { name, url, description, versions } = site
 const byOrderSorter = (a, b) => a.data.order - b.data.order
 
 class Guides extends Component {
@@ -109,7 +110,7 @@ class Guides extends Component {
 
             article header .category > :global(div) {
               display: inline-block;
-              padding-left: var(--spacing);
+              padding-left: calc(var(--spacing) * 2);
               font-size: .9rem;
             }
 
