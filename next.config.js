@@ -1,5 +1,5 @@
 const { withNextein } = require('nextein/config')
-const { versions } = require('./src/site.json')
+const site = require('./src/site.json')
 
 /**
  * Append the versioned urls and scans all defaultPathMap entries to add
@@ -34,6 +34,7 @@ function versionedEntries(defaultPathMap, { url, page = url, versions, dev }) {
 }
 
 module.exports = withNextein({
+  webpack5: true,
   nextein: {
     plugins: [
       {
@@ -68,8 +69,8 @@ module.exports = withNextein({
   exportPathMap: (defaultPathMap, { dev }) => { 
     return ({
       ...defaultPathMap,
-      ...versionedEntries(defaultPathMap, { url: '/guides', versions, dev }),
-      ...versionedEntries(defaultPathMap, { url: '/docs', versions, dev })      
+      ...versionedEntries(defaultPathMap, { url: '/guides', versions: site.versions, dev }),
+      ...versionedEntries(defaultPathMap, { url: '/docs', versions: site.versions, dev })      
       // These are necessary since guides and docs are used to render entries.
       // Nextein removes any page specified in a `page` from the defaultPathMap
       // so we need to add them back to generate the index.html in each folder.

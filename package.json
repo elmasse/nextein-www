@@ -14,7 +14,7 @@
     "babel-plugin-prismjs": "^2.0.1",
     "elems": "^1.0.0-beta.15",
     "isomorphic-fetch": "^3.0.0",
-    "next": "^10.0.0",
+    "next": "^11.0.0",
     "nextein": "^3.0.0",
     "nextein-plugin-toc": "^1.0.1",
     "prismjs": "^1.16.0",
@@ -26,6 +26,7 @@
     "unist-util-map": "^2.0.1"
   },
   "devDependencies": {
-    "cpr": "^3.0.1"
+    "cpr": "^3.0.1",
+    "webpack": "^5.40.0"
   }
 }
