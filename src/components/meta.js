@@ -12,7 +12,7 @@ export default class Meta extends Component {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
-        <meta property="og:image" content={`${url}/static/images/logo.png`} />
+        <meta property="og:image" content={`${url}/images/logo.png`} />
       </Head>
     )
   }

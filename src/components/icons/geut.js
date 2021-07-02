@@ -45,7 +45,7 @@ export default function Geut (props) {
             className="multiply"/>
         </g>
       </g>
-      <image href="" src="./static/images/logo.png" alt="GEUT logo" className="logo-fallback"></image>
+      <image href="" src="./images/logo.png" alt="GEUT logo" className="logo-fallback"></image>
     </svg>
   )
 }

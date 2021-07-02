@@ -51,7 +51,7 @@ export default withPost(({ post }) => {
 
 This will render a very simple html without any styles.
 
-![Simple HTML](/static/images/guides/06-unstyled.png)
+![Simple HTML](/images/guides/06-unstyled.png)
 
 Let's change our `page.js` to display the paragraphs with some styles. We are going to use a simple stylesheet (as it is defined in the nextein-starter kit).
 
@@ -59,7 +59,7 @@ We need to add our `stylesheet.css` to the `page.js` component using next.js `He
 
 ```js
   <Head>
-      <link type="text/css" rel="stylesheet" href="/static/stylesheet.css" />
+      <link type="text/css" rel="stylesheet" href="/stylesheet.css" />
   </Head>
 ```
 
@@ -115,7 +115,7 @@ export default withPost(({ post }) => {
 
 The final result will render paragraphs with our style
 
-![Custom Renders for Paragraphs](/static/images/guides/06-styled-p.png)
+![Custom Renders for Paragraphs](/images/guides/06-styled-p.png)
 
 
 ## Custom Elements
@@ -198,7 +198,7 @@ export default withPost(({ post }) => {
 
 ```
 
-![Using custom elements](/static/images/guides/06-custom-element.png)
+![Using custom elements](/images/guides/06-custom-element.png)
 
 > Note
 >
