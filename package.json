@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nextein",
     "export": "nextein build && nextein export",
-    "build": "npm run export && npm run copy-wellknown",
-    "copy-wellknown": "cpr .well-known out/.well-known"
+    "copy-wellknown": "cpr .well-known out/.well-known",
+    "build": "npm run export && npm run copy-wellknown"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
