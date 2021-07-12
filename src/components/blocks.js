@@ -1,11 +1,10 @@
-import React from 'react'
-import { Blockquote } from 'elems'
-
 
 export default function Blocks ({ children }) {
-  let Type = Blockquote
-  let kind
+  let Type = props => <blockquote {...props} />
+
   const item = children[0]?.props.children[0]
+  let kind
+
   if (item && typeof item === 'string') {
     kind = (children[0]?.props.children[0].toLowerCase())
     if (['example', 'note', 'warning', 'tip'].includes(kind)){
@@ -13,19 +12,31 @@ export default function Blocks ({ children }) {
     }
   }
 
-  return (
-    <Type>
-      {children}
-    </Type>     
-  )
+  return <Type>{children}</Type>
 }
 
 function Block (kind) {
-  function BlockRender ({ children }) {
+  function BlockRender ({ children, ...props }) {
     return (
-      <div className={`block ${kind}`}>     
-        {children}
-      <style jsx>{`
+      <div
+        className={[
+          ' my-8 border-l-8 px-6 py-4',
+          (kind === 'example' || kind === 'tip') && 'bg-gray-100 border-gray-300',
+          kind === 'note' && 'bg-sky-200 border-sky-400',
+          kind === 'warning' && 'bg-yellow-100 border-yellow-300'
+        ].filter(Boolean).join(' ')}
+        {...props}
+      > 
+      {children}
+        <style jsx>{`
+          div :global(p:first-child) {
+            font-weight: bold;
+          }
+        `}
+        </style>
+      </div>
+
+      /* <style jsx>{`
          --block-background: var(--grey100);
          --block-border-color: var(--grey300);         
         .block {
@@ -58,8 +69,8 @@ function Block (kind) {
           --block-background: rgba(255, 229, 100, .3);
           --block-border-color: rgb(255, 229, 100);
         }
-      `}</style>  
-      </div>
+      `}</style>
+      */
     )
   }
   BlockRender.displayName = `Block(${kind})`

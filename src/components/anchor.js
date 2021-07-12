@@ -2,15 +2,10 @@ import React from 'react'
 
 export default function Anchor ({ children, ...props }) {
   return (
-    <a {...props}>
+    <a className='inline-block relative' style={{ textDecoration: 'none' }} {...props}>
       {children}
-      <style jsx>{`
-        a {
-          color: var(--main-color);
-          text-decoration: none;
-          display: inline-block;
-          position: relative;
-        }
+      <span className='absolute bottom-0 left-0 right-0 bg-action bg-opacity-30 h-1/3 w-full transition-all duration-75 hover:h-full'></span>
+      {/* <style jsx>{`
         a::after {
           content: '';
           position: absolute;
@@ -26,7 +21,7 @@ export default function Anchor ({ children, ...props }) {
         a:hover::after {
           height: 100%;
         }
-      `}</style>
+      `}</style> */}
     </a>
   )
 }

@@ -1,12 +1,25 @@
 import React from 'react'
 
-export const Button = React.forwardRef(({ children, variant="normal", raised=false, ...props }, ref) => {
+export const Button = React.forwardRef(({ children, variant='normal', border=true, className='', ...props }, ref) => {
   return (
-    <button type="text" {...props} ref={ref}>
+    <button
+      ref={ref}
+      type='text'
+      className={[
+        'flex items-center justify-center h-10 px-6',
+        'uppercase font-normal',
+        'rounded-md',
+        variant === 'normal' && 'bg-gray-100 hover:bg-gray-300 text-gray-900',
+        variant === 'highlight' && 'bg-action text-gray-900',
+        border && 'border-gray-900 border',
+        'hover:shadow-sm',
+        className].filter(Boolean).join(' ')}
+      {...props}
+    >
       {children}
-      <style jsx>{`
+      {/* <style jsx>{`
         button {
-          ${(variant === "normal" && `
+          ${(variant === 'normal' && `
             --button-bg-color: var(--main-contrast-color);
             --button-border-color: var(--main-contrast-color);
             --button-color: var(--main-color);
@@ -14,7 +27,7 @@ export const Button = React.forwardRef(({ children, variant="normal", raised=fal
             --button--hover-border-color: var(--main-color);
             --button--hover-color: var(--main--contrast-color);
           `) || ''}
-          ${(variant === "highlight" && `
+          ${(variant === 'highlight' && `
             --button-bg-color: var(--action-color);
             --button-border-color: var(--action-color);
             --button-color: var(--grey100);
@@ -56,7 +69,7 @@ export const Button = React.forwardRef(({ children, variant="normal", raised=fal
         }
 
         button:hover {
-          ${(variant === "highlight" || raised) && `
+          ${(variant === 'highlight' || raised) && `
           box-shadow: 0 7px 20px rgba(0,0,0,.32);
           transform: translateY(-1px);
           ` || `
@@ -65,7 +78,7 @@ export const Button = React.forwardRef(({ children, variant="normal", raised=fal
           color: var(--button--hover-color);
           `
         }
-      `}</style>
+      `}</style> */}
     </button>
   )
 })

@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link href="/images/favicon.svg" rel="icon" type="image/svg+xml" />
-          <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:300,400,600|Montserrat:300,400,600" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:300,400,600" rel="stylesheet" />
         </Head>
         <body>
           <Main />

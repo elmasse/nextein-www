@@ -12,7 +12,7 @@ export default function VersionSelector ({ section, selected, versions = {} }) {
     ev.stopPropagation()
     setOpen(value => !value)
   }
-  
+
   function closeMenu () {
     setOpen(false)
   }
@@ -25,34 +25,28 @@ export default function VersionSelector ({ section, selected, versions = {} }) {
   }, [])
 
   return (
-    <div className="selector">
-      <Button
-        variant="highlight"        
-        onClick={toggleMenu}>
-          <b className="selector-version">{version}</b>
-        </Button>
+    <div className='relative'>
+      <Button variant='highlight' border={false} onClick={toggleMenu}>
+        <b className='normal-case text-white'>{version}</b>
+      </Button>
       {open ? (
-        <Menu>
+        <Menu className='absolute'>
           {Object.entries(all).map(([tag, name]) => (
             <MenuItem key={tag} selected={tag === selected}>
               <Link href={`/${section}/${tag}`}>
-                <a><b className="selector-version">{name}</b></a>
+                <a><b className='normal-case'>{name}</b></a>
               </Link>
             </MenuItem>
           ))}
         </Menu>
       ) : null }
-      <style jsx>{`
+      {/* <style jsx>{`
         .selector {
           position: relative;
         }
 
         .selector .selector-version {
           text-transform: none;
-        }
-        .selector :global(button:hover) {
-          box-shadow: none;
-          transform: translateY(-1px);
         }
 
         .selector > :global(.menu) {
@@ -73,7 +67,7 @@ export default function VersionSelector ({ section, selected, versions = {} }) {
           display: flex;
           justify-content: center;
         }
-      `}</style>
+      `}</style> */}
     </div>
   )
 }

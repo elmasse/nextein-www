@@ -1,5 +1,4 @@
 
-import React, { Component, Fragment } from 'react'
 
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
@@ -13,36 +12,26 @@ import Sponsors from '../components/sponsors'
 import Footer from '../components/footer'
 
 
-class Index extends Component {
-  render() {
-    const { posts } = this.props
-    const [contributors] = posts.filter(inCategory('contributors'))
-    const snippets = posts.filter(inCategory('snippets'))
-    const { name, url, description } = site
+function Index ({ posts }) {
+  const [contributors] = posts.filter(inCategory('contributors'))
+  const snippets = posts.filter(inCategory('snippets'))
+  const { name, url, description } = site
 
-    return (
-      <Fragment>
-        <Meta title={name} url={url} description={description}/>
-        <div className="container">
-          <header>
-            <Navigation />
-            <Hero />
-          </header>
-          <Intro snippets={snippets} />
-          <Contributors contributors={contributors} />
-          <Sponsors />
-          <Footer gutter />
-          <style jsx>{`
-            .container {
-              --main-color: var(--grey500);
-              --main-contrast-color: var(--grey100);
-              background: radial-gradient(ellipse at 50% 0% , var(--grey700), var(--grey900));
-            }  
-          `}</style>
-        </div>
-      </Fragment>
-    )
-  }
+  return (
+    <div className='bg-gradient-radial from-gray-700 to-gray-900'>
+      <Meta title={name} url={url} description={description}/>
+      <div className='max-w-7xl mx-auto my-0 space-y-16'>
+        <header>
+          <Navigation />
+          <Hero />
+        </header>
+        <Intro snippets={snippets} />
+        <Contributors contributors={contributors} />
+        <Sponsors />
+        <Footer />
+      </div>
+    </div>
+  )  
 }
 
 export default withPostsFilterBy(
