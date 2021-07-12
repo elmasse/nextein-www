@@ -54,7 +54,7 @@ class Docs extends Component {
           </header>
           <div className='flex'>
             <article className='mr-12 flex-1 w-1'>{/* // width 1px to make the article to not expand */}
-              <header className='flex flex-col justify-between align-baseline my-32 space-y-10'>
+              <header className='flex flex-col justify-between align-baseline mt-20 mb-40 space-y-10'>
                 <div className='flex items-center space-x-4'>
                   <span className='text-gray-600 text-2xl font-heading font-medium uppercase '>Docs</span>
                   <VersionSelector section='docs' versions={versions} selected={version} />
@@ -62,7 +62,7 @@ class Docs extends Component {
                 <h1 className='font-heading text-7xl font-bold tracking-tight'>{post.data.title}</h1>
               </header>
               <Content
-                className='prose prose-xl max-w-full mb-32'
+                className='prose prose-xl mb-32'
                 {...post}
                 renderers={{
                   a: Anchor,
