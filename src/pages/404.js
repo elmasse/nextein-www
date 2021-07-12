@@ -5,26 +5,30 @@ import Footer from '../components/footer'
 
 export default function NotFound () {
   return (
-    <div className='max-w-5xl h-screen mx-auto text-gray-500'>
-      <hgroup className='my-40 flex items-center justify-center space-x-8'>
-        <Link href='/'><a><Nextein className='w-32 fill-current' alt='home' /></a></Link>
-        <h1 className='text-9xl'>404</h1>
-        <h2 className='text-6xl'>Not Found.</h2>
-      </hgroup>
-      <section className='prose prose-lg my-20'>
-        <p>
-          We have been moving things around. Sorry about that, this page is not here anymore.
-          Maybe you are looking for:
-        </p>
-        
-        <ul>
-          <li><Link href='/'><a>Home</a></Link></li>
-          <li><Link href='/guides'><a>Guides</a></Link></li>
-          <li><Link href='/docs'><a>Docs</a></Link></li>
-          <li><Link href='/404'><a>This Page :)</a></Link></li>
-        </ul>
-      </section>
-      <Footer />
+    <div className='bg-gradient-radial from-gray-700 to-gray-900'>
+      <div className='max-w-5xl mx-auto text-gray-600 min-h-screen flex flex-col'>
+        <hgroup className='my-40 flex items-center justify-center space-x-2'>
+          <Link href='/'><a><Nextein className='w-56 fill-current filter drop-shadow-2xl z-10' alt='home' /></a></Link>
+          <h1 className='text-8xl font-bold'>Page&nbsp;</h1>
+          <h2 className='text-8xl tracking-tight font-bold text-gray-300'>Not Found.</h2>
+        </hgroup>
+        <section className='text-gray-500 my-20 flex-1 space-y-10 max-w-screen-md'>
+          <p className='text-2xl'>
+            We have been moving things around.<br/>
+            Sorry about that, this page is not here anymore. <br/>
+          </p>
+          <p className='text-xl'>            
+            Maybe you are looking for:
+          </p>        
+          <ul className='text-xl space-y-2 uppercase'>
+            <li><Link href='/'><a>Home</a></Link></li>
+            <li><Link href='/guides'><a>Guides</a></Link></li>
+            <li><Link href='/docs'><a>Docs</a></Link></li>
+            <li><Link href='/404'><a>This Page :)</a></Link></li>
+          </ul>
+        </section>
+        <Footer />
+      </div>
     </div>
   )
 }
