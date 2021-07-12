@@ -1,3 +1,4 @@
+import React from 'react'
 
 export const Button = React.forwardRef(({ children, variant='normal', border=true, className='', ...props }, ref) => {
   return (
