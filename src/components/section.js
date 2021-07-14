@@ -1,38 +1,13 @@
-import React, { Component } from 'react'
 
-import { Heading3 } from 'elems'
-
-export default class Section extends Component {
-  render() {
-    const { title, children } = this.props
-    return (
-      <div className="container">
-        <div className="separator" />
-        <div className="title">
-          <Heading3>{title}</Heading3>
-        </div>
-        {children}
-        <style jsx>{`
-
-          .container {
-            margin-top: calc(var(--spacing) * 2);
-            padding: 0 calc(var(--spacing) * 4);
-          }
-
-          .separator {
-            margin: 0;
-            width: calc(var(--spacing) * 10);
-            height: calc(var(--spacing) * .5);
-            background-color: var(--main-color);
-          }
-
-          .title :global(h3) {
-            margin: calc(var(--spacing) * 4) 0;
-            color: var(--action-color);
-          }
-          `}</style>        
+export default function Section ({ title, children, className, ...props }) {
+  return (
+    <section className={['mt-4 px-8', className].join(' ')} {...props}>
+      <div className='m-0 w-20 h-1 bg-gray-300' />
+      <div className='my-8 text-action'>
+        <h1 className='text-4xl font-heading font-extrabold tracking-tight'>{title}</h1>
       </div>
+      {children}        
+    </section>
 
-    )
-  }
+  )
 }

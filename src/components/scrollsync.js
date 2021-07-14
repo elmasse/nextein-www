@@ -1,34 +1,26 @@
-import React, { Component } from 'react'
+import  { useEffect, useState } from 'react'
 
-export default class ScrollSync extends Component {
-  state = {
-    activeTarget: '',
-    targetsTopOffset: []
-  }
+export default function ScrollSync ({ post, threshold = 50, children }) {
+  const [activeTarget, setActiveTarget] = useState('')
+  const [targetsTopOffset, setTargetsTopOffset] = useState([])
 
-  componentDidUpdate(prevProps) {
-    const { post } = this.props;
-    if (prevProps.post.data.toc !== post.data.toc) {
-      this.calculateTargetTopOffsets();
+  useEffect(() => {    
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('scroll', handleScroll)    
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('scroll', handleScroll)
     }
-  }
+  }, [targetsTopOffset])
 
-  componentDidMount() {
-    this.calculateTargetTopOffsets();
+  useEffect(() => {
+    calculateTargetTopOffsets()
+  }, [post.data.__id])
 
-    window.addEventListener('resize', this.handleResize);
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  calculateTargetTopOffsets = () => {
-    const { post: { data: { toc = []} }, threshold = 50 } = this.props;
-
-    const targetsTopOffset = toc.map(item => {
+  function calculateTargetTopOffsets () {   
+    const { data: { toc }} = post
+    const _targetsTopOffset = toc.map(item => {
       const id = item.href.replace('#', '')
       const element = document.getElementById(id)
       if (element) {
@@ -38,36 +30,28 @@ export default class ScrollSync extends Component {
       }
     }).filter(Boolean)
 
-    this.setState({
-      targetsTopOffset
-    })
-    
+    setTargetsTopOffset(_targetsTopOffset)
   }
 
-  handleResize = () => {
-    this.calculateTargetTopOffsets();
-    this.handleScroll();
+  function handleResize () {
+    calculateTargetTopOffsets()
+    handleScroll()
   }
-
-  handleScroll = () => {
-    const { targetsTopOffset}  = this.state;
+ 
+  function handleScroll () {
+    console.log('scroll', targetsTopOffset.length)
     const item = targetsTopOffset.find((itemTopOffset, i) => {
-      const nextItemTopOffset = targetsTopOffset[i + 1];
+      const nextItemTopOffset = targetsTopOffset[i + 1]
       if (nextItemTopOffset) {
         return (
           window.scrollY >= itemTopOffset.offsetTop &&
           window.scrollY < nextItemTopOffset.offsetTop
-        );
+        )
       }
-      return window.scrollY >= itemTopOffset.offsetTop;
-    });
-    this.setState({
-      activeTarget: item ? item.id : '',
-    });
+      return window.scrollY >= itemTopOffset.offsetTop
+    })
+    setActiveTarget(item ? item.id : '')
   }
-  render() {
-    const { children } = this.props
-    const { activeTarget } = this.state
-    return children({ activeTarget })
-  }
+
+  return children({ activeTarget })
 }

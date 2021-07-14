@@ -1,11 +1,8 @@
 
-import React, { Component, Fragment } from  'react'
+import { Component } from  'react'
 
 import { withPostsFilterBy } from 'nextein/posts'
 import Content from 'nextein/content'
-
-import { Heading1 } from 'elems'
-import renderers from 'elems/renderers'
 
 import  site from '../site.json'
 import { inVersionedCategory } from '../versioned'
@@ -35,69 +32,44 @@ class Guides extends Component {
     const post = current || posts[0]
     const headTitle = `${name} | Guides | ${post.data.title}`
     const fullUrl = `${url}${post.data.url}`
+
     return (
-      <Fragment>
+      <>
         <Meta title={headTitle} url={fullUrl} description={description}/>
-        <div className="container">
+        <div className='max-w-7xl mx-auto my-0 space-y-16'>
           <header>
             <Navigation/>
           </header>
-          <div className="main rows">
-            <article>
-              <header>
-                <div className="category">
-                  Guides<VersionSelector section="guides" versions={versions} selected={version} />
+          <div className='flex'>
+            <article className='lg:mr-12 flex-1 w-1'>{/* // width 1px to make the article to not expand */}
+              <header className='flex flex-col justify-between align-baseline mt-20 mb-40 space-y-10 px-4'>
+                <div className='flex items-center space-x-4'>
+                  <span className='text-gray-600 text-2xl font-heading font-medium uppercase '>Guides</span>
+                  <VersionSelector section='guides' versions={versions} selected={version} />
                 </div>
-                <Heading1>{post.data.title}</Heading1>
+                <h1 className='font-heading text-7xl font-bold tracking-tight'>{post.data.title}</h1>
               </header>
               <Content
-                className="content columns"
+                className='prose prose-lg lg:prose-xl mb-32 px-4'
                 {...post}
                 renderers={{
-                  ...renderers,
                   a: Anchor,
                   blockquote: Blocks
                 }}
               />
               <Footer>
-                 <Pagination posts={posts} post={post} section="guides"/>
-                 <div className="bottom-post-nav">
-                  <Sidebar current={post} posts={posts} toc={false} />
-                 </div>
+                <Pagination posts={posts} post={post} section='guides'/>                
               </Footer>
             </article>
-            <aside>
+            <aside className='hidden md:block -mt-32 pt-6 flex-none w-80 bg-gray-100'>
               <ScrollSync post={post}>
                 {({ activeTarget }) => (
-                  <Sidebar current={post} activeTarget={activeTarget} posts={posts} width={`var(--sidebar-width)`}/>
+                  <Sidebar current={post} activeTarget={activeTarget} posts={posts} />
                 )}
               </ScrollSync>
             </aside>
           </div>
-          <style jsx>{`
-            --sidebar-width: calc(var(--spacing) * 38);
-            --code-background-color: var(--grey100);
-
-            article {
-              flex: 1;
-              width: 1px; /* width to get the Article to not expand */
-              padding: 0 calc(var(--spacing) * 4);
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              align-items: stretch;
-            }
-
-            article header {
-              display: flex;
-              flex-direction: column;
-              flex-grow: 0;
-              flex-shrink: 1;
-              flex-basis: auto;
-              justify-content: space-between;
-              align-items: baseline;
-              margin: calc(var(--spacing) * 10) 0;
-            }
+          {/* <style jsx>{`
 
             article header .category {
               display: flex;
@@ -136,9 +108,9 @@ class Guides extends Component {
               }
             }
 
-          `}</style>
+          `}</style> */}
         </div>
-      </Fragment>
+      </>
     )
   }
 }

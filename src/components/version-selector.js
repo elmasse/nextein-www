@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Button } from './button'
+import { useEffect, useState } from 'react'
 import Link from 'nextein/link'
-import { Menu, MenuItem } from './menu'
 
 export default function VersionSelector ({ section, selected, versions = {} }) {
   const [open, setOpen] = useState(false)
@@ -12,7 +10,7 @@ export default function VersionSelector ({ section, selected, versions = {} }) {
     ev.stopPropagation()
     setOpen(value => !value)
   }
-  
+
   function closeMenu () {
     setOpen(false)
   }
@@ -25,55 +23,30 @@ export default function VersionSelector ({ section, selected, versions = {} }) {
   }, [])
 
   return (
-    <div className="selector">
-      <Button
-        variant="highlight"        
-        onClick={toggleMenu}>
-          <b className="selector-version">{version}</b>
-        </Button>
+    <div className='relative'>
+      <button className='flex items-center space-x-1 py-2 pl-6 pr-3 text-gray-100 bg-action rounded-md' onClick={toggleMenu}>
+        <b className='text-sm normal-case'>{version}</b>
+        <svg className='h-5 w-5 fill-current' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+          <path fillRule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clipRule='evenodd' />
+        </svg>
+      </button>
       {open ? (
-        <Menu>
+        <div className='absolute inset-x-0 mt-1 bg-white inline-block text-left shadow-lg rounded border py-1'>
           {Object.entries(all).map(([tag, name]) => (
-            <MenuItem key={tag} selected={tag === selected}>
+            <div
+              key={tag}
+              className={[
+                'relative py-2 px-6 text-md min-w-full text-right transition-all duration-100',
+                (tag === selected) ? 'bg-action text-gray-100' : 'hover:bg-gray-100'
+              ].filter(Boolean).join(' ')}
+            >
               <Link href={`/${section}/${tag}`}>
-                <a><b className="selector-version">{name}</b></a>
+                <a><b className='normal-case text-sm'>{name}</b></a>
               </Link>
-            </MenuItem>
+            </div>
           ))}
-        </Menu>
+        </div>
       ) : null }
-      <style jsx>{`
-        .selector {
-          position: relative;
-        }
-
-        .selector .selector-version {
-          text-transform: none;
-        }
-        .selector :global(button:hover) {
-          box-shadow: none;
-          transform: translateY(-1px);
-        }
-
-        .selector > :global(.menu) {
-          position: absolute;
-        }
-        .selector > :global(button),
-        .selector > :global(.menu) {
-          width: 100px;
-        }
-
-        .selector > :global(.menu) a {
-          color: inherit;
-          text-decoration: none;
-          display: block;
-        }
-
-        .selector :global(.menu-item) {
-          display: flex;
-          justify-content: center;
-        }
-      `}</style>
     </div>
   )
 }
