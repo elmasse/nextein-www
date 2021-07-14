@@ -1,19 +1,19 @@
 function Toolbar ({ children }) {
   return (
-    <div className='flex-none h-11 flex items-center px-4'>
+    <div className='flex-none h-11 flex items-center justify-start relative px-4'>
       <div className='flex space-x-1.5'>
         <div className='w-3 h-3 rounded-full bg-red-500'></div>
         <div className='w-3 h-3 rounded-full bg-yellow-400'></div>
         <div className='w-3 h-3 rounded-full bg-green-400'></div>
       </div>
-      <div className='flex-1 flex items-center justify-center'>{children}</div>
+      <div className='absolute inset-0 flex items-center justify-center'>{children}</div>
     </div>
   )
 }
 
 export function Window ({ title, children, className }) {
   return (
-    <div className={['relative overflow-hidden md:rounded-xl shadow-2xl flex bg-light-blue-500 pb-6 md:pb-0 border border-gray-800', className].join(' ')} style={{ borderTopColor: '#666' }}>
+    <div className={['relative overflow-hidden rounded-xl shadow-2xl flex bg-light-blue-500 pb-6 md:pb-0 border border-gray-800', className].join(' ')} style={{ borderTopColor: '#666' }}>
       <div className='absolute inset-0 bg-black bg-opacity-50'></div>
       <div className='relative w-full flex flex-col'>
         <Toolbar><div className='text-sm text-gray-300'>{title}</div></Toolbar>
@@ -42,7 +42,7 @@ export function Window ({ title, children, className }) {
 export function Browser ({ title, children, className }) {
   return (
     <div
-      className={['relative overflow-hidden md:rounded-xl shadow-2xl flex bg-light-blue-500 pb-6 md:pb-0', className].join(' ')}>
+      className={['relative overflow-hidden rounded-xl shadow-2xl flex bg-light-blue-500 pb-6 md:pb-0', className].join(' ')}>
       <div className='absolute inset-0 bg-gray-50'></div>
       <div className='relative w-full flex flex-col'>
         <Toolbar><div className='text-sm text-gray-700'>{title}</div></Toolbar>

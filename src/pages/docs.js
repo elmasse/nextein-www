@@ -53,16 +53,16 @@ class Docs extends Component {
             <Navigation/>
           </header>
           <div className='flex'>
-            <article className='mr-12 flex-1 w-1'>{/* // width 1px to make the article to not expand */}
-              <header className='flex flex-col justify-between align-baseline mt-20 mb-40 space-y-10'>
+            <article className='lg:mr-12 flex-1 w-1'>{/* // width 1px to make the article to not expand */}
+              <header className='flex flex-col justify-between align-baseline mt-20 mb-40 space-y-10 px-4'>
                 <div className='flex items-center space-x-4'>
                   <span className='text-gray-600 text-2xl font-heading font-medium uppercase '>Docs</span>
                   <VersionSelector section='docs' versions={versions} selected={version} />
                 </div>
-                <h1 className='font-heading text-7xl font-bold tracking-tight'>{post.data.title}</h1>
+                <h1 className='font-heading text-7xl font-bold tracking-tight'>{title}</h1>
               </header>
               <Content
-                className='prose prose-xl mb-32'
+                className='prose prose-lg  lg:prose-xl mb-32 px-4'
                 {...post}
                 renderers={{
                   a: Anchor,
@@ -71,9 +71,6 @@ class Docs extends Component {
               />
               <Footer>
                 <Pagination posts={posts} post={post} section='guides'/>                
-                 <div className='flex md:hidden'>
-                  <Sidebar current={post} posts={posts} toc={false} />
-                 </div>
               </Footer>
             </article>
             <aside className='hidden md:block -mt-32 pt-6 flex-none w-80 bg-gray-100'>
@@ -84,46 +81,6 @@ class Docs extends Component {
               </ScrollSync>
             </aside>
           </div>
-          {/* <style jsx>{`
-
-            article header .category {
-              display: flex;
-              font-family: var(--font-family-heading);
-              font-size: 2em;
-              text-transform: uppercase;
-              color: var(--grey600);
-              margin-bottom: calc(var(--spacing) * -4);
-            }
-
-            article header .category > :global(div) {
-              display: inline-block;
-              padding-left: calc(var(--spacing) * 2);
-              font-size: .9rem;
-            }
-
-            aside {
-              margin-top: calc(var(--spacing) * -11);
-              padding-top: calc(var(--spacing) * 3);
-              width: var(--sidebar-width);
-              border-left: 1px solid #eee;
-              overflow-y: auto;
-            }
-
-            .bottom-post-nav {
-              display: none;
-            }
-
-            @media screen and (max-width: 1024px) {
-              aside {
-                display: none;
-              }
-
-              .bottom-post-nav {
-                display: flex;
-              }
-            }
-
-          `}</style> */}
         </div>
       </>
     )

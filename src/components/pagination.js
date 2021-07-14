@@ -11,7 +11,7 @@ export default function Pagination ({ posts, post, section }) {
         <Link {...prev}>
           <a className='prev flex-1 no-underline justify-start'>
             <div className='text-sm font-bold'>Previous</div>
-            <div className='text-3xl font-bold tracking-tight font-heading'>{prev.data.title}</div>
+            <div className='text-2xl md:text-3xl font-bold tracking-tight font-heading'>{prev.data.title}</div>
             <div className='text-sm font-medium uppercase'>{section}</div>
           </a>
         </Link>
@@ -20,7 +20,7 @@ export default function Pagination ({ posts, post, section }) {
         <Link {...next}>
           <a className='next flex-1 justify-end text-right'>
             <div className='text-sm font-bold'>Next</div>
-            <div className='text-3xl font-bold tracking-tight font-heading'>{next.data.title}</div>
+            <div className='text-2xl md:text-3xl font-bold tracking-tight font-heading'>{next.data.title}</div>
             <div className='text-sm font-medium uppercase'>{section}</div>
           </a>
         </Link>

@@ -7,12 +7,12 @@ import { Button } from './button'
 export default function Contributors ({ contributors: { data: { contributors = [] } } }) {
   return (
     <Section title='Contributors'>
-      <div className='flex items-center space-x-12 my-20'>
+      <div className='my-20 flex flex-col lg:flex-row space-x-0 space-y-8 lg:space-x-12 lg:space-y-0'>
         <div className='flex-none flex flex-col space-y-10'>
           <p className='text-xl text-gray-400 font-light' >This project exists thanks to all the people who contribute.</p>
           <div className=''>
             <Link href='https://github.com/elmasse/nextein' prefetch={false}>
-              <Button raised>
+              <Button>
                 <a target='_blank' rel='noopener noreferrer'><b>Become a Contributor!</b></a>
               </Button>
             </Link>  
@@ -32,4 +32,4 @@ export default function Contributors ({ contributors: { data: { contributors = [
       </div>
     </Section>
   )
-  }
+}

@@ -9,7 +9,7 @@ import Twitter from './icons/twitter'
 
 export default function Footer ({ children }) {
   return (
-    <footer className='flex flex-col text-gray-500'>
+    <footer className='px-6 flex flex-col text-gray-500'>
       {children}
       <div className='flex justify-between'>
         <div className='space-y-2'>
