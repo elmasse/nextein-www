@@ -25,50 +25,6 @@ export default function Pagination ({ posts, post, section }) {
           </a>
         </Link>
       )}
-      {/* <style jsx>{`
-        // nav {
-        //   display: flex;
-        //   flex-direction: row;
-        //   align-items: flex-start;
-        //   min-height: 4em;
-        //   margin: calc(var(--spacing) * 8) 0;    
-        // }
-
-        nav > .columns {
-          flex: 1;
-        }
-
-        nav > a {
-          text-decoration: none;
-          color: var(--action-color);
-        }
-
-        .prev {
-          justify-content: flex-start;
-        }
-
-        .next {
-          justify-content: flex-end;
-          text-align: right;
-        }
-
-        .nav-to {
-          font-weight: bold;
-        }
-
-        .title {
-          font-family: var(--font-family-heading);
-          font-size: 1.4em;
-          font-weight: bold;
-        }
-
-        .category {
-          font-family: var(--font-family-heading);
-          font-size: .85em;
-          text-transform: uppercase;
-        }
-      `}</style>  */}
-
     </nav>
   )
 }

@@ -57,7 +57,3 @@ export function Browser ({ title, children, className }) {
     </div>
   )
 }
-
-export function Computer () {
-  
-}

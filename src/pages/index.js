@@ -1,5 +1,4 @@
 
-
 import { withPostsFilterBy, inCategory } from 'nextein/posts'
 
 import site from '../site.json'
@@ -36,4 +35,4 @@ function Index ({ posts }) {
 
 export default withPostsFilterBy(
   (post) => inCategory('contributors')(post) || inCategory('snippets')(post)
-)(Index);
+)(Index)

@@ -1,6 +1,6 @@
-import React from 'react'
+import { forwardRef } from 'react'
 
-export const Button = React.forwardRef(({ children, variant='normal', border=true, className='', ...props }, ref) => {
+export const Button = forwardRef(({ children, variant='normal', border=true, className='', ...props }, ref) => {
   return (
     <button
       ref={ref}

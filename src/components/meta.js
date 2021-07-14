@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Meta ({ title, url, type = "website", description }) {  
+export default function Meta ({ title, url, description }) {  
   return (
     <Head>
       <title>{title}</title>

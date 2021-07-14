@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Section from './section'
 import { Button } from './button'
 
-
 export default function Contributors ({ contributors: { data: { contributors = [] } } }) {
   return (
     <Section title='Contributors'>

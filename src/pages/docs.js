@@ -1,6 +1,6 @@
 
 
-import React, { Component } from  'react'
+import { Component } from  'react'
 
 import { withPostsFilterBy } from 'nextein/posts'
 import Content from 'nextein/content'

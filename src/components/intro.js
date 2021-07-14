@@ -8,7 +8,6 @@ import { Button } from './button'
 function byOrderSorter (a, b) { return a.data.order - b.data.order }
 function overlayByType (type) { return type === 'browser' ? Browser : Window }
 
-
 export default function Intro ({ snippets = [] }) {
   snippets.sort(byOrderSorter)
   return (
@@ -82,71 +81,6 @@ export default function Intro ({ snippets = [] }) {
           }            
         }        
       `}</style>
-
-      {/* <style jsx>{`
-        .container {
-          min-height: 50vh;
-          margin-bottom: 5em;
-        }
-
-        .rows.examples {
-          margin: 5em 0;
-          perspective: 1500px;
-        }
-
-        :global(.window.example) {
-          flex: 1;
-        }
-        :global(.window.example:nth-child(1)) {
-          transform: scale(.9) rotateY(15deg) rotateX(5deg);
-        }
-        :global(.window.example:nth-child(2)) {
-          transform: scale(1.1);
-          margin-left: -4em;
-        }
-        :global(.window.example:nth-child(3)) {
-          transform: scale(0.8) rotateY(-24deg) rotateX(12deg) translateZ(150px);
-          margin-left: -4em;
-        }
-
-        @media screen and (max-width: 1024px) {
-          .rows.examples {
-            display: flex;
-            flex-direction: column;
-          }
-          :global(.window.example:nth-child(1)) {
-            transform: scale(1);
-          }
-          :global(.window.example:nth-child(2)) {
-            transform: scale(1.1);
-            margin-left: 0;
-            marign-top: -8em;
-            
-          }
-          :global(.window.example:nth-child(3)) {
-            transform: scale(1);
-            margin-left: 0;
-            marign-top: -8em;
-          }            
-        }
-        
-        :global(.window.browser .browser) {
-          --main-color: var(--grey700);
-          background: var(--grey100);
-          align-items: center;
-          flex-direction: column;
-          display: flex;
-        }
-
-        .actions {
-          margin-left: calc(var(--spacing) * -1);
-        }
-
-        .actions :global(button) {
-          --button-color: var(--grey900);
-          margin: 0 calc(var(--spacing) * 1);
-        }
-      `}</style> */}
     </Section>
   )
 }
