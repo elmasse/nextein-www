@@ -8,7 +8,7 @@ export default function NotFound () {
     <div className='bg-gradient-radial from-gray-700 to-gray-900'>
       <div className='max-w-5xl mx-auto text-gray-600 min-h-screen flex flex-col'>
         <hgroup className='my-40 flex flex-col md:flex-row items-center justify-center space-x-2 px-8'>
-          <Link href='/'><a><Nextein className='w-56 fill-current filter drop-shadow-2xl z-10' alt='home' /></a></Link>
+          <Link href='/'><a><Nextein contour className='w-56 fill-current filter drop-shadow-2xl z-10' alt='home' /></a></Link>
           <h1 className='text-6xl font-bold'>Page&nbsp;</h1>
           <h2 className='text-6xl tracking-tight font-bold text-gray-300'>Not Found.</h2>
         </hgroup>

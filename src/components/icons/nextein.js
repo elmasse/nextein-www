@@ -1,14 +1,15 @@
 
-export default function Nextein ({ alt, ...props }) {
+export default function Nextein ({ alt, solid = true, contour = false, ...props }) {
+  if (contour) solid = false
   return (
-    <svg {...props} viewBox='0 0 155 109' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+    <svg {...props} viewBox='0 0 646 455' version='1.1' xmlns='http://www.w3.org/2000/svg'>
       { alt && <title>{alt}</title> }
-      <g transform='matrix(1,0,0,1,-159.075,-163.661)'>
-        <g transform='matrix(0.440542,0,0,0.574469,-40.8871,-3.2098)'>
-          <path
-           d='M471.973,471.593C476.321,481.369 508.946,434.03 532.731,434.173C585.752,434.494 772.013,481.173 790.096,473.515C804.206,467.54 797.144,319.468 792.031,298.144C787.556,279.487 778.599,345.7 759.413,345.567C705.702,345.197 485.453,288.595 469.762,295.919C452.059,304.181 460.489,445.771 471.973,471.593Z'/>
-        </g>
-      </g>    
+      <path
+        fill={solid ? 'currentColor' : 'none'}
+        stroke={!solid ? 'currentColor' : 'none'}
+        strokeWidth={contour && contour !== true ? contour : 10}
+        d='M33.174,433.52c7.981,23.4 67.868,-89.912 111.527,-89.569c97.325,0.768 439.224,112.5 472.417,94.169c25.9,-14.302 12.937,-368.73 3.552,-419.771c-8.214,-44.658 -24.656,113.831 -59.873,113.512c-98.592,-0.885 -502.879,-136.369 -531.681,-118.838c-32.496,19.776 -17.022,358.689 4.058,420.497Z' 
+      />
     </svg>
   )
 } 
