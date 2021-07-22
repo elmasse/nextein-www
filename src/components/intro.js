@@ -60,7 +60,7 @@ export default function Intro ({ snippets = [] }) {
           margin-left: -4em;
         }
         :global(.__overlay:nth-child(3)) {
-          transform: scale(0.8) rotateY(-24deg) rotateX(12deg) translateZ(150px);
+          transform: scale(0.8) rotateY(-24deg) rotateX(6deg) translateZ(150px);
           margin-left: -4em;
         }
 
