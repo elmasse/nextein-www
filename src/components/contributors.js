@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Section from './section'
 import { Button } from './button'
 
-export default function Contributors ({ contributors: { data: { contributors = [] } } }) {
+export default function Contributors ({ contributors }) {
   return (
     <Section title='Contributors'>
       <div className='my-20 flex flex-col lg:flex-row space-x-0 space-y-8 lg:space-x-12 lg:space-y-0'>

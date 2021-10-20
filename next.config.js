@@ -1,42 +1,10 @@
 const { withNextein } = require('nextein/config')
-const site = require('./src/site.json')
-
-/**
- * Append the versioned urls and scans all defaultPathMap entries to add
- * @param {*} defaultPathMap
- * @param {*} options 
- */
-function versionedEntries(defaultPathMap, { url, page = url, versions, dev }) {
-  const { latest, ...all } = versions
-  return Object.keys(all).reduce((prev, version) => {
-    const isLatest = version === latest
-    const versionedUrl = `${url}/${version}`
-
-    return {
-      ...prev,
-      ...(isLatest ? {
-        [url]: { page, query: { version } }
-      } : undefined),
-      [versionedUrl]: { page, query: { version } },
-      ...Object.keys(defaultPathMap)
-       // Search for posts entries in guides or docs that match this version
-      .filter(k => k.startsWith(`${versionedUrl}/`))
-      // return the export entry and attach version param into query
-      .reduce((prev, key) => {
-        const value = defaultPathMap[key]
-        return {
-          ...prev,
-          [key]: {...value, query: {  ...value.query, version }}
-        }
-      }, {}) 
-    }
-  }, {})
-}
 
 module.exports = withNextein({
   webpack5: true,
   nextein: {
     plugins: [
+      ['nextein-plugin-source-fs', { path: 'posts', data: { page: false } }],
       {
         name: 'nextein-plugin-markdown', 
         options: {
@@ -64,18 +32,5 @@ module.exports = withNextein({
         }
       }
     ]
-  },
-
-  exportPathMap: (defaultPathMap, { dev }) => { 
-    return ({
-      ...defaultPathMap,
-      ...versionedEntries(defaultPathMap, { url: '/guides', versions: site.versions, dev }),
-      ...versionedEntries(defaultPathMap, { url: '/docs', versions: site.versions, dev })      
-      // These are necessary since guides and docs are used to render entries.
-      // Nextein removes any page specified in a `page` from the defaultPathMap
-      // so we need to add them back to generate the index.html in each folder.
-      // '/guides': { page: '/guides', query: {} },
-      // '/docs': { page: '/docs', query: {} }
-      })
   }
 })

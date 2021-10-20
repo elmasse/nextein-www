@@ -1,4 +1,4 @@
-import Link from 'nextein/link'
+import Link from 'next/link'
 
 import Nextein from '../components/icons/nextein'
 import Footer from '../components/footer'

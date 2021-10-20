@@ -1,5 +1,6 @@
 
-import { withPostsFilterBy, inCategory } from 'nextein/posts'
+import { getPostsFilterBy } from 'nextein/fetcher'
+import { inCategory } from 'nextein/filters'
 
 import site from '../site.json'
 import Meta from '../components/meta'
@@ -10,10 +11,17 @@ import Contributors from '../components/contributors'
 import Sponsors from '../components/sponsors'
 import Footer from '../components/footer'
 
+export async function getStaticProps () {
+  return {
+    props: {
+      contributors: await getPostsFilterBy(inCategory('contributors')),
+      snippets: await getPostsFilterBy(inCategory('snippets'))
+    }
+  }
+}
 
-function Index ({ posts }) {
-  const [contributors] = posts.filter(inCategory('contributors'))
-  const snippets = posts.filter(inCategory('snippets'))
+
+export default function Index ({ snippets, contributors }) {
   const { name, url, description } = site
 
   return (
@@ -25,14 +33,10 @@ function Index ({ posts }) {
           <Hero />
         </header>
         <Intro snippets={snippets} />
-        <Contributors contributors={contributors} />
+        <Contributors contributors={contributors[0].data.contributors} />
         <Sponsors />
         <Footer />
       </div>
     </div>
   )  
 }
-
-export default withPostsFilterBy(
-  (post) => inCategory('contributors')(post) || inCategory('snippets')(post)
-)(Index)
