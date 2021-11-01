@@ -20,7 +20,7 @@ const byOrderSorter = (a, b) => a.data.order - b.data.order
 
 export async function getStaticPaths () {
   const { getDataFilterBy } = await import('nextein/fetcher')
-  const data = await getDataFilterBy(inCategory('guides', { includeSubCategories: true }))
+  const data = await getDataFilterBy(inCategory('guides/*'))
   const paths = [
     { params: { guides: [] }},
     { params: { guides: ['v2'] }},
