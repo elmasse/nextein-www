@@ -1,6 +1,5 @@
 ---
 title: nextein/fetcher
-page: docs
 order: 50
 experimental: true
 ---

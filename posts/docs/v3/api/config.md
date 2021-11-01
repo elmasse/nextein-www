@@ -1,6 +1,5 @@
 ---
 title: nextein/config
-page: docs
 order: 1
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Getting Started
 order: 1
-page: guides
 ---
 
 This post will guide you on how to get started with **Nextein**. 

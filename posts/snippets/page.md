@@ -1,16 +1,18 @@
 ---
-page: false
 type: bash
 title: pages/index.js
 order: 2
 ---
 
 ```js
-import React from 'react'
-import withPosts from 'nextein/posts'
 import Content from 'nextein/content'
 
-function Index ({ posts }) {
+export async function getStaticProps () {
+  const { getPosts } = await import('nextein/fetcher')
+  return { props: { posts: await getPosts() }}
+}
+
+export function Index ({ posts }) {
   return (
     <div>
       <h1>Hello!</h1>
@@ -24,5 +26,4 @@ function Index ({ posts }) {
   )
 }
 
-export default withPosts(Index)
 ```

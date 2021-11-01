@@ -1,6 +1,5 @@
 ---
 title: nextein/content
-page: docs
 order: 21
 ---
 

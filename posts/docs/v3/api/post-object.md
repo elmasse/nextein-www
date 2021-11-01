@@ -1,6 +1,5 @@
 ---
 title: post
-page: docs
 order: 40
 ---
 

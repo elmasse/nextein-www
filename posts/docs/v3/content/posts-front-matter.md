@@ -1,6 +1,5 @@
 ---
 title: Front Matter
-page: docs
 order: 101
 ---
 

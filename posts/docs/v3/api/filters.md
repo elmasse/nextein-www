@@ -1,6 +1,5 @@
 ---
 title: nextein/filters
-page: docs
 order: 11
 ---
 
