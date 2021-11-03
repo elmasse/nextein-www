@@ -1,4 +1,5 @@
 
+import { getDataFilterBy, getPost } from 'nextein/fetcher'
 import { inCategory } from 'nextein/filters'
 import Content from 'nextein/content'
 
@@ -17,7 +18,6 @@ import Blocks from '../../components/blocks'
 const byOrderSorter = (a, b) => a.data.order - b.data.order
 
 export async function getStaticPaths () {
-  const { getDataFilterBy } = await import('nextein/fetcher')
   const data = await getDataFilterBy(inCategory('docs/*'))
   const paths = [
     { params: { docs: [] }},
@@ -38,7 +38,6 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params: { docs = [] } = {} }) {
-  const { getDataFilterBy, getPost } = await import('nextein/fetcher')
   const [version = versions.latest, ...rest] = docs
   const [slug, ...sub] = rest.reverse()
   const category = `docs/${version}`
