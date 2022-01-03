@@ -23,7 +23,7 @@ export async function getStaticProps () {
 
 export default function Index ({ snippets, contributors }) {
   const { name, url, description } = site
-
+console.log(contributors)
   return (
     <div className='bg-gradient-radial from-gray-700 to-gray-900'>
       <Meta title={name} url={url} description={description}/>

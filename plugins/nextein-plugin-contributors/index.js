@@ -17,7 +17,7 @@ contributors: ${contributors.map(({ login, avatar_url, html_url }) => `
 `
 )
 
-module.exports.source = async ({ owner, repo, category = 'contributors', includeOwner = false }, { add }) => {
+module.exports.source = async ({ owner, repo, category = 'contributors', includeOwner = false }, { build }) => {
   try {
     const res = await fetch(GITHUB_API({ owner, repo }))
     const stats = await res.json()
@@ -28,7 +28,7 @@ module.exports.source = async ({ owner, repo, category = 'contributors', include
 
     const fakeFile = `${owner}-${repo}-contributors.md`
 
-    add({
+    build({
       filePath: fakeFile,
       name: fakeFile,
       mimeType: 'text/markdown',
