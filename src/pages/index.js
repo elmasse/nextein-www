@@ -3,6 +3,8 @@ import { getPostsFilterBy } from 'nextein/fetcher'
 import { inCategory } from 'nextein/filters'
 
 import site from '../site.json'
+import getContributors from '../contributors'
+
 import Meta from '../components/meta'
 import Navigation from '../components/navigation'
 import Hero from '../components/hero'
@@ -14,8 +16,8 @@ import Footer from '../components/footer'
 export async function getStaticProps () {
   return {
     props: {
-      contributors: await getPostsFilterBy(inCategory('contributors')),
-      snippets: await getPostsFilterBy(inCategory('snippets'))
+      snippets: await getPostsFilterBy(inCategory('snippets')),
+      contributors: await getContributors()
     }
   }
 }
@@ -23,7 +25,7 @@ export async function getStaticProps () {
 
 export default function Index ({ snippets, contributors }) {
   const { name, url, description } = site
-console.log(contributors)
+
   return (
     <div className='bg-gradient-radial from-gray-700 to-gray-900'>
       <Meta title={name} url={url} description={description}/>
@@ -33,7 +35,7 @@ console.log(contributors)
           <Hero />
         </header>
         <Intro snippets={snippets} />
-        <Contributors contributors={contributors[0].data.contributors} />
+        <Contributors contributors={contributors} />
         <Sponsors />
         <Footer />
       </div>

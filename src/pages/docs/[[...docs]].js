@@ -23,6 +23,7 @@ export async function getStaticPaths () {
     { params: { docs: [] }},
     { params: { docs: ['v2'] }},
     { params: { docs: ['v3'] }},
+    { params: { docs: ['v4'] }},
     ...data.map(({ slug, category }) => {
       const [_,version, ...sub] = category.split('/')
       return {

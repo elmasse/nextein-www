@@ -17,14 +17,6 @@ module.exports = withNextein({
         }
       },
       {
-        name: './plugins/nextein-plugin-contributors',
-        options: {
-          owner: 'elmasse',
-          repo: 'nextein',
-          includeOwner: true
-        }
-      },
-      {
         name: 'nextein-plugin-toc',
         options: {
           categories: ['guides', 'docs'],

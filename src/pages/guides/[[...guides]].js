@@ -24,6 +24,7 @@ export async function getStaticPaths () {
     { params: { guides: [] }},
     { params: { guides: ['v2'] }},
     { params: { guides: ['v3'] }},
+    { params: { guides: ['v4'] }},
     ...data.map(({ slug, category }) => {
       const [_,version] = category.split('/')
       return {
