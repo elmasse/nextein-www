@@ -1,5 +1,5 @@
 
-import Link from 'nextein/link'
+import Link from 'next/link'
 
 import Github from './icons/github'
 import Nextein from './icons/nextein'

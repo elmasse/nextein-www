@@ -1,6 +1,5 @@
 ---
 title: nextein/posts
-page: docs
 order: 10
 ---
 

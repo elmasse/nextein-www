@@ -1,4 +1,4 @@
-import Link from 'nextein/link'
+import Link from 'next/link'
 
 import { Button } from './button'
 import { Window } from './overlay'

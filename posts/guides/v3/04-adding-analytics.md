@@ -1,7 +1,6 @@
 ---
 title: Adding Analytics
 order: 4
-page: guides
 ---
 
 One of the most common scenarios for websites or blogs is to add _Analytics_ to monitor traffic. In this guide we will use `react-ga` to configure a _Google Analytics_ account.

@@ -1,8 +1,6 @@
 ---
 title: Custom Components
 order: 6
-page: guides
-postcast: false
 ---
 
 In this guide we are going to learn about using custom components in markdown posts. 

@@ -39,7 +39,6 @@ export default function ScrollSync ({ post, threshold = 50, children }) {
   }
  
   function handleScroll () {
-    console.log('scroll', targetsTopOffset.length)
     const item = targetsTopOffset.find((itemTopOffset, i) => {
       const nextItemTopOffset = targetsTopOffset[i + 1]
       if (nextItemTopOffset) {

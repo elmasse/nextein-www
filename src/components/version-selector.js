@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Link from 'nextein/link'
+import Link from 'next/link'
 
 export default function VersionSelector ({ section, selected, versions = {} }) {
   const [open, setOpen] = useState(false)

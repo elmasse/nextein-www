@@ -1,5 +1,4 @@
 ---
-page: false
 type: bash
 title: posts/first-post.md
 order: 1

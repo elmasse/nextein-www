@@ -1,8 +1,6 @@
 ---
 title: Build & Deploy with Vercel
 order: 5
-page: guides
-published: true
 ---
 
 In this post we will cover how to build and deploy your **nextein** site using Vercel.

@@ -1,6 +1,5 @@
 ---
 title: Directory Structure
-page: docs
 order: 100
 ---
 

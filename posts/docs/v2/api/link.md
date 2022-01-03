@@ -1,6 +1,5 @@
 ---
 title: nextein/link
-page: docs
 order: 30
 ---
 

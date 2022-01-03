@@ -1,4 +1,4 @@
-import Link from 'nextein/link'
+import Link from 'next/link'
 
 export default function Pagination ({ posts, post, section }) {
   const currIdx = posts.findIndex(p => ( p.data.title == post.data.title ))
@@ -8,7 +8,7 @@ export default function Pagination ({ posts, post, section }) {
   return (
     <nav className='flex items-start my-16 text-action'>
       {prev && (
-        <Link {...prev}>
+        <Link as={`/${prev.data.category}/${prev.data.slug}`} href={`/${section}/[[...${section}]]`}>
           <a className='prev flex-1 no-underline justify-start'>
             <div className='text-sm font-bold'>Previous</div>
             <div className='text-2xl md:text-3xl font-bold tracking-tight font-heading'>{prev.data.title}</div>
@@ -17,8 +17,8 @@ export default function Pagination ({ posts, post, section }) {
         </Link>
       )}
       {next && (
-        <Link {...next}>
-          <a className='next flex-1 justify-end text-right'>
+        <Link as={`/${next.data.category}/${next.data.slug}`} href={`/${section}/[[...${section}]]`}>
+        <a className='next flex-1 justify-end text-right'>
             <div className='text-sm font-bold'>Next</div>
             <div className='text-2xl md:text-3xl font-bold tracking-tight font-heading'>{next.data.title}</div>
             <div className='text-sm font-medium uppercase'>{section}</div>

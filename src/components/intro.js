@@ -1,5 +1,5 @@
 import Content from 'nextein/content'
-import Link from 'nextein/link'
+import Link from 'next/link'
 
 import Section from './section'
 import { Browser, Window } from './overlay'
