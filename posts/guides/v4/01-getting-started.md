@@ -59,7 +59,7 @@ export default function Index ({ posts }) {
     <main>
     {
       posts.map(post => (        
-        <article key={post.data.__id}>
+        <article key={post.__id}>
           <h1>{post.data.title}</h1>
           <Content {...post} excerpt />
         </article>

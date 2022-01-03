@@ -1,6 +1,6 @@
 ---
 title: nextein/fetcher
-order: 50
+order: 10
 ---
 
 Dynamic Routes and **static generator functions** (`getStaticProps` and `getStaticPaths`) can be used with this feature.

@@ -13,11 +13,11 @@ export default function Sidebar ({ posts,  current, activeTarget, toc = true, se
             <Link as={`/${post.data.category}/${post.data.slug}`} href={`/${section}/[[...${section}]]`}>
               <a
                 className={[
-                  'inline-block w-full px-4 py-2 border-l-2',
+                  'inline-flex items-center gap-2 w-full px-4 py-2 border-l-2',
                   active ? 'bg-gray-200 text-gray-800 border-gray-300' : 'border-gray-100'
                   ].filter(Boolean).join(' ')}
                 >
-                  {post.data.title}
+                  {post.data.title}{post.data.deprecated ? <span className='text-xs font-normal text-action'>deprecated</span>: null}
                 </a>
             </Link>
             {toc && active && post.data.toc &&

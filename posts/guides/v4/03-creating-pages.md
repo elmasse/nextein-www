@@ -12,19 +12,26 @@ If we want to create our blog as a separated section, we can generate our `/blog
 This page component will render only those posts within the `blog` category:
 
 ```js
-import React from 'react'
-import { withPostsFilterBy, inCategory } from 'nextein/posts'
-import { Content } from 'nextein/post' 
+import { getPostsFilterBy } from 'nextein/fetcher'
+import Content from 'nextein/content'
 
-const fromBlog = withPostsFilterBy(inCategory('blog', { includeSubCategories: true }))
+export async function getStaticProps () {
+  return { props: { bllog: await getPostsFilterBy(inCategory('blog/*')) } }
+}
 
-export default fromBlog(({ posts }) => (
+export default function Index ({ blog }) {
+  return (
     <main>
     {
-      posts.map(post => <Content key={post.data.__id} {...post} excerpt />)
+      blog.map(post => (        
+        <article key={post.__id}>
+          <h1>{post.data.title}</h1>
+          <Content {...post} excerpt />
+        </article>
+      ))
     }
     </main>
   )
-)
+}
 
 ```

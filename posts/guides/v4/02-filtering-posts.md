@@ -16,21 +16,29 @@ The `category` property follows the directory structure by default. If you have 
 The most common case is to filter posts by `category`. **Nextein** exposes a filter function to help: `inCategory(category, options)`. This method uses the `post.data` to filter posts by a given `category`:
 
 ```js
-import React from 'react'
-import withPosts, { inCategory } from 'nextein/posts'
-import { Content } from 'nextein/post' 
+import { getPosts } from 'nextein/fetcher'
+import Content from 'nextein/content'
 
-export default withPosts(({ posts }) => {
+export async function getStaticProps () {
+  return { props: { posts: await getPosts() } }
+}
+
+export default function Index ({ posts }) {
   const blog = posts.filter(inCategory('blog'))
 
   return (
     <main>
     {
-      blog.map(post => <Content key={post.data.__id} {...post} excerpt />)
+      blog.map(post => (        
+        <article key={post.__id}>
+          <h1>{post.data.title}</h1>
+          <Content {...post} excerpt />
+        </article>
+      ))
     }
     </main>
   )
-})
+}
 
 ```
 
@@ -63,31 +71,39 @@ const maxBlog = posts
 
 ```
 
-## Using withPostsFilterBy
+## Using getPostFilterBy
 
-You can use the `withPostsFilterBy` which returns an HOC with a pre-configured filter. This avoid to process all posts and filtering them in your render method.
+You can use the `getPostFilterBy` to avoid to process all posts and filtering them in your render method.
 
 Our previous example can be simplified by doing:
 
 ```js
-import React from 'react'
-import { withPostsFilterBy, inCategory } from 'nextein/posts'
-import { Content } from 'nextein/post' 
+import { getPostsFilterBy } from 'nextein/fetcher'
+import Content from 'nextein/content'
 
-const fromBlog = withPostsFilterBy(inCategory('blog', { includeSubCategories: true }))
+export async function getStaticProps () {
+  return { props: { bllog: await getPostsFilterBy(inCategory('blog')) } }
+}
 
-export default fromBlog(({ posts }) => (
+export default function Index ({ blog }) {
+  return (
     <main>
     {
-      posts.map((post) => <Content key={post.data.__id} {...post} excerpt />)
+      blog.map(post => (        
+        <article key={post.__id}>
+          <h1>{post.data.title}</h1>
+          <Content {...post} excerpt />
+        </article>
+      ))
     }
     </main>
   )
-)
+}
+
 ```
 
 This is the preferred way in case you have a large amount of posts and you display just a small set. 
 
 > Note
 >
-> Filtering posts using the **`withPostsFilterBy`** HOC will help performance since we are not adding unnecessary posts into the global cache, reducing the size of the final HTML file.
+> Filtering posts using the **`getPostsFilterBy`** method will help performance since we are not adding unnecessary posts into the global cache, reducing the size of the final HTML file.

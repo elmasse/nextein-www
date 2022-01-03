@@ -1,6 +1,6 @@
 ---
 title: nextein/post
-order: 20
+order: 100
 deprecated: true
 ---
 

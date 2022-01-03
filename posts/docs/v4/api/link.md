@@ -1,6 +1,6 @@
 ---
 title: nextein/link
-order: 30
+order: 100
 deprecated: true
 ---
 
