@@ -4,8 +4,8 @@
   "description": "Nextein is a static site generator for Next.js",
   
   "versions": {
-    "latest": "v3",
-    "v4": "v4.0.0-beta",
+    "latest": "v4",
+    "v4": "v4.0.0",
     "v3": "v3.2.4",
     "v2": "v2.7.3"
   }

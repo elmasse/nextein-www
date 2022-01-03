@@ -1,6 +1,6 @@
 ---
 title: Directory Structure
-order: 100
+order: 50
 ---
 
 Nextein follows `Next` directory structure. As an overview, these are the relevant files and folders on a `Nextein` project:
