@@ -3,7 +3,7 @@ import { getDataFilterBy, getPost } from 'nextein/fetcher'
 import { inCategory } from 'nextein/filters'
 import Content from 'nextein/content'
 
-import  site from '../../site.json'
+import site from '../../site.json'
 import Meta from '../../components/meta'
 import Navigation from '../../components/navigation'
 import Sidebar from '../../components/sidebar'
@@ -18,20 +18,21 @@ import Blocks from '../../components/blocks'
 const { name, url, description, versions } = site
 const byOrderSorter = (a, b) => a.data.order - b.data.order
 
-export async function getStaticPaths () {
-  const data = await getDataFilterBy(inCategory('guides/*'))
-  const paths = [
-    { params: { guides: [] }},
-    { params: { guides: ['v2'] }},
-    { params: { guides: ['v3'] }},
-    { params: { guides: ['v4'] }},
-    ...data.map(({ slug, category }) => {
-      const [_,version] = category.split('/')
-      return {
-        params: { guides: [version, slug] },
-      }
-    })
-  ]
+export async function getStaticPaths() {
+  const paths = []
+
+  const data = await getDataFilterBy(inCategory(`guides/*`))
+
+ Object.keys(versions).filter(k => k !== 'latest').map(version => {
+    paths.push(
+      { params: { version: [version] } },
+      ...data.filter(inCategory(`guides/${version}/*`)).map(({ slug }) => {
+        return {
+          params: { version: [version, slug] },
+        }
+      })
+    )
+  })
 
   return {
     paths,
@@ -39,8 +40,8 @@ export async function getStaticPaths () {
   }
 }
 
-export async function getStaticProps ({ params: { guides = [] } = {} }) {
-  const [version = versions.latest, slug] = guides
+export async function getStaticProps({ params: { version: versionParam } = {} }) {
+  const [version, slug] = versionParam
   const category = `guides/${version}`
 
   const posts = (await getDataFilterBy(inCategory(category, { includeSubCategories: true }))).map(data => ({ data }))
@@ -49,22 +50,22 @@ export async function getStaticProps ({ params: { guides = [] } = {} }) {
   const post = await getPost({ slug: slug || posts[0].data.slug, category })
 
   return {
-    props: { 
-      posts, post, version 
+    props: {
+      posts, post, version
     }
   }
 }
 
-export default function Guides ({ posts, post, version }) {
+export default function Guides({ posts, post, version }) {
   const headTitle = `${name} | Guides | ${post.data.title}`
   const fullUrl = `${url}${post.data.url}` // TODO
 
   return (
     <>
-      <Meta title={headTitle} url={fullUrl} description={description}/>
+      <Meta title={headTitle} url={fullUrl} description={description} />
       <div className='max-w-7xl mx-auto my-0 space-y-16'>
         <header>
-          <Navigation/>
+          <Navigation />
         </header>
         <div className='flex'>
           <article className='lg:mr-12 flex-1 w-1'>{/* // width 1px to make the article to not expand */}
@@ -84,13 +85,13 @@ export default function Guides ({ posts, post, version }) {
               }}
             />
             <Footer>
-              <Pagination posts={posts} post={post} section='guides'/>                
+              <Pagination posts={posts} post={post} section='guides' />
             </Footer>
           </article>
           <aside className='hidden md:block -mt-32 pt-6 flex-none w-80 bg-gray-100'>
             <ScrollSync post={post}>
               {({ activeTarget }) => (
-                <Sidebar current={post} activeTarget={activeTarget} posts={posts} section='guides'/>
+                <Sidebar current={post} activeTarget={activeTarget} posts={posts} section='guides' />
               )}
             </ScrollSync>
           </aside>

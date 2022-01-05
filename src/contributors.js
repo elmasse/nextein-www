@@ -7,6 +7,7 @@ export default async function getContributors ({ owner = 'elmasse', repo = 'next
   try {
     const res = await fetch(GITHUB_API({ owner, repo }))
     const stats = await res.json()
+
     const contributors = stats
       .map(s => s.author)
       .filter(a => a.type === 'User')

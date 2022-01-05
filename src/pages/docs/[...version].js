@@ -15,22 +15,24 @@ import VersionSelector from '../../components/version-selector'
 import Anchor from '../../components/anchor'
 import Blocks from '../../components/blocks'
 
+const { name, url, description, versions } = site
 const byOrderSorter = (a, b) => a.data.order - b.data.order
 
-export async function getStaticPaths () {
-  const data = await getDataFilterBy(inCategory('docs/*'))
-  const paths = [
-    { params: { docs: [] }},
-    { params: { docs: ['v2'] }},
-    { params: { docs: ['v3'] }},
-    { params: { docs: ['v4'] }},
-    ...data.map(({ slug, category }) => {
-      const [_,version, ...sub] = category.split('/')
-      return {
-        params: { docs: [version, ...sub, slug] },
-      }
-    })
-  ]
+export async function getStaticPaths() {
+  const paths = []
+  const data = await getDataFilterBy(inCategory(`docs/*`))
+
+  Object.keys(versions).filter(k => k !== 'latest').map(async (version) => {
+    paths.push(
+      { params: { version: [version] } },
+      ...data.map(({ slug, category }) => {
+        const [_, version, ...sub] = category.split('/')
+        return {
+          params: { version: [version, ...sub, slug] },
+        }
+      })
+    )
+  })
 
   return {
     paths,
@@ -38,29 +40,29 @@ export async function getStaticPaths () {
   }
 }
 
-export async function getStaticProps ({ params: { docs = [] } = {} }) {
-  const [version = versions.latest, ...rest] = docs
+export async function getStaticProps({ params: { version: versionParam } = {} }) {
+  const [version, ...rest] = versionParam
   const [slug, ...sub] = rest.reverse()
+
   const category = `docs/${version}`
 
   const posts = (await getDataFilterBy(inCategory(category, { includeSubCategories: true }))).map(data => ({ data }))
   posts.sort(byOrderSorter)
 
+  // const post = await getPost({ slug: slug || posts[0].data.slug, category })
   const post = await getPost({
     slug: slug || posts[0].data.slug,
     category: slug ? [category, ...sub].join('/') : posts[0].data.category
   })
 
   return {
-    props: { 
-      posts, post, version 
+    props: {
+      posts, post, version
     }
   }
 }
 
-const { name, url, description, versions } = site
-
-export default function Docs ({posts, post, version}) {
+export default function Docs({ posts, post, version }) {
   // Little hack to make title to break on / but without showing spaces.
   const title = post.data.title.split('/').reduce((prev, curr, idx) => {
     if (idx > 0) {
@@ -75,10 +77,10 @@ export default function Docs ({posts, post, version}) {
 
   return (
     <>
-      <Meta title={headTitle} url={fullUrl} description={description}/>
+      <Meta title={headTitle} url={fullUrl} description={description} />
       <div className='max-w-7xl mx-auto my-0 space-y-16'>
         <header>
-          <Navigation/>
+          <Navigation />
         </header>
         <div className='flex'>
           <article className='lg:mr-12 flex-1 w-1'>{/* // width 1px to make the article to not expand */}
@@ -98,7 +100,7 @@ export default function Docs ({posts, post, version}) {
               }}
             />
             <Footer>
-              <Pagination posts={posts} post={post} section='docs'/>
+              <Pagination posts={posts} post={post} section='docs' />
             </Footer>
           </article>
           <aside className='hidden md:block -mt-32 pt-6 flex-none w-80 bg-gray-100'>
