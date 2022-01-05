@@ -18,6 +18,7 @@ The most common case is to filter posts by `category`. **Nextein** exposes a fil
 ```js
 import { getPosts } from 'nextein/fetcher'
 import Content from 'nextein/content'
+import { inCategory } from 'nextein/filters'
 
 export async function getStaticProps () {
   return { props: { posts: await getPosts() } }
@@ -80,6 +81,7 @@ Our previous example can be simplified by doing:
 ```js
 import { getPostsFilterBy } from 'nextein/fetcher'
 import Content from 'nextein/content'
+import { inCategory } from 'nextein/filters'
 
 export async function getStaticProps () {
   return { props: { bllog: await getPostsFilterBy(inCategory('blog')) } }

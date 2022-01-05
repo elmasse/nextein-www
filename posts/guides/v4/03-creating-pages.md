@@ -14,6 +14,7 @@ This page component will render only those posts within the `blog` category:
 ```js
 import { getPostsFilterBy } from 'nextein/fetcher'
 import Content from 'nextein/content'
+import { inCategory } from 'nextein/filters'
 
 export async function getStaticProps () {
   return { props: { bllog: await getPostsFilterBy(inCategory('blog/*')) } }

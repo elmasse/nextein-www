@@ -174,8 +174,8 @@ Modify the `package.json` to include the export script:
 ```json
 {
   "scripts": {
-    "dev": "nextein",
-    "export": "nextein build && nextein export"
+    "dev": "next",
+    "export": "next build && next export"
   }
 }
 
