@@ -35,7 +35,10 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            'h1,h2,h3,h4': { fontFamily: 'Montserrat' }
+            'h1,h2,h3,h4': { fontFamily: 'Montserrat' },
+            'pre[class*="language-"] code': { fontSize: '1rem !important' },
+            '.language-diff .token.deleted': { color: '#f87171 !important' },
+            '.language-diff .token.inserted': { color: '#22c55e !important' }
           }
         }
       }      
