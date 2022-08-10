@@ -8,24 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mapbox/rehype-prism": "^0.5.0",
-    "@tailwindcss/typography": "^0.5.0",
-    "autoprefixer": "^10.3.5",
+    "@mapbox/rehype-prism": "^0.8.0",
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.8",
     "isomorphic-fetch": "^3.0.0",
-    "next": "^12.0.9",
-    "nextein": "^4.0.4",
+    "next": "^12.2.4",
+    "nextein": "^4.1.0",
     "nextein-plugin-toc": "^1.0.3",
-    "postcss": "^8.3.7",
-    "prismjs": "^1.25.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "postcss": "^8.4.16",
+    "prismjs": "^1.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rehype-autolink-headings": "^4.0.0",
     "rehype-minify-whitespace": "^4.0.5",
     "rehype-slug": "^3.0.0",
-    "tailwindcss": "^3.0.8",
+    "tailwindcss": "^3.1.8",
     "unist-util-map": "^2.0.1"
-  },
-  "devDependencies": {
-    "webpack": "^5.53.0"
   }
 }
