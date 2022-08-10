@@ -3,7 +3,6 @@ const { withNextein } = require('nextein/config')
 const { versions } = require('./src/site.json')
 
 module.exports = withNextein({
-  webpack5: true,
   async redirects () {
     return [
       {
