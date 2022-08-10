@@ -13,7 +13,7 @@
     "autoprefixer": "^10.4.8",
     "isomorphic-fetch": "^3.0.0",
     "next": "^12.2.4",
-    "nextein": "^4.1.0",
+    "nextein": "^4.1.1",
     "nextein-plugin-toc": "^1.0.3",
     "postcss": "^8.4.16",
     "prismjs": "^1.28.0",
