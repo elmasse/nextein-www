@@ -4,8 +4,7 @@
   "private": true,
   "repository": "https://github.com/elmasse/nextein-www",
   "scripts": {
-    "dev": "next",
-    "start": "next start"
+    "dev": "next"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.8.0",
