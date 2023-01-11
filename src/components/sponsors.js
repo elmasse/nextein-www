@@ -18,18 +18,7 @@ export default function Sponsors () {
             </Link>  
           </div>
         </div>
-        <div className='flex-1 flex justify-center'>
-          <Link
-            href='https://geutstudio.com'
-            prefetch={false}
-            target='_blank'
-            rel='noopener noreferrer'
-            title='GEUT'>
-
-            <Geut className='w-72' />
-
-          </Link>
-        </div>
+        <div className='flex-1 flex justify-center' />
       </div>
     </Section>
   );
