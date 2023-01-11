@@ -11,7 +11,7 @@ export default function Sponsors () {
         <div className='flex-none flex-col space-y-10'>
           <p className='text-xl text-gray-400 font-light'>Amazing organizations that support this project.</p>
           <div className='flex'>
-            <Link href='https://opencollective.com/nextein' prefetch={false}>
+            <Link href='https://opencollective.com/nextein' prefetch={false} legacyBehavior>
               <Button>
                 <a target='_blank' rel='noopener noreferrer'><b>Become a Sponsor!</b></a>
               </Button>
@@ -19,13 +19,18 @@ export default function Sponsors () {
           </div>
         </div>
         <div className='flex-1 flex justify-center'>
-          <Link href='https://geutstudio.com' prefetch={false}>
-            <a target='_blank' rel='noopener noreferrer' title='GEUT'>          
-              <Geut className='w-72' />
-            </a>
+          <Link
+            href='https://geutstudio.com'
+            prefetch={false}
+            target='_blank'
+            rel='noopener noreferrer'
+            title='GEUT'>
+
+            <Geut className='w-72' />
+
           </Link>
         </div>
       </div>
     </Section>
-  )
+  );
 }

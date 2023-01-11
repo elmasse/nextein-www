@@ -35,12 +35,12 @@ export default function Intro ({ snippets = [] }) {
           Get started right now with our Guides or check the Starter Kit.
         </p>
         <div className='flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0'>
-          <Link href='/guides'>
+          <Link href='/guides' legacyBehavior>
             <Button variant='highlight'>
               <a target='_blank' rel='noopener noreferrer'><b>Get Started!</b></a>
             </Button>
           </Link>  
-          <Link href='https://github.com/elmasse/nextein-starter' passHref>
+          <Link href='https://github.com/elmasse/nextein-starter' passHref legacyBehavior>
             <Button>
               <a target='_blank' rel='noopener noreferrer'><b>Check the starter kit</b></a>
             </Button>
@@ -82,5 +82,5 @@ export default function Intro ({ snippets = [] }) {
         }        
       `}</style>
     </Section>
-  )
+  );
 }

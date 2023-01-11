@@ -8,7 +8,7 @@ export default function NotFound () {
     <div className='bg-gradient-radial from-gray-700 to-gray-900'>
       <div className='max-w-5xl mx-auto text-gray-600 min-h-screen flex flex-col'>
         <hgroup className='my-40 flex flex-col md:flex-row items-center justify-center space-x-2 px-8'>
-          <Link href='/'><a><Nextein contour className='w-56 fill-current filter drop-shadow-2xl z-10' alt='home' /></a></Link>
+          <Link href='/'><Nextein contour className='w-56 fill-current filter drop-shadow-2xl z-10' alt='home' /></Link>
           <h1 className='text-6xl font-bold'>Page&nbsp;</h1>
           <h2 className='text-6xl tracking-tight font-bold text-gray-300'>Not Found.</h2>
         </hgroup>
@@ -21,14 +21,14 @@ export default function NotFound () {
             Maybe you are looking for:
           </p>        
           <ul className='text-xl space-y-2 uppercase'>
-            <li><Link href='/'><a>Home</a></Link></li>
-            <li><Link href='/guides'><a>Guides</a></Link></li>
-            <li><Link href='/docs'><a>Docs</a></Link></li>
-            <li><Link href='/404'><a>This Page :)</a></Link></li>
+            <li><Link href='/'>Home</Link></li>
+            <li><Link href='/guides'>Guides</Link></li>
+            <li><Link href='/docs'>Docs</Link></li>
+            <li><Link href='/404'>This Page :)</Link></li>
           </ul>
         </section>
         <Footer />
       </div>
     </div>
-  )
+  );
 }

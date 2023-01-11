@@ -8,23 +8,29 @@ export default function Pagination ({ posts, post, section }) {
   return (
     <nav className='flex items-start my-16 text-action'>
       {prev && (
-        <Link as={`/${prev.data.category}/${prev.data.slug}`} href={`/${section}/[[...${section}]]`}>
-          <a className='prev flex-1 no-underline justify-start'>
-            <div className='text-sm font-bold'>Previous</div>
-            <div className='text-2xl md:text-3xl font-bold tracking-tight font-heading'>{prev.data.title}</div>
-            <div className='text-sm font-medium uppercase'>{section}</div>
-          </a>
-        </Link>
+        (<Link
+          as={`/${prev.data.category}/${prev.data.slug}`}
+          href={`/${section}/[[...${section}]]`}
+          className='prev flex-1 no-underline justify-start'>
+
+          <div className='text-sm font-bold'>Previous</div>
+          <div className='text-2xl md:text-3xl font-bold tracking-tight font-heading'>{prev.data.title}</div>
+          <div className='text-sm font-medium uppercase'>{section}</div>
+
+        </Link>)
       )}
       {next && (
-        <Link as={`/${next.data.category}/${next.data.slug}`} href={`/${section}/[[...${section}]]`}>
-        <a className='next flex-1 justify-end text-right'>
-            <div className='text-sm font-bold'>Next</div>
-            <div className='text-2xl md:text-3xl font-bold tracking-tight font-heading'>{next.data.title}</div>
-            <div className='text-sm font-medium uppercase'>{section}</div>
-          </a>
-        </Link>
+        (<Link
+          as={`/${next.data.category}/${next.data.slug}`}
+          href={`/${section}/[[...${section}]]`}
+          className='next flex-1 justify-end text-right'>
+
+          <div className='text-sm font-bold'>Next</div>
+          <div className='text-2xl md:text-3xl font-bold tracking-tight font-heading'>{next.data.title}</div>
+          <div className='text-sm font-medium uppercase'>{section}</div>
+
+        </Link>)
       )}
     </nav>
-  )
+  );
 }

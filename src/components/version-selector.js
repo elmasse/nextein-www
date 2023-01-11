@@ -41,12 +41,12 @@ export default function VersionSelector ({ section, selected, versions = {} }) {
               ].filter(Boolean).join(' ')}
             >
               <Link href={`/${section}/${tag}`}>
-                <a><b className='normal-case text-sm'>{name}</b></a>
+                <b className='normal-case text-sm'>{name}</b>
               </Link>
             </div>
           ))}
         </div>
       ) : null }
     </div>
-  )
+  );
 }

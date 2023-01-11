@@ -10,15 +10,16 @@ export default function Sidebar ({ posts,  current, activeTarget, toc = true, se
         const active = post.data.__id === current.data.__id
         return (
           <li key={`sidenav-${post.data.__id}`}>
-            <Link as={`/${post.data.category}/${post.data.slug}`} href={`/${section}/[[...${section}]]`}>
-              <a
-                className={[
-                  'inline-flex items-center gap-2 w-full px-4 py-2 border-l-2',
-                  active ? 'bg-gray-200 text-gray-800 border-gray-300' : 'border-gray-100'
-                  ].filter(Boolean).join(' ')}
-                >
-                  {post.data.title}{post.data.deprecated ? <span className='text-xs font-normal text-action'>deprecated</span>: null}
-                </a>
+            <Link
+              as={`/${post.data.category}/${post.data.slug}`}
+              href={`/${section}/[[...${section}]]`}
+              className={[
+                'inline-flex items-center gap-2 w-full px-4 py-2 border-l-2',
+                active ? 'bg-gray-200 text-gray-800 border-gray-300' : 'border-gray-100'
+                ].filter(Boolean).join(' ')}>
+
+              {post.data.title}{post.data.deprecated ? <span className='text-xs font-normal text-action'>deprecated</span>: null}
+
             </Link>
             {toc && active && post.data.toc &&
               <ul className='text-gray-500 font-medium'>
@@ -34,18 +35,18 @@ export default function Sidebar ({ posts,  current, activeTarget, toc = true, se
                         active ? 'border-action text-gray-900' : 'border-gray-100',
                       ].filter(Boolean).join(' ')}
                     >
-                      <Link href={href}><a className={`toc toc-${item.type}`}>{item.value}</a></Link>
+                      <Link href={href} className={`toc toc-${item.type}`}>{item.value}</Link>
                     </li>
-                  )
+                  );
                 })
                 }
               </ul>
             }
           </li>
-        )
+        );
       })}
 
       </ul>
     </div>
-  )
+  );
 }

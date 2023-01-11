@@ -21,25 +21,37 @@ export default function Footer ({ children }) {
         </div>
        
         <div className='self-center flex items-center space-x-4'>
-          <Link href='https://twitter.com/nexteinjs'>
-            <a target='_blank' rel='noopener noreferrer'>
+          <Link
+            href='https://twitter.com/nexteinjs'
+            target='_blank'
+            rel='noopener noreferrer'>
+
             <Twitter className='h-5 fill-current' alt='Twitter'/>
-            </a>
+
           </Link>
-          <Link href='https://gitter.im/nextein'>
-            <a target='_blank' rel='noopener noreferrer'>
+          <Link
+            href='https://gitter.im/nextein'
+            target='_blank'
+            rel='noopener noreferrer'>
+
             <Gitter className='h-5 fill-current' alt='Gitter IM'/>
-            </a>
+
           </Link> 
-          <Link href='https://github.com/elmasse/nextein'>
-            <a target='_blank' rel='noopener noreferrer'>
-              <Github className='h-5 fill-current' alt='Github' />
-            </a>
+          <Link
+            href='https://github.com/elmasse/nextein'
+            target='_blank'
+            rel='noopener noreferrer'>
+
+            <Github className='h-5 fill-current' alt='Github' />
+
           </Link>
-          <Link href='https://www.npmjs.com/package/nextein'>
-            <a target='_blank' rel='noopener noreferrer'>
-              <Npm className='h-5 fill-current' alt='npm' />
-            </a>
+          <Link
+            href='https://www.npmjs.com/package/nextein'
+            target='_blank'
+            rel='noopener noreferrer'>
+
+            <Npm className='h-5 fill-current' alt='npm' />
+
           </Link>
         </div>
       </div>
@@ -47,5 +59,5 @@ export default function Footer ({ children }) {
         <p className='text-sm font-light'>Built with <span>♥︎</span> and <span>nextein</span> by <a href='https://github.com/elmasse'>/<span>elmasse</span></a></p>
       </div>
     </footer>
-  )
+  );
 }

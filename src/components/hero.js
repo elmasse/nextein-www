@@ -18,12 +18,12 @@ export default function Header () {
           Combine the simplicity of <b>Markdown</b> and the power of <b>Next.js</b>.
         </p>
         <div className='flex flex-1 space-x-2'>
-          <Link href='/guides'>
+          <Link href='/guides' legacyBehavior>
             <Button variant='highlight'>
               <a><b>Guides</b></a>
             </Button>
           </Link>
-          <Link href='/docs'>
+          <Link href='/docs' legacyBehavior>
             <Button>
               <a><b>Docs</b></a>
             </Button>
@@ -36,5 +36,5 @@ export default function Header () {
         </Window>
       </div>
     </div>
-  )
+  );
 }
